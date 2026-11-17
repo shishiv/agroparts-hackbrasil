@@ -1,0 +1,4114 @@
+{
+  "fonte": "API de Dados Abertos do Compras.gov.br, módulo material",
+  "consultadoEm": "2026-11-16",
+  "grupos": [
+    {
+      "codigoGrupo": 10,
+      "nomeGrupo": "ARMAMENTO",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 1005,
+          "nomeClasse": "ARMAS DE FOGO DE CALIBRE ATÉ 120MM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1010,
+          "nomeClasse": "ARMAS DE FOGO DE CALIBRE ACIMA DE 30MM ATÉ 75MM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1015,
+          "nomeClasse": "ARMAS DE FOGO DE CALIBRE ACIMA DE 75MM ATÉ 125MM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1020,
+          "nomeClasse": "ARMAS DE FOGO DE CALIBRE ACIMA DE 125MM ATÉ 150MM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1025,
+          "nomeClasse": "ARMAS DE FOGO DE CALIBRE ACIMA DE 150MM ATÉ 200MM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1030,
+          "nomeClasse": "ARMAS DE FOGO DE CALIBRE ACIMA DE 200MM ATÉ 300MM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1035,
+          "nomeClasse": "ARMAS DE FOGO DE CALIBRE ACIMA DE 300MM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1040,
+          "nomeClasse": "ARMAMENTO E EQUIPAMENTOS DE GUERRA QUÍMICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1045,
+          "nomeClasse": "LANÇADORES DE TORPEDOS E DE BOMBAS DE PROFUNDIDADE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1055,
+          "nomeClasse": "LANÇADORES DE FOGUETES E PIROTÉCNICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1070,
+          "nomeClasse": "REDES SUBMARINAS DE DEFESA DE PORTOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1075,
+          "nomeClasse": "EQUIPAMENTOS DE DESMAGNETIZAÇÃO E DE VARREDURA DE MINAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1080,
+          "nomeClasse": "EQUIPAMENTOS DE CAMUFLAGEM E DE DISSIMULAÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1090,
+          "nomeClasse": "CONJUNTOS INTERCAMBIÁVEIS DE DUAS OU MAIS CLASSES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1095,
+          "nomeClasse": "ARMAMENTOS DIVERSOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 11,
+      "nomeGrupo": "MATERIAIS BÉLICOS NUCLEARES",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 1105,
+          "nomeClasse": "BOMBAS NUCLEARES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1110,
+          "nomeClasse": "PROJÉTEIS NUCLEARES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1115,
+          "nomeClasse": "OGIVAS NUCLEARES E SEÇÕES DE OGIVAS NUCLEARES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1120,
+          "nomeClasse": "BOMBAS NUCLEARES DE PROFUNDIDADE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1125,
+          "nomeClasse": "CARGAS NUCLEARES DE DEMOLIÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1127,
+          "nomeClasse": "FOGUETES NUCLEARES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1130,
+          "nomeClasse": "CONJUNTOS DE CONVERSÃO PARA ARMAMENTO NUCLEAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1135,
+          "nomeClasse": "DISPOSITIVOS DE DETONAÇÃO E DISPARO DE ARMAMENTO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1140,
+          "nomeClasse": "COMPONENTES NUCLEARES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1145,
+          "nomeClasse": "COMPONENTES EXPLOSIVOS E PIROTÉCNICOS DE ARMAMENTO NUCLEAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1190,
+          "nomeClasse": "EQUIPAMENTO ESPECIALIZADO DE MANUSEIO E ENSAIO DE  ARMAMENTONUCLEAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1195,
+          "nomeClasse": "MATERIAL BÉLICO NUCLEAR DIVERSOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 12,
+      "nomeGrupo": "EQUIPAMENTOS DE TIRO",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 1210,
+          "nomeClasse": "DIRETORAS DE CONTROLE DE TIRO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1220,
+          "nomeClasse": "DISPOSITIVOS E CORRETORES DE CONTROLE DE TIRO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1230,
+          "nomeClasse": "SISTEMAS COMPLETOS DE CONTROLE DE TIRO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1240,
+          "nomeClasse": "EQUIPAMENTOS ÓTICOS DE VISADA E MEDIÇÃO DE DISTÂNCIA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1250,
+          "nomeClasse": "MECANISMOS DE ESTABILIZAÇÃO E CONTROLE DE TIRO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1260,
+          "nomeClasse": "EQUIPAMENTO DE DESIGNAÇÃO E INDICAÇÃO DE CONTROLE DE TIRO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1265,
+          "nomeClasse": "EQUIPAMENTO DE RECEPÇÃO E TRANSMISSÃO DE  CONTROLE  DE  TIRO(EXCETO DE AERONAVE)",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1270,
+          "nomeClasse": "COMPONENTES DE CONTROLE DE TIRO DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1280,
+          "nomeClasse": "COMPONENTES DE CONTROLE DE TIRO EM AERONAVES DE BOMBARDEIO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1285,
+          "nomeClasse": "EQUIPAMENTO RADAR DE CONTROLE DE TIRO (EXCETO DE AERONAVES)",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1287,
+          "nomeClasse": "EQUIPAMENTO SONAR DE CONTROLE DE TIRO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1290,
+          "nomeClasse": "EQUIPAMENTOS DIVERSOS DE CONTROLE DE TIRO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1295,
+          "nomeClasse": "EQUIPAMENTO DE CONTROLE DE TIRO DIVERSOS",
+          "statusClasse": false
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 13,
+      "nomeGrupo": "MUNIÇÕES E EXPLOSIVOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 1305,
+          "nomeClasse": "MUNIÇÃO DE CALIBRE ATÉ 30 MM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1310,
+          "nomeClasse": "MUNIÇÃO DE CALIBRE ACIMA DE 30 MM ATÉ 75 MM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1315,
+          "nomeClasse": "MUNIÇÃO DE CALIBRE ACIMA DE 75MM ATÉE 125MM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1320,
+          "nomeClasse": "MUNIÇÃO DE CALIBRE ACIMA DE 125 MM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1325,
+          "nomeClasse": "BOMBAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1330,
+          "nomeClasse": "GRANADAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1336,
+          "nomeClasse": "OGIVAS E COMPONENTES EXPLOSIVOS DE MISSEIS GUIADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1337,
+          "nomeClasse": "UNIDADES DE PROPULSAO EXPLOSIVA A COMBUSTIVEL SOLIDO DE VEICULOS ESPACIAIS E MISSEIS GUIADOS E SEUS COMPONENTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1338,
+          "nomeClasse": "UNIDADES DE PROPULSAO INERTES A COMBUSTIVEL SOLIDO DE VEICULOS ESPACIAIS E MISSEIS GUIADOS E SEUS COMPONENTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1340,
+          "nomeClasse": "ROJÕES, FOGUETES, MUNIÇÃO E COMPONENTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1345,
+          "nomeClasse": "MINAS TERRESTRES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1346,
+          "nomeClasse": "MUNIÇÕES DE CONTROLE À DISTÂNCIA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1350,
+          "nomeClasse": "COMPONENTES INERTES DE MINA SUBMARINA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1351,
+          "nomeClasse": "COMPONENTES EXPLOSIVOS DE MINAS SUBMARINAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1352,
+          "nomeClasse": "DISPOSITIVOS INERTES DE MINAS SUBAQUÁTICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1353,
+          "nomeClasse": "DISPOSITIVOS EXPLOSIVOS DE MINAS SUBAQUÁTICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1355,
+          "nomeClasse": "COMPONENTES INERTES DE TORPEDOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1356,
+          "nomeClasse": "COMPONENTES EXPLOSIVOS DE TORPEDOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1360,
+          "nomeClasse": "COMPONENTES INERTES DE CARGAS DE PROFUNDIDADE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1361,
+          "nomeClasse": "COMPONENTES EXPLOSIVOS DE BOMBAS DE PROFUNDIDADE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1365,
+          "nomeClasse": "PRODUTOS QUIMICOS DE USO MILITAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1367,
+          "nomeClasse": "CONJUNTOS E EQUIPAMENTOS TÁTICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1370,
+          "nomeClasse": "PIROTECNICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1375,
+          "nomeClasse": "MATERIAIS DE DEMOLIÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1376,
+          "nomeClasse": "EXPLOSIVOS A GRANEL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1377,
+          "nomeClasse": "DISPOSITIVOS ACIONADOS POR PROPELENTES E CARTUCHOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1380,
+          "nomeClasse": "AGENTES BIOLOGICOS DE USO MILITAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1385,
+          "nomeClasse": "EQUIPAMENTOS E FERRAMENTAS PARA MANUSEIO DE EXPLOSIVO NA SU-PERFÍCIE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1386,
+          "nomeClasse": "EQUIPAMENTOS E FERRAMENTAS PARA MANUSEIO DE  EXPLOSIVO  SUB-MERSO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1390,
+          "nomeClasse": "ESPOLETAS E ESTOPILHAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1395,
+          "nomeClasse": "COMPONENTES DIVERSOS DE MUNIÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1398,
+          "nomeClasse": "EQUIPAMENTOS ESPECIALIZADOS PARA MANUSEIO E CONSERVACAO DE MUNICAO",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 14,
+      "nomeGrupo": "MÍSSEIS GUIADOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 1410,
+          "nomeClasse": "MÍSSEIS GUIADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1420,
+          "nomeClasse": "COMPONENTES DE MÍSSEIS GUIADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1425,
+          "nomeClasse": "SISTEMAS COMPLETOS DE MÍSSEIS GUIADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1427,
+          "nomeClasse": "SUBSISTEMAS DE MÍSSEIS GUIADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1430,
+          "nomeClasse": "SISTEMA DE CONTROLE REMOTO DE MÍSSEIS GUIADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1440,
+          "nomeClasse": "LANÇADORES DE MÍSSEIS GUIADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1450,
+          "nomeClasse": "EQUIPAMENTO PARA MANUSEIO DE MANUTENÇÃO DE MÍSSEIS GUIADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1495,
+          "nomeClasse": "MISSEIS GUIADOS DIVERSOS",
+          "statusClasse": false
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 15,
+      "nomeGrupo": "AERONAVES E SEUS COMPONENTES ESTRUTURAIS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 1505,
+          "nomeClasse": "AERONAVES",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 1510,
+          "nomeClasse": "AERONAVES DE ASAS FIXAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1515,
+          "nomeClasse": "HELICES DE AERONAVES E COMPONENTES",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 1520,
+          "nomeClasse": "AERONAVES DE ASA ROTATIVAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1525,
+          "nomeClasse": "COMPONENTES DE SISTEMA DE FREIOS E RODAS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 1530,
+          "nomeClasse": "COMPNENTES DE SISTEMA HIDRAULICO, DE VACUO E  DEGELAMENTO",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 1535,
+          "nomeClasse": "COMPONENTE DE SISTEMAS DE CONDICIONAMENTO  DE  AR,DO AQUECIMENTO E DE PRESSURIZACAO",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 1540,
+          "nomeClasse": "PLANADORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1550,
+          "nomeClasse": "AERONAVES TELEGUIADAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1560,
+          "nomeClasse": "COMPONENTES ESTRUTURAIS DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1595,
+          "nomeClasse": "AERONAVES E COMPONENTES ESTRUTURAIS DIVERSOS",
+          "statusClasse": false
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 16,
+      "nomeGrupo": "COMPONENTES E ACESSORIOS DE AERONAVES",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 1610,
+          "nomeClasse": "HELICES DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1615,
+          "nomeClasse": "PÁS DE ROTOR DE HELICOPTERO, MECANISMOS DE TRANSMISSÃO E    COMPONENTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1620,
+          "nomeClasse": "COMPONENTES DE TREM DE POUSO DE AERONAVE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1630,
+          "nomeClasse": "SISTEMAS DE RODAS E DE FREIO DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1650,
+          "nomeClasse": "COMPONENTES DOS SISTEMAS HIDRÁULICOS,DE VÁCUO E DEGELO      DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1660,
+          "nomeClasse": "EQUIPAMENTOS DE AR CONCICIONADO, AQUECIMENTO E PRESSURIZAÇÃODE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1670,
+          "nomeClasse": "PÁRA-QUEDAS,SISTEMAS DE COLETA, LANÇAMENTO E RESGATE AÉREO  E EQUIPAMENTOS DE AMARRAÇÃO DE CARGAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1680,
+          "nomeClasse": "ACESSORIOS E COMPONENTES DIVERSOS DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1695,
+          "nomeClasse": "COMPONENTES E ACESSORIOS DE AERONAVES DIVERSOS",
+          "statusClasse": false
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 17,
+      "nomeGrupo": "EQUIPAMENTOS PARA LANCAMENTOS, POUSO E MANOBRA DE AERONAVES",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 1705,
+          "nomeClasse": "EQUIPAMENTOS PARA SERVICOS DE AERODROMOS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 1710,
+          "nomeClasse": "EQUIPAMENTOS PARA POUSO DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1720,
+          "nomeClasse": "EQUIPAMENTOS PARA LANÇAMENTO DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1730,
+          "nomeClasse": "EQUIPAMENTOS DE SERVICOS EM TERRA DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1740,
+          "nomeClasse": "TRATORES E REBOQUES ESPECIALIZADOS PARA AEROPORTOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1795,
+          "nomeClasse": "EQUIPAMENTOS PARA LANCAMENTO, POUSO E MANOBRA  DE  AERONAVESDIVERSOS",
+          "statusClasse": false
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 18,
+      "nomeGrupo": "VEICULOS ESPACIAIS (ASTRONAVES)",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 1805,
+          "nomeClasse": "VEICULOS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 1810,
+          "nomeClasse": "VEÍCULOS ESPACIAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1820,
+          "nomeClasse": "COMPONENTES DE VEICULOS ESPACIAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1830,
+          "nomeClasse": "SISTEMAS DE CONTROLE REMOTO DE VEICULOS ESPACIAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1840,
+          "nomeClasse": "LANCADORES DE VEICULOS ESPACIAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1850,
+          "nomeClasse": "EQUIPAMENTOS DE SERVICOS E MANUSEIO DE VEICULOS ESPACIAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1860,
+          "nomeClasse": "EQUIPAMENTOS DE SOBREVIVÊNCIA ESPACIAL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1895,
+          "nomeClasse": "VEICULOS ESPACIAIS DIVERSOS",
+          "statusClasse": false
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 19,
+      "nomeGrupo": "NAVIOS, PEQUENAS EMBARCACOES, PONTOES E DIQUES FLUTUANTES",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 1905,
+          "nomeClasse": "NAVIOS DE GUERRA E EMBARCACOES DE DESEMBARQUE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1910,
+          "nomeClasse": "NAVIOS PARA TRANSPORTE DE PASSAGEIRO E DE TROPA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1915,
+          "nomeClasse": "NAVIOS TANQUES E CARGUEIROS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1920,
+          "nomeClasse": "NAVIOS PESQUEIROS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1925,
+          "nomeClasse": "NAVIOS DE SERVICOS ESPECIAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1930,
+          "nomeClasse": "BATELOES E CHATAS PARA CARGAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1935,
+          "nomeClasse": "BATELOES E CHATAS PARA FINS ESPECIAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1940,
+          "nomeClasse": "EMBARCAÇÕES PEQUENAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1945,
+          "nomeClasse": "PONTÕES E DOCAS FLUTUANTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1950,
+          "nomeClasse": "DIQUES FLUTUANTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1955,
+          "nomeClasse": "DRAGAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 1990,
+          "nomeClasse": "EMBARCACOES DIVERSAS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 20,
+      "nomeGrupo": "EQUIPAMENTOS PARA NAVIOS E EMBARCACOES",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 2010,
+          "nomeClasse": "EQUIPAMENTOS DE PROPULSÃO DE NAVIOS E EMBARCAÇÕES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2020,
+          "nomeClasse": "CORDAMES E EQUIPAMENTOS CORRELATOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2030,
+          "nomeClasse": "MAQUINARIA DE CONVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2040,
+          "nomeClasse": "FERRAGENS DE MARINHARIA E ITENS DE CASCO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2050,
+          "nomeClasse": "BOIAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2060,
+          "nomeClasse": "EQUIPAMENTO COMERCIAL DE PESCA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2090,
+          "nomeClasse": "EQUIPAMENTOS DIVERSOS PARA NAVIOS E MARINHARIA",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 22,
+      "nomeGrupo": "EQUIPAMENTOS FERROVIÁRIOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 2210,
+          "nomeClasse": "LOCOMOTIVAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2220,
+          "nomeClasse": "VAGÕES FERROVIÁRIOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2230,
+          "nomeClasse": "EQUIPAMENTO DE CONSTRUÇAO E MANUTENÇAO DE LEITO DE FERROVIA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2240,
+          "nomeClasse": "ACESSÓRIOS E COMPONENTES DE LOCOMOTIVAS E DE VAGÕES FERROVI-ÁRIOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2250,
+          "nomeClasse": "MATERIAIS DE FERROVIA",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 23,
+      "nomeGrupo": "VEíCULOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 2305,
+          "nomeClasse": "VEÍCULOS DE EFEITO-SOLO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2310,
+          "nomeClasse": "VEÍCULOS MOTORIZADOS DE PASSAGEIROS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2315,
+          "nomeClasse": "VEICULOS DE SERVICOS ESPECIAIS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 2320,
+          "nomeClasse": "VEÍCULOS SOBRE RODAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2330,
+          "nomeClasse": "REBOQUES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2340,
+          "nomeClasse": "MOTOCICLETAS, MOTONETAS E BICICLETAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2350,
+          "nomeClasse": "VEÍCULOS TÁTICOS SOBRE LAGARTAS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 24,
+      "nomeGrupo": "TRATORES",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 2410,
+          "nomeClasse": "TRATORES DE BAIXA VELOCIDADE SOBRE LAGARTA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2420,
+          "nomeClasse": "TRATORES SOBRE RODAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2430,
+          "nomeClasse": "TRATORES DE ALTA VELOCIDADE SOBRE LAGARTAS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 25,
+      "nomeGrupo": "COMPONENTES DE VEÍCULOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 2510,
+          "nomeClasse": "COMPONENTES DE CABINE, CARROCERIA E CHASSIS DE VEÍCULOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2520,
+          "nomeClasse": "COMPONENTES DE TRANSMISSÃO DE VEÍCULOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2530,
+          "nomeClasse": "COMPONENTES DE FREIO, DIREÇÃO, EIXO, RODA E LAGARTA  DE  VEÍCULOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2540,
+          "nomeClasse": "EQUIPAMENTO E ACESSÓRIOS PARA VEÍCULOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2541,
+          "nomeClasse": "ACESSÓRIOS VEICULARES ESPECÍFICOS PARA SISTEMAS DE ARMAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2590,
+          "nomeClasse": "COMPONENTES DIVERSOS PARA VEÍCULOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 26,
+      "nomeGrupo": "PNEUS E CÂMARAS DE AR",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 2610,
+          "nomeClasse": "PNEUS E CÂMARAS DE AR, EXCETO OS DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2620,
+          "nomeClasse": "PNEUS E CÂMARAS DE AR DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2630,
+          "nomeClasse": "PNEUS MACIÇO E DE BAIXA PRESSÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2640,
+          "nomeClasse": "MATERIAL PARA REFORMA E REPARO DE PNEUS E CÂMARAS DE AR",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 28,
+      "nomeGrupo": "MOTORES, TURBINAS E SEUS COMPONENTES",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 2805,
+          "nomeClasse": "MOTORES A GASOLINA E COMPONENTES, EXCETO  OS DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2810,
+          "nomeClasse": "MOTORES A GASOLINA PARA AERONAVES E COMPONENTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2815,
+          "nomeClasse": "MOTORES DIESEL E COMPONENTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2820,
+          "nomeClasse": "MÁQUINAS ALTERNATIVAS A VAPOR E COMPONENTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2825,
+          "nomeClasse": "TURBINAS A VAPOR E COMPONENTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2830,
+          "nomeClasse": "TURBINAS E RODAS D'ÁGUA E COMPONENTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2835,
+          "nomeClasse": "TURBINAS A GÁS E MOTORES A JATO E COMPONENTES, EXCETO OS  DEAERONAVE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2840,
+          "nomeClasse": "TURBINAS A GÁS E MOTORES A JATO DE AERONAVES E COMPONENTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2845,
+          "nomeClasse": "MOTORES DE FOGUETES E COMPONENTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2850,
+          "nomeClasse": "MOTORES ROTATIVOS A GASOLINA E COMPONENTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2895,
+          "nomeClasse": "MOTORES DIVERSOS E COMPONENTES",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 29,
+      "nomeGrupo": "ACESSÓRIOS DE MOTORES",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 2910,
+          "nomeClasse": "COMPONENTES DO SISTEMA DE COMBUSTÍVEL DE  MOTORES, EXCETO OSDE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2915,
+          "nomeClasse": "COMPONENTES DO SISTEMA DE COMBUSTÍVEL DE MOTORES  DE  AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2920,
+          "nomeClasse": "COMPONENTES DO SISTEMA ELÉTRICO DE MOTORES, EXCETO OS DE AE-RONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2925,
+          "nomeClasse": "COMPONENTES DO SISTEMA ELÉTRICO DE MOTORES DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2930,
+          "nomeClasse": "COMPONENTES DO SISTEMA DE  RESFRIAMENTO  (ARREFECIMENTO)  DEMOTORES, EXCETO DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2935,
+          "nomeClasse": "COMPONENTES DO SISTEMA DE  RESFRIAMENTO  (ARREFECIMENTO)  DEMOTORES DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2940,
+          "nomeClasse": "FILTROS DE AR E DE ÓLEO, ELEMENTOS FILTRANTES E PURIFICADO- RES DE MOTORES, EXCETO DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2945,
+          "nomeClasse": "FILTROS DE AR E DE ÓLEO; ELEMENTOS FILTRANTES PURIFICADORES DE MOTORES DE AERONAVES.",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2950,
+          "nomeClasse": "TURBO- SUPERCOMPRESSORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2990,
+          "nomeClasse": "ACESSÓRIOS DIVERSOS DE MOTORES, EXCETO OS DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 2995,
+          "nomeClasse": "ACESSÓRIOS DIVERSOS DE MOTORES DE AERONAVES",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 30,
+      "nomeGrupo": "EQUIPAMENTOS DE TRANSMISSÃO DE FORÇA MECÂNICA",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 3010,
+          "nomeClasse": "CONVERSORES DE TORQUE E CÂMBIOS DE VELOCIDADE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3020,
+          "nomeClasse": "ENGRENAGENS, POLIAS, COROAS DENTADAS E  CORRENTES  DE  TRANSMISSÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3030,
+          "nomeClasse": "CORREAME, CORREIAS DE TRANSMISSÃO, CORREIAS DOS VENTILADORESE ACESSÓRIOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3040,
+          "nomeClasse": "EQUIPAMENTOS DIVERSOS DE TRANSMISSÃO DE FORÇA",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 31,
+      "nomeGrupo": "ROLAMENTOS E MANCAIS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 3110,
+          "nomeClasse": "ROLAMENTOS ANTIFRICÇÃO NÃO MONTADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3120,
+          "nomeClasse": "MANCAIS NÃO MONTADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3130,
+          "nomeClasse": "ROLAMENTOS E MANCAIS MONTADOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 32,
+      "nomeGrupo": "MÁQUINAS E EQUIPAMENTOS PARA TRABALHOS EM MADEIRA",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 3210,
+          "nomeClasse": "MÁQUINAS PARA SERRARIA E PREPARO DE MADEIRA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3220,
+          "nomeClasse": "MÁQUINAS PARA TRABALHOS EM MADEIRA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3230,
+          "nomeClasse": "FERRAMENTAS E ACESSÓRIOS DE MÁQUINAS PARA TRABALHO EM  MADEIRA",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 34,
+      "nomeGrupo": "MAQUINAS PARA TRABALHO EM METAIS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 3405,
+          "nomeClasse": "MÁQUINAS DE SERRAR E LIMAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3408,
+          "nomeClasse": "MÁQUINAS DE FUNÇÕES MÚLTIPLAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3410,
+          "nomeClasse": "MÁQUINAS DE DESBASTAR, ELÉTRICAS E ULTRA-SÔNICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3411,
+          "nomeClasse": "MÁQUINAS DE BROCAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3412,
+          "nomeClasse": "MÁQUINAS DE MANDRILAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3413,
+          "nomeClasse": "MÁQUINAS DE FURAR E ABRIR ROSCAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3414,
+          "nomeClasse": "MÁQUINAS PARA CORTE E ACABAMENTO DE ENGRENAGENS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3415,
+          "nomeClasse": "MÁQUINAS RETIFICADORAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3416,
+          "nomeClasse": "TORNOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3417,
+          "nomeClasse": "MÁQUINAS DE FRESAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3418,
+          "nomeClasse": "MÁQUINAS DE APLAINAR E TALHAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3419,
+          "nomeClasse": "MÁQUINAS-FERRAMENTA DIVERSAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3422,
+          "nomeClasse": "MÁQUINAS DE LAMINAR E TREFILAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3424,
+          "nomeClasse": "EQUIPAMENTO DE TRATAMENTO TÉRMICO E NÃO TÉRMICO DE METAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3426,
+          "nomeClasse": "EQUIPAMENTOS PARA ACABAMENTO EM METAL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3427,
+          "nomeClasse": "DEBASTADORAS E PLAINAS-LIMADORAS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 3431,
+          "nomeClasse": "EQUIPAMENTO PARA SOLDA A ARCO VOLTAICO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3432,
+          "nomeClasse": "EQUIPAMENTO PARA SOLDA A RESISTÊNCIA ELÉTRICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3433,
+          "nomeClasse": "EQUIPAMENTO PARA SOLDA A GÁS, CORTE POR AQUECIMENTO E DE  METALIZAÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3436,
+          "nomeClasse": "POSICIONADORES E MANIPULADORES DE SOLDA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3438,
+          "nomeClasse": "EQUIPAMENTOS DIVERSOS DE SOLDA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3439,
+          "nomeClasse": "SUPRIMENTOS E ACESSÓRIOS PARA SOLDAS DIVERSAS, FRACAS E  FORTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3440,
+          "nomeClasse": "MATERIAIS E EQUIPAMENTOS PARA FUNDICAO",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 3441,
+          "nomeClasse": "MÁQUINAS DE DOBRAR E DE MODELAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3442,
+          "nomeClasse": "PRENSAS HIDRÁULICAS E PNEUMÁTICAS ACIONADAS POR ENERGIA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3443,
+          "nomeClasse": "PRENSAS MECÂNICAS ACIONADAS POR ENERGIA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3444,
+          "nomeClasse": "PRENSAS MANUAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3445,
+          "nomeClasse": "MÁQUINAS DE PUNCIONAR E CORTAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3446,
+          "nomeClasse": "FORJAS MECÂNICAS E MARTELOS PARA FORJAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3447,
+          "nomeClasse": "MÁQUINAS DE MODELAR FIOS E FITAS DE METAL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3448,
+          "nomeClasse": "MÁQUINAS DE REBITAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3449,
+          "nomeClasse": "MÁQUINAS AUXILIARES PARA MODELAGEM E CORTE DE METAL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3450,
+          "nomeClasse": "MÁQUINAS-FERRAMENTA PORTÁTEIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3455,
+          "nomeClasse": "FERRAMENTAS DE CORTAR PARA MÁQUINAS FERRAMENTA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3456,
+          "nomeClasse": "FERRAMENTAS DE CORTE E MODELAGEM DE PEÇAS DE MÁQUINAS.",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3460,
+          "nomeClasse": "ACESSÓRIOS PARA MÁQUINAS-FERRAMENTAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3461,
+          "nomeClasse": "ACESSÓRIOS PARA MÁQUINAS AUXILIARES PARA TRABALHO EM METAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3465,
+          "nomeClasse": "GABARITOS E MOLDES DE PRODUÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3470,
+          "nomeClasse": "CONJUNTOS, JOGOS E ACESSÓRIOS PARA OFICINA MECÂNICA",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 35,
+      "nomeGrupo": "EQUIPAMENTOS COMERCIAIS E DE SERVIÇOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 3510,
+          "nomeClasse": "EQUIPAMENTOS DE LAVANDERIA E LAVAGEM A SECO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3520,
+          "nomeClasse": "EQUIPAMENTOS PARA CONSERTO DE CALÇADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3530,
+          "nomeClasse": "MÁQUINAS DE COSTURA INDUSTRIAL E OFICINAS MÓVEIS  DE  CONSERTOS EM TECIDOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3540,
+          "nomeClasse": "MÁQUINAS DE EMBALAR E EMPACOTAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3541,
+          "nomeClasse": "MAQUINAS INDUSTRIAIS DE VIDRO E CRISTAIS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 3550,
+          "nomeClasse": "MÁQUINAS REGISTRADORAS AUTOMÁTICAS E MÁQUINAS ACIONADAS  COMFICHAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3590,
+          "nomeClasse": "EQUIPAMENTOS DIVERSOS PARA SERVIÇOS PROFISSIONAIS E  COMERCIAIS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 36,
+      "nomeGrupo": "MÁQUINAS PARA INDÚSTRIAS ESPECIALIZADAS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 3605,
+          "nomeClasse": "MÁQUINAS E EQUIPAMENTOS PARA PRODUTOS ALIMENTÍCIOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3610,
+          "nomeClasse": "EQUIPAMENTO PARA IMPRESSÃO, DUPLICAÇÃO E ENCADERNAÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3611,
+          "nomeClasse": "MÁQUINAS INDUSTRIAIS PARA MARCAÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3615,
+          "nomeClasse": "MÁQUINAS PARA INDÚSTRIA DE POLPA E DE PAPEL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3620,
+          "nomeClasse": "MÁQUINAS PARA TRABALHOS EM BORRACHA E PLÁSTICO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3625,
+          "nomeClasse": "MÁQUINAS PARA INDÚSTRIAS TÊXTEIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3630,
+          "nomeClasse": "MÁQUINAS PARA INDÚSTRIAS DE PRODUTOS DE ARGILA E CONCRETO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3635,
+          "nomeClasse": "MÁQUINAS PARA INDÚSTRIAS DE CRISTAL E VIDRO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3640,
+          "nomeClasse": "MÁQUINAS PARA INDÚSTRIAS DE TABACO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3645,
+          "nomeClasse": "MÁQUINAS PARA INDÚSTRIAS DE COURO E DE CURTUMES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3650,
+          "nomeClasse": "MÁQUINAS PARA INDÚSTRIAS DE PRODUTOS QUÍMICOS  E  FARMACÊUTICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3655,
+          "nomeClasse": "SISTEMAS DE GERAÇÃO E DISTRIBUIÇÃO DE GÁS, FIXOS OU MÓVEIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3660,
+          "nomeClasse": "MAQUINARIA PARA REDUÇÃO INDUSTRIAL DE TAMANHO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3670,
+          "nomeClasse": "MÁQUINAS ESPECIALIZADAS PARA FABRICAÇÃO  DE  SEMICONDUTORES,CIRCUITOS MICROELETRÔNICOS E PLACAS DE CIRCUITOS IMPRESSOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3680,
+          "nomeClasse": "MÁQUINAS PARA FUNDIÇÃO, EQUIPAMENTOS E  SUPRIMENTOS  CORRELATOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3685,
+          "nomeClasse": "MÁQUINAS ESPECIALIZADAS PARA FABRICAÇÃO DE RECIPIENTES  METÁLICOS E EQUIPAMENTOS CORRELATOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3690,
+          "nomeClasse": "MÁQUINARIA ESPECIALIZADA PARA ARMAMENTO E MUNIÇÃO  E  EQUIPAMENTOS CORRELATOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3693,
+          "nomeClasse": "MAQUINARIA INDUSTRIL PARA MONTAGEM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3694,
+          "nomeClasse": "EQUIPAMENTOS E INSTALAÇÕES PARA SANEAMENTO AMBIENTAL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3695,
+          "nomeClasse": "MÁQUINAS DIVERSAS PARA INDÚSTRIAS ESPECIALIZADAS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 37,
+      "nomeGrupo": "MÁQUINAS E EQUIPAMENTOS AGRÍCOLAS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 3710,
+          "nomeClasse": "EQUIPAMENTO PARA PREPARAÇÃO DO SOLO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3720,
+          "nomeClasse": "EQUIPAMENTO DE COLHEITA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3730,
+          "nomeClasse": "EQUIPAMENTO DE LATICÍNIOS, AVICULTURA E PECUÁRIA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3740,
+          "nomeClasse": "EQUIPAMENTO PARA CONTROLE DE PRAGAS, DOENÇAS E GEADAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3750,
+          "nomeClasse": "IMPLEMENTOS E FERRAMENTAS DE JARDINAGEM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3760,
+          "nomeClasse": "VEICULOS DE TRACAO ANIMAL E REBOQUES PARA USO AGRICOLA",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 3770,
+          "nomeClasse": "SELARIA, ARREAMENTO, CHICOTE E ACESSÓRIOS CORRELATOS PARA   ANIMAIS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 38,
+      "nomeGrupo": "EQUIPAMENTOS PARA CONSTRUÇÃO, MINERAÇÃO, TERRAPLENAGEM E MA-NUTENÇÃO DE ESTRADAS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 3805,
+          "nomeClasse": "EQUIPAMENTOS PARA MOVIMENTAÇÃO E ESCAVAÇÃO DE TERRA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3810,
+          "nomeClasse": "GUINDASTES E ESCAVADEIRAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3815,
+          "nomeClasse": "ACESSÓRIOS PARA GUINDASTES E ESCAVADEIRAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3820,
+          "nomeClasse": "EQUIPAMENTOS PARA MINERAÇÃO, PERFURAÇÃO DE ROCHAS, TERRA  E CORRELATOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3825,
+          "nomeClasse": "EQUIPAMENTO DE DESOBSTRUÇÃO E LIMPEZA DE ESTRADAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3830,
+          "nomeClasse": "ACESSÓRIOS PARA CAMINHÕES E TRATORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3835,
+          "nomeClasse": "EQUIPAMENTO PARA PRODUÇÃO E DISTRIBUIÇÃO DE PETRÓLEO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3895,
+          "nomeClasse": "EQUIPAMENTOS DIVERSOS PARA CONSTRUÇÃO",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 39,
+      "nomeGrupo": "EQUIPAMENTOS PARA MANUSEIO DE MATERIAL",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 3910,
+          "nomeClasse": "TRANSPORTADORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3915,
+          "nomeClasse": "EQUIPAMENTOS ALIMENTADORES DE MATERIAIS-PRIMAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3920,
+          "nomeClasse": "EQUIPAMENTOS NÃO AUTOPROPULSIONADO PARA MOVIMENTAÇÃO  DE  MATERIAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3930,
+          "nomeClasse": "VEÍCULOS AUTOPROPULSIONADOS PARA ARMAZÉM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3940,
+          "nomeClasse": "POLEAMES, TALHAS, MOITÕES, MASSAMES E LINGAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3950,
+          "nomeClasse": "GUINCHOS, IÇADORES, GUINDASTES E CÁBREAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3960,
+          "nomeClasse": "ELEVADORES E ESCADAS ROLANTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 3990,
+          "nomeClasse": "EQUIPAMENTOS DIVERSOS PARA MOVIMENTAÇÃO DE MATERIAIS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 40,
+      "nomeGrupo": "CORDAS, CABOS, CORRENTES E SEUS ACESSÓRIOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 4010,
+          "nomeClasse": "CORRENTES E CABOS DE AÇO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4020,
+          "nomeClasse": "CABOS DE FIBRA, CORDOALHAS E BARBANTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4030,
+          "nomeClasse": "ACESSÓRIOS PARA CORDAS, CABOS E CORRENTES",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 41,
+      "nomeGrupo": "EQUIPAMENTOS PARA REFRIGERAÇÃO, AR CONDICIONADO E CIRCULAÇÃODE AR",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 4110,
+          "nomeClasse": "EQUIPAMENTO PARA REFRIGERAÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4120,
+          "nomeClasse": "EQUIPAMENTO DE AR CONDICIONADO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4130,
+          "nomeClasse": "COMPONENTES DE EQUIPAMENTOS PARA REFRIGERAÇÃO E AR  CONDICIONADO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4140,
+          "nomeClasse": "VENTILADORES, CIRCULADORES DE AR E VENTOINHAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4150,
+          "nomeClasse": "TUBOS DE TURBILHONAMENTO E OUTROS TUBOS  RELACIONADOS  À  REFRIGERAÇÃO",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 42,
+      "nomeGrupo": "EQUIPAMENTO PARA COMBATE A INCÊNDIO, RESGATE E SEGURANÇA",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 4210,
+          "nomeClasse": "EQUIPAMENTOS PARA COMBATE A INCÊNDIO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4220,
+          "nomeClasse": "EQUIPAMENTO PARA MERGULHO E SALVAMENTO MARÍTIMO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4230,
+          "nomeClasse": "EQUIPAMENTO  PARA DESCONTAMINAÇÃO E IMPREGNAÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4235,
+          "nomeClasse": "RECIPIENTES PARA COLETA DE MATERIAIS PERIGOSOS, MATERIAIS E EQUIPAMENTOS DE LIMPEZA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4240,
+          "nomeClasse": "EQUIPAMENTO PARA SEGURANÇA E SALVAMENTO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4250,
+          "nomeClasse": "EQUIPAMENTO PARA RECICLAGEM E RECUPERAÇÃO",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 43,
+      "nomeGrupo": "BOMBAS E COMPRESSORES",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 4310,
+          "nomeClasse": "BOMBAS E COMPRESSORES A VÁCUO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4320,
+          "nomeClasse": "BOMBAS MANUAIS E MECÂNICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4330,
+          "nomeClasse": "CENTRIFUGADORES, SEPARADORES E FILTROS DE PRESSÃO E A VÁCUO",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 44,
+      "nomeGrupo": "FORNOS, CENTRAIS DE VAPOR E EQUIPAMENTOS DE SECAGEM,  REATO-RES NUCLEARES",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 4410,
+          "nomeClasse": "CALDEIRAS INDUSTRIAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4420,
+          "nomeClasse": "TROCADORES DE CALOR E CONDENSADORES DE VAPOR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4425,
+          "nomeClasse": "EQUIPAMENTOS INDUSTRIAIS DE VENTILACAO E CIRCULACAO",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 4430,
+          "nomeClasse": "FORNALHAS, FORNOS E ESTUFAS INDUSTRIAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4440,
+          "nomeClasse": "SECADORES, DESIDRATADORES E ANTI-HIDRATADORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4460,
+          "nomeClasse": "EQUIPAMENTOS PARA PURIFICAÇÃO DE AR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4470,
+          "nomeClasse": "REATORES NUCLEARES",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 45,
+      "nomeGrupo": "EQUIPAMENTO DE INSTALAÇÕES HIDRÁULICAS E DE AQUECIMENTO",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 4510,
+          "nomeClasse": "DISPOSITIVOS E ACESSÓRIOS PARA INSTALAÇÕES HIDRÁULICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4520,
+          "nomeClasse": "EQUIPAMENTOS PARA CALEFAÇÃO E AQUECEDORES DOMÉSTICOS DE ÁGUA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4530,
+          "nomeClasse": "EQUIPAMENTOS PARA QUEIMA DE COMBUSTIVEL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4540,
+          "nomeClasse": "EQUIPAMENTOS DIVERSOS DE INSTALAÇÕES HIDRÁULICAS, SANITÁRIASE DE CALEFAÇÃO",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 46,
+      "nomeGrupo": "EQUIPAMENTOS PARA PURIFICAÇÃO DE ÁGUAS E TRATAMENTO DE ESGO-TOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 4610,
+          "nomeClasse": "EQUIPAMENTOS PARA PURIFICAÇÃO DE ÁGUA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4620,
+          "nomeClasse": "EQUIPAMENTOS PARA DESTILAÇÃO DE ÁGUA, PARA  USO  MARÍTIMO E INDUSTRIAL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4630,
+          "nomeClasse": "EQUIPAMENTOS PARA TRATAMENTO DE ESGOTOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 47,
+      "nomeGrupo": "CANOS, TUBOS, MANGUEIRAS E ACESSÓRIOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 4710,
+          "nomeClasse": "CANOS E TUBOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4720,
+          "nomeClasse": "MANGUEIRAS E TUBULAÇÕES FLEXÍVEIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4730,
+          "nomeClasse": "ACESSÓRIOS E FERRAGENS ESPECIAIS PARA  MANGUEIRAS, CANOS  E TUBOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 48,
+      "nomeGrupo": "VÁLVULAS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 4810,
+          "nomeClasse": "VÁLVULAS ACIONADAS POR FORÇA MOTRIZ",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4820,
+          "nomeClasse": "VÁLVULAS NÃO ACIONADAS POR FORÇA MOTRIZ",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4850,
+          "nomeClasse": "ATUADORES PARA MOVIMENTACAO DE VALVULAS",
+          "statusClasse": false
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 49,
+      "nomeGrupo": "EQUIPAMENTOS PARA OFICINAS DE MANUTENÇÃO E REPAROS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 4910,
+          "nomeClasse": "EQUIPAMENTO ESPECIALIZADO PARA OFICINA DE MANUTENÇÃO E  REPARO DE VEÍCULOS MOTORIZADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4920,
+          "nomeClasse": "EQUIPAMENTO ESPECIALIZADO PARA OFICINA DE MANUTENÇÃO E REPA-RO DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4921,
+          "nomeClasse": "EQUIPAMENTO ESPECIALIZADO PARA MANUTENÇÃO, REPARO E INSPEÇÃODE TORPEDOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4923,
+          "nomeClasse": "EQUIPAMENTO ESPECIALIZADO PARA MANUTENÇÃO,REPARO E INSPEÇÃO DE MINAS SUBMARINAS E BOMBAS DE PROFUNDIDADE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4925,
+          "nomeClasse": "EQUIPAMENTO ESPECIALIZADO PARA MANUTENÇÃO,REPARO E INSPEÇÃO DE MUNIÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4927,
+          "nomeClasse": "EQUIPAMENTO ESPECIALIZADO PARA MANUTENÇÃO,REPARO E INSPEÇÃO DE FOGUETES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4930,
+          "nomeClasse": "EQUIPAMENTO PARA ABASTECIMENTO DE COMBUSTÍVEL E LUBRIFICAÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4931,
+          "nomeClasse": "EQUIPAMENTO ESPECIALIZADO PARA OFICINA DE MANUTENÇÃO E  REPARO DE MATERIAL DE CONTROLE DE TIRO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4933,
+          "nomeClasse": "EQUIPAMENTO ESPECIALIZADO PARA OFICINA DE MANUTENÇÃO E  REPARO DE ARMAMENTO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4935,
+          "nomeClasse": "EQUIPAMENTO ESPECIALIZADO PARA MANUTENÇÃO,REPARO E INSPEÇÃO DE MÍSSEIS GUIADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4940,
+          "nomeClasse": "EQUIPAMENTO ESPECIALIZADO DIVERSOS PARA OFICINA  DE  MANUTENÇÃO E REPARO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4960,
+          "nomeClasse": "EQUIPAMENTO ESPECIALIZADO PARA MANUTENÇÃO, REPARO E INSPEÇÃODE VEÍCULOS ESPACIAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 4970,
+          "nomeClasse": "EQUIPAMENTO ESPECIALIZADO PARA MANUTENÇÃO E REPARO DE ARMAS MÚLTIPLAS GUIADAS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 51,
+      "nomeGrupo": "FERRAMENTAS MANUAIS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 5110,
+          "nomeClasse": "FERRAMENTAS MANUAIS DE CORTE, NÃO ACIONADAS POR FORÇA MOTRIZ",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5120,
+          "nomeClasse": "FERRAMENTAS MANUAIS SEM CORTE, NÃO ACIONADAS  POR  FORÇA  MOTRIZ",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5130,
+          "nomeClasse": "FERRAMENTAS MANUAIS ACIONADAS POR FORÇA MOTRIZ",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5133,
+          "nomeClasse": "BROCAS, ALARGADORES, ESCARIADORES, MANUAIS E PARA USO EM  MÁQUINAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5135,
+          "nomeClasse": "CABOS DE FERRAMENTAS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 5136,
+          "nomeClasse": "MACHOS, MATRIZES E MANDRIS, MANUAIS E MECÂNICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5140,
+          "nomeClasse": "CAIXAS PARA FERRAMENTAS E FERRAGENS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5180,
+          "nomeClasse": "JOGOS E CONJUNTOS DE FERRAMENTAS MANUAIS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 52,
+      "nomeGrupo": "INSTRUMENTOS DE MEDIÇÃO",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 5210,
+          "nomeClasse": "INSTRUMENTOS DE MEDIÇÃO PARA ARTÍFICES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5220,
+          "nomeClasse": "CALIBRES DE INSPEÇÃO E FERRAMENTAS DE PRECISÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5280,
+          "nomeClasse": "JOGOS E CONJUNTOS DE INSTRUMENTOS DE MEDIÇÃO",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 53,
+      "nomeGrupo": "FERRAGENS E ABRASIVOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 5305,
+          "nomeClasse": "PARAFUSOS SEM PORCA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5306,
+          "nomeClasse": "PARAFUSOS COM PORCA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5307,
+          "nomeClasse": "PRISIONEIROS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5310,
+          "nomeClasse": "PORCAS E ARRUELAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5315,
+          "nomeClasse": "PREGOS, CHAVETAS E PINOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5320,
+          "nomeClasse": "REBITES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5325,
+          "nomeClasse": "DISPOSITIVOS PARA FIXAÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5330,
+          "nomeClasse": "GAXETAS E OUTROS MATERIAIS PARA VEDAÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5331,
+          "nomeClasse": "ANÉIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5335,
+          "nomeClasse": "TELAS METÁLICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5340,
+          "nomeClasse": "FERRAGENS DIVERSAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5341,
+          "nomeClasse": "CANTONEIRAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5342,
+          "nomeClasse": "FERRAGENS DE PEÇA DE SISTEMAS DE ARMAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5345,
+          "nomeClasse": "DISCOS E PEDRAS ABRASIVOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5350,
+          "nomeClasse": "MATERIAIS ABRASIVOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5355,
+          "nomeClasse": "BOTÕES E PONTEIROS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5360,
+          "nomeClasse": "MOLAS DE ARAME, PLANAS E HELICOIDAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5365,
+          "nomeClasse": "ANÉIS, BUCHAS E ESPAÇADORES",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 54,
+      "nomeGrupo": "ESTRUTURAS E ANDAIMES PRÉ-FABRICADOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 5410,
+          "nomeClasse": "EDIFICAÇÕES PRÉ-FABRICADAS E PORTÁTEIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5411,
+          "nomeClasse": "ABRIGOS DE PAREDE RÍGIDA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5419,
+          "nomeClasse": "CONSTRUÇÕES COLETIVAS MODULARES DE APOIO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5420,
+          "nomeClasse": "PONTES FIXAS E FLUTUANTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5430,
+          "nomeClasse": "TANQUES DE ARMAZENAGEM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5440,
+          "nomeClasse": "EQUIPAMENTOS PARA MONTAGEM DE ANDAIME E FORMAS DE CONCRETO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5445,
+          "nomeClasse": "ESTRUTURAS DE TORRES PRÉ-FABRICADAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5450,
+          "nomeClasse": "ESTRUTURAS PRÉ-FABRICADAS DIVERSAS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 55,
+      "nomeGrupo": "TÁBUAS, ESQUADRIAS, COMPENSADOS E FOLHEADOS DE MADEIRA",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 5510,
+          "nomeClasse": "TÁBUAS E ARTIGOS CORRELATOS À BASE DE MADEIRA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5520,
+          "nomeClasse": "ESQUADRIAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5530,
+          "nomeClasse": "COMPENSADOS E FOLHEADOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 56,
+      "nomeGrupo": "MATERIAIS PARA CONSTRUÇÃO",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 5610,
+          "nomeClasse": "MATERIAIS DE ORIGEM MINERAL PARA CONSTRUÇÃO, A GRANEL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5620,
+          "nomeClasse": "VIDROS, TELHAS, TIJOLOS E BLOCOS PARA CONSTRUÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5630,
+          "nomeClasse": "TUBOS E CONDUTOS, NÃO METÁLICOS, PARA CONSTRUÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5640,
+          "nomeClasse": "PAINEL DE PAPELÃO,PAPEL EMPREGADO EM CONSTRUÇÃO E MATERIAIS DE ISOLAMENTO TÉRMICO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5650,
+          "nomeClasse": "MATERIAIS PARA TELHADOS E REVESTIMENTO DE PAREDES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5660,
+          "nomeClasse": "CERCAS, GRADES E PORTÕES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5670,
+          "nomeClasse": "COMPONENTES PRÉ-FABRICADOS PARA CONSTRUÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5675,
+          "nomeClasse": "MATERIAL DE CONSTRUÇÃO SINTÉTICO E ARTIGOS CORRELATOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5680,
+          "nomeClasse": "MATERIAIS DIVERSOS PARA CONSTRUÇÃO",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 58,
+      "nomeGrupo": "EQUIPAMENTOS DE COMUNICAÇÕES, DETEÇÃO E RADIAÇÃO COERENTE",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 5805,
+          "nomeClasse": "EQUIPAMENTO TELEFÔNICO E TELEGRÁFICO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5810,
+          "nomeClasse": "EQUIPAMENTOS E COMPONENTES PARA SEGURANÇA DE COMUNICAÇÕES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5811,
+          "nomeClasse": "OUTROS EQUIPAMENTOS CRIPTOLÓGICOS E COMPONENTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5815,
+          "nomeClasse": "EQUIPAMENTOS DE TELETIPO E FAC-SÍMILE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5820,
+          "nomeClasse": "EQUIPAMENTOS PARA COMUNICAÇÃO POR RÁDIO E TELEVISÃO, EXCETO OS DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5821,
+          "nomeClasse": "EQUIPAMENTOS PARA COMUNICACÃO POR RÁDIO E TELEVISÃO, PARA A-ERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5825,
+          "nomeClasse": "EQUIPAMENTOS DE RADIONAVEGAÇÃO, EXCETO OS DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5826,
+          "nomeClasse": "EQUIPAMENTOS PARA RADIONAVEGAÇÃO DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5830,
+          "nomeClasse": "SISTEMAS DE INTERCOMUNICAÇÃO E AMPLIFICAÇÃO DE  VOZ,  EXCETOOS DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5831,
+          "nomeClasse": "SISTEMAS PARA INTERCOMUNICAÇÃO E AMPLIFICAÇÃO DE VOZ, DE  AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5835,
+          "nomeClasse": "EQUIPAMENTOS PARA GRAVAÇÃO E REPRODUÇÃO DE SOM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5836,
+          "nomeClasse": "EQUIPAMENTOS PARA GRAVAÇÃO E REPRODUÇÃO DE VÍDEO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5840,
+          "nomeClasse": "EQUIPAMENTOS DE RADAR, EXCETO OS DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5841,
+          "nomeClasse": "EQUIPAMENTOS DE RADAR PARA AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5845,
+          "nomeClasse": "EQUIPAMENTOS SUBMARINO DE SOM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5850,
+          "nomeClasse": "EQUIPAMENTOS PARA COMUNICAÇÃO COM LUZ VISÍVEL E INVISÍVEL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5855,
+          "nomeClasse": "EQUIPAMENTOS PARA VISÃO NOTURNA, POR RADIAÇÃO EMITIDA  E  REFLETIDA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5860,
+          "nomeClasse": "DISPOSITIVOS DE RADIAÇÃO COERENTE ESTIMULADA, SEUS  COMPONENTES E ACESSÓRIOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5865,
+          "nomeClasse": "EQUIPAMENTOS PARA CONTRAMEDIDAS ELETRÔNICAS,   CONTRA-CONTRAMEDIDAS E DE CAPACIDADE DE REAÇÃO RÁPIDA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5895,
+          "nomeClasse": "EQUIPAMENTOS DIVERSOS PARA COMUNICAÇÕES",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 59,
+      "nomeGrupo": "COMPONENTES DE EQUIPAMENTOS ELÉTRICOS E ELETRÔNICOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 5905,
+          "nomeClasse": "RESISTORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5910,
+          "nomeClasse": "CAPACITORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5915,
+          "nomeClasse": "FILTROS E REDES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5920,
+          "nomeClasse": "FUSÍVEIS INTERRUPTORES, ISOLANTES E PROTETORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5925,
+          "nomeClasse": "DISJUNTORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5930,
+          "nomeClasse": "CHAVES ELÉTRICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5935,
+          "nomeClasse": "CONECTORES ELÉTRICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5940,
+          "nomeClasse": "BORNES, TERMINAIS E LÂMINAS TERMINAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5945,
+          "nomeClasse": "RELÉS E SOLENÓIDES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5950,
+          "nomeClasse": "BOBINAS E TRANSFORMADORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5955,
+          "nomeClasse": "CRISTAIS OSCILADORES E PIEZOELÉTRICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5960,
+          "nomeClasse": "VÁLVULAS ELETRÔNICAS E FERRAGENS CORRELATAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5961,
+          "nomeClasse": "DISPOSITIVOS A SEMICONDUTOR E PLACAS ASSOCIADAS (CIRCUITOS)",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5962,
+          "nomeClasse": "MICROCIRCUITOS ELETRÔNICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5963,
+          "nomeClasse": "MÓDULOS ELETRÔNICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5965,
+          "nomeClasse": "FONES, MICROFONES E ALTO-FALANTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5970,
+          "nomeClasse": "ISOLADORES ELÉTRICOS E MATERIAIS ISOLANTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5975,
+          "nomeClasse": "FERRAGENS E SUPRIMENTOS DE ELETRICIDADE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5977,
+          "nomeClasse": "ESCOVAS DE CONTATO ELÉTRICO E ELETRODOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5980,
+          "nomeClasse": "DISPOSITIVOS OPTOELETRÔNICOS E ITENS CORRELATOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5985,
+          "nomeClasse": "ANTENAS, GUIAS DE ONDA E ITENS CORRELATOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5990,
+          "nomeClasse": "SINCRONIZADORES E ANALISADORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5995,
+          "nomeClasse": "CONJUNTOS DE CABOS, CORDÕES E FIOS ELÉTRICOS PARA  EQUIPAMENTOS DE COMUNICAÇÕES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5996,
+          "nomeClasse": "AMPLIFICADORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5998,
+          "nomeClasse": "CONJUNTOS ELÉTRICOS E ELETRÔNICOS, PLACAS, CARTÕES  E  ITENSCORRELATOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 5999,
+          "nomeClasse": "COMPONENTES ELÉTRICOS E ELETRÔNICOS DIVERSOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 60,
+      "nomeGrupo": "MATERIAIS, COMPONENTES, CONJUNTOS E ACESSÓRIOS DE FIBRAS  Ó-TICAS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 6004,
+          "nomeClasse": "JUNTAS ROTATIVAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6005,
+          "nomeClasse": "ACOPLADORES , ISOLADORES E MISTURADORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6006,
+          "nomeClasse": "ATENUADORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6007,
+          "nomeClasse": "FILTROS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6008,
+          "nomeClasse": "MULTIPLEXADORES E DEMULTIPLEXADORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6010,
+          "nomeClasse": "CONDUTORES DE FIBRA ÓTICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6015,
+          "nomeClasse": "CABOS DE FIBRA ÓTICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6020,
+          "nomeClasse": "CONJUNTOS MONTADOS DE CABOS DE FOBRA ÓTICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6021,
+          "nomeClasse": "INTERRUPTORES DE FIBRA ÓTICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6025,
+          "nomeClasse": "TRANSMISSORES DE FIBRA OTICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6026,
+          "nomeClasse": "RECEPTORES DE FIBRA OTICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6029,
+          "nomeClasse": "REPETIDORES OTICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6030,
+          "nomeClasse": "DISPOSITIVOS DE FIBRA ÓTICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6031,
+          "nomeClasse": "CIRCUITOS OTICOS INTEGRADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6032,
+          "nomeClasse": "FONTES DE LUZ DE FIBRA ÓTICA E FOTODETETORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6033,
+          "nomeClasse": "FOTO DETETORES DE FIBRA OTICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6034,
+          "nomeClasse": "MODULADORES E DEMODULADORES DE FIBRA OTICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6035,
+          "nomeClasse": "DISPOSITIVOS DE TRANSFERÊNCIA DE LUZ E DE IMAGEM DE FIBRA  ÓTICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6040,
+          "nomeClasse": "SENSORES DE FIBRA OTICA",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6050,
+          "nomeClasse": "DISPOSITIVOS PASSIVOS DE FIBRA OTICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6060,
+          "nomeClasse": "INTERCONECTORES E SUPRIMENTOS DE FIBRA ÓTICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6070,
+          "nomeClasse": "ACESSÓRIOS E MATERIAIS DE FIBRAS ÓTICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6080,
+          "nomeClasse": "JOGOS E CONJUNTOS DE FIBRAS ÓTICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6099,
+          "nomeClasse": "COMPONENTES DIVERSOS DE FIBRA ÓTICA",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 61,
+      "nomeGrupo": "CONDUTORES ELÉTRICOS E EQUIPAMENTOS PARA GERAÇÃO  E  DISTRI-BUIÇÃO DE ENERGIA",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 6105,
+          "nomeClasse": "MOTORES ELÉTRICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6110,
+          "nomeClasse": "EQUIPAMENTOS DE CONTROLE ELÉTRICO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6115,
+          "nomeClasse": "GERADORES E CONJUNTOS GERADORES ELÉTRICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6116,
+          "nomeClasse": "UNIDADES DE FORÇA DE CÉLULA DE  COMBUSTÍVEL,  COMPONENTES E ACESSÓRIOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6117,
+          "nomeClasse": "SISTEMA DE ENERGIA ELÉTRICA SOLAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6120,
+          "nomeClasse": "TRANSFORMADORES PARA ESTAÇÃO DE FORÇA E DE DISTRIBUIÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6125,
+          "nomeClasse": "CONVERSORES ELÉTRICOS ROTATIVOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6130,
+          "nomeClasse": "CONVERSORES ELÉTRICOS ESTÁTICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6135,
+          "nomeClasse": "BATERIAS NAO RECARREGÁVEIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6140,
+          "nomeClasse": "BATERIAS RECARREGÁVEIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6145,
+          "nomeClasse": "FIOS E CABOS ELÉTRICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6150,
+          "nomeClasse": "EQUIPAMENTOS DIVERSOS PARA GERAÇÃO E DISTRIBUIÇÃO DE ENERGIA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6160,
+          "nomeClasse": "ACESSÓRIOS E REVESTIMENTOS DIVERSOS PARA BATERIAS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 62,
+      "nomeGrupo": "EQUIPAMENTOS DE ILUMINAÇÃO E LÂMPADAS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 6210,
+          "nomeClasse": "APARELHOS DE ILUMINAÇÃO ELÉTRICA DE USO INTERNO E EXTERNO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6220,
+          "nomeClasse": "LUZES E EQUIPAMENTOS DE ILUMINAÇÃO ELÉTRICA PARA VEÍCULOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6230,
+          "nomeClasse": "EQUIPAMENTOS DE ILUMINAÇÃO ELÉTRICA MANUAL E PORTÁTIL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6240,
+          "nomeClasse": "LÂMPADAS ELÉTRICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6250,
+          "nomeClasse": "LUSTRES, SUPORTES PARA LÂMPADAS E ELEMENTOS DE PARTIDA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6260,
+          "nomeClasse": "EQUIPAMENTOS DE ILUMINAÇÃO NÃO ELÉTRICOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 63,
+      "nomeGrupo": "SISTEMAS DE ALARME, SINALIZAÇÃO E DETECÇÃO PARA SEGURANÇA",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 6310,
+          "nomeClasse": "SISTEMA DE SINALIZAÇÃO DE TRÁFEGO E TRÂNSITO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6320,
+          "nomeClasse": "SISTEMAS DE SINALIZAÇÃO E ALARME DE EMBARCAÇÕES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6330,
+          "nomeClasse": "SISTEMAS DE SINALIZAÇÃO E ALARME PARA FERROVIAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6340,
+          "nomeClasse": "SISTEMAS DE SINALIZAÇÃO E ALARME PARA AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6350,
+          "nomeClasse": "SISTEMAS DIVERSOS DE SINALIZAÇÃO, ALARME E DETECÇÃO PARA  SEGURANÇA",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 64,
+      "nomeGrupo": "MEDICAMENTOS, DROGAS E PRODUTOS BIOLOGICOS",
+      "statusGrupo": false,
+      "classes": [
+        {
+          "codigoClasse": 6405,
+          "nomeClasse": "MEDICAMENTOS PARA APARELHOS DIGESTIVO METABOLISMO E NUTRICAO",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6410,
+          "nomeClasse": "MEDICAMENTOS PARA SANGUE E ORGAOS HEMATOPOETICOS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6415,
+          "nomeClasse": "MEDICAMENTOS PARA APARELHO CARDIVASCULAR",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6420,
+          "nomeClasse": "MEDICAMENTOS PARA DERMATOLOGICOS,   OTOLOGICOS   EOFTAMOLOGICOS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6425,
+          "nomeClasse": "MEDICAMENTOS PARA APARELHOS GENITOURINARIO E HARMONIOS SEXUAIS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6430,
+          "nomeClasse": "MEDICAMENTOS PARA HORMONIOS, EXCETO SEXUAIS E METABOLISMO",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6435,
+          "nomeClasse": "MEDICAMENTOS PARA QUIMIOTERAPIA",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6440,
+          "nomeClasse": "MEDICAMENTOS PARA IMUNOTERAPIA E ALERGIA",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6445,
+          "nomeClasse": "MEDICAMENTOS PARA SISTEMA NERVOSO",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6450,
+          "nomeClasse": "MEDICAMENTOS PARA APARELHO RESPIRATORIO",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6455,
+          "nomeClasse": "MEDICAMENTOS PARA SISTEMA MUSCULO ESQUELETICO",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6460,
+          "nomeClasse": "MEDICAMENTOS PARA AGENTES DIAGNOSTICOS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6465,
+          "nomeClasse": "OUTROS MEDICAMENTOS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6470,
+          "nomeClasse": "DROGAS E PRODUTOS QUIMICOS PARA ANALISE   LABORATORIAIS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6475,
+          "nomeClasse": "PRODUTOS QUIMICOS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 6495,
+          "nomeClasse": "MEDICAMENTOS, DROGAS E PRODUTOS BIOLOGICOS, DIVER SOS",
+          "statusClasse": false
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 65,
+      "nomeGrupo": "EQUIPAMENTOS E ARTIGOS PARA USO MÉDICO, DENTÁRIO E VETERINÁRIO",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 6505,
+          "nomeClasse": "DROGAS E MEDICAMENTOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6508,
+          "nomeClasse": "COSMÉTICOS E ARTIGOS DE TOUCADOR DE NATUREZA MEDICINAL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6509,
+          "nomeClasse": "DROGAS E PRODUTOS BIOLÓGICOS DE USO VETERINÁRIO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6510,
+          "nomeClasse": "MATERIAIS CIRÚRGICOS PARA CURATIVOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6515,
+          "nomeClasse": "INSTRUMENTOS, EQUIPAMENTOS E SUPRIMENTOS MÉDICOS  E  CIRÚRGICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6520,
+          "nomeClasse": "INSTRUMENTOS, EQUIPAMENTOS E SUPRIMENTOS DENTÁRIOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6525,
+          "nomeClasse": "EQUIPAMENTOS E SUPRIMENTOS DE RAIOS-X DE USO  MÉDICO,  DENTÁRIO E VETERINÁRIO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6530,
+          "nomeClasse": "MOBILIÁRIO, EQUIPAMENTOS, UTENSÍLIOS E  SUPRIMENTOS  HOSPITALARES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6532,
+          "nomeClasse": "VESTUÁRIO HOSPITALAR E CIRÚRGICO E ITENS CORRELATOS DE  FINALIDADES ESPECIAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6540,
+          "nomeClasse": "EQUIPAMENTOS, INSTRUMENTOS E SUPRIMENTOS OFTALMOLÓGICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6545,
+          "nomeClasse": "JOGOS E CONJUNTOS MÉDICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6550,
+          "nomeClasse": "SUBSTÂNCIAS PARA DIAGNÓSTICO \"IN VITRO\",  REAGENTES,  CONJUNTOS E JOGOS PARA TESTE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6555,
+          "nomeClasse": "JOGOS E CONJUNTOS MEDICOS",
+          "statusClasse": false
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 66,
+      "nomeGrupo": "INSTRUMENTOS E EQUIPAMENTOS DE LABORATÓRIO",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 6605,
+          "nomeClasse": "INSTRUMENTOS DE NAVEGAÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6610,
+          "nomeClasse": "INSTRUMENTOS DE VÔO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6615,
+          "nomeClasse": "MECANISMOS DE PILOTO AUTOMÁTICO E  COMPONENTES GIROSCÓPICOS DE AERONAVES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6620,
+          "nomeClasse": "INSTRUMENTOS DE MOTOR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6625,
+          "nomeClasse": "INSTRUMENTO DE TESTE E DE MEDIÇÃO DE PROPRIEDADES ELÉTRICAS E ELETRÔNICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6630,
+          "nomeClasse": "INSTRUMENTOS PARA ANÁLISES QUÍMICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6635,
+          "nomeClasse": "EQUIPAMENTOS PARA TESTES DE PROPRIEDADES FÍSICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6636,
+          "nomeClasse": "CÂMARAS DE CONTROLE AMBIENTAL E EQUIPAMENTOS CORRELATOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6640,
+          "nomeClasse": "EQUIPAMENTOS E ARTIGOS DE LABORATÓRIO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6645,
+          "nomeClasse": "INSTRUMENTOS PARA MEDIÇÃO DE TEMPO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6650,
+          "nomeClasse": "INSTRUMENTOS ÓTICOS, EQUIPAMENTOS DE TESTE, COMPONENTES  E ACESSÓRIOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6655,
+          "nomeClasse": "INSTRUMENTOS GEOFÍSICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6660,
+          "nomeClasse": "INSTRUMENTOS E APARELHOS METEOROLÓGICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6665,
+          "nomeClasse": "INSTRUMENTOS E APARELHOS DE DETECÇÃO DE PERIGO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6670,
+          "nomeClasse": "ESCALAS E BALANÇAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6675,
+          "nomeClasse": "INSTRUMENTOS DE DESENHO, TOPOGRAFIA E CARTOGRAFIA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6680,
+          "nomeClasse": "INSTRUMENTOS PARA MEDIÇÃO DE FLUXO DE LÍQUIDO E  GÁS, NÍVEL DE LÍQUIDOS E DE MOVIMENTOS MECÂNICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6685,
+          "nomeClasse": "INSTRUMENTOS PARA MEDIÇÃO E CONTROLE DE PRESSÃO,TEMPERATURA E UMIDADE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6695,
+          "nomeClasse": "INSTRUMENTOS COMBINADOS DIVERSOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 67,
+      "nomeGrupo": "EQUIPAMENTOS FOTOGRÁFICOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 6710,
+          "nomeClasse": "CÂMARAS CINEMATOGRÁFICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6720,
+          "nomeClasse": "CÂMARAS FOTOGRÁFICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6730,
+          "nomeClasse": "EQUIPAMENTO PARA PROJEÇÃO FOTOGRÁFICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6740,
+          "nomeClasse": "EQUIPAMENTO PARA REVELAÇÃO E ACABAMENTO FOTOGRÁFICO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6750,
+          "nomeClasse": "SUPRIMENTOS FOTOGRÁFICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6760,
+          "nomeClasse": "EQUIPAMENTO FOTOGRÁFICO E ACESSÓRIOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6770,
+          "nomeClasse": "FILMES REVELADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6780,
+          "nomeClasse": "JOGOS E CONJUNTOS FOTOGRÁFICOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 68,
+      "nomeGrupo": "SUBSTÂNCIAS E PRODUTOS QUÍMICOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 6810,
+          "nomeClasse": "PRODUTOS QUÍMICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6820,
+          "nomeClasse": "CORANTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6830,
+          "nomeClasse": "GASES COMPRIMIDOS E LIQUEFEITOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6840,
+          "nomeClasse": "PESTICIDAS E DESINFETANTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6850,
+          "nomeClasse": "ESPECIALIDADES QUÍMICAS DIVERSAS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 69,
+      "nomeGrupo": "APARELHOS E ACESSÓRIOS PARA TREINAMENTO",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 6910,
+          "nomeClasse": "ACESSÓRIOS PARA TREINAMENTO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6920,
+          "nomeClasse": "ACESSÓRIOS PARA TREINAMENTO DE ARMAMENTO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6930,
+          "nomeClasse": "ACESSÓRIOS PARA TREINAMENTO OPERACIONAL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 6940,
+          "nomeClasse": "ACESSÓRIOS PARA TREINAMENTO DE COMUNICAÇÕES",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 70,
+      "nomeGrupo": "INFORMÁTICA - EQUIPAMENTOS,  PEÇAS, ACESSÓRIOS E SUPRIMENTOSDE TIC",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 7005,
+          "nomeClasse": "EQUIPAMENTOS DE ENTRADA E SAIDA DE DADOS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 7010,
+          "nomeClasse": "COMPUTADORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7015,
+          "nomeClasse": "EQUIPAMENTOS DE APOIO",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 7020,
+          "nomeClasse": "IMPRESSORAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7021,
+          "nomeClasse": "UNIDADES CENTRAIS DE PROCESSAMENTO DIGITAIS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 7022,
+          "nomeClasse": "UNIDADES CENTRAIS DE PROCESSAMENTO HÍBRIDAS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 7025,
+          "nomeClasse": "UNIDADES DE ARMAZENAMENTO DE ENTRADA E SAÍDA DE DADOS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 7030,
+          "nomeClasse": "EQUIPAMENTOS DE ARMAZENAMENTO DE DADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7035,
+          "nomeClasse": "EQUIPAMENTOS SUPORTES DE PROCESSAMENTO AUTOMÁTICO DE DADOS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 7040,
+          "nomeClasse": "EQUIPAMENTOS DE ENTRADA DE DADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7042,
+          "nomeClasse": "DISPOSITIVOS PARA CONTROLE DE MINI E MICROCOMPUTADORES",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 7045,
+          "nomeClasse": "ARTIGOS DIVERSOS PARA PROCESSAMENTO AUTOMÁTICO DE DADOS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 7050,
+          "nomeClasse": "EQUIPAMENTOS DE REDE DE TIC - LOCAL E REMOTA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7060,
+          "nomeClasse": "PEÇAS E ACESSÓRIOS PARA COMPUTADORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7070,
+          "nomeClasse": "PEÇAS E ACESSÓRIOS PARA IMPRESSORAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7080,
+          "nomeClasse": "PEÇAS, ACESSÓRIOS E FERRAMENTAS PARA REDES DE TIC",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7090,
+          "nomeClasse": "SUPRIMENTOS DE INFORMÁTICA - TIC",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7095,
+          "nomeClasse": "UNIDADES PARA MANUSEIO DE CARTÕES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7099,
+          "nomeClasse": "OUTROS",
+          "statusClasse": false
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 71,
+      "nomeGrupo": "MOBILIÁRIOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 7105,
+          "nomeClasse": "MOBILIÁRIO DOMÉSTICO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7110,
+          "nomeClasse": "MOBILIÁRIO PARA ESCRITÓRIO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7115,
+          "nomeClasse": "MOBILIARIOS ESCOLAR",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 7120,
+          "nomeClasse": "ESTANTES E ARMACOES PARA ALMOXARIFADOS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 7125,
+          "nomeClasse": "ARMÁRIOS E ESTANTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7195,
+          "nomeClasse": "MOBILIÁRIOS DIVERSOS E ACESSÓRIOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 72,
+      "nomeGrupo": "UTENSILIOS E UTILIDADES DE USO DOMESTICO E COMERCIAL",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 7210,
+          "nomeClasse": "UTENSÍLIOS DOMÉSTICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7220,
+          "nomeClasse": "REVESTIMENTOS PARA PISOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7230,
+          "nomeClasse": "TAPEÇARIAS, CORTINAS E PERSIANAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7240,
+          "nomeClasse": "RECEPIENTES PARA USO DOMÉSTICO E COMERCIAL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7290,
+          "nomeClasse": "UTENSÍLIOS COMERCIAIS E DOMÉSTICOS DIVERSOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 73,
+      "nomeGrupo": "EQUIPAMENTOS PARA PREPARAR E SERVIR ALIMENTOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 7310,
+          "nomeClasse": "EQUIPAMENTOS PARA COZINHAR, ASSAR E SERVIR ALIMENTOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7320,
+          "nomeClasse": "EQUIPAMENTOS E APARELHOS DE COZINHA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7330,
+          "nomeClasse": "UTENSÍLIOS E FERRAMENTAS MANUAIS DE COZINHA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7340,
+          "nomeClasse": "CUTELARIA E TALHERES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7350,
+          "nomeClasse": "LOUÇA E ARTIGOS DE MESA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7360,
+          "nomeClasse": "JOGOS, CONJUNTOS  E  EQUIPAMENTOS PARA PREPARAR E SERVIR ALIMENTOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 74,
+      "nomeGrupo": "MÁQUINAS PARA ESCRITÓRIO, SISTEMAS DE PROCESSAMENTO DE  TEX-TO E FICHÁRIOS DE CLASSIFICAÇÃO VISÍVEL",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 7420,
+          "nomeClasse": "MÁQUINAS DE CONTABILIDADE E DE CALCULAR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7425,
+          "nomeClasse": "MAQUINAS DE FOTOCOPIAS",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 7430,
+          "nomeClasse": "MÁQUINAS DE ESCREVER E DE COMPOSIÇÃO PARA ESCRITÓRIO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7431,
+          "nomeClasse": "MAQUINAS DE REPROGRAFIA",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 7432,
+          "nomeClasse": "MAQUINAS DE REPROGRAFIA",
+          "statusClasse": false
+        },
+        {
+          "codigoClasse": 7435,
+          "nomeClasse": "EQUIPAMENTOS DE SISTEMAS DE INFORMAÇÕES PARA ESCRITÓRIO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7450,
+          "nomeClasse": "MÁQUINAS DE GRAVAÇÃO E REPRODUÇÃO DE SOM PARA  USO  EM ESCRITÓRIO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7460,
+          "nomeClasse": "ARQUIVOS VISUAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7490,
+          "nomeClasse": "MÁQUINAS DIVERSAS PARA ESCRITÓRIO",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 75,
+      "nomeGrupo": "UTENSÍLIOS DE ESCRITÓRIO E MATERIAL DE EXPEDIENTE",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 7510,
+          "nomeClasse": "ARTIGOS PARA ESCRITÓRIO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7520,
+          "nomeClasse": "ACESSÓRIOS E DISPOSITIVOS PARA ESCRITÓRIO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7530,
+          "nomeClasse": "FORMULÁRIOS OFICIAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7540,
+          "nomeClasse": "FORMULÁRIOS PADRONIZADOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 76,
+      "nomeGrupo": "LIVROS, MAPAS E OUTRAS PUBLICAÇÕES",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 7610,
+          "nomeClasse": "LIVROS E FOLHETOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7630,
+          "nomeClasse": "JORNAIS E PERIÓDICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7640,
+          "nomeClasse": "MAPAS, CARTAS E GLOBOS GEOGRÁFICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7641,
+          "nomeClasse": "MAPAS AERONÁUTICOS, CARTAS E PRODUTOS GEODÉSICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7642,
+          "nomeClasse": "MAPAS HIDROGRÁFICOS, CARTAS E PRODUTOS GEODÉSICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7643,
+          "nomeClasse": "MAPAS TOPOGRÁFICOS, CARTAS E PRODUTOS GEODÉSICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7644,
+          "nomeClasse": "MAPAS DIGITAIS, CARTAS E PRODUTOS GEODÉSICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7650,
+          "nomeClasse": "DESENHOS E ESPECIFICAÇÕES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7660,
+          "nomeClasse": "FOLHAS E LIVROS DE MÚSICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7670,
+          "nomeClasse": "MICROFILMES REVELADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7690,
+          "nomeClasse": "IMPRESSOS DIVERSOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 77,
+      "nomeGrupo": "INSTRUMENTOS MUSICAIS, FONÓGRAFOS E RÁDIOS DOMÉSTICOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 7710,
+          "nomeClasse": "INSTRUMENTOS MUSICAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7720,
+          "nomeClasse": "PEÇAS E ACESSÓRIOS DE INSTRUMENTOS MUSICAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7730,
+          "nomeClasse": "FONÓGRAFOS, RÁDIOS E TELEVISORES DE TIPO DOMÉSTICO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7740,
+          "nomeClasse": "DISCOS PARA FONÓGRAFO",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 78,
+      "nomeGrupo": "EQUIPAMENTOS PARA RECREAÇÃO E DESPORTOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 7810,
+          "nomeClasse": "EQUIPAMENTO PARA ATLETISMO E DESPORTO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7820,
+          "nomeClasse": "JOGOS, BRINQUEDOS E ARTIGOS CORRELATOS COM RODAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7830,
+          "nomeClasse": "EQUIPAMENTO PARA GINÁSTICA E RECREAÇÃO",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 79,
+      "nomeGrupo": "EQUIPAMENTOS E MATERIAIS PARA LIMPEZA",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 7910,
+          "nomeClasse": "ENCERADEIRAS E ASPIRADORES DE PÓ",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7920,
+          "nomeClasse": "VASSOURAS, ESCOVAS, RODOS, ESPONJAS E ESFREGÕES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 7930,
+          "nomeClasse": "COMPOSTOS E PREPARADOS PARA LIMPEZA E POLIMENTO",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 80,
+      "nomeGrupo": "PINCÉIS, TINTAS, VEDANTES E ADESIVOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 8010,
+          "nomeClasse": "TINTAS, VERNIZES E PRODUTOS CORRELATOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8020,
+          "nomeClasse": "PINCEL PARA ARTISTAS E PINTORES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8030,
+          "nomeClasse": "COMPOSTOS PRESERVATIVOS E VEDANTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8040,
+          "nomeClasse": "ADESIVOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 81,
+      "nomeGrupo": "RECIPIENTES E MATERIAIS PARA ACONDICIONAMENTO E EMBALAGEM",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 8105,
+          "nomeClasse": "SACOS E BOLSAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8110,
+          "nomeClasse": "TAMBORES E LATAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8115,
+          "nomeClasse": "CAIXAS, CAIXOTES E ENGRADADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8120,
+          "nomeClasse": "CILINDROS COMERCIAIS E INDUSTRIAIS PARA GASES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8125,
+          "nomeClasse": "GARRAFAS E JARROS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8130,
+          "nomeClasse": "CARRETÉIS E BOBINAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8135,
+          "nomeClasse": "MATERIAIS A GRANEL PARA ACONDICIONAMENTO E EMBALAGEM",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8140,
+          "nomeClasse": "CAIXAS, RECIPIENTES E EMBALAGENS  ESPECIAIS  PARA ARMAMENTO NUCLEAR E MUNIÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8145,
+          "nomeClasse": "RECIPIENTES ESPECIALIZADOS PARA TRANSPORTE E ARMAZENAGEM",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 83,
+      "nomeGrupo": "TECIDOS, COUROS, PELES, AVIAMENTOS, BARRACAS E BANDEIRAS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 8305,
+          "nomeClasse": "TECIDOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8310,
+          "nomeClasse": "FIOS E LINHAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8315,
+          "nomeClasse": "MIUDEZAS E AVIAMENTOS PARA COSTURA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8320,
+          "nomeClasse": "MATERIAIS PARA ESTOFAMENTO E ACOLCHOAMENTO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8325,
+          "nomeClasse": "PELES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8330,
+          "nomeClasse": "COUROS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8335,
+          "nomeClasse": "MATERIAIS PARA CALÇADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8340,
+          "nomeClasse": "BARRACAS E ENCERADOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8345,
+          "nomeClasse": "BANDEIRAS, FLAMULAS E PAVILHOES",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 84,
+      "nomeGrupo": "VESTUÁRIOS, EQUIPAMENTOS INDIVIDUAIS E INSÍGNIAS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 8405,
+          "nomeClasse": "VESTUÁRIO EXTERNO MASCULINO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8410,
+          "nomeClasse": "VESTUÁRIO EXTERNO FEMININO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8415,
+          "nomeClasse": "VESTUÁRIO PARA FINS ESPECIAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8420,
+          "nomeClasse": "ROUPAS ÍNTIMAS E PARA DORMIR, MASCULINAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8425,
+          "nomeClasse": "ROUPAS ÍNTIMAS E PARA DORMIR, FEMININAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8430,
+          "nomeClasse": "CALÇADOS MASCULINOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8435,
+          "nomeClasse": "CALÇADOS FEMININOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8440,
+          "nomeClasse": "MEIAS, LUVAS E OUTROS COMPLEMENTOS DO VESTUARIO MASCULINO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8445,
+          "nomeClasse": "MEIAS, LUVAS E OUTROS COMPLEMENTOS DO VESTUÁRIO FEMININO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8450,
+          "nomeClasse": "VESTUÁRIO INFANTO-JUVENIL E COMPLEMENTOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8455,
+          "nomeClasse": "DISTINTIVOS E INSÍGNIAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8460,
+          "nomeClasse": "BAGAGENS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8465,
+          "nomeClasse": "EQUIPAMENTOS INDIVIDUAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8470,
+          "nomeClasse": "ROUPAS DE PROTEÇÃO CONTRA PROJÉTEIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8475,
+          "nomeClasse": "VESTUÁRIO ESPECIALIZADO PARA VÔO E ACESSÓRIOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 85,
+      "nomeGrupo": "ARTIGOS DE HIGIENE",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 8510,
+          "nomeClasse": "PERFUMES, ARTIGOS PARA TOALETE E TOUCADOR",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8520,
+          "nomeClasse": "SABONETES, ARTIGOS PARA BARBEAR E DENTIFRÍCIOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8530,
+          "nomeClasse": "ARTIGOS PARA HIGIENE PESSOAL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8540,
+          "nomeClasse": "ARTIGOS DE PAPEL PARA HIGIENE",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 87,
+      "nomeGrupo": "SUPRIMENTOS AGRÍCOLAS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 8710,
+          "nomeClasse": "FORRAGENS E ALIMENTOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8720,
+          "nomeClasse": "FERTILIZANTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8730,
+          "nomeClasse": "SEMENTES E MUDAS DE PLANTAS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 88,
+      "nomeGrupo": "ANIMAIS VIVOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 8810,
+          "nomeClasse": "ANIMAIS VIVOS, CRIADOS PARA ALIMENTAÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8820,
+          "nomeClasse": "ANIMAIS VIVOS, NÃO CRIADOS PARA ALIMENTAÇÃO",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 89,
+      "nomeGrupo": "SUBSISTÊNCIA",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 8905,
+          "nomeClasse": "CARNES, AVES E PEIXES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8910,
+          "nomeClasse": "OVOS E LATICÍNIOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8915,
+          "nomeClasse": "FRUTAS, VERDURAS E LEGUMES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8920,
+          "nomeClasse": "PRODUTOS DE PANIFICAÇÃO E CEREAIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8925,
+          "nomeClasse": "AÇÚCAR, CONFEITOS, CASTANHAS, NOZES E SIMILARES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8930,
+          "nomeClasse": "GELEIAS, CONSERVAS E GELATINAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8935,
+          "nomeClasse": "SOPAS E CALDOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8940,
+          "nomeClasse": "ALIMENTOS ESPECIAIS DIETÉTICOS E PREPARADOS ALIMENTÍCIOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8945,
+          "nomeClasse": "ÓLEOS E GORDURAS COMESTÍVEIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8950,
+          "nomeClasse": "CONDIMENTOS E PRODUTOS CORRELATOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8955,
+          "nomeClasse": "CAFÉ, CHÁ E CHOCOLATE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8960,
+          "nomeClasse": "BEBIDAS NÃO ALCOÓLICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8965,
+          "nomeClasse": "BEBIDAS ALCOÓLICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8970,
+          "nomeClasse": "RAÇÕES EMBALADAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 8975,
+          "nomeClasse": "PRODUTOS DE TABACO",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 91,
+      "nomeGrupo": "COMBUSTÍVEIS, LUBRIFICANTES, ÓLEOS E CERAS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 9110,
+          "nomeClasse": "COMBUSTÍVEIS SÓLIDOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9130,
+          "nomeClasse": "COMBUSTÍVEIS E PROPELENTES LÍQUIDOS À BASE DE PETRÓLEO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9135,
+          "nomeClasse": "COMBUSTÍVEIS PROPELENTES LÍQUIDOS E OXIDANTES Á BASE QUÍMICA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9140,
+          "nomeClasse": "ÓLEOS COMBUSTÍVEIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9150,
+          "nomeClasse": "ÓLEOS E GRAXAS PARA CORTE, LUBRIFICAÇÃO E SISTEMAS  HIDRÁULICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9160,
+          "nomeClasse": "CERAS, ÓLEOS E GORDURAS DIVERSOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 93,
+      "nomeGrupo": "MATERIAIS MANUFATURADOS, NÃO METÁLICOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 9310,
+          "nomeClasse": "PAPÉIS E PAPELÕES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9320,
+          "nomeClasse": "ARTIGOS DE BORRACHA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9330,
+          "nomeClasse": "ARTIGOS DE PLÁSTICO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9340,
+          "nomeClasse": "ARTIGOS DE VIDRO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9350,
+          "nomeClasse": "MATERIAIS REFRATÁRIOS E DE ACABAMENTO SUPERFICIAL CONTRA  FOGO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9390,
+          "nomeClasse": "PRODUTOS DIVERSOS NÃO METÁLICOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 94,
+      "nomeGrupo": "MATÉRIAS-PRIMAS NAO METÁLICAS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 9410,
+          "nomeClasse": "MATÉRIAS-PRIMAS DE ORIGEM VEGETAL",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9420,
+          "nomeClasse": "FIBRAS VEGETAIS, ANIMAIS E SINTÉTICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9430,
+          "nomeClasse": "MATÉRIAS-PRIMAS DIVERSAS DE ORIGEM ANIMAL, NÃO COMESTÍVEIS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9440,
+          "nomeClasse": "MATÉRIAS-PRIMAS DIVERSAS, FLORESTAIS E AGRÍCOLAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9450,
+          "nomeClasse": "RESÍDUOS NAO METÁLICOS, EXCETO OS TÊXTEIS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 95,
+      "nomeGrupo": "BARRAS, CHAPAS E PERFILADOS METÁLICOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 9505,
+          "nomeClasse": "ARAMES DE FERRO E DE AÇO, NÃO UTILIZÁVEIS EM ELETRICIDADE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9510,
+          "nomeClasse": "BARRAS E VERGALHÕES DE FERRO E DE AÇO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9515,
+          "nomeClasse": "PLACAS, CHAPAS, FITAS E LAMINADOS FINOS DE FERRO E DE AÇO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9520,
+          "nomeClasse": "PERFIS ESTRUTURAIS DE FERRO E AÇO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9525,
+          "nomeClasse": "ARAMES DE METAL NÃO FERROSO, NÃO UTILIZÁVEIS EM ELETRICIDADE",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9530,
+          "nomeClasse": "BARRAS E VERGALHÕES DE METAIS NÃO FERROSOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9535,
+          "nomeClasse": "PLACAS, CHAPAS, FITAS E LAMINADOS FINOS DE METAIS NÃO  FERROSOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9540,
+          "nomeClasse": "PERFIS ESTRUTURAIS DE METAIS NÃO FERROSOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9545,
+          "nomeClasse": "PLACAS, CHAPAS, FITAS E LAMINADOS FINOS DE METAIS PRECIOSOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 96,
+      "nomeGrupo": "MINÉRIOS, MINERAIS E SEUS PRODUTOS PRIMÁRIOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 9610,
+          "nomeClasse": "MINÉRIOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9620,
+          "nomeClasse": "MINERAIS NATURAIS E SINTÉTICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9630,
+          "nomeClasse": "ADITIVOS METÁLICOS E LIGAS BÁSICAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9640,
+          "nomeClasse": "PRODUTOS SEMI-ACABADOS E PRODUTOS PRIMÁRIOS DE  FERRO  E DE AÇO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9650,
+          "nomeClasse": "REFINADOS E PRODUTOS SEMI-ACABADOS DE  METAIS  BÁSICOS  NÃO FERROSOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9660,
+          "nomeClasse": "METAIS PRECIOSOS EM SUAS FORMAS PRIMÁRIAS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9670,
+          "nomeClasse": "SUCATA DE FERRO E DE AÇO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9680,
+          "nomeClasse": "SUCATA DE METAIS NÃO FERROSOS",
+          "statusClasse": true
+        }
+      ]
+    },
+    {
+      "codigoGrupo": 99,
+      "nomeGrupo": "DIVERSOS",
+      "statusGrupo": true,
+      "classes": [
+        {
+          "codigoClasse": 9905,
+          "nomeClasse": "CARTAZES, MOSTRUÁRIOS E PLACAS DE IDENTIFICAÇÃO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9910,
+          "nomeClasse": "ARTIGOS DE JOALHERIA",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9915,
+          "nomeClasse": "ARTIGOS PARA COLECIONADORES E/OU HISTÓRICOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9920,
+          "nomeClasse": "ARTIGOS PARA FUMANTES",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9925,
+          "nomeClasse": "EQUIPAMENTOS E ARTIGOS RELIGIOSOS",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9930,
+          "nomeClasse": "EQUIPAMENTOS E ARTIGOS MORTUÁRIOS E DE CEMITÉRIO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9997,
+          "nomeClasse": "PEDIDOS DE CATALOGAÇÃO DO ESTADO DE SÃO PAULO - PARA USO EXCLUSIVO DO ESTADO DE SÃO PAULO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9998,
+          "nomeClasse": "SERVICO",
+          "statusClasse": true
+        },
+        {
+          "codigoClasse": 9999,
+          "nomeClasse": "ITENS DIVERSOS",
+          "statusClasse": true
+        }
+      ]
+    }
+  ]
+}

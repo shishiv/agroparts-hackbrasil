@@ -1,0 +1,36 @@
+{
+  "name": "agroparts-hackbrasil",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "AGPL-3.0-only",
+  "description": "AgroParts para a Hack Brasil 2026: histórico de manutenção unificado na placa de patrimônio da máquina.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "preview:pages": "wrangler pages dev dist",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p functions",
+    "test": "bun test",
+    "test:navegador": "vitest run --project navegador",
+    "baixar-catmat": "bun run scripts/baixar-catmat.ts",
+    "gerar-demo": "bun run scripts/gerar-demo.ts",
+    "gerar-paginas": "bun run scripts/gerar-paginas.ts",
+    "placar": "bun run scripts/placar.ts",
+    "familia-jev": "bun run scripts/familia-jev.ts"
+  },
+  "dependencies": {
+    "@typesafe-ai/sdk": "^0.7.0",
+    "aws4fetch": "^1.0.20"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261116.1",
+    "@types/bun": "^1.4.4",
+    "@vitest/browser-playwright": "^5.1.0",
+    "playwright": "^1.65.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0",
+    "wrangler": "^4.163.0"
+  }
+}

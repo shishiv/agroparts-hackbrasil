@@ -1,0 +1,13 @@
+patrimonio;tag;nome;area
+004501;M-101;Moenda, 1º terno;Extração
+004502;M-102;Moenda, 2º terno;Extração
+004503;P-101;Picador de cana;Preparo
+004504;D-101;Desfibrador;Preparo
+004505;EC-101;Esteira de cana nº 1;Recepção
+004512;B-104;Bomba de caldo;Caldo
+004513;B-105;Bomba de caldo;Caldo
+004520;EX-201;Exaustor da caldeira;Caldeira
+004521;VT-202;Ventilador de ar secundário;Caldeira
+004530;RD-101;Redutor da moenda 1;Extração
+004531;RD-102;Redutor do picador;Preparo
+004540;BV-301;Bomba de vácuo do filtro;Filtração

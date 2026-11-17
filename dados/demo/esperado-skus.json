@@ -1,0 +1,32 @@
+{
+  "regra": "Mistura: o SKU tem códigos de dois ou mais grupos. Inconclusivo: não é mistura e tem código sem grupo (decisão revisa ou recusa). Coerente: todos os códigos do SKU estão no mesmo grupo. Fragmentação: grupo com códigos em dois ou mais SKUs. Código sem SKU fica de fora de tudo.",
+  "skus": [
+    {"sku":"ACO","veredicto":"inconclusivo","codigos":["10046","10272"],"grupos":[],"semGrupo":["10046","10272"]},
+    {"sku":"COR-V","veredicto":"inconclusivo","codigos":["10032","10108","10144","10148"],"grupos":[],"semGrupo":["10032","10108","10144","10148"]},
+    {"sku":"POL","veredicto":"inconclusivo","codigos":["10020","10222"],"grupos":[],"semGrupo":["10020","10222"]},
+    {"sku":"RET","veredicto":"inconclusivo","codigos":["10002","10019","10276"],"grupos":[],"semGrupo":["10002","10019","10276"]},
+    {"sku":"ROL-2RS-PEQ","veredicto":"mistura","codigos":["10124","10215","10229","10281"],"grupos":[["10124","10281"],["10215","10229"]],"semGrupo":[]},
+    {"sku":"ROL-6007","veredicto":"coerente","codigos":["10131","10176"],"grupos":[["10131","10176"]],"semGrupo":[]},
+    {"sku":"ROL-6204","veredicto":"coerente","codigos":["10076"],"grupos":[["10076"]],"semGrupo":[]},
+    {"sku":"ROL-6210","veredicto":"mistura","codigos":["10005","10049","10093","10097","10116","10153","10234","10258"],"grupos":[["10005","10153"],["10049","10093","10258"],["10097","10116"]],"semGrupo":["10234"]},
+    {"sku":"ROL-6211","veredicto":"mistura","codigos":["10054","10104","10134","10154","10266"],"grupos":[["10054","10104","10134"],["10154","10266"]],"semGrupo":[]},
+    {"sku":"ROL-6217","veredicto":"coerente","codigos":["10048","10155"],"grupos":[["10048","10155"]],"semGrupo":[]},
+    {"sku":"ROL-6308","veredicto":"mistura","codigos":["10034","10141","10186","10198","10212","10247"],"grupos":[["10034","10186","10198"],["10141","10212"]],"semGrupo":["10247"]},
+    {"sku":"ROL-6309-2RS","veredicto":"coerente","codigos":["10096","10206"],"grupos":[["10096","10206"]],"semGrupo":[]},
+    {"sku":"ROL-6309-ZZC3","veredicto":"inconclusivo","codigos":["10059","10066","10165","10203"],"grupos":[["10059","10066","10165"]],"semGrupo":["10203"]},
+    {"sku":"ROL-6311","veredicto":"coerente","codigos":["10181","10191","10217"],"grupos":[["10181","10191","10217"]],"semGrupo":[]},
+    {"sku":"ROL-6312","veredicto":"mistura","codigos":["10041","10071","10083","10117","10261"],"grupos":[["10071","10261"],["10083","10117"]],"semGrupo":["10041"]},
+    {"sku":"ROL-6312-ZZC3","veredicto":"coerente","codigos":["10091","10158"],"grupos":[["10091","10158"]],"semGrupo":[]},
+    {"sku":"ROL-6314-A","veredicto":"coerente","codigos":["10026","10113"],"grupos":[["10026","10113"]],"semGrupo":[]},
+    {"sku":"ROL-6314-B","veredicto":"coerente","codigos":["10001"],"grupos":[["10001"]],"semGrupo":[]},
+    {"sku":"ROL-ANG","veredicto":"inconclusivo","codigos":["10230"],"grupos":[],"semGrupo":["10230"]},
+    {"sku":"ROL-AUTO","veredicto":"inconclusivo","codigos":["10267"],"grupos":[],"semGrupo":["10267"]},
+    {"sku":"ROL-GEN","veredicto":"inconclusivo","codigos":["10012","10062","10089","10125"],"grupos":[],"semGrupo":["10012","10062","10089","10125"]},
+    {"sku":"SEL","veredicto":"inconclusivo","codigos":["10192","10241"],"grupos":[],"semGrupo":["10192","10241"]}
+  ],
+  "fragmentacoes": [
+    {"codigos":["10001","10026","10113"],"skus":["ROL-6314-A","ROL-6314-B"]},
+    {"codigos":["10071","10091","10158","10261"],"skus":["ROL-6312","ROL-6312-ZZC3"]}
+  ],
+  "resumo": {"coerentes":8,"misturas":5,"inconclusivos":9,"fragmentacoes":2}
+}
