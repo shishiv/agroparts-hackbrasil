@@ -1,0 +1,10 @@
+{
+  "origem": "gravada em 17/11/2026 em api.groq.com/openai/v1/audio/transcriptions com whisper-large-v3-turbo; um segundo e meio de silêncio",
+  "status": 200,
+  "corpo": {
+    "text": " Folga C3.",
+    "x_groq": {
+      "id": "req_01m7mxeq4teznty305gd304k57"
+    }
+  }
+}

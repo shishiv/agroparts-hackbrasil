@@ -1,0 +1,11 @@
+{
+  "origem": "gravada em 17/11/2026 em api.groq.com/openai/v1/audio/transcriptions com whisper-large-v3-turbo; chave que não existe",
+  "status": 401,
+  "corpo": {
+    "error": {
+      "message": "Invalid API Key",
+      "type": "invalid_request_error",
+      "code": "invalid_api_key"
+    }
+  }
+}
