@@ -91,6 +91,30 @@ describe("no site construído, num celular de 390 px", () => {
     await digitado.contexto.close();
   }, 60_000);
 
+  it("tocar na placa simulada de uma máquina da demo abre a página dela, a mesma do link, e a tela diz que é demonstração", async () => {
+    const link = await celular();
+    await link.pagina.goto(`${base}/e/004512`);
+    const doLink = await historicoDe(link.pagina);
+
+    const { pagina, contexto } = await celular();
+    await pagina.goto(`${base}/`);
+    expect(await pagina.locator(".aviso-demo").innerText()).toBe("Demonstração: simula o toque na tag NFC");
+    const placa = pagina.locator('button[data-patrimonio="004512"]');
+    expect(await placa.locator("svg").textContent()).toContain("004512");
+
+    await placa.click();
+    await pagina.waitForSelector('[data-patrimonio="004512"][data-lendo]');
+    expect(await placa.innerText()).toContain("(simulada)");
+    await pagina.waitForURL(`${base}/e/004512`);
+    expect(await historicoDe(pagina)).toBe(doLink);
+
+    await pagina.goBack();
+    await pagina.waitForSelector('button[data-patrimonio="004512"]:not([data-lendo])');
+    expect(await pagina.locator('button[data-patrimonio="004512"]').innerText()).toContain("B-104 · Bomba de caldo");
+    await link.contexto.close();
+    await contexto.close();
+  }, 60_000);
+
   it("mostra a folga normal como não escrita no texto, sem marcar nada, com o motor real no build", async () => {
     const { pagina, contexto } = await celular();
     await pagina.goto(`${base}/e/004540`);

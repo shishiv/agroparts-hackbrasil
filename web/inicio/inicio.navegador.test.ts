@@ -1,6 +1,8 @@
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { patrimonioDoCaminho } from "../equipamento/carregar";
 import { montarInicio } from "./inicio";
+import { PLACAS_DA_DEMO } from "./placa";
+import { AVISO_DA_DEMONSTRACAO, type Tempos } from "./toque";
 
 const montados: HTMLElement[] = [];
 
@@ -8,12 +10,14 @@ afterEach(() => {
   for (const raiz of montados.splice(0)) raiz.remove();
 });
 
-function abrir() {
+const RAPIDO: Tempos = { lendoMs: 40, lidaMs: 40 };
+
+function abrir(tempos: Tempos = RAPIDO) {
   const raiz = document.createElement("main");
   document.body.append(raiz);
   montados.push(raiz);
   const destinos: string[] = [];
-  montarInicio(raiz, (endereco) => destinos.push(endereco));
+  montarInicio(raiz, (endereco) => destinos.push(endereco), tempos);
   const campo = raiz.querySelector<HTMLInputElement>("input");
   const formulario = raiz.querySelector("form");
   if (!campo || !formulario) throw new Error("a página inicial precisa de um campo dentro de um formulário");
@@ -58,5 +62,88 @@ describe("o campo de número de patrimônio da página inicial", () => {
     const { destinos, enviar } = abrir();
     for (const digitado of ["004512", "B-77", "a b", "a/b", "x?y#z", "100%"]) enviar(digitado);
     expect(destinos.map(patrimonioDoCaminho)).toEqual(["004512", "B-77", "a b", "a/b", "x?y#z", "100%"]);
+  });
+});
+
+describe("a placa simulada, só para demonstração", () => {
+  const placa = (raiz: HTMLElement, patrimonio: string) => {
+    const botao = raiz.querySelector<HTMLButtonElement>(`button[data-patrimonio="${patrimonio}"]`);
+    if (!botao) throw new Error(`a página inicial não tem a placa ${patrimonio}`);
+    return botao;
+  };
+
+  it("desenha a placa de cada máquina da demo, com o número gravado e a marca NFC", () => {
+    const { raiz } = abrir();
+    const botoes = [...raiz.querySelectorAll<HTMLButtonElement>("button[data-patrimonio]")];
+    expect(botoes.map((b) => b.dataset.patrimonio)).toEqual([...PLACAS_DA_DEMO]);
+    for (const botao of botoes) {
+      const desenho = botao.querySelector("svg");
+      expect(desenho?.textContent).toContain(botao.dataset.patrimonio);
+      expect(desenho?.textContent?.split(botao.dataset.patrimonio ?? "")).toHaveLength(2);
+      expect(desenho?.textContent).toContain("NFC");
+      expect(desenho?.querySelector("image")).toBeNull();
+    }
+    expect(placa(raiz, "004512").textContent).toContain("B-104 · Bomba de caldo");
+  });
+
+  it("diz na tela que é uma demonstração que simula a tag", () => {
+    const { raiz } = abrir();
+    expect(AVISO_DA_DEMONSTRACAO).toBe("Demonstração: simula o toque na tag NFC");
+    expect(raiz.querySelector(".aviso-demo")?.textContent).toBe(AVISO_DA_DEMONSTRACAO);
+  });
+
+  it("tocar na placa mostra a leitura e só depois abre o endereço que a tag gravaria", async () => {
+    const { raiz, destinos } = abrir();
+    const botao = placa(raiz, "004512");
+    botao.click();
+    expect(botao.hasAttribute("data-lendo")).toBe(true);
+    expect(botao.textContent).toContain("Lendo a tag (simulada)");
+    expect(destinos).toEqual([]);
+
+    await vi.waitFor(() => expect(botao.textContent).toContain("Tag lida (simulada): abrindo a página de 004512"));
+    expect(destinos).toEqual([]);
+    await vi.waitFor(() => expect(destinos).toEqual(["/e/004512"]));
+  });
+
+  it("o toque abre o mesmo endereço que o número digitado", async () => {
+    const { raiz, destinos, enviar } = abrir();
+    for (const patrimonio of PLACAS_DA_DEMO) {
+      enviar(patrimonio);
+      const digitado = destinos.pop();
+      placa(raiz, patrimonio).click();
+      await vi.waitFor(() => expect(destinos).toEqual([digitado]));
+      destinos.length = 0;
+      window.dispatchEvent(new PageTransitionEvent("pageshow", { persisted: true }));
+    }
+  });
+
+  it("um segundo toque durante a leitura não abre a página duas vezes", async () => {
+    const { raiz, destinos } = abrir();
+    placa(raiz, "004512").click();
+    placa(raiz, "004504").click();
+    placa(raiz, "004512").click();
+    await vi.waitFor(() => expect(destinos).toEqual(["/e/004512"]));
+    await new Promise((resolver) => setTimeout(resolver, 150));
+    expect(destinos).toEqual(["/e/004512"]);
+  });
+
+  it("voltar pelo histórico do navegador devolve a placa pronta para outro toque", async () => {
+    const { raiz, destinos } = abrir();
+    const botao = placa(raiz, "004512");
+    botao.click();
+    await vi.waitFor(() => expect(destinos).toEqual(["/e/004512"]));
+
+    window.dispatchEvent(new PageTransitionEvent("pageshow", { persisted: true }));
+    expect(botao.hasAttribute("data-lendo")).toBe(false);
+    expect(botao.textContent).toContain("B-104 · Bomba de caldo");
+
+    botao.click();
+    await vi.waitFor(() => expect(destinos).toEqual(["/e/004512", "/e/004512"]));
+  });
+
+  it("o campo de número continua no lugar e sem mudança, antes das placas", () => {
+    const { raiz } = abrir();
+    const filhos = [...raiz.children].map((f) => f.tagName.toLowerCase());
+    expect(filhos).toEqual(["h1", "form", "section"]);
   });
 });

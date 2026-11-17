@@ -1,0 +1,70 @@
+import type { Equipamento } from "../../src/contrato";
+import { enderecoDoEquipamento, type Ir } from "./casca";
+import { h } from "./dom";
+import { desenharPlaca, placasDaDemo } from "./placa";
+
+export const AVISO_DA_DEMONSTRACAO = "Demonstração: simula o toque na tag NFC";
+
+export interface Tempos {
+  /** Quanto a tela mostra "lendo", antes de a tag responder. */
+  lendoMs: number;
+  /** Quanto a tela mostra "tag lida", antes de abrir a página. */
+  lidaMs: number;
+}
+
+export const TEMPOS_DO_TOQUE: Tempos = { lendoMs: 600, lidaMs: 500 };
+
+type Estado = "parado" | "lendo" | "lida";
+
+const textoDe = (equipamento: Equipamento) => `${equipamento.tag} · ${equipamento.nome}`;
+
+/**
+ * A simulação do toque na tag NFC: cada placa é um botão. Tocar nela mostra a leitura e abre
+ * o mesmo endereço que a tag gravaria. Nada aqui lê uma tag de verdade nem usa Web NFC.
+ */
+export function montarToque(ir: Ir, tempos: Tempos = TEMPOS_DO_TOQUE): HTMLElement {
+  const secao = h("section", { class: "toque", "data-estado": "parado" });
+  const mudar = (estado: Estado) => secao.setAttribute("data-estado", estado);
+  const estado = () => secao.getAttribute("data-estado");
+
+  const placas = placasDaDemo().map((equipamento) => {
+    const legenda = h("span", { class: "legenda", role: "status" }, textoDe(equipamento));
+    const botao = h(
+      "button",
+      { type: "button", class: "placa-toque", "data-patrimonio": equipamento.patrimonio },
+      desenharPlaca(equipamento.patrimonio),
+      legenda,
+    );
+    botao.addEventListener("click", () => {
+      if (estado() !== "parado") return;
+      const endereco = enderecoDoEquipamento(equipamento.patrimonio);
+      botao.setAttribute("data-lendo", "");
+      mudar("lendo");
+      legenda.textContent = "Lendo a tag (simulada)…";
+      setTimeout(() => {
+        mudar("lida");
+        legenda.textContent = `Tag lida (simulada): abrindo a página de ${equipamento.patrimonio}`;
+        setTimeout(() => ir(endereco), tempos.lidaMs);
+      }, tempos.lendoMs);
+    });
+    const voltar = () => {
+      botao.removeAttribute("data-lendo");
+      legenda.textContent = textoDe(equipamento);
+    };
+    return { botao, voltar };
+  });
+
+  // Voltar pelo histórico do navegador devolve a página como estava; a placa tem de estar pronta de novo.
+  window.addEventListener("pageshow", (evento) => {
+    if (!evento.persisted) return;
+    for (const { voltar } of placas) voltar();
+    mudar("parado");
+  });
+
+  secao.append(
+    h("h2", {}, "Toque numa placa"),
+    h("p", { class: "aviso-demo" }, AVISO_DA_DEMONSTRACAO),
+    ...placas.map(({ botao }) => botao),
+  );
+  return secao;
+}
