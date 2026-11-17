@@ -1,6 +1,7 @@
 import { fileURLToPath } from "node:url";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { defineConfig, type Plugin } from "vite";
+import { paginasDoSite } from "./scripts/gerar-paginas";
 
 const daRaiz = (caminho: string) => fileURLToPath(new URL(caminho, import.meta.url));
 
@@ -35,7 +36,7 @@ export default defineConfig({
   root: daRaiz("./web"),
   publicDir: daRaiz("./public"),
   appType: "mpa",
-  plugins: [rotasDoSite()],
+  plugins: [rotasDoSite(), paginasDoSite()],
   build: {
     outDir: daRaiz("./dist"),
     emptyOutDir: true,

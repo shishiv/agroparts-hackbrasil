@@ -56,7 +56,7 @@ describe("site vazio, depois do build e no preview", () => {
 
   it("não inventa rota: o que não existe dá 404", async () => {
     expect((await titulo("/nao-existe")).status).toBe(404);
-    expect((await titulo("/maquinas/004512.json")).status).toBe(404);
+    expect((await titulo("/maquinas/nao-existe.json")).status).toBe(404);
   });
 
   it("leva a página de 404 que o Cloudflare Pages usa no lugar da página inicial", async () => {
