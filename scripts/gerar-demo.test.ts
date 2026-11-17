@@ -1,4 +1,4 @@
-import { mkdtemp, readFile, readdir, rm } from "node:fs/promises";
+import { cp, mkdtemp, readFile, readdir, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterAll, describe, expect, it } from "vitest";
@@ -45,6 +45,21 @@ describe("gerar-demo", () => {
     expect((await readdir(saida)).sort()).toEqual([...NOMES_DOS_ARQUIVOS].sort());
     for (const nome of NOMES_DOS_ARQUIVOS) {
       expect(await readFile(join(saida, nome), "utf8"), nome).toBe(await lerDaDemo(nome));
+    }
+  });
+
+  it("acha os dados quando o caminho do projeto tem espaço e acento", async () => {
+    const raiz = join(import.meta.dir, "..");
+    const temporaria = await mkdtemp(join(tmpdir(), "gerar-demo-"));
+    pastasTemporarias.push(temporaria);
+    const copia = join(temporaria, "Área de Trabalho", "agroparts");
+    for (const pasta of ["scripts", "src", "dados/catmat"]) {
+      await cp(join(raiz, pasta), join(copia, pasta), { recursive: true });
+    }
+    const processo = Bun.spawn(["bun", "run", "scripts/gerar-demo.ts"], { cwd: copia, stdout: "pipe", stderr: "pipe" });
+    expect(await processo.exited, await new Response(processo.stderr).text()).toBe(0);
+    for (const nome of NOMES_DOS_ARQUIVOS) {
+      expect(await readFile(join(copia, "dados/demo", nome), "utf8"), nome).toBe(await lerDaDemo(nome));
     }
   });
 

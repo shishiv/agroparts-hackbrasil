@@ -1,10 +1,11 @@
 import { mkdir, writeFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
 import { SEMENTE_PADRAO } from "./demo/cenario";
 import { carregarCatmat } from "./demo/catmat";
 import { arquivosDaDemo, NOMES_DOS_ARQUIVOS } from "./demo/escrever";
 import { montarUsina } from "./demo/usina";
 
-const RAIZ = new URL("../", import.meta.url).pathname;
+const RAIZ = fileURLToPath(new URL("../", import.meta.url));
 export const PASTA_DO_CATMAT = `${RAIZ}dados/catmat`;
 export const PASTA_DA_DEMO = `${RAIZ}dados/demo`;
 

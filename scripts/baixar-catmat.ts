@@ -1,4 +1,5 @@
 import { mkdir } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
 import { acharSinaisDePrivacidade, type SinalDePrivacidade } from "./privacidade";
 
 export const BASE = "https://dadosabertos.compras.gov.br/modulo-material";
@@ -211,7 +212,7 @@ async function gravar(caminho: string, conteudo: unknown): Promise<void> {
 
 async function principal(): Promise<void> {
   const consultadoEm = hojeEmBrasilia(new Date());
-  const pasta = new URL("../dados/catmat/", import.meta.url).pathname;
+  const pasta = fileURLToPath(new URL("../dados/catmat/", import.meta.url));
   await mkdir(pasta, { recursive: true });
 
   const rolamentos = await baixarRolamentos(buscarComTentativas, consultadoEm);
