@@ -1,0 +1,2 @@
+[test]
+pathIgnorePatterns = ["**/*.navegador.test.ts", "node_modules/**", "dist/**"]

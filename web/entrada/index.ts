@@ -1,0 +1,7 @@
+export interface ModuloDeEntrada {
+  id: string;
+  /** Põe o botão da entrada (foto, áudio) dentro de `destino`. */
+  montar(destino: HTMLElement): void;
+}
+
+export const entradasRegistradas: readonly ModuloDeEntrada[] = [];
