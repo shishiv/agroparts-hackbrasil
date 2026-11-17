@@ -1,6 +1,12 @@
 # Placar do motor
 
-Versão das regras: `motor-1`. Gabarito: `gabarito-1`, 520 textos públicos do CATMAT, rotulados antes de o motor existir.
+Versão das regras: `motor-1`. Gabarito: `gabarito-1`, 520 textos públicos do CATMAT.
+
+## O que estes números valem
+
+- Os mesmos textos do CATMAT serviram para montar as listas de palavras do motor (`PALAVRAS_DE_APLICACAO` e `FRASE_CONHECIDA`, em `src/motor/familias/rolamento-rigido-de-esferas/`). Os números abaixo são medidos sobre o conjunto usado para ajustar o motor, não sobre textos nunca vistos.
+- No cadastro de uma usina real, a taxa de resolve deve ser menor que a deste placar.
+- O item 622950 (rolamento inox) foi corrigido de resolve para revisa depois da primeira versão do motor. A correção deixou o rótulo mais difícil para o motor, não mais fácil.
 
 Impressão das leituras: `13defe7d90f0cc`. É a mesma no Bun e no navegador do teste: o resumo inclui chave, atributos e trechos de cada leitura.
 

@@ -33,3 +33,9 @@ O que a chave não olha: diâmetro externo e largura, gaiola, tolerância, fabri
 ## Mudar uma regra
 
 Mude `VERSAO_REGRAS` em `unificar.ts` e rode `bun run placar`. O placar grava a versão, os pares falsos juntados, o acordo com o gabarito e uma impressão de todas as leituras. O teste de navegador calcula o placar de novo e confere que sai o mesmo arquivo.
+
+## O que o placar mede
+
+- Os 520 textos do CATMAT do gabarito serviram também para montar as listas de palavras do motor (`PALAVRAS_DE_APLICACAO` e `FRASE_CONHECIDA`, em `familias/rolamento-rigido-de-esferas/`). Os números do placar são medidos sobre o conjunto usado para ajustar o motor, não sobre textos nunca vistos.
+- No cadastro de uma usina real, a taxa de resolve deve ser menor que a do placar.
+- O item 622950 (rolamento inox) foi corrigido de resolve para revisa depois da primeira versão do motor. A correção deixou o rótulo mais difícil para o motor, não mais fácil.
