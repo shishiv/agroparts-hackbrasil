@@ -1,3 +1,4 @@
+import type { Classe } from "../classes";
 import { MODELO_DO_JEV } from "../pergunta";
 import type { Amostra } from "./amostra";
 import { intervaloDeWilson, type Avaliacao, type Fracao, type Resultados, type Veredito } from "./avaliar";
@@ -9,8 +10,8 @@ export const DOLARES_POR_MILHAO_DE_TOKENS = 0.042;
 export interface DadosDoRelatorio {
   protocolo: Protocolo;
   amostra: Amostra;
-  /** Quantas classes o Jev recebeu como opção, sem contar "nenhuma". */
-  classesOferecidas: number;
+  /** As classes que o Jev recebeu como opção, sem contar "nenhuma". */
+  classesOferecidas: readonly Classe[];
   /** Ausentes antes da medição: o relatório sai só com o protocolo. */
   medicao: { resultados: Resultados; avaliacao: Avaliacao } | null;
 }
@@ -29,12 +30,13 @@ function comIntervalo(fracao: Fracao): string {
 
 const celula = (texto: string): string => texto.replaceAll("|", "/");
 
-function tabela(cabecalho: readonly string[], linhas: readonly (readonly string[])[]): string {
-  const separador = cabecalho.map((_, i) => (i < 2 ? "---" : "---:"));
+function tabela(cabecalho: readonly string[], linhas: readonly (readonly string[])[], aEsquerda = 2): string {
+  const separador = cabecalho.map((_, i) => (i < aEsquerda ? "---" : "---:"));
   return [cabecalho, separador, ...linhas.map((l) => l.map(celula))].map((l) => `| ${l.join(" | ")} |`).join("\n");
 }
 
-function secaoDoProtocolo({ protocolo, amostra, classesOferecidas }: DadosDoRelatorio): string {
+function secaoDoProtocolo({ protocolo, amostra, classesOferecidas: oferecidas }: DadosDoRelatorio): string {
+  const classesOferecidas = oferecidas.length;
   const { limiares, regra } = protocolo;
   const dentro = amostra.classes.filter((c) => c.dentro).length;
   const fora = amostra.classes.length - dentro;
@@ -84,7 +86,10 @@ function linhaDoVeredito(v: Veredito): string {
 }
 
 function secaoDoResultado(dados: DadosDoRelatorio, resultados: Resultados, avaliacao: Avaliacao): string {
-  const nomeDe = new Map(dados.amostra.classes.map((c) => [c.codigo, c.nome]));
+  const nomeDe = new Map<string, string>([
+    ...dados.classesOferecidas.map((c): [string, string] => [c.codigo, c.nome]),
+    ...dados.amostra.classes.map((c): [string, string] => [c.codigo, c.nome]),
+  ]);
   const nome = (codigo: string): string => (codigo === "nenhuma" ? "nenhuma" : `${codigo} ${nomeDe.get(codigo) ?? ""}`.trim());
   const { vereditos, dentro, fora, inversao } = avaliacao;
 
@@ -109,6 +114,10 @@ function secaoDoResultado(dados: DadosDoRelatorio, resultados: Resultados, avali
     ? tabela(["esperada", "escolhida", "vezes"], avaliacao.confusoes.map((c) => [nome(c.esperada).slice(0, 60), nome(c.escolhida).slice(0, 60), String(c.vezes)]))
     : "O Choice acertou todos os itens de classes oferecidas.";
 
+  const desviosDosControles = avaliacao.desviosDosControles.length
+    ? `Classes sugeridas para os itens que deviam terminar em "nenhuma": ${avaliacao.desviosDosControles.map((d) => `${nome(d.classe)} (${d.vezes})`).join("; ")}.`
+    : 'Nenhum item que devia terminar em "nenhuma" recebeu uma classe.';
+
   const faixas = tabela(
     ["probabilidade da escolha", "itens", "escolha certa", "acerto"],
     avaliacao.faixas.map((f) => [`${virgula(f.de, 1)} a ${virgula(f.ate, 1)}`, String(f.itens), String(f.escolhaCerta), percentual({ k: f.escolhaCerta, n: f.itens })]),
@@ -131,13 +140,15 @@ Escolha do Choice sem a regra: ${dentro.escolhaCerta} de ${dentro.itens} itens d
 
 ### Por classe
 
-${tabela(["classe", "nome", "tipo", "itens", "escolha certa", "sugestões", "sugestões certas", "em nenhuma", "marca"], porClasse)}
+${tabela(["classe", "nome", "tipo", "itens", "escolha certa", "sugestões", "sugestões certas", "em nenhuma", "marca"], porClasse, 3)}
 
 ${avaliacao.classesFracas.length === 0 ? "Nenhuma classe oferecida ficou abaixo do mínimo." : `Classes fracas: ${avaliacao.classesFracas.map((r) => r.classe.codigo).join(", ")}.`}
 
 ### Onde o Choice errou
 
 ${confusoes}
+
+${desviosDosControles}
 
 ### A probabilidade da escolha
 

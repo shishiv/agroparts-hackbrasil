@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { Amostra } from "./amostra";
 import { avaliar, type Resultados } from "./avaliar";
 import { PROTOCOLO } from "./protocolo";
+import { classesDaGravacao } from "../teste-de-apoio";
 import { formatarRelatorio, percentual } from "./relatorio";
 
 const AMOSTRA: Amostra = {
@@ -38,7 +39,7 @@ describe("percentual", () => {
 
 describe("formatarRelatorio", () => {
   it("antes da medição, traz o protocolo com os limiares e diz que ainda não mediu", () => {
-    const texto = formatarRelatorio({ protocolo: PROTOCOLO, amostra: AMOSTRA, classesOferecidas: 231, medicao: null });
+    const texto = formatarRelatorio({ protocolo: PROTOCOLO, amostra: AMOSTRA, classesOferecidas: classesDaGravacao(), medicao: null });
     expect(texto).toContain("| precisão das sugestões | das sugestões de classe para itens de classes oferecidas, as que batem com o CATMAT | 85% |");
     expect(texto).toContain("um Choice entre 231 classes");
     expect(texto).toContain("Para um item das 1 classes não oferecidas (1 itens)");
@@ -47,11 +48,12 @@ describe("formatarRelatorio", () => {
 
   it("depois da medição, traz o veredito, a linha de cada classe e o custo", () => {
     const avaliacao = avaliar(AMOSTRA, RESULTADOS, PROTOCOLO);
-    const texto = formatarRelatorio({ protocolo: PROTOCOLO, amostra: AMOSTRA, classesOferecidas: 231, medicao: { resultados: RESULTADOS, avaliacao } });
+    const texto = formatarRelatorio({ protocolo: PROTOCOLO, amostra: AMOSTRA, classesOferecidas: classesDaGravacao(), medicao: { resultados: RESULTADOS, avaliacao } });
     expect(texto).toContain("O selo de família sugerida entra, porque a precisão e os controles passaram.");
     expect(texto).toContain("| precisão das sugestões | 1 de 1 | 100,0% (21% a 100%) | 85% | passou |");
     expect(texto).toContain("| 3030 | CORREIAS / CORREAME | oferecida | 1 | 1 | 1 | 1 | 0 |  |");
     expect(texto).toContain("US$ 0,001");
+    expect(texto).toContain('Nenhum item que devia terminar em "nenhuma" recebeu uma classe.');
   });
 
   it("diz que o selo não entra quando a precisão falha", () => {
@@ -60,7 +62,7 @@ describe("formatarRelatorio", () => {
       respostas: [{ codigoItem: 1, ordem: "crescente", escolha: "7510", probabilidadeDaEscolha: 0.9, noul: 0.95 }, ...RESULTADOS.respostas.slice(1)],
     };
     const avaliacao = avaliar(AMOSTRA, errado, PROTOCOLO);
-    const texto = formatarRelatorio({ protocolo: PROTOCOLO, amostra: AMOSTRA, classesOferecidas: 231, medicao: { resultados: errado, avaliacao } });
+    const texto = formatarRelatorio({ protocolo: PROTOCOLO, amostra: AMOSTRA, classesOferecidas: classesDaGravacao(), medicao: { resultados: errado, avaliacao } });
     expect(texto).toContain("O selo de família sugerida não entra");
     expect(texto).toContain("Classes fracas: 3030.");
   });

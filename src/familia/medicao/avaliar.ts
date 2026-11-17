@@ -59,6 +59,12 @@ export interface Confusao {
   vezes: number;
 }
 
+/** Uma classe que a regra sugeriu para itens que deviam terminar em "nenhuma". */
+export interface DesvioDeControle {
+  classe: string;
+  vezes: number;
+}
+
 export interface FaixaDeProbabilidade {
   de: number;
   ate: number;
@@ -72,6 +78,7 @@ export interface Avaliacao {
   fora: { itens: number; emNenhuma: number };
   inversao: { itens: number; mesmaEscolha: number; mesmaDecisao: number; escolhaCertaInvertida: number; escolhaCertaNaOrdemNormal: number };
   confusoes: readonly Confusao[];
+  desviosDosControles: readonly DesvioDeControle[];
   faixas: readonly FaixaDeProbabilidade[];
   vereditos: { precisao: Veredito; cobertura: Veredito; controles: Veredito; inversao: Veredito };
   classesFracas: readonly ResumoDaClasse[];
@@ -107,6 +114,7 @@ export function avaliar(amostra: Amostra, resultados: Resultados, protocolo: Pro
     ]),
   );
   const confusoes = new Map<string, Confusao>();
+  const desvios = new Map<string, number>();
   const faixas = [0, ...CORTES_DAS_FAIXAS].map((de, i) => ({
     de,
     ate: CORTES_DAS_FAIXAS[i] ?? 1,
@@ -133,6 +141,8 @@ export function avaliar(amostra: Amostra, resultados: Resultados, protocolo: Pro
       resumo.sugestoes++;
       if (decisao === esperado) resumo.sugestoesCertas++;
     }
+
+    if (!resumo.classe.dentro && decisao !== NENHUMA) desvios.set(decisao, (desvios.get(decisao) ?? 0) + 1);
 
     if (resumo.classe.dentro) {
       const faixa = faixas[CORTES_DAS_FAIXAS.filter((corte) => resposta.probabilidadeDaEscolha >= corte).length];
@@ -184,6 +194,7 @@ export function avaliar(amostra: Amostra, resultados: Resultados, protocolo: Pro
     fora,
     inversao,
     confusoes: [...confusoes.values()].sort((a, b) => b.vezes - a.vezes || (a.esperada < b.esperada ? -1 : a.esperada > b.esperada ? 1 : 0)).slice(0, 8),
+    desviosDosControles: [...desvios].map(([classe, vezes]) => ({ classe, vezes })).sort((a, b) => b.vezes - a.vezes || (a.classe < b.classe ? -1 : 1)),
     faixas,
     vereditos,
     classesFracas: dentroDaOferta.filter((r) => r.itens > 0 && r.escolhaCerta / r.itens < limiares.acertoMinimoPorClasse),

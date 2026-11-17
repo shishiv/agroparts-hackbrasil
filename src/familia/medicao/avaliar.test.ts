@@ -76,6 +76,10 @@ describe("avaliar", () => {
     expect(avaliacao.confusoes).toEqual([{ esperada: "3030", escolhida: "3110", vezes: 1 }]);
   });
 
+  it("diz que classe a regra sugeriu para os controles que deviam terminar em nenhuma", () => {
+    expect(avaliacao.desviosDosControles).toEqual([{ classe: "3030", vezes: 1 }]);
+  });
+
   it("separa o acerto da escolha pela probabilidade que o Jev deu a ela", () => {
     expect(avaliacao.faixas.map((f) => [f.de, f.ate, f.itens, f.escolhaCerta])).toEqual([
       [0, 0.5, 1, 1],

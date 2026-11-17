@@ -47,7 +47,7 @@ describe("docs/medicao/familia.md", () => {
       : null;
     if (resultados && !resultados.ok) throw new Error("familia-respostas.json ilegível");
     const medicao = resultados?.ok ? { resultados: resultados.valor, avaliacao: avaliar(amostra, resultados.valor, PROTOCOLO) } : null;
-    const esperado = formatarRelatorio({ protocolo: PROTOCOLO, amostra, classesOferecidas: oferecidas().length, medicao });
+    const esperado = formatarRelatorio({ protocolo: PROTOCOLO, amostra, classesOferecidas: oferecidas(), medicao });
     expect(lerTexto("docs/medicao/familia.md")).toBe(esperado);
   });
 });

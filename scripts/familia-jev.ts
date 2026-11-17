@@ -245,7 +245,7 @@ async function comandoRelatorio(): Promise<void> {
     if ((erro as NodeJS.ErrnoException).code !== "ENOENT") throw erro;
   }
   const medicao = resultados ? { resultados, avaliacao: avaliar(amostra, resultados, PROTOCOLO) } : null;
-  await writeFile(ARQUIVO_DO_RELATORIO, formatarRelatorio({ protocolo: PROTOCOLO, amostra, classesOferecidas: oferecidas.length, medicao }));
+  await writeFile(ARQUIVO_DO_RELATORIO, formatarRelatorio({ protocolo: PROTOCOLO, amostra, classesOferecidas: oferecidas, medicao }));
   console.log(`familia-jev relatorio: docs/medicao/familia.md ${medicao ? "com resultado" : "só com o protocolo"}.`);
 }
 
