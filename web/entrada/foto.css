@@ -1,0 +1,34 @@
+.entrada-foto button {
+  min-height: 3rem;
+  padding: 0 1.25rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--acento);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+}
+
+.entrada-foto button.secundario {
+  border: 2px solid var(--apoio);
+  background: transparent;
+  color: var(--texto);
+}
+
+.entrada-foto textarea {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--apoio);
+  border-radius: 0.5rem;
+  background: var(--papel);
+  color: var(--texto);
+  font: inherit;
+  font-size: 1.25rem;
+}
+
+.entrada-acoes {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}

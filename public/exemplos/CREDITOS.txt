@@ -1,0 +1,78 @@
+Créditos das fotos de public/exemplos/
+
+Todas vêm da Wikimedia Commons, baixadas em 17/11/2026. Cada uma foi redimensionada para no máximo 1600 px no lado maior, recomprimida em JPEG (qualidade 85) e teve os metadados removidos. Nada mais foi alterado.
+Os textos corretos de cada foto estão em verdade.json. A medição que usa as fotos está em docs/medicao/foto.md.
+
+zkl-ur-6304.jpg
+  Título na Commons: 1984 deep groove ball bearing UR 6304 made in Czechoslovakia by ZKL.jpg
+  Autor: R. Henrik Nilsson
+  Licença: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0)
+  Fonte: https://commons.wikimedia.org/wiki/File:1984_deep_groove_ball_bearing_UR_6304_made_in_Czechoslovakia_by_ZKL.jpg
+
+fag-6304-rsr-lado-a.jpg
+  Título na Commons: 1990s FAG 6304 RSR single row deep groove ball bearing made in Germany view 1.jpg
+  Autor: R. Henrik Nilsson
+  Licença: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0)
+  Fonte: https://commons.wikimedia.org/wiki/File:1990s_FAG_6304_RSR_single_row_deep_groove_ball_bearing_made_in_Germany_view_1.jpg
+
+fag-6304-rsr-lado-b.jpg
+  Título na Commons: 1990s FAG 6304 RSR single row deep groove ball bearing made in Germany view 2.jpg
+  Autor: R. Henrik Nilsson
+  Licença: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0)
+  Fonte: https://commons.wikimedia.org/wiki/File:1990s_FAG_6304_RSR_single_row_deep_groove_ball_bearing_made_in_Germany_view_2.jpg
+
+nsk-608z.jpg
+  Título na Commons: 1990s NSK Nippon Seiko Kabushiki gaisha ball bearing 608Z made in Japan.jpg
+  Autor: R. Henrik Nilsson
+  Licença: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0)
+  Fonte: https://commons.wikimedia.org/wiki/File:1990s_NSK_Nippon_Seiko_Kabushiki_gaisha_ball_bearing_608Z_made_in_Japan.jpg
+
+fag-6207-re17.jpg
+  Título na Commons: 1990s ball bearing 6207 RE17 by Fischers Aktien Gesellschaft Bielefeld factory Germany.jpg
+  Autor: R. Henrik Nilsson
+  Licença: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0)
+  Fonte: https://commons.wikimedia.org/wiki/File:1990s_ball_bearing_6207_RE17_by_Fischers_Aktien_Gesellschaft_Bielefeld_factory_Germany.jpg
+
+nachi-6203-c3.jpg
+  Título na Commons: Kugellager 6203 C3.jpg
+  Autor: SimonWaldherr
+  Licença: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)
+  Fonte: https://commons.wikimedia.org/wiki/File:Kugellager_6203_C3.jpg
+
+rkw-6203-c3-m7.jpg
+  Título na Commons: Second half of 20th century ball bearing 6203 C3 M7 by RKW.jpg
+  Autor: R. Henrik Nilsson
+  Licença: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0)
+  Fonte: https://commons.wikimedia.org/wiki/File:Second_half_of_20th_century_ball_bearing_6203_C3_M7_by_RKW.jpg
+
+gpz-207-caixa.jpg
+  Título na Commons: GPZ 207 single-row groove ball bearing 6207 in original packaging.jpg
+  Autor: Marnevitim
+  Licença: CC0 (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
+  Fonte: https://commons.wikimedia.org/wiki/File:GPZ_207_single-row_groove_ball_bearing_6207_in_original_packaging.jpg
+
+skf-129-ha.jpg
+  Título na Commons: 1950s ball bearing 129 HA by Swedish company SKF made in Sweden.jpg
+  Autor: R. Henrik Nilsson
+  Licença: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0)
+  Fonte: https://commons.wikimedia.org/wiki/File:1950s_ball_bearing_129_HA_by_Swedish_company_SKF_made_in_Sweden.jpg
+
+hoffmann-330-v4.jpg
+  Título na Commons: 1970 or earlier ball bearing 330 V4 MTY Hoffmann Manufacturing Company England.jpg
+  Autor: R. Henrik Nilsson
+  Licença: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0)
+  Fonte: https://commons.wikimedia.org/wiki/File:1970_or_earlier_ball_bearing_330_V4_MTY_Hoffmann_Manufacturing_Company_England.jpg
+
+sem-texto-bmw.jpg
+  Título na Commons: 2020-12-14-Rillenkugellager-0747.jpg
+  Autor: Superbass
+  Licença: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)
+  Fonte: https://commons.wikimedia.org/wiki/File:2020-12-14-Rillenkugellager-0747.jpg
+
+sem-texto-solaris.jpg
+  Título na Commons: Ball bearing.jpg
+  Autor: Solaris2006
+  Licença: CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
+  Fonte: https://commons.wikimedia.org/wiki/File:Ball_bearing.jpg
+
+As cópias das fotos CC BY-SA continuam sob a mesma licença CC BY-SA, e as CC BY sob CC BY. A CC0 não exige crédito, que fica aqui por cortesia.

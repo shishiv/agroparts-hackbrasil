@@ -1,0 +1,59 @@
+{
+  "foto": "public/exemplos/nsk-608z.jpg",
+  "gravadaEm": "17/11/2026, chamada de transcrever() a us.openai.gpt-6-luna com a foto acima",
+  "resposta": {
+    "metrics": {
+      "latencyMs": 1318
+    },
+    "output": {
+      "message": {
+        "content": [
+          {
+            "text": "JAPAN\n608\nUST\n"
+          }
+        ],
+        "role": "assistant"
+      }
+    },
+    "stopReason": "end_turn",
+    "usage": {
+      "cacheReadInputTokenCount": 2550,
+      "cacheReadInputTokens": 2550,
+      "cacheWriteInputTokenCount": 0,
+      "cacheWriteInputTokens": 0,
+      "inputTokens": 2,
+      "outputTokens": 12,
+      "serverToolUsage": {},
+      "totalTokens": 2564
+    }
+  },
+  "semTexto": {
+    "observacao": "Forma da resposta sem reasoning.effort: o raciocínio consome os 300 tokens e o texto não vem. O bloco redigido foi cortado.",
+    "metrics": {
+      "latencyMs": 3932
+    },
+    "output": {
+      "message": {
+        "role": "assistant",
+        "content": [
+          {
+            "reasoningContent": {
+              "redactedContent": "(cortado)"
+            }
+          }
+        ]
+      }
+    },
+    "stopReason": "max_tokens",
+    "usage": {
+      "cacheReadInputTokens": 0,
+      "cacheWriteInputTokens": 2550,
+      "inputTokens": 2,
+      "outputTokens": 300,
+      "totalTokens": 2852
+    }
+  },
+  "recusaDeTemperatura": {
+    "message": "This model doesn't support the temperature field. Remove temperature and try again."
+  }
+}

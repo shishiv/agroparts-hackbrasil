@@ -1,0 +1,32 @@
+{
+  "lidoPor": "Claude Opus 5.5, olhando cada foto ampliada. Nenhuma pessoa conferiu ainda.",
+  "fotos": [
+    { "arquivo": "zkl-ur-6304.jpg", "linhas": ["ZKL", "UR 6304", "CSSR"], "ambiguo": ["CY"], "designacao": "6304" },
+    { "arquivo": "fag-6304-rsr-lado-a.jpg", "linhas": [], "ambiguo": ["530880A", "1 B", "I B"], "designacao": null },
+    { "arquivo": "fag-6304-rsr-lado-b.jpg", "linhas": ["F1530X", "6304 RSR"], "ambiguo": ["GERMANY"], "designacao": "6304 RSR" },
+    { "arquivo": "nsk-608z.jpg", "linhas": ["NSK", "608Z", "JAPAN"], "ambiguo": [], "designacao": "608Z" },
+    {
+      "arquivo": "fag-6207-re17.jpg",
+      "linhas": ["GERMANY", "FAG", "6207", "17", "FAG", "6207", "17"],
+      "ambiguo": ["R E"],
+      "designacao": "6207"
+    },
+    { "arquivo": "nachi-6203-c3.jpg", "linhas": ["NACHI", "6203 C3"], "ambiguo": [], "designacao": "6203 C3" },
+    { "arquivo": "rkw-6203-c3-m7.jpg", "linhas": ["RKW", "6203 C3", "M7"], "ambiguo": [], "designacao": "6203 C3" },
+    {
+      "arquivo": "gpz-207-caixa.jpg",
+      "linhas": ["GPZ BEARINGS", "GPZ 207 (6207)", "EXPORTED BY STANKOIMPORT", "MADE IN USSR"],
+      "ambiguo": [],
+      "designacao": "6207"
+    },
+    {
+      "arquivo": "skf-129-ha.jpg",
+      "linhas": ["SKF", "FABRIQUE EN SUEDE", "MADE IN SWEDEN", "HA 129"],
+      "ambiguo": ["UM", "UR"],
+      "designacao": null
+    },
+    { "arquivo": "hoffmann-330-v4.jpg", "linhas": ["HOFFMANN", "MTY", "ENGLAND", "330 V4"], "ambiguo": [], "designacao": null },
+    { "arquivo": "sem-texto-bmw.jpg", "linhas": [], "ambiguo": [], "designacao": null },
+    { "arquivo": "sem-texto-solaris.jpg", "linhas": [], "ambiguo": [], "designacao": null }
+  ]
+}

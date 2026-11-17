@@ -1,0 +1,298 @@
+{
+  "modelo": "us.openai.gpt-6-luna",
+  "feitoEm": "2026-11-17T14:23:31.289Z",
+  "passadas": [
+    [
+      {
+        "arquivo": "zkl-ur-6304.jpg",
+        "texto": "ZKL\nUR\n6204\nC3 SR\nCY",
+        "ms": 2586,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 2550,
+          "leituraDeCache": 0,
+          "saida": 17
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "fag-6304-rsr-lado-a.jpg",
+        "texto": "[ilegível]",
+        "ms": 1497,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 2550,
+          "leituraDeCache": 0,
+          "saida": 8
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "fag-6304-rsr-lado-b.jpg",
+        "texto": "FAG\n6304 FSR",
+        "ms": 1567,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 2550,
+          "leituraDeCache": 0,
+          "saida": 11
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "nsk-608z.jpg",
+        "texto": "JAPAN\n608\nUSTV",
+        "ms": 1586,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 0,
+          "leituraDeCache": 2550,
+          "saida": 12
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "fag-6207-re17.jpg",
+        "texto": "GERMANY  \nR·F·E  \n17  \nFAG  \n6207  \n17  \nFAG  \n6207",
+        "ms": 1716,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 2550,
+          "leituraDeCache": 0,
+          "saida": 29
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "nachi-6203-c3.jpg",
+        "texto": "6203 C3\nNACHI",
+        "ms": 1530,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 2550,
+          "leituraDeCache": 0,
+          "saida": 12
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "rkw-6203-c3-m7.jpg",
+        "texto": "6203\nRKW\nM7",
+        "ms": 1720,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 2550,
+          "leituraDeCache": 0,
+          "saida": 12
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "gpz-207-caixa.jpg",
+        "texto": "GPZ\nBEARINGS\nGPZ 207 162071\nEXPORTED BY\nSTANK/IMPORT\nMADE IN USSR",
+        "ms": 1750,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 1950,
+          "leituraDeCache": 0,
+          "saida": 32
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "skf-129-ha.jpg",
+        "texto": "FABRIQUE EN SUÈDE\nSKF\nN° 629\nSWEDEN",
+        "ms": 1625,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 2550,
+          "leituraDeCache": 0,
+          "saida": 23
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "hoffmann-330-v4.jpg",
+        "texto": "MTY\nENGLAND\nHOFFMANN\n350\nA 4",
+        "ms": 1596,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 2550,
+          "leituraDeCache": 0,
+          "saida": 22
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "sem-texto-bmw.jpg",
+        "texto": "[ilegível]",
+        "ms": 1591,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 1750,
+          "leituraDeCache": 0,
+          "saida": 8
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "sem-texto-solaris.jpg",
+        "texto": "[ilegível]",
+        "ms": 991,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 1240,
+          "leituraDeCache": 0,
+          "saida": 8
+        },
+        "falha": null
+      }
+    ],
+    [
+      {
+        "arquivo": "zkl-ur-6304.jpg",
+        "texto": "ZKL\nUR 6017\nC3 SR\nCY",
+        "ms": 2164,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 0,
+          "leituraDeCache": 2550,
+          "saida": 17
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "fag-6304-rsr-lado-a.jpg",
+        "texto": "[ilegível]",
+        "ms": 1563,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 0,
+          "leituraDeCache": 2550,
+          "saida": 8
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "fag-6304-rsr-lado-b.jpg",
+        "texto": "FAG\n6304 2RSR",
+        "ms": 1604,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 0,
+          "leituraDeCache": 2550,
+          "saida": 13
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "nsk-608z.jpg",
+        "texto": "JAPAN\n608Z\nTSL V3",
+        "ms": 1491,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 0,
+          "leituraDeCache": 2550,
+          "saida": 15
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "fag-6207-re17.jpg",
+        "texto": "GERMANY\nR·F\n17\nR·F\nFAG\n6207\n17\n[ilegível]",
+        "ms": 2127,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 0,
+          "leituraDeCache": 2550,
+          "saida": 31
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "nachi-6203-c3.jpg",
+        "texto": "6203 C3\nNACHI",
+        "ms": 1724,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 0,
+          "leituraDeCache": 2550,
+          "saida": 11
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "rkw-6203-c3-m7.jpg",
+        "texto": "6203\nRKW\nM7",
+        "ms": 1783,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 0,
+          "leituraDeCache": 2550,
+          "saida": 12
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "gpz-207-caixa.jpg",
+        "texto": "GPZ\nBEARINGS\nGPZ 207.162071\nEXPORTED BY\nSTANKIMPORT\nMADE IN USSR",
+        "ms": 1220,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 0,
+          "leituraDeCache": 1950,
+          "saida": 31
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "skf-129-ha.jpg",
+        "texto": "FAMOUS\nENGLAND\nMADE IN\nCHINA\n6203\n4H",
+        "ms": 1763,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 0,
+          "leituraDeCache": 2550,
+          "saida": 24
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "hoffmann-330-v4.jpg",
+        "texto": "M.TY\nENGLAND\nHOFMANN\n3504 A 3",
+        "ms": 2127,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 0,
+          "leituraDeCache": 2550,
+          "saida": 22
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "sem-texto-bmw.jpg",
+        "texto": "[ilegível]",
+        "ms": 1378,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 0,
+          "leituraDeCache": 1750,
+          "saida": 8
+        },
+        "falha": null
+      },
+      {
+        "arquivo": "sem-texto-solaris.jpg",
+        "texto": "[ilegível]",
+        "ms": 1246,
+        "uso": {
+          "entrada": 2,
+          "escritaDeCache": 0,
+          "leituraDeCache": 1240,
+          "saida": 8
+        },
+        "falha": null
+      }
+    ]
+  ]
+}
