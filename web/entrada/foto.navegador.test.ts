@@ -84,10 +84,10 @@ describe("redução da foto no navegador", () => {
 });
 
 describe("o botão de foto", () => {
-  it("começa só com o botão Foto, que abre a câmera traseira", () => {
+  it("começa só com o botão Achar peça por foto, que abre a câmera traseira", () => {
     const { raiz } = montar();
     expect(estado(raiz)).toBe("pronta");
-    expect(botao(raiz, "Foto")).toBeTruthy();
+    expect(botao(raiz, "Achar peça por foto")).toBeTruthy();
     const arquivo = raiz.querySelector("input[type=file]");
     expect([arquivo?.getAttribute("accept"), arquivo?.getAttribute("capture")]).toEqual(["image/*", "environment"]);
   });
@@ -129,19 +129,45 @@ describe("o botão de foto", () => {
     expect(publicados).toEqual([]);
   });
 
-  it("quando a função falha, avisa e deixa tentar de novo", async () => {
-    const { raiz, publicados } = montar({ buscar: async () => resposta(502, { erro: "modelo-indisponivel" }) });
+  it.each([
+    ["o site estático não tem a função (404 com HTML)", () => ({ ok: false, status: 404, json: async () => Promise.reject(new SyntaxError("<!doctype")) }), "A leitura de foto está indisponível agora."],
+    ["a função está sem a chave da AWS (500)", () => resposta(500, { erro: "funcao-sem-credencial" }), "A leitura de foto está indisponível agora."],
+    ["o Bedrock falhou (502)", () => resposta(502, { erro: "modelo-indisponivel" }), "A leitura de foto está indisponível agora."],
+    ["a função responde 200 com HTML no lugar do JSON", () => ({ ok: true, status: 200, json: async () => Promise.reject(new SyntaxError("<!doctype")) }), "A leitura de foto está indisponível agora."],
+    ["o celular está sem rede", () => Promise.reject(new TypeError("Failed to fetch")), "A leitura de foto está indisponível agora."],
+    ["bateu o limite (429)", () => resposta(429, { erro: "limite" }), "Limite da demo atingido. Tente em um minuto."],
+  ])("quando %s, diz em português e deixa tentar de novo", async (_, responder, aviso) => {
+    const { raiz, publicados } = montar({ buscar: async () => responder() });
     escolher(raiz, JPEG);
     await vi.waitFor(() => expect(estado(raiz)).toBe("erro"));
-    expect(raiz.querySelector("[role=alert]")?.textContent).toBe("Não consegui ler a foto.");
-    expect(botao(raiz, "Foto")).toBeTruthy();
+    expect(raiz.querySelector("[role=alert]")?.textContent).toBe(aviso);
+    expect(botao(raiz, "Achar peça por foto")).toBeTruthy();
     expect(publicados).toEqual([]);
   });
 
-  it("quando a foto não reduz, também avisa", async () => {
-    const { raiz } = montar({ reduzir: async () => Promise.reject(new Error("foto corrompida")) });
+  it("depois de uma falha, a segunda foto lê normalmente", async () => {
+    let pedidos = 0;
+    const { raiz } = montar({ buscar: async () => (++pedidos === 1 ? resposta(502, { erro: "modelo-indisponivel" }) : resposta(200, DO_MODELO)) });
     escolher(raiz, JPEG);
     await vi.waitFor(() => expect(estado(raiz)).toBe("erro"));
+    escolher(raiz, JPEG);
+    await vi.waitFor(() => expect(estado(raiz)).toBe("conferindo"));
+    expect(campo(raiz).value).toBe(DO_MODELO.texto);
+  });
+
+  it("quando a foto não reduz, diz que não conseguiu abri-la e não chama a função", async () => {
+    const pedidos: string[] = [];
+    const { raiz } = montar({
+      reduzir: async () => Promise.reject(new Error("foto corrompida")),
+      buscar: async (endereco) => {
+        pedidos.push(endereco);
+        return resposta(200, DO_MODELO);
+      },
+    });
+    escolher(raiz, JPEG);
+    await vi.waitFor(() => expect(estado(raiz)).toBe("erro"));
+    expect(raiz.querySelector("[role=alert]")?.textContent).toBe("Não consegui abrir esta foto.");
+    expect(pedidos).toEqual([]);
   });
 });
 
@@ -161,7 +187,7 @@ describe("o aviso à página do equipamento", () => {
     document.body.append(pagina);
     montados.push(pagina);
     const sinal = new EventTarget();
-    await montarEquipamento(pagina, "004512", { buscar: servidorDaDemo().buscar, ir: () => undefined, escutar: sinal });
+    await montarEquipamento(pagina, "004512", { buscar: servidorDaDemo().buscar, ir: () => undefined, escutar: sinal, entradas: [] });
     const { raiz } = montar({
       buscar: async () => resposta(200, { ...DO_MODELO, texto }),
       publicar: (detalhe) => void sinal.dispatchEvent(new CustomEvent(PECA_IDENTIFICADA, { detail: detalhe })),

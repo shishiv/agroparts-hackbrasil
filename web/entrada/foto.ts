@@ -1,8 +1,23 @@
 import { PECA_IDENTIFICADA, type PecaIdentificada } from "../../src/contrato";
-import { identificarPeca, ladosReduzidos, lerFoto, QUALIDADE_DO_JPEG, type Buscar, type TextoDaFoto } from "../../src/entrada/foto";
+import {
+  FotoNaoLida,
+  identificarPeca,
+  ladosReduzidos,
+  lerFoto,
+  QUALIDADE_DO_JPEG,
+  type Buscar,
+  type FalhaDaFoto,
+  type TextoDaFoto,
+} from "../../src/entrada/foto";
 import { h } from "../inicio/dom";
 import "./foto.css";
 import type { ModuloDeEntrada } from "./index";
+
+const MENSAGEM: Readonly<Record<FalhaDaFoto | "foto-ilegivel", string>> = {
+  "foto-ilegivel": "Não consegui abrir esta foto.",
+  limite: "Limite da demo atingido. Tente em um minuto.",
+  indisponivel: "A leitura de foto está indisponível agora.",
+};
 
 export interface Ambiente {
   buscar: Buscar;
@@ -43,7 +58,7 @@ export function criarEntradaDeFoto(ambiente: () => Ambiente): ModuloDeEntrada {
       const { buscar, reduzir, publicar } = ambiente();
       const secao = h("section", { class: "entrada-foto" });
       const arquivo = h("input", { type: "file", accept: "image/*", capture: "environment", hidden: true });
-      const botao = h("button", { type: "button" }, "Foto");
+      const botao = h("button", { type: "button" }, "Achar peça por foto");
 
       const pronta = (aviso?: string): void => {
         secao.dataset.estado = aviso ? "erro" : "pronta";
@@ -51,16 +66,12 @@ export function criarEntradaDeFoto(ambiente: () => Ambiente): ModuloDeEntrada {
       };
 
       const conferir = (lido: TextoDaFoto): void => {
-        const campo = h("textarea", {
-          name: "texto-lido",
-          rows: "4",
-          spellcheck: "false",
-          "aria-label": "Texto lido da foto",
-        });
+        const campo = h("textarea", { id: "foto-lida", name: "texto-lido", rows: "4", spellcheck: "false" });
         campo.value = lido.texto;
         const formulario = h(
           "form",
           {},
+          h("label", { for: "foto-lida" }, "O que li na foto"),
           campo,
           h("div", { class: "entrada-acoes" }, h("button", { type: "submit" }, "Confirmar"), descartar()),
         );
@@ -83,10 +94,16 @@ export function criarEntradaDeFoto(ambiente: () => Ambiente): ModuloDeEntrada {
       async function ler(foto: File): Promise<void> {
         secao.dataset.estado = "lendo";
         secao.replaceChildren(h("p", { "aria-busy": "true", role: "status" }, "Lendo…"));
+        let jpeg: Blob;
         try {
-          conferir(await lerFoto(await reduzir(foto), buscar));
+          jpeg = await reduzir(foto);
         } catch {
-          pronta("Não consegui ler a foto.");
+          return pronta(MENSAGEM["foto-ilegivel"]);
+        }
+        try {
+          conferir(await lerFoto(jpeg, buscar));
+        } catch (erro) {
+          pronta(MENSAGEM[erro instanceof FotoNaoLida ? erro.falha : "indisponivel"]);
         }
       }
 

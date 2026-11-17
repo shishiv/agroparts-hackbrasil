@@ -15,6 +15,12 @@
   color: var(--texto);
 }
 
+.entrada-foto label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
 .entrada-foto textarea {
   display: block;
   width: 100%;

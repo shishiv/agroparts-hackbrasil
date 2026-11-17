@@ -5,6 +5,8 @@ import type {
   ItemDoHistorico,
   Leitura,
   MotivoRecusa,
+  Origem,
+  PecaIdentificada,
   Pendencia,
   Saldo,
   Troca,
@@ -37,8 +39,38 @@ const MOTIVOS: Readonly<Record<MotivoRecusa, string>> = {
   "sem-texto": "O cadastro não tem descrição.",
 };
 
+const MOTIVOS_DA_ENTRADA: Readonly<Record<MotivoRecusa, string>> = {
+  contradicao: "O texto se contradiz.",
+  "fora-das-familias": "Só rolamento rígido de esferas é identificado por enquanto.",
+  "sem-texto": "Não há texto para ler.",
+};
+
 function motivoDaLeitura(leitura: Exclude<Leitura, { decisao: "resolve" }>): string {
   return leitura.decisao === "revisa" ? leitura.pendencias.map((p) => PENDENCIAS[p]).join(" ") : MOTIVOS[leitura.motivo];
+}
+
+/** O texto que o modelo escreveu a partir da foto ou do áudio. A pessoa pode tê-lo corrigido antes de confirmar. */
+function textoQueVeio(origem: Origem): { quem: string; texto: string } | null {
+  if (origem.tipo === "foto") return { quem: "Texto lido na foto", texto: origem.textoLido };
+  if (origem.tipo === "audio") return { quem: "Texto ouvido", texto: origem.textoOuvido };
+  return null;
+}
+
+/** O aviso de uma peça que o motor não resolveu: diz que não deu, por quê, e mostra o texto que chegou. */
+export function naoIdentificada({ leitura, origem }: PecaIdentificada): Filho[] {
+  const veio = textoQueVeio(origem);
+  const porque =
+    leitura.decisao === "resolve"
+      ? null
+      : leitura.decisao === "revisa"
+        ? leitura.pendencias.map((p) => PENDENCIAS[p]).join(" ")
+        : MOTIVOS_DA_ENTRADA[leitura.motivo];
+  return [
+    h("p", {}, "Não deu para identificar a peça."),
+    porque && h("p", {}, porque),
+    veio && h("p", { class: "apoio" }, `${veio.quem}:`),
+    veio && h("p", { class: "original texto-lido" }, veio.texto),
+  ];
 }
 
 const NOMES_DE_ATRIBUTO: Readonly<Record<string, string>> = { serie: "série", vedacao: "vedação", folga: "folga" };
@@ -99,12 +131,12 @@ function usoPorCodigo(trocas: readonly Troca[]): Map<CodigoLegado, Uso> {
 const quantidadesTexto = (quantidades: ReadonlyMap<string, number>): string =>
   [...quantidades].map(([unidade, n]) => comUnidade(n, unidade)).join(" + ");
 
-function linhaDeSaldo(saldo: Saldo): HTMLElement {
+function linhaDeSaldo(saldo: Saldo, quemTem = ""): HTMLElement {
   return h(
     "li",
     { "data-codigo": saldo.codigo, "data-saldo": String(saldo.quantidade) },
     h("strong", {}, saldo.codigo),
-    ` · ${comUnidade(saldo.quantidade, saldo.unidade)}`,
+    ` · ${quemTem}saldo ${comUnidade(saldo.quantidade, saldo.unidade)}`,
     saldo.endereco === null ? null : ` · endereço ${saldo.endereco}`,
   );
 }
@@ -114,18 +146,21 @@ function blocoComLinhas(tipo: string, titulo: string, linhas: readonly HTMLEleme
 }
 
 export function blocoDeSaldo(tipo: string, titulo: string, saldos: readonly Saldo[]): HTMLElement | null {
-  return saldos.length === 0 ? null : blocoComLinhas(tipo, titulo, saldos.map(linhaDeSaldo));
+  return saldos.length === 0 ? null : blocoComLinhas(tipo, titulo, saldos.map((saldo) => linhaDeSaldo(saldo)));
 }
 
-/** Cada código que a máquina usou aparece, com o saldo dele ou dizendo que a usina não registrou estoque. */
+/**
+ * Cada código que a máquina usou aparece, com o saldo dele ou dizendo que o almoxarifado não tem o código.
+ * Saldo zero é um código que o almoxarifado tem, com quantidade 0, e a página não pode confundir os dois.
+ */
 function saldoNosCodigosDaMaquina(item: Peca): HTMLElement {
   const linhas = item.codigosUsadosAqui.flatMap((codigo) => {
     const doCodigo = item.saldoAqui.filter((s) => s.codigo === codigo);
     return doCodigo.length > 0
-      ? doCodigo.map(linhaDeSaldo)
-      : [h("li", { "data-codigo": codigo }, h("strong", {}, codigo), " · sem estoque registrado")];
+      ? doCodigo.map((saldo) => linhaDeSaldo(saldo, "o almoxarifado tem este código, "))
+      : [h("li", { "data-codigo": codigo }, h("strong", {}, codigo), " · o almoxarifado não tem este código")];
   });
-  return blocoComLinhas("aqui", "Saldo nos códigos desta máquina", linhas);
+  return blocoComLinhas("aqui", "No almoxarifado, códigos desta máquina", linhas);
 }
 
 function linhaDeTroca(troca: Troca): HTMLElement {
@@ -231,6 +266,7 @@ export function desenharHistorico(achado: Achado): Filho[] {
   const semChave = itens.filter((i): i is SemChave => i.tipo === "codigo-sem-chave");
   return [
     cabecalhoDaMaquina(equipamento),
+    h("div", { id: "entradas", class: "entradas" }),
     h("div", { id: "avisos", role: "status" }),
     itens.length === 0 && h("p", { class: "vazio" }, "Nenhuma troca registrada nesta máquina."),
     pecas.length > 0 &&

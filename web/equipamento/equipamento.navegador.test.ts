@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import { PECA_IDENTIFICADA, type Leitura, type PecaIdentificada } from "../../src/contrato";
 import { lerChave, lerFamilia } from "../../src/exportacao/valores";
 import { indiceDeGrupos } from "../../src/historico";
+import { entradasRegistradas } from "../entrada";
 import { montarInicio } from "../inicio/inicio";
 import { patrimonioDoCaminho } from "./carregar";
 import { exportacaoDaDemo, servidorDaDemo, unificacaoDaDemo } from "./demo-de-teste";
@@ -23,7 +24,7 @@ afterEach(() => {
 async function abrir(patrimonio: string, servidor = servidorDaDemo()) {
   const raiz = novaRaiz();
   const sinal = new EventTarget();
-  await montarEquipamento(raiz, patrimonio, { buscar: servidor.buscar, ir: () => undefined, escutar: sinal });
+  await montarEquipamento(raiz, patrimonio, { buscar: servidor.buscar, ir: () => undefined, escutar: sinal, entradas: [] });
   return { raiz, servidor, sinal };
 }
 
@@ -146,6 +147,15 @@ describe("a página mostra a conta que se faz à mão", () => {
     ]);
   });
 
+  it("004512: código fora do almoxarifado e código com saldo zero se leem diferente", async () => {
+    const { raiz } = await abrir("004512");
+    const linha = (codigo: string) => raiz.querySelector<HTMLElement>(`[data-estoque="aqui"] [data-codigo="${codigo}"]`)?.textContent;
+    expect(linha("10066")).toBe("10066 · o almoxarifado não tem este código");
+    expect(linha("10071")).toBe("10071 · o almoxarifado tem este código, saldo 0 UN");
+    expect(linha("10091")).toBe("10091 · o almoxarifado tem este código, saldo 2 UN · endereço A-03-5");
+    expect(raiz.querySelector('[data-estoque="outro"] [data-codigo="10059"]')?.textContent).toBe("10059 · saldo 3 UN · endereço B-05-1");
+  });
+
   it("explica por que um código sem chave ficou fora da soma", async () => {
     const { raiz } = await abrir("004512");
     const decisoes = new Map([...raiz.querySelectorAll<HTMLElement>(".sem-chave")].map((c) => [c.dataset.codigo, c.dataset.decisao]));
@@ -196,7 +206,7 @@ describe("patrimônio desconhecido", () => {
   it("o campo do aviso leva ao patrimônio digitado", async () => {
     const raiz = novaRaiz();
     const destinos: string[] = [];
-    await montarEquipamento(raiz, "999999", { buscar: servidorDaDemo().buscar, ir: (e) => destinos.push(e), escutar: new EventTarget() });
+    await montarEquipamento(raiz, "999999", { buscar: servidorDaDemo().buscar, ir: (e) => destinos.push(e), escutar: new EventTarget(), entradas: [] });
     const campo = raiz.querySelector<HTMLInputElement>("form input");
     if (!campo) throw new Error("sem campo");
     campo.value = "004512";
@@ -290,12 +300,92 @@ describe("o evento agroparts:peca-identificada", () => {
 
   it("chega mesmo quando é disparado num elemento da página e a janela escuta", async () => {
     const raiz = novaRaiz();
-    await montarEquipamento(raiz, "004512", { buscar: servidorDaDemo().buscar, ir: () => undefined, escutar: window });
+    await montarEquipamento(raiz, "004512", { buscar: servidorDaDemo().buscar, ir: () => undefined, escutar: window, entradas: [] });
     const [primeira] = pecasDe(raiz);
     const detalhe: PecaIdentificada = { leitura: leituraQueResolve(primeira?.dataset.peca ?? ""), origem: { tipo: "digitado" } };
     raiz.dispatchEvent(new CustomEvent(PECA_IDENTIFICADA, { detail: detalhe, bubbles: false }));
     await depoisDoAviso();
     expect(primeira?.classList.contains("destaque")).toBe(true);
+  });
+});
+
+describe("os botões de foto e de áudio na página da máquina", () => {
+  const botoes = (raiz: HTMLElement) => [...raiz.querySelectorAll<HTMLButtonElement>("#entradas button")].map((b) => b.textContent);
+
+  async function abrirComEntradas(patrimonio: string, servidor = servidorDaDemo()) {
+    const raiz = novaRaiz();
+    await montarEquipamento(raiz, patrimonio, { buscar: servidor.buscar, ir: () => undefined, escutar: window, entradas: entradasRegistradas });
+    return raiz;
+  }
+
+  it("004512 mostra Achar peça por foto e Achar peça por voz, entre o cabeçalho e as peças", async () => {
+    const raiz = await abrirComEntradas("004512");
+    expect(botoes(raiz)).toEqual(["Achar peça por foto", "Achar peça por voz"]);
+    const ordem = [...raiz.children].map((f) => f.id || f.className);
+    expect(ordem).toEqual(["maquina", "entradas", "avisos", "pecas", "sem-chave-lista"]);
+  });
+
+  it("não monta botão onde não há máquina: patrimônio desconhecido e falha do servidor", async () => {
+    expect(botoes(await abrirComEntradas("004512"))).toHaveLength(2);
+    expect(botoes(await abrirComEntradas("999999"))).toEqual([]);
+    expect(botoes(await abrirComEntradas("004512", servidorDaDemo(new Set(["/maquinas/004512.json"]))))).toEqual([]);
+  });
+
+  it("uma foto confirmada que o motor lê destaca o grupo da máquina, pelo evento da janela", async () => {
+    const raiz = await abrirComEntradas("004512");
+    const pagina = raiz.querySelector<HTMLElement>('[data-peca$="|6312|ZZ|C3"]');
+    const publicada = leituraQueResolve(pagina?.dataset.peca ?? "");
+    window.dispatchEvent(new CustomEvent(PECA_IDENTIFICADA, { detail: { leitura: publicada, origem: { tipo: "digitado" } } }));
+    await depoisDoAviso();
+    expect(pecasDe(raiz).map((p) => p.classList.contains("destaque"))).toEqual([false, true]);
+  });
+});
+
+describe("a peça que o motor não resolve", () => {
+  const sinalComFoto = (texto: string, leitura: Leitura): PecaIdentificada => ({
+    leitura,
+    origem: { tipo: "foto", modelo: "us.openai.gpt-6-luna", textoLido: texto, confirmadoPelaPessoa: true },
+  });
+
+  async function avisoDe(detalhe: PecaIdentificada): Promise<HTMLElement> {
+    const { raiz, sinal } = await abrir("004512");
+    sinal.dispatchEvent(new CustomEvent(PECA_IDENTIFICADA, { detail: detalhe }));
+    await depoisDoAviso();
+    expect(pecasDe(raiz).some((p) => p.classList.contains("destaque"))).toBe(false);
+    return raiz.querySelector<HTMLElement>('#avisos [data-aviso="sem-chave"]') ?? expect.fail("sem aviso");
+  }
+
+  it("foto recusada: diz que não deu, por quê, e mostra o texto lido linha por linha", async () => {
+    const aviso = await avisoDe(
+      sinalComFoto("JAPAN\n608\nUST", { decisao: "recusa", motivo: "fora-das-familias", detalhe: "", atributos: [] }),
+    );
+    expect([...aviso.querySelectorAll("p")].map((p) => p.textContent)).toEqual([
+      "Não deu para identificar a peça.",
+      "Só rolamento rígido de esferas é identificado por enquanto.",
+      "Texto lido na foto:",
+      "JAPAN\n608\nUST",
+    ]);
+  });
+
+  it("áudio em revisão: diz o que falta e mostra o texto ouvido", async () => {
+    const aviso = await avisoDe({
+      leitura: { decisao: "revisa", familia: null, pendencias: ["sufixo-desconhecido"], atributos: [] },
+      origem: { tipo: "audio", modelo: "whisper-large-v3-turbo", textoOuvido: "Rolamento 6304", confirmadoPelaPessoa: true },
+    });
+    expect([...aviso.querySelectorAll("p")].map((p) => p.textContent)).toEqual([
+      "Não deu para identificar a peça.",
+      "Falta o sufixo do rolamento, como ZZ ou 2RS.",
+      "Texto ouvido:",
+      "Rolamento 6304",
+    ]);
+  });
+
+  it("texto digitado não ganha 'texto lido': a pessoa já sabe o que digitou", async () => {
+    const aviso = await avisoDe({
+      leitura: { decisao: "recusa", motivo: "sem-texto", detalhe: "", atributos: [] },
+      origem: { tipo: "digitado" },
+    });
+    expect([...aviso.querySelectorAll("p")].map((p) => p.textContent)).toEqual(["Não deu para identificar a peça.", "Não há texto para ler."]);
   });
 });
 
