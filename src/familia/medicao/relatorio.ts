@@ -45,7 +45,7 @@ Escrito e commitado antes da primeira chamada ao Jev sobre a amostra. O arquivo 
 
 **O que o Jev recebe.** A descrição de um item. Duas perguntas na mesma chamada: um Choice entre ${classesOferecidas} classes do CATMAT (as classes ativas dos grupos listados em \`GRUPOS_OFERECIDOS\`, em \`src/familia/classes.ts\`) mais "nenhuma", e um Noul companheiro que pergunta se alguma dessas classes serve. O modelo é o \`${MODELO_DO_JEV}\`, pinado em \`MODELO_DO_JEV\`, porque os limiares valem para ele e um alias muda sem aviso.
 
-**Regra.** A sugestão é uma classe só quando o Noul é de ${virgula(regra.noulMinimo, 2)} ou mais, o Choice não escolheu "nenhuma" e a probabilidade da classe escolhida é de ${virgula(regra.escolhaMinima, 2)} ou mais (\`${regra.versao}\`). Nos outros casos a resposta é "nenhuma". A pergunta e a regra foram fixadas depois de ver as respostas dos 24 códigos do cadastro da demo, que não fazem parte da amostra, e não mudaram desde então.
+**Regra.** A sugestão é uma classe só quando o Noul é de ${virgula(regra.noulMinimo, 2)} ou mais, o Choice não escolheu "nenhuma" e a probabilidade da classe escolhida é de ${virgula(regra.escolhaMinima, 2)} ou mais (\`${regra.versao}\`). Nos outros casos a resposta é "nenhuma". A pergunta teve duas versões, e as duas só rodaram nos 24 códigos do cadastro da demo, que não fazem parte da amostra. A segunda manda escolher pela peça que o texto nomeia, e não pelo material nem pelo equipamento, e é a que vale aqui. A regra e a pergunta não mudam depois da amostra.
 
 **Amostra.** ${amostra.itens.length} itens públicos do CATMAT, consultados em ${amostra.consultadoEm}: ${protocolo.itensPorClasse} por classe, em ${dentro} classes oferecidas e ${fora} classes que o Jev não recebe. O sorteio pega os itens ativos da classe, sem sinal de dado pessoal e com descrição diferente, e ordena por um hash de \`${amostra.semente}\` e do código do item (\`sortearItens\`, em \`src/familia/medicao/amostra.ts\`). A amostra está em \`docs/medicao/familia-amostra.json\`.
 
@@ -53,7 +53,7 @@ Escrito e commitado antes da primeira chamada ao Jev sobre a amostra. O arquivo 
 
 **Ordem das opções.** O Jev tende a favorecer as primeiras opções de um Choice (https://docs.typesafe.ai/model-jaggedness.md). ${protocolo.itensNaInversao} itens de classes oferecidas são perguntados de novo com as classes na ordem inversa, e a decisão tem de continuar a mesma.
 
-**O que cada resultado decide.**
+**O que cada resultado decide.** Uma medida passa quando o valor medido, sem o intervalo, chega ao mínimo.
 
 ${tabela(
   ["medida", "o que conta", "mínimo"],
