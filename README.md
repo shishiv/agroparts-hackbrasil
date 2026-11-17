@@ -21,11 +21,15 @@ Fornecedor, órgão comprador e preço das compras públicas não entram. O test
 - Recusa: texto contraditório, outra família (rolamento que não é rígido, ou peça que não é rolamento) ou descrição vazia.
 - `esperado-particao.json` tem a decisão de cada código e os grupos. `unificacao-de-exemplo.json` traz chaves, rótulos e trechos provisórios. `esperado-skus.json` traz misturas e fragmentações plantadas.
 
+## Tag NFC: na demo, simulada
+
+A demo não tem tag NFC física, e a compra das tags para metal ficou para depois. Na página inicial, três placas de patrimônio desenhadas em SVG (004512, 004504 e 004540) simulam o toque: tocar numa delas mostra a leitura e abre `/e/<patrimônio>`, o mesmo endereço que a tag gravaria. A tela diz "Demonstração: simula o toque na tag NFC". O site não lê tag nenhuma e não usa Web NFC. O número digitado continua abrindo o mesmo endereço. O código está em `web/inicio/toque.ts` e `web/inicio/placa.ts`.
+
 ## Rotas
 
 | Rota | Arquivos |
 |---|---|
-| `/` | `web/index.html`, `web/inicio/main.ts` |
+| `/` | `web/index.html`, `web/inicio/main.ts`. Campo de número e as placas do toque simulado. |
 | `/e/<patrimônio>` | `web/equipamento/index.html`, `web/equipamento/main.ts`. A página baixa só `/maquinas/<patrimônio>.json`; `/grupos.json` é o índice de grupos com saldo. `public/_redirects` reescreve tudo que está sob `/e/` para `/equipamento/`, e `vite.config.ts` faz o mesmo no `dev` e no `preview`. Por isso o JSON de cada máquina não pode ficar sob `/e/`. |
 | `/diagnostico` | `web/diagnostico/index.html`, `web/diagnostico/main.ts` |
 

@@ -5,7 +5,8 @@
 **Tag do equipamento:** código curto da máquina na usina, como B-104. Não é a tag NFC da placa.
 **Placa de patrimônio:** placa física que a usina já fixa no equipamento, com o número gravado e uma tag NFC que abre a página do equipamento.
 **Número de patrimônio:** número gravado na placa; abre a página quando digitado.
-**Tag NFC para metal:** etiqueta NFC com camada de ferrite, que funciona colada em metal.
+**Tag NFC para metal:** etiqueta NFC com camada de ferrite, que funciona colada em metal. A demo não tem tag física: as tags ficam para depois, e a página inicial simula o toque (ver Toque simulado).
+**Toque simulado:** na página inicial, tocar numa placa desenhada no site mostra uma leitura curta e abre `/e/<patrimônio>`, o mesmo endereço que a tag gravaria. Só demonstração: o site não lê tag nenhuma e não usa Web NFC.
 **Página do equipamento:** página aberta pela placa, com o histórico unificado do equipamento. Só lê.
 **Posição:** lugar da peça no equipamento, quando a exportação do CMMS informa.
 **Ordem de manutenção:** registro do CMMS de um serviço num equipamento.
