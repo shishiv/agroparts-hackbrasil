@@ -10,6 +10,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "preview:pages": "wrangler pages dev dist",
+    "deploy": "vite build && wrangler pages deploy dist --project-name agroparts-hackbrasil --branch main",
     "typecheck": "tsc --noEmit && tsc --noEmit -p functions",
     "test": "bun test",
     "test:navegador": "vitest run --project navegador",
