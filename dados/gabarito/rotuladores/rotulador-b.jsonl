@@ -1,0 +1,520 @@
+{"codigoItem":472443,"decisao":"recusa","motivo":"contradicao","nota":"O código Z indica uma blindagem, mas o texto afirma blindagem dupla."}
+{"codigoItem":472506,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6211 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":601154,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 3313 A/C3 é de outra família e o texto informa duas carreiras."}
+{"codigoItem":601435,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência N1013 BTK RCC IP4 não pertence à família definida."}
+{"codigoItem":387948,"decisao":"resolve","serie":"6313","vedacao":"Z","folga":"CN","provas":{"serie":"6313","vedacao":"Z","folga":null},"nota":"A referência determina a série 6313 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":455452,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência GE60-XL-KRR-B é de rolamento de inserção radial, fora da família."}
+{"codigoItem":317390,"decisao":"resolve","serie":"6213","vedacao":"ZZ","folga":"CN","provas":{"serie":"6213","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6213 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472645,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6210 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":606806,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":274566,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência GRAE 20 NPPB é de mancal com inserto, fora da família."}
+{"codigoItem":254315,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":472537,"decisao":"resolve","serie":"629","vedacao":"ZZ","folga":"CN","provas":{"serie":"629","vedacao":"ZZ","folga":null},"nota":"A referência determina a série miniatura 629 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":235213,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":472588,"decisao":"resolve","serie":"6809","vedacao":"ZZ","folga":"CN","provas":{"serie":"6809","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6809 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":326502,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":287183,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":472450,"decisao":"resolve","serie":"6011","vedacao":"ZZ","folga":"CN","provas":{"serie":"6011","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6011 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":357380,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6312 traz o sufixo 2ZR, que não determina vedação pelas regras."}
+{"codigoItem":319096,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 3984 é de rolamento cônico e não pertence à família."}
+{"codigoItem":283529,"decisao":"resolve","serie":"6312","vedacao":"ZZ","folga":"CN","provas":{"serie":"6312","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6312 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":606551,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 2206 é de rolamento autocompensador de duas carreiras."}
+{"codigoItem":613055,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência PART NUMBER 820504-52 não pertence à família definida."}
+{"codigoItem":472581,"decisao":"resolve","serie":"635","vedacao":"2RS","folga":"CN","provas":{"serie":"635","vedacao":"2RS","folga":null},"nota":"A referência determina a série miniatura 635 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":267273,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência UCR209MM é de mancal com inserto, fora da família."}
+{"codigoItem":250905,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":317396,"decisao":"resolve","serie":"6004","vedacao":"ZZ","folga":"CN","provas":{"serie":"6004","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6004 com duas blindagens e folga normal implícita."}
+{"codigoItem":472514,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6216 aparece sem código de vedação."}
+{"codigoItem":472583,"decisao":"resolve","serie":"6800","vedacao":"ZZ","folga":"CN","provas":{"serie":"6800","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6800 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472593,"decisao":"resolve","serie":"6908","vedacao":"2RS","folga":"CN","provas":{"serie":"6908","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6908 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":317406,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6303 aparece sem código de vedação."}
+{"codigoItem":466753,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 2351-090-084 não pertence à família definida."}
+{"codigoItem":472446,"decisao":"resolve","serie":"6016","vedacao":"ZZ","folga":"CN","provas":{"serie":"6016","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6016 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":466761,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 1517-020-083 não pertence à família definida."}
+{"codigoItem":317414,"decisao":"resolve","serie":"629","vedacao":"ZZ","folga":"CN","provas":{"serie":"629","vedacao":"ZZ","folga":null},"nota":"A referência determina a série miniatura 629 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":292853,"decisao":"resolve","serie":"6314","vedacao":"ZZ","folga":"CN","provas":{"serie":"6314","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6314 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":466738,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 1812-150-398 não pertence à família definida."}
+{"codigoItem":472547,"decisao":"resolve","serie":"6308","vedacao":"2RS","folga":"CN","provas":{"serie":"6308","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6308 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":472634,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6310 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":254313,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":611283,"decisao":"recusa","motivo":"fora-das-familias","nota":"O texto descreve rolo de apoio NATR 15 PP, fora da família."}
+{"codigoItem":472546,"decisao":"resolve","serie":"6305","vedacao":"2RS","folga":"CN","provas":{"serie":"6305","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6305 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":278296,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência UCR 211 é de mancal com inserto, fora da família."}
+{"codigoItem":318845,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":479590,"decisao":"resolve","serie":"6012","vedacao":"ZZ","folga":"CN","provas":{"serie":"6012","vedacao":"2Z","folga":null},"nota":"A referência determina a série 6012 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":606805,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":625866,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 1206 EKTN9 C3 é de rolamento autocompensador."}
+{"codigoItem":611422,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 1202 ETN9 é de rolamento autocompensador."}
+{"codigoItem":317408,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6305 aparece sem código de vedação."}
+{"codigoItem":472657,"decisao":"resolve","serie":"6312","vedacao":"ZZ","folga":"CN","provas":{"serie":"6312","vedacao":"2Z","folga":null},"nota":"A referência determina a série 6312 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":396846,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência GRAE 25 NPPB é de mancal com inserto, fora da família."}
+{"codigoItem":317424,"decisao":"resolve","serie":"6214","vedacao":"ZZ","folga":"CN","provas":{"serie":"6214","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6214 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":611133,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":472453,"decisao":"resolve","serie":"6010","vedacao":"2RS","folga":"CN","provas":{"serie":"6010","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6010 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":472630,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6208 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":601482,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 70BER 10HTVIVSUELP3 não pertence à família definida."}
+{"codigoItem":472474,"decisao":"resolve","serie":"6004","vedacao":"2RS","folga":"CN","provas":{"serie":"6004","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6004 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":346381,"decisao":"resolve","serie":"6306","vedacao":"ZZ","folga":"CN","provas":{"serie":"6306","vedacao":"2Z","folga":null},"nota":"A referência determina a série 6306 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":601431,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 8006 não pertence à família definida."}
+{"codigoItem":472599,"decisao":"resolve","serie":"6207","vedacao":"Z","folga":"CN","provas":{"serie":"6207","vedacao":"Z","folga":null},"nota":"A referência determina a série 6207 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":472475,"decisao":"resolve","serie":"6003","vedacao":"ZZ","folga":"CN","provas":{"serie":"6003","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6003 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":466744,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 2351-090-106 não pertence à família definida."}
+{"codigoItem":472654,"decisao":"resolve","serie":"6306","vedacao":"2RS","folga":"CN","provas":{"serie":"6306","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6306 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":606553,"decisao":"resolve","serie":"6408","vedacao":"ZZ","folga":"CN","provas":{"serie":"6408","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6408 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":465664,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":472578,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6315 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":472557,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6314 traz folga C3 e o sufixo desconhecido EQ, sem vedação determinada."}
+{"codigoItem":601114,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 3313 A/C3 não pertence à família definida."}
+{"codigoItem":603041,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":472649,"decisao":"resolve","serie":"6307","vedacao":"Z","folga":"C3","provas":{"serie":"6307","vedacao":"Z","folga":"C3"},"nota":"A referência determina a série 6307 com uma blindagem metálica e folga C3."}
+{"codigoItem":264287,"decisao":"resolve","serie":"6203","vedacao":"ZZ","folga":"CN","provas":{"serie":"6203","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6203 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":466755,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 1812-160-091 não pertence à família definida."}
+{"codigoItem":250908,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":318846,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":472647,"decisao":"resolve","serie":"6210","vedacao":"ZZ","folga":"C3","provas":{"serie":"6210","vedacao":"ZZ","folga":"C3"},"nota":"A referência determina a série 6210 com duas blindagens metálicas e folga C3."}
+{"codigoItem":478570,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":385825,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":357282,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6212 traz o sufixo 2ZR, que não determina vedação pelas regras."}
+{"codigoItem":601429,"decisao":"resolve","serie":"6311","vedacao":"ZZ","folga":"CN","provas":{"serie":"6311","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6311 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":467557,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência EX-205-G2 NTN-SNR não pertence à família definida."}
+{"codigoItem":472513,"decisao":"resolve","serie":"6214","vedacao":"ZZ","folga":"CN","provas":{"serie":"6214","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6214 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472512,"decisao":"resolve","serie":"6213","vedacao":"ZZ","folga":"CN","provas":{"serie":"6213","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6213 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":317391,"decisao":"resolve","serie":"6215","vedacao":"ZZ","folga":"CN","provas":{"serie":"6215","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6215 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":346386,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6312 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":606512,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 3305 é de rolamento de contato angular de duas carreiras."}
+{"codigoItem":472535,"decisao":"resolve","serie":"626","vedacao":"2RS","folga":"CN","provas":{"serie":"626","vedacao":"2RS","folga":null},"nota":"A referência determina a série miniatura 626 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":466739,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 1812-150-444 não pertence à família definida."}
+{"codigoItem":472636,"decisao":"resolve","serie":"6310","vedacao":"Z","folga":"CN","provas":{"serie":"6310","vedacao":"Z","folga":null},"nota":"A referência determina a série 6310 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":283524,"decisao":"recusa","motivo":"contradicao","nota":"O código 2RS1 indica borracha, mas o texto afirma que o rolamento é metálico e blindado."}
+{"codigoItem":606613,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 2312K é de rolamento autocompensador de duas carreiras."}
+{"codigoItem":472510,"decisao":"resolve","serie":"6211","vedacao":"ZZ","folga":"CN","provas":{"serie":"6211","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6211 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":606554,"decisao":"resolve","serie":"6024","vedacao":"ZZ","folga":"CN","provas":{"serie":"6024","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6024 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":601302,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série miniatura 625 aparece sem código de vedação."}
+{"codigoItem":456528,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 2351-020-159 não pertence à família definida."}
+{"codigoItem":317393,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6001 aparece sem código de vedação."}
+{"codigoItem":611132,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":319045,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 3207 A-2Z é de rolamento de contato angular de duas carreiras."}
+{"codigoItem":353161,"decisao":"resolve","serie":"6407","vedacao":"ZZ","folga":"CN","provas":{"serie":"6407","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6407 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":248356,"decisao":"resolve","serie":"6204","vedacao":"ZZ","folga":"CN","provas":{"serie":"6204","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6204 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":606515,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 3306 é de rolamento de contato angular de duas carreiras."}
+{"codigoItem":601353,"decisao":"resolve","serie":"6018","vedacao":"2RS","folga":"CN","provas":{"serie":"6018","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6018 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":472476,"decisao":"resolve","serie":"6003","vedacao":"2RS","folga":"CN","provas":{"serie":"6003","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6003 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":358721,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":466746,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 1812-160-121 não pertence à família definida."}
+{"codigoItem":261064,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":472454,"decisao":"resolve","serie":"6009","vedacao":"ZZ","folga":"CN","provas":{"serie":"6009","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6009 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":466745,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 2351-020-141 não pertence à família definida."}
+{"codigoItem":472470,"decisao":"resolve","serie":"6006","vedacao":"2RS","folga":"CN","provas":{"serie":"6006","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6006 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":311960,"decisao":"resolve","serie":"6318","vedacao":"ZZ","folga":"C3","provas":{"serie":"6318","vedacao":"ZZ","folga":"C3"},"nota":"A referência determina a série 6318 com duas blindagens metálicas e folga C3."}
+{"codigoItem":466757,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 2351-020-353 não pertence à família definida."}
+{"codigoItem":606516,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 3309 é de rolamento de contato angular de duas carreiras."}
+{"codigoItem":381670,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":319047,"decisao":"resolve","serie":"16009","vedacao":"ZZ","folga":"CN","provas":{"serie":"16009","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 16009 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":298024,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":150333,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":343106,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 1206 AKTN/C3 não pertence à família definida."}
+{"codigoItem":606517,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 3310 é de rolamento de contato angular de duas carreiras."}
+{"codigoItem":346332,"decisao":"resolve","serie":"6203","vedacao":"ZZ","folga":"CN","provas":{"serie":"6203","vedacao":"2Z","folga":null},"nota":"A referência determina a série 6203 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":601430,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 7606 CTPA não pertence à família definida."}
+{"codigoItem":290384,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6311 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":339448,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 1315 não pertence à família definida."}
+{"codigoItem":472486,"decisao":"resolve","serie":"6205","vedacao":"2RS","folga":"CN","provas":{"serie":"6205","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6205 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":601481,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência INA K não traz designação da família definida."}
+{"codigoItem":346424,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":472648,"decisao":"resolve","serie":"6307","vedacao":"Z","folga":"CN","provas":{"serie":"6307","vedacao":"Z","folga":null},"nota":"A referência determina a série 6307 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":607140,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":625865,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 1206 EKTN9 é de rolamento autocompensador."}
+{"codigoItem":481990,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência ER 205 16 não pertence à família definida."}
+{"codigoItem":606804,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":314231,"decisao":"resolve","serie":"6301","vedacao":"ZZ","folga":"CN","provas":{"serie":"6301","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6301 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":226915,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":269754,"decisao":"resolve","serie":"16003","vedacao":"ZZ","folga":"CN","provas":{"serie":"16.003","vedacao":"2Z","folga":null},"nota":"A referência com ponto de milhar determina a série 16003 com duas blindagens metálicas."}
+{"codigoItem":264286,"decisao":"resolve","serie":"6202","vedacao":"ZZ","folga":"CN","provas":{"serie":"6202","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6202 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":317418,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série miniatura 628 aparece sem código de vedação."}
+{"codigoItem":472644,"decisao":"resolve","serie":"6210","vedacao":"2RS","folga":"CN","provas":{"serie":"6210","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6210 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":314234,"decisao":"resolve","serie":"6306","vedacao":"ZZ","folga":"CN","provas":{"serie":"6306","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6306 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":486267,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":606541,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 7316-B é de rolamento de contato angular."}
+{"codigoItem":357384,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6207 traz o sufixo 2ZR, que não determina vedação pelas regras."}
+{"codigoItem":283626,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":606513,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 3212 é de rolamento de contato angular de duas carreiras."}
+{"codigoItem":601433,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 207 NU E é de rolamento cilíndrico, fora da família."}
+{"codigoItem":314204,"decisao":"resolve","serie":"6307","vedacao":"ZZ","folga":"CN","provas":{"serie":"6307","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6307 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472556,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6314 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":472596,"decisao":"resolve","serie":"6909","vedacao":"2RS","folga":"CN","provas":{"serie":"6909","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6909 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":285938,"decisao":"resolve","serie":"6310","vedacao":"ZZ","folga":"CN","provas":{"serie":"6310","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6310 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472445,"decisao":"resolve","serie":"6017","vedacao":"2RS","folga":"CN","provas":{"serie":"6017","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6017 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":317402,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6010 aparece sem código de vedação."}
+{"codigoItem":606809,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":317394,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6002 aparece sem código de vedação."}
+{"codigoItem":283554,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":283555,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":606542,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 2303 é de rolamento autocompensador de duas carreiras."}
+{"codigoItem":472598,"decisao":"resolve","serie":"6207","vedacao":"2RS","folga":"CN","provas":{"serie":"6207","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6207 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":250909,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":472640,"decisao":"recusa","motivo":"contradicao","nota":"O código 2RS indica borracha, mas o texto afirma blindagem metálica."}
+{"codigoItem":472444,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6017 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":601974,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":466477,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":346382,"decisao":"resolve","serie":"6212","vedacao":"ZZ","folga":"CN","provas":{"serie":"6212","vedacao":"2Z","folga":null},"nota":"A referência determina a série 6212 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":614042,"decisao":"recusa","motivo":"fora-das-familias","nota":"O texto descreve rolamento linear LBE 16 UU, fora da família."}
+{"codigoItem":606546,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 2307K é de rolamento autocompensador de duas carreiras."}
+{"codigoItem":622950,"decisao":"resolve","serie":"6202","vedacao":"2RS","folga":"CN","provas":{"serie":"6202","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6202 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":601352,"decisao":"resolve","serie":"6001","vedacao":"ZZ","folga":"C3","provas":{"serie":"6001","vedacao":"ZZ","folga":"C3"},"nota":"A referência determina a série 6001 com duas blindagens metálicas e folga C3."}
+{"codigoItem":472503,"decisao":"resolve","serie":"607","vedacao":"ZZ","folga":"CN","provas":{"serie":"607","vedacao":"ZZ","folga":null},"nota":"A referência determina a série miniatura 607 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":601303,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 630 não pertence às formas de designação aceitas."}
+{"codigoItem":307434,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":608666,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 2207 é de rolamento autocompensador."}
+{"codigoItem":254314,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":267835,"decisao":"resolve","serie":"6203","vedacao":"ZZ","folga":"CN","provas":{"serie":"6203","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6203 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":318844,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":319042,"decisao":"resolve","serie":"16011","vedacao":"ZZ","folga":"CN","provas":{"serie":"16011","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 16011 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":283526,"decisao":"recusa","motivo":"contradicao","nota":"O código 2RS1 indica borracha, mas o texto afirma que o rolamento é metálico e blindado."}
+{"codigoItem":382516,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência UCR 207 é de mancal com inserto, fora da família."}
+{"codigoItem":292951,"decisao":"resolve","serie":"6212","vedacao":"ZZ","folga":"CN","provas":{"serie":"6212","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6212 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":346422,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":382530,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência URC 205 não pertence à família definida."}
+{"codigoItem":472481,"decisao":"resolve","serie":"6203","vedacao":"2RS","folga":"CN","provas":{"serie":"6203","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6203 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":601501,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 25TAB06DB/GM P4 TA270 080711 não pertence à família definida."}
+{"codigoItem":601308,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 3205 A é de rolamento de contato angular."}
+{"codigoItem":399936,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência RAL 012NPP não pertence à família definida."}
+{"codigoItem":472587,"decisao":"resolve","serie":"6809","vedacao":"2RS","folga":"CN","provas":{"serie":"6809","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6809 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":226916,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":601475,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série miniatura 609 aparece sem código de vedação."}
+{"codigoItem":292933,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6409 aparece sem código de vedação."}
+{"codigoItem":466748,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 2351-090-360 não pertence à família definida."}
+{"codigoItem":283521,"decisao":"recusa","motivo":"contradicao","nota":"O código 2RS1 indica borracha, mas o texto afirma que o rolamento é metálico e blindado."}
+{"codigoItem":283523,"decisao":"recusa","motivo":"contradicao","nota":"O código 2RS1 indica borracha, mas o texto afirma que o rolamento é metálico e blindado."}
+{"codigoItem":481989,"decisao":"resolve","serie":"6206","vedacao":"ZZ","folga":"CN","provas":{"serie":"6206","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6206 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":261066,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":601434,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 209 NU é de rolamento cilíndrico, fora da família."}
+{"codigoItem":472469,"decisao":"resolve","serie":"6006","vedacao":"ZZ","folga":"CN","provas":{"serie":"6006","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6006 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472538,"decisao":"resolve","serie":"629","vedacao":"2RS","folga":"CN","provas":{"serie":"629","vedacao":"2RS","folga":null},"nota":"A referência determina a série miniatura 629 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":346331,"decisao":"resolve","serie":"6202","vedacao":"ZZ","folga":"CN","provas":{"serie":"6202","vedacao":"2Z","folga":null},"nota":"A referência determina a série 6202 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":478255,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 28461803,B+S não pertence à família definida."}
+{"codigoItem":472551,"decisao":"resolve","serie":"6309","vedacao":"2RS","folga":"CN","provas":{"serie":"6309","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6309 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":346380,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6310 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":466742,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 2351-020-345 não pertence à família definida."}
+{"codigoItem":346337,"decisao":"resolve","serie":"6208","vedacao":"Z","folga":"CN","provas":{"serie":"6208","vedacao":"Z","folga":null},"nota":"A referência determina a série 6208 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":9938,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor de graxa."}
+{"codigoItem":606800,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":346340,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência G 209 não pertence à família definida."}
+{"codigoItem":605719,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6206 traz o sufixo 2RZ, que não determina vedação pelas regras."}
+{"codigoItem":15881,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um acoplamento flexível."}
+{"codigoItem":278297,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 3309 não pertence à família definida."}
+{"codigoItem":606469,"decisao":"recusa","motivo":"fora-das-familias","nota":"O texto descreve rolamento de agulhas NK 8/12 TN."}
+{"codigoItem":611136,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":317416,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série miniatura 608 aparece sem código de vedação."}
+{"codigoItem":472552,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6309 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":474207,"decisao":"resolve","serie":"6811","vedacao":"2RS","folga":"CN","provas":{"serie":"6811","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6811 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":606263,"decisao":"resolve","serie":"62305","vedacao":"2RS","folga":"CN","provas":{"serie":"62305","vedacao":"2RS","folga":null},"nota":"A referência determina a série 62305 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":472509,"decisao":"resolve","serie":"6211","vedacao":"ZZ","folga":"C3","provas":{"serie":"6211","vedacao":"ZZ","folga":"C3"},"nota":"A referência determina a série 6211 com duas blindagens metálicas e folga C3."}
+{"codigoItem":472650,"decisao":"resolve","serie":"6307","vedacao":"2RS","folga":"CN","provas":{"serie":"6307","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6307 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":472515,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6217 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":317412,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6312 aparece sem código de vedação."}
+{"codigoItem":601306,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 603 DDF não pertence às formas de designação aceitas."}
+{"codigoItem":472487,"decisao":"resolve","serie":"6205","vedacao":"Z","folga":"CN","provas":{"serie":"6205","vedacao":"Z","folga":null},"nota":"A referência determina a série 6205 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":472555,"decisao":"resolve","serie":"6309","vedacao":"ZZ","folga":"C3","provas":{"serie":"6309","vedacao":"ZZ","folga":"C3"},"nota":"A referência determina a série 6309 com duas blindagens metálicas e folga C3."}
+{"codigoItem":312727,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência em polegadas RMS 18 não pertence à família definida."}
+{"codigoItem":483409,"decisao":"resolve","serie":"61801","vedacao":"2RS","folga":"CN","provas":{"serie":"61801","vedacao":"2RS","folga":null},"nota":"A referência determina a série 61801 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":381671,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":292855,"decisao":"resolve","serie":"6313","vedacao":"ZZ","folga":"CN","provas":{"serie":"6313","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6313 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":466754,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 2351-020-361 não pertence à família definida."}
+{"codigoItem":226917,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":362474,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência NU 209E é de rolamento cilíndrico, fora da família."}
+{"codigoItem":472652,"decisao":"resolve","serie":"6200","vedacao":"2RS","folga":"CN","provas":{"serie":"6200","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6200 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":466478,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":472472,"decisao":"resolve","serie":"6005","vedacao":"2RS","folga":"CN","provas":{"serie":"6005","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6005 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":317392,"decisao":"resolve","serie":"6216","vedacao":"ZZ","folga":"CN","provas":{"serie":"6216","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6216 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":466743,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 1812-150-436 não pertence à família definida."}
+{"codigoItem":318842,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":605432,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 2209 EKTN9/C3 é de rolamento autocompensador."}
+{"codigoItem":283522,"decisao":"recusa","motivo":"contradicao","nota":"O código 2RS1 indica borracha, mas o texto afirma que o rolamento é metálico e blindado."}
+{"codigoItem":610165,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência SA 206 RLB não pertence à família definida."}
+{"codigoItem":472519,"decisao":"resolve","serie":"62208","vedacao":"2RS","folga":"CN","provas":{"serie":"62208","vedacao":"2RS","folga":null},"nota":"A referência determina a série 62208 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":382515,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência UCR 206 é de mancal com inserto, fora da família."}
+{"codigoItem":472508,"decisao":"resolve","serie":"6211","vedacao":"Z","folga":"C3","provas":{"serie":"6211","vedacao":"Z","folga":"C3"},"nota":"A referência determina a série 6211 com uma blindagem metálica e folga C3."}
+{"codigoItem":472540,"decisao":"resolve","serie":"6300","vedacao":"ZZ","folga":"CN","provas":{"serie":"6300","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6300 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":260981,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":472456,"decisao":"resolve","serie":"6008","vedacao":"ZZ","folga":"CN","provas":{"serie":"6008","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6008 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":485889,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6006 traz o sufixo LLU, que não determina vedação pelas regras."}
+{"codigoItem":317401,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6009 aparece sem código de vedação."}
+{"codigoItem":611137,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":310602,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 4208A é de rolamento rígido de duas carreiras."}
+{"codigoItem":63835,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":601307,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência APP 1705_COL/CSR EMQ não pertence à família definida."}
+{"codigoItem":611135,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":267275,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência UCR 209 é de mancal com inserto, fora da família."}
+{"codigoItem":466479,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":255525,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6307 aparece sem código de vedação."}
+{"codigoItem":478973,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":314228,"decisao":"resolve","serie":"608","vedacao":"ZZ","folga":"CN","provas":{"serie":"608","vedacao":"ZZ","folga":null},"nota":"A referência determina a série miniatura 608 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":466758,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 2351-020-353 não pertence à família definida."}
+{"codigoItem":317410,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6310 aparece sem código de vedação."}
+{"codigoItem":310600,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 4210A é de rolamento rígido de duas carreiras."}
+{"codigoItem":472479,"decisao":"resolve","serie":"6203","vedacao":"Z","folga":"C3","provas":{"serie":"6203","vedacao":"Z","folga":"C3"},"nota":"A referência determina a série 6203 com uma blindagem metálica e folga C3."}
+{"codigoItem":346333,"decisao":"resolve","serie":"6204","vedacao":"ZZ","folga":"CN","provas":{"serie":"6204","vedacao":"2Z","folga":null},"nota":"A referência determina a série 6204 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":602539,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":260979,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":250902,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":472539,"decisao":"resolve","serie":"6300","vedacao":"2RS","folga":"CN","provas":{"serie":"6300","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6300 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":292852,"decisao":"resolve","serie":"6312","vedacao":"ZZ","folga":"CN","provas":{"serie":"6312","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6312 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472642,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6209 traz o sufixo U, que não determina vedação pelas regras."}
+{"codigoItem":472482,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6204 traz o sufixo U, que não determina vedação pelas regras."}
+{"codigoItem":346339,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência G 208 não pertence à família definida."}
+{"codigoItem":472541,"decisao":"resolve","serie":"63006","vedacao":"2RS","folga":"CN","provas":{"serie":"63006","vedacao":"2RS","folga":null},"nota":"A referência determina a série 63006 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":346338,"decisao":"resolve","serie":"6209","vedacao":"Z","folga":"CN","provas":{"serie":"6209","vedacao":"Z","folga":null},"nota":"A referência determina a série 6209 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":346334,"decisao":"resolve","serie":"6205","vedacao":"ZZ","folga":"CN","provas":{"serie":"6205","vedacao":"2Z","folga":null},"nota":"A referência determina a série 6205 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472544,"decisao":"resolve","serie":"6302","vedacao":"2RS","folga":"CN","provas":{"serie":"6302","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6302 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":472545,"decisao":"resolve","serie":"6302","vedacao":"ZZ","folga":"CN","provas":{"serie":"6302","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6302 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472632,"decisao":"resolve","serie":"6310","vedacao":"2RS","folga":"CN","provas":{"serie":"6310","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6310 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":472590,"decisao":"resolve","serie":"6811","vedacao":"2RS","folga":"CN","provas":{"serie":"6811","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6811 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":601502,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 61908 aparece sem código de vedação."}
+{"codigoItem":293116,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6306 aparece sem código de vedação."}
+{"codigoItem":601581,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":396857,"decisao":"recusa","motivo":"contradicao","nota":"O código ZZ indica duas blindagens, mas o texto afirma uma blindagem."}
+{"codigoItem":261067,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":317398,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6006 aparece sem código de vedação."}
+{"codigoItem":314229,"decisao":"resolve","serie":"6200","vedacao":"ZZ","folga":"CN","provas":{"serie":"6200","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6200 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":299482,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":466756,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 2351-020-159 não pertence à família definida."}
+{"codigoItem":466759,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 2351-030-031 não pertence à família definida."}
+{"codigoItem":472478,"decisao":"resolve","serie":"6001","vedacao":"2RS","folga":"CN","provas":{"serie":"6001","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6001 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":606812,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":612141,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":466752,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 2351-020-132 não pertence à família definida."}
+{"codigoItem":472594,"decisao":"resolve","serie":"6908","vedacao":"ZZ","folga":"CN","provas":{"serie":"6908","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6908 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472558,"decisao":"resolve","serie":"6314","vedacao":"ZZ","folga":"CN","provas":{"serie":"6314","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6314 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472550,"decisao":"resolve","serie":"6308","vedacao":"ZZ","folga":"CN","provas":{"serie":"6308","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6308 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472451,"decisao":"resolve","serie":"6011","vedacao":"2RS","folga":"CN","provas":{"serie":"6011","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6011 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":283528,"decisao":"resolve","serie":"6308","vedacao":"ZZ","folga":"CN","provas":{"serie":"6308","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6308 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":292850,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 22213K é de rolamento autocompensador, fora da família."}
+{"codigoItem":346425,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":476140,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":254317,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":267276,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência UCR 210 é de mancal com inserto, fora da família."}
+{"codigoItem":317632,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série miniatura 627 aparece sem código de vedação."}
+{"codigoItem":606811,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":486265,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia rolamentada, não um rolamento da família."}
+{"codigoItem":472488,"decisao":"resolve","serie":"6206","vedacao":"2RS","folga":"CN","provas":{"serie":"6206","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6206 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":319055,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência RNA 4905 é de rolamento de agulhas."}
+{"codigoItem":466750,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 1812-160-075 não pertence à família definida."}
+{"codigoItem":472518,"decisao":"resolve","serie":"62206","vedacao":"2RS","folga":"CN","provas":{"serie":"62206","vedacao":"2RS","folga":null},"nota":"A referência determina a série 62206 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":624270,"decisao":"revisa","motivo":"duas-leituras","nota":"O texto oferece 6206 2RS1 e 6206 DDU como referências alternativas com sufixos diferentes."}
+{"codigoItem":601305,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 600-W não pertence às formas de designação aceitas."}
+{"codigoItem":601500,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 212 N ECP não pertence à família definida."}
+{"codigoItem":357381,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6314 traz o sufixo 2ZR, que não determina vedação pelas regras."}
+{"codigoItem":611134,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":606814,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":472483,"decisao":"resolve","serie":"6204","vedacao":"2RS","folga":"CN","provas":{"serie":"6204","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6204 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":626233,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 1205 EKTN9 C3 é de rolamento autocompensador."}
+{"codigoItem":611281,"decisao":"recusa","motivo":"fora-das-familias","nota":"O texto descreve rolamento linear LBE 16 UU, fora da família."}
+{"codigoItem":346341,"decisao":"resolve","serie":"6209","vedacao":"ZZ","folga":"CN","provas":{"serie":"6209","vedacao":"2Z","folga":null},"nota":"A referência determina a série 6209 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":601973,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":250907,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":250906,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":317403,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6012 aparece sem código de vedação."}
+{"codigoItem":310599,"decisao":"resolve","serie":"6232","vedacao":"ABERTO","folga":"CN","provas":{"serie":"6232","vedacao":"S/ BLINDAGEM","folga":null},"nota":"A referência determina a série 6232 aberta, com folga normal implícita."}
+{"codigoItem":388227,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6205 não traz código de vedação; a frase sobre um lado não substitui o código exigido."}
+{"codigoItem":612238,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":472639,"decisao":"resolve","serie":"6311","vedacao":"ZZ","folga":"C3","provas":{"serie":"6311","vedacao":"2Z","folga":"C3"},"nota":"A referência determina a série 6311 com duas blindagens metálicas e folga C3."}
+{"codigoItem":633501,"decisao":"resolve","serie":"61903","vedacao":"2RS","folga":"CN","provas":{"serie":"61903","vedacao":"2RS1","folga":null},"nota":"A referência determina a série 61903 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":397748,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":472448,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6013 traz o sufixo U, que não determina vedação pelas regras."}
+{"codigoItem":466760,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 1825-510-806 não pertence à família definida."}
+{"codigoItem":261068,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":485890,"decisao":"resolve","serie":"6204","vedacao":"ZZ","folga":"C4","provas":{"serie":"6204","vedacao":"2Z","folga":"C4"},"nota":"A referência determina a série 6204 com duas blindagens metálicas e folga C4."}
+{"codigoItem":290385,"decisao":"resolve","serie":"6211","vedacao":"Z","folga":"C3","provas":{"serie":"6211","vedacao":"Z","folga":"C3"},"nota":"A referência determina a série 6211 com uma blindagem metálica e folga C3."}
+{"codigoItem":346335,"decisao":"resolve","serie":"6206","vedacao":"ZZ","folga":"CN","provas":{"serie":"6206","vedacao":"2Z","folga":null},"nota":"A referência determina a série 6206 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":466751,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 1812-160-105 não pertence à família definida."}
+{"codigoItem":611559,"decisao":"recusa","motivo":"fora-das-familias","nota":"O texto descreve rolamento linear KB2045-PP, fora da família."}
+{"codigoItem":472449,"decisao":"recusa","motivo":"contradicao","nota":"A série 6012 exige diâmetro interno de 60 mm, mas o texto informa 65 mm."}
+{"codigoItem":607147,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":317405,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6302 aparece sem código de vedação."}
+{"codigoItem":601354,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série miniatura 627 aparece sem código de vedação."}
+{"codigoItem":472534,"decisao":"resolve","serie":"625","vedacao":"Z","folga":"CN","provas":{"serie":"625","vedacao":"Z","folga":null},"nota":"A referência determina a série miniatura 625 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":260980,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":311967,"decisao":"resolve","serie":"6312","vedacao":"ZZ","folga":"C3","provas":{"serie":"6312","vedacao":"ZZ","folga":"C3"},"nota":"A referência determina a série 6312 com duas blindagens metálicas e folga C3."}
+{"codigoItem":472554,"decisao":"resolve","serie":"6309","vedacao":"Z","folga":"C3","provas":{"serie":"6309","vedacao":"Z","folga":"C3"},"nota":"A referência determina a série 6309 com uma blindagem metálica e folga C3."}
+{"codigoItem":606816,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":301434,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 1308K C3 é de rolamento autocompensador."}
+{"codigoItem":346384,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6314 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":472504,"decisao":"resolve","serie":"609","vedacao":"Z","folga":"CN","provas":{"serie":"609","vedacao":"Z","folga":null},"nota":"A referência determina a série miniatura 609 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":606803,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":283556,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":479859,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":472543,"decisao":"resolve","serie":"6301","vedacao":"ZZ","folga":"CN","provas":{"serie":"6301","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6301 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":317404,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6301 aparece sem código de vedação."}
+{"codigoItem":472549,"decisao":"resolve","serie":"6308","vedacao":"ZZ","folga":"C3","provas":{"serie":"6308","vedacao":"ZZ","folga":"C3"},"nota":"A referência determina a série 6308 com duas blindagens metálicas e folga C3."}
+{"codigoItem":610479,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência TAO 12X22X12MM não pertence à família definida."}
+{"codigoItem":602489,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":601432,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 203 NU é de rolamento cilíndrico, fora da família."}
+{"codigoItem":317399,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6008 aparece sem código de vedação."}
+{"codigoItem":610521,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 2212 EKTN9 é de rolamento autocompensador."}
+{"codigoItem":472471,"decisao":"resolve","serie":"6005","vedacao":"ZZ","folga":"CN","provas":{"serie":"6005","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6005 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":353163,"decisao":"resolve","serie":"6406","vedacao":"ZZ","folga":"CN","provas":{"serie":"6406","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6406 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":606813,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":472643,"decisao":"resolve","serie":"6209","vedacao":"Z","folga":"CN","provas":{"serie":"6209","vedacao":"Z","folga":null},"nota":"A referência determina a série 6209 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":317415,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série miniatura 606 aparece sem código de vedação."}
+{"codigoItem":346378,"decisao":"resolve","serie":"6307","vedacao":"ZZ","folga":"CN","provas":{"serie":"6307","vedacao":"2Z","folga":null},"nota":"A referência determina a série 6307 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":226914,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":283557,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":607139,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":601480,"decisao":"resolve","serie":"61802","vedacao":"2RS","folga":"CN","provas":{"serie":"61802","vedacao":"2RS","folga":null},"nota":"A referência determina a série 61802 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":248357,"decisao":"resolve","serie":"6205","vedacao":"ZZ","folga":"CN","provas":{"serie":"6205","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6205 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":606807,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":261065,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":312730,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência em polegadas CRL 22A não pertence à família definida."}
+{"codigoItem":463415,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6204 não traz código de vedação; as palavras metálico e blindado não bastam para determiná-la."}
+{"codigoItem":346388,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6311 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":287339,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":263252,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":606549,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 2208-K é de rolamento autocompensador de duas carreiras."}
+{"codigoItem":292854,"decisao":"resolve","serie":"6316","vedacao":"ZZ","folga":"CN","provas":{"serie":"6316","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6316 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":346330,"decisao":"resolve","serie":"6201","vedacao":"ZZ","folga":"CN","provas":{"serie":"6201","vedacao":"2Z","folga":null},"nota":"A referência determina a série 6201 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472631,"decisao":"resolve","serie":"6208","vedacao":"Z","folga":"CN","provas":{"serie":"6208","vedacao":"Z","folga":null},"nota":"A referência determina a série 6208 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":472480,"decisao":"resolve","serie":"6203","vedacao":"Z","folga":"CN","provas":{"serie":"6203","vedacao":"Z","folga":null},"nota":"A referência determina a série 6203 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":472502,"decisao":"resolve","serie":"607","vedacao":"2RS","folga":"CN","provas":{"serie":"607","vedacao":"2RS","folga":null},"nota":"A referência determina a série miniatura 607 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":472447,"decisao":"recusa","motivo":"contradicao","nota":"A série 6013 exige diâmetro interno de 65 mm, mas o texto informa 60 mm."}
+{"codigoItem":263251,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":346420,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":248358,"decisao":"resolve","serie":"6206","vedacao":"ZZ","folga":"CN","provas":{"serie":"6206","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6206 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472592,"decisao":"resolve","serie":"6901","vedacao":"2RS","folga":"CN","provas":{"serie":"6901","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6901 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":472579,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6317 aparece sem código de vedação."}
+{"codigoItem":362473,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 3308 não pertence à família definida."}
+{"codigoItem":624253,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 1311 EKTN9/C3 é de rolamento autocompensador."}
+{"codigoItem":263253,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":472585,"decisao":"resolve","serie":"6808","vedacao":"2RS","folga":"CN","provas":{"serie":"6808","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6808 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":310597,"decisao":"resolve","serie":"6224","vedacao":"ABERTO","folga":"CN","provas":{"serie":"6224","vedacao":"S/ BLINDAGEM","folga":null},"nota":"A referência determina a série 6224 aberta, com folga normal implícita."}
+{"codigoItem":246446,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":317397,"decisao":"resolve","serie":"6005","vedacao":"ZZ","folga":"CN","provas":{"serie":"6005","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6005 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":287340,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":346421,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":472542,"decisao":"resolve","serie":"6301","vedacao":"2RS","folga":"CN","provas":{"serie":"6301","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6301 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":466749,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 1812-110-213 não pertence à família definida."}
+{"codigoItem":606468,"decisao":"recusa","motivo":"fora-das-familias","nota":"O texto descreve rolamento de agulhas NK 10/12 TN."}
+{"codigoItem":226913,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":466740,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 2351-020-167 não pertence à família definida."}
+{"codigoItem":472651,"decisao":"resolve","serie":"608","vedacao":"2RS","folga":"CN","provas":{"serie":"608","vedacao":"2RS","folga":null},"nota":"A referência determina a série miniatura 608 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":472597,"decisao":"resolve","serie":"6909","vedacao":"ZZ","folga":"CN","provas":{"serie":"6909","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6909 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472600,"decisao":"resolve","serie":"6208","vedacao":"2RS","folga":"CN","provas":{"serie":"6208","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6208 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":606514,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 3213 é de rolamento de contato angular de duas carreiras."}
+{"codigoItem":478854,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":346379,"decisao":"resolve","serie":"6308","vedacao":"ZZ","folga":"CN","provas":{"serie":"6308","vedacao":"2Z","folga":null},"nota":"A referência determina a série 6308 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":633500,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 2203 E-2RS1TN9 é de rolamento autocompensador."}
+{"codigoItem":606802,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":606801,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":602624,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6306 traz o sufixo VV, que não determina vedação pelas regras."}
+{"codigoItem":261069,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":283258,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":606601,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 7405-B é de rolamento de contato angular."}
+{"codigoItem":317400,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6007 aparece sem código de vedação."}
+{"codigoItem":387945,"decisao":"resolve","serie":"6308","vedacao":"Z","folga":"CN","provas":{"serie":"6308","vedacao":"Z","folga":null},"nota":"A referência determina a série 6308 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":472637,"decisao":"recusa","motivo":"contradicao","nota":"O código 2RS indica borracha, mas o texto afirma blindagem metálica."}
+{"codigoItem":235214,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":250904,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":472646,"decisao":"resolve","serie":"6210","vedacao":"ZZ","folga":"CN","provas":{"serie":"6210","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6210 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":247832,"decisao":"resolve","serie":"6205","vedacao":"2RS","folga":"CN","provas":{"serie":"6205","vedacao":"2-RS1","folga":null},"nota":"A referência determina a série 6205 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":481991,"decisao":"resolve","serie":"6201","vedacao":"2RS","folga":"C3","provas":{"serie":"6201","vedacao":"2RS","folga":"C3"},"nota":"A referência determina a série 6201 com duas vedações de borracha e folga C3."}
+{"codigoItem":357383,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6205 traz o sufixo 2ZR, que não determina vedação pelas regras."}
+{"codigoItem":472584,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 68062 ZZ não corresponde a uma forma de designação aceita."}
+{"codigoItem":407703,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 4211A é de rolamento rígido de duas carreiras."}
+{"codigoItem":263254,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":311968,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6319 aparece sem código de vedação."}
+{"codigoItem":466747,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 2351-090-092 não pertence à família definida."}
+{"codigoItem":472660,"decisao":"resolve","serie":"6212","vedacao":"Z","folga":"C3","provas":{"serie":"6212","vedacao":"Z","folga":"C3"},"nota":"A referência determina a série 6212 com uma blindagem metálica e folga C3."}
+{"codigoItem":606808,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":472477,"decisao":"resolve","serie":"6001","vedacao":"ZZ","folga":"CN","provas":{"serie":"6001","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6001 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":254316,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":311969,"decisao":"resolve","serie":"6309","vedacao":"ZZ","folga":"CN","provas":{"serie":"6309","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6309 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":339447,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 2215 não pertence à família definida."}
+{"codigoItem":15962,"decisao":"revisa","motivo":"designacao-ausente","nota":"O texto identifica um rolamento de esfera, mas não traz referência de fabricante."}
+{"codigoItem":486266,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia rolamentada, não um rolamento da família."}
+{"codigoItem":317407,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6304 aparece sem código de vedação."}
+{"codigoItem":357382,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6206 traz o sufixo 2ZR, que não determina vedação pelas regras."}
+{"codigoItem":465665,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":472442,"decisao":"resolve","serie":"6017","vedacao":"ZZ","folga":"CN","provas":{"serie":"6017","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6017 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472586,"decisao":"resolve","serie":"6808","vedacao":"ZZ","folga":"CN","provas":{"serie":"6808","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6808 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":317411,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6311 aparece sem código de vedação."}
+{"codigoItem":311963,"decisao":"resolve","serie":"6318","vedacao":"ZZ","folga":"C3","provas":{"serie":"6318","vedacao":"ZZ","folga":"C3"},"nota":"A referência determina a série 6318 com duas blindagens metálicas e folga C3."}
+{"codigoItem":606499,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um acoplamento flexível."}
+{"codigoItem":601301,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6002 traz o sufixo W, que não determina vedação pelas regras."}
+{"codigoItem":606547,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 2309K é de rolamento autocompensador de duas carreiras."}
+{"codigoItem":472452,"decisao":"resolve","serie":"6010","vedacao":"ZZ","folga":"CN","provas":{"serie":"6010","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6010 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":317417,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série miniatura 626 aparece sem código de vedação."}
+{"codigoItem":472473,"decisao":"resolve","serie":"6004","vedacao":"ZZ","folga":"CN","provas":{"serie":"6004","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6004 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":250903,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma correia de transmissão."}
+{"codigoItem":472658,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6212 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":472507,"decisao":"resolve","serie":"6211","vedacao":"Z","folga":"CN","provas":{"serie":"6211","vedacao":"Z","folga":null},"nota":"A referência determina a série 6211 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":472653,"decisao":"resolve","serie":"6200","vedacao":"Z","folga":"CN","provas":{"serie":"6200","vedacao":"Z","folga":null},"nota":"A referência determina a série 6200 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":346385,"decisao":"resolve","serie":"6312","vedacao":"Z","folga":"C3","provas":{"serie":"6312","vedacao":"Z","folga":"C3"},"nota":"A referência determina a série 6312 com uma blindagem metálica e folga C3."}
+{"codigoItem":472485,"decisao":"resolve","serie":"6202","vedacao":"2RS","folga":"CN","provas":{"serie":"6202","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6202 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":472591,"decisao":"resolve","serie":"6814","vedacao":"ZZ","folga":"CN","provas":{"serie":"6814","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6814 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":346423,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":292851,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 22215K é de rolamento autocompensador, fora da família."}
+{"codigoItem":606518,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 7205-B é de rolamento de contato angular."}
+{"codigoItem":610941,"decisao":"recusa","motivo":"fora-das-familias","nota":"O texto descreve rolo de leva LR50/6NPPU, fora da família."}
+{"codigoItem":624172,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 2306 é de rolamento autocompensador."}
+{"codigoItem":472457,"decisao":"resolve","serie":"6008","vedacao":"2RS","folga":"CN","provas":{"serie":"6008","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6008 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":605430,"decisao":"resolve","serie":"6305","vedacao":"ZZ","folga":"CN","provas":{"serie":"6305","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6305 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":606810,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":472501,"decisao":"resolve","serie":"605","vedacao":"Z","folga":"CN","provas":{"serie":"605","vedacao":"Z","folga":null},"nota":"A referência determina a série miniatura 605 com uma blindagem metálica e folga normal implícita."}
+{"codigoItem":605233,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":472517,"decisao":"resolve","serie":"62205","vedacao":"2RS","folga":"CN","provas":{"serie":"62205","vedacao":"2RS","folga":null},"nota":"A referência determina a série 62205 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":601304,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 793 não pertence à família definida."}
+{"codigoItem":601428,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 208 NU é de rolamento cilíndrico, fora da família."}
+{"codigoItem":283625,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":611938,"decisao":"resolve","serie":"61801","vedacao":"ZZ","folga":"CN","provas":{"serie":"61801","vedacao":"2Z","folga":null},"nota":"A referência determina a série 61801 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":317413,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 4203ZZ é de rolamento rígido de duas carreiras."}
+{"codigoItem":472536,"decisao":"resolve","serie":"627","vedacao":"ZZ","folga":"CN","provas":{"serie":"627","vedacao":"ZZ","folga":null},"nota":"A referência determina a série miniatura 627 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":317409,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6309 aparece sem código de vedação."}
+{"codigoItem":295603,"decisao":"revisa","motivo":"designacao-ausente","nota":"O texto descreve rolamento de esferas aberto, mas não traz referência de fabricante."}
+{"codigoItem":605431,"decisao":"resolve","serie":"6302","vedacao":"ZZ","folga":"CN","provas":{"serie":"6302","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6302 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":248360,"decisao":"resolve","serie":"6208","vedacao":"ZZ","folga":"CN","provas":{"serie":"6208","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6208 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":396758,"decisao":"resolve","serie":"6901","vedacao":"ZZ","folga":"CN","provas":{"serie":"6901","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6901 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":366359,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 3320-SKF é de rolamento de duas carreiras, fora da família."}
+{"codigoItem":283525,"decisao":"recusa","motivo":"contradicao","nota":"O código 2RS1 indica borracha, mas o texto afirma que o rolamento é metálico e blindado."}
+{"codigoItem":472484,"decisao":"resolve","serie":"6202","vedacao":"ZZ","folga":"C3","provas":{"serie":"6202","vedacao":"ZZ","folga":"C3"},"nota":"A referência determina a série 6202 com duas blindagens metálicas e folga C3."}
+{"codigoItem":479589,"decisao":"resolve","serie":"6013","vedacao":"ZZ","folga":"CN","provas":{"serie":"6013","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6013 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":466741,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência veicular 2351-020-205 não pertence à família definida."}
+{"codigoItem":606539,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 7308 é de rolamento de contato angular."}
+{"codigoItem":248359,"decisao":"resolve","serie":"6207","vedacao":"ZZ","folga":"CN","provas":{"serie":"6207","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6207 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472582,"decisao":"resolve","serie":"6800","vedacao":"2RS","folga":"CN","provas":{"serie":"6800","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6800 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":318843,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":472505,"decisao":"resolve","serie":"6211","vedacao":"2RS","folga":"CN","provas":{"serie":"6211","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6211 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":264285,"decisao":"resolve","serie":"6201","vedacao":"ZZ","folga":"CN","provas":{"serie":"6201","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6201 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":601309,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6209 traz o sufixo NR, que não determina vedação pelas regras."}
+{"codigoItem":626492,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 1205 EKTN9 é de rolamento autocompensador."}
+{"codigoItem":267274,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência UCR210MM é de mancal com inserto, fora da família."}
+{"codigoItem":396858,"decisao":"recusa","motivo":"contradicao","nota":"O código ZZ indica duas blindagens, mas o texto afirma uma blindagem."}
+{"codigoItem":454274,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":151026,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":472520,"decisao":"resolve","serie":"624","vedacao":"ZZ","folga":"CN","provas":{"serie":"624","vedacao":"ZZ","folga":null},"nota":"A referência determina a série miniatura 624 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472580,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 63206 LLB/2A não corresponde a uma forma de designação aceita."}
+{"codigoItem":472441,"decisao":"resolve","serie":"6019","vedacao":"ZZ","folga":"CN","provas":{"serie":"6019","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6019 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472455,"decisao":"resolve","serie":"6009","vedacao":"2RS","folga":"CN","provas":{"serie":"6009","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6009 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":601975,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um selo mecânico."}
+{"codigoItem":317395,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6003 aparece sem código de vedação."}
+{"codigoItem":472458,"decisao":"resolve","serie":"6007","vedacao":"ZZ","folga":"CN","provas":{"serie":"6007","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6007 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472516,"decisao":"resolve","serie":"6217","vedacao":"ZZ","folga":"C3","provas":{"serie":"6217","vedacao":"ZZ","folga":"C3"},"nota":"A referência determina a série 6217 com duas blindagens metálicas e folga C3."}
+{"codigoItem":624165,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 2306 C3 é de rolamento autocompensador."}
+{"codigoItem":606540,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 7309-BW é de rolamento de contato angular."}
+{"codigoItem":283527,"decisao":"recusa","motivo":"contradicao","nota":"O código 2RS1 indica borracha, mas o texto afirma que o rolamento é metálico e blindado."}
+{"codigoItem":472655,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6306 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":317388,"decisao":"resolve","serie":"6211","vedacao":"ZZ","folga":"CN","provas":{"serie":"6211","vedacao":"ZZ","folga":null},"nota":"A referência determina a série 6211 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472468,"decisao":"resolve","serie":"6007","vedacao":"2RS","folga":"CN","provas":{"serie":"6007","vedacao":"2RS","folga":null},"nota":"A referência determina a série 6007 com duas vedações de borracha e folga normal implícita."}
+{"codigoItem":472641,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6209 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":311966,"decisao":"resolve","serie":"626","vedacao":"ZZ","folga":"CN","provas":{"serie":"626","vedacao":"ZZ","folga":null},"nota":"A referência determina a série miniatura 626 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472511,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6213 aparece sem código de vedação."}
+{"codigoItem":607142,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um acoplamento flexível."}
+{"codigoItem":352270,"decisao":"recusa","motivo":"fora-das-familias","nota":"A referência 37521VJ525 é de rolamento cônico, fora da família."}
+{"codigoItem":346383,"decisao":"resolve","serie":"6211","vedacao":"Z","folga":"C3","provas":{"serie":"6211","vedacao":"Z","folga":"C3"},"nota":"A referência determina a série 6211 com uma blindagem metálica e folga C3."}
+{"codigoItem":472440,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6020 aparece sem código de vedação."}
+{"codigoItem":606817,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":310598,"decisao":"resolve","serie":"6228","vedacao":"ABERTO","folga":"CN","provas":{"serie":"6228","vedacao":"S/ BLINDAGEM","folga":null},"nota":"A referência determina a série 6228 aberta, com folga normal implícita."}
+{"codigoItem":606815,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é um retentor."}
+{"codigoItem":346336,"decisao":"resolve","serie":"6207","vedacao":"ZZ","folga":"CN","provas":{"serie":"6207","vedacao":"2Z","folga":null},"nota":"A referência determina a série 6207 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":472656,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6312 aparece com folga C3, mas sem código de vedação."}
+{"codigoItem":346387,"decisao":"resolve","serie":"6309","vedacao":"ZZ","folga":"CN","provas":{"serie":"6309","vedacao":"2Z","folga":null},"nota":"A referência determina a série 6309 com duas blindagens metálicas e folga normal implícita."}
+{"codigoItem":328774,"decisao":"recusa","motivo":"fora-das-familias","nota":"O item é uma polia."}
+{"codigoItem":472548,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"A série 6308 aparece com folga C3, mas sem código de vedação."}
