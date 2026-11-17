@@ -38,6 +38,7 @@ bun run typecheck
 bun run build            # site estático em dist/
 bun run preview          # rotas /, /e/<patrimônio>, /diagnostico
 bun run preview:pages    # idem com as Pages Functions, local e sem conta no Cloudflare
+bun run deploy           # build e publicação em https://agroparts-hackbrasil.pages.dev (ver "Publicar")
 bun run gerar-demo       # refaz dados/demo/
 bun run baixar-catmat    # baixa de novo dados/catmat/
 bun run placar           # mede o motor contra dados/gabarito/ e grava docs/medicao/placar.md
@@ -45,6 +46,19 @@ bunx playwright install chromium && bun run test:navegador   # ou CHROMIUM_PATH=
 ```
 
 `bun run gerar-paginas [pasta]` grava os JSON das máquinas e `/grupos.json` (padrão `dist/`); o `bun run build` e o `bun run dev` já fazem isso pelo plugin de `scripts/gerar-paginas.ts`. `familia-jev` aponta para um arquivo que as próximas fatias preenchem.
+
+## Publicar
+
+O projeto Pages `agroparts-hackbrasil` tem produção no branch `main`. Com `CLOUDFLARE_EMAIL` e `CLOUDFLARE_API_KEY` (ou `CLOUDFLARE_API_TOKEN`) da conta no ambiente, `bun run deploy` faz o build e publica `dist/` com as funções de `functions/api/`.
+
+As funções leem estas variáveis, gravadas como segredo do projeto e nunca no repositório:
+
+| Variável | Função |
+|---|---|
+| `GROQ_API_KEY` | `/api/audio` |
+| `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` | `/api/foto`. Sem elas a página mostra "leitura de foto indisponível". |
+
+Para gravar uma: `printf %s "$VALOR" | bunx wrangler pages secret put NOME --project-name agroparts-hackbrasil`. O segredo vale a partir da próxima publicação. Para testar local, ponha as mesmas variáveis em `.dev.vars`, que o git ignora.
 
 ## Pastas
 
