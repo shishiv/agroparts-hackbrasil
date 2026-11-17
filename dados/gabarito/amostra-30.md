@@ -26,24 +26,24 @@ Por quê: A série miniatura 608 aparece sem código de vedação.
 - [ ] confere
 - [ ] não confere. Deveria ser: 
 
-## 3. Item 472456
+## 3. Item 472451
 
-> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO DE UMA CARREIRA DE ESFERAS, BLINDAGEM DUPLA , DIÂMETRO INTERNO: 40 MM, DIÂMETRO EXTERNO: 68 MM, LARGURA: 15 MM, REFERÊNCIA FABRICANTE 1: 6008 ZZ
+> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO DE UMA CARREIRA DE ESFERAS, VEDAÇÃO DUPLA , DIÂMETRO INTERNO: 55 MM, DIÂMETRO EXTERNO: 90 MM, LARGURA: 18 MM, REFERÊNCIA FABRICANTE 1: 6011 2RS
 
-Rótulo: **resolve**: rolamento 6008, vedação ZZ, folga normal (CN)
+Rótulo: **resolve**: rolamento 6011, vedação 2RS, folga normal (CN)
 
-Por quê: A referência determina a série 6008 com duas blindagens metálicas e folga normal implícita.
+Por quê: A referência determina a série 6011 com duas vedações de borracha e folga normal implícita.
 
 - [ ] confere
 - [ ] não confere. Deveria ser: 
 
-## 4. Item 472513
+## 4. Item 605431
 
-> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO DE UMA CARREIRA DE ESFERAS, BLINDAGEM DUPLA , DIÂMETRO INTERNO: 70 MM, DIÂMETRO EXTERNO: 125 MM, LARGURA: 24 MM, REFERÊNCIA FABRICANTE 1: 6214 ZZ
+> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO , DE UMA CARREIRA DE  ESFERAS , BLINDAGEM D , DIÂMETRO INTERNO: 15 MM, DIÂMETRO EXTERNO: 42 MM, LARGURA: 13 MM, REFERÊNCIA FABRICANTE 2: 6302 ZZ
 
-Rótulo: **resolve**: rolamento 6214, vedação ZZ, folga normal (CN)
+Rótulo: **resolve**: rolamento 6302, vedação ZZ, folga normal (CN)
 
-Por quê: A referência determina a série 6214 com duas blindagens metálicas e folga normal implícita.
+Por quê: A referência determina a série 6302 com duas blindagens metálicas e folga normal implícita.
 
 - [ ] confere
 - [ ] não confere. Deveria ser: 
@@ -125,13 +125,13 @@ Por quê: O item é um selo mecânico.
 - [ ] confere
 - [ ] não confere. Deveria ser: 
 
-## 12. Item 472453
+## 12. Item 472654
 
-> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO DE UMA CARREIRA DE ESFERAS, VEDAÇÃO DUPLA , DIÂMETRO INTERNO: 50 MM, DIÂMETRO EXTERNO: 80 MM, LARGURA: 16 MM, REFERÊNCIA FABRICANTE 1: 6010 2RS
+> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO, UMA CARREIRA DE ESFERA, VEDAÇÃO NBR EM AMB , DIÂMETRO INTERNO: 30 MM, DIÂMETRO EXTERNO: 72 MM, LARGURA: 19 MM, REFERÊNCIA FABRICANTE 2: 6306-2RS
 
-Rótulo: **resolve**: rolamento 6010, vedação 2RS, folga normal (CN)
+Rótulo: **resolve**: rolamento 6306, vedação 2RS, folga normal (CN)
 
-Por quê: A referência determina a série 6010 com duas vedações de borracha e folga normal implícita.
+Por quê: A referência determina a série 6306 com duas vedações de borracha e folga normal implícita.
 
 - [ ] confere
 - [ ] não confere. Deveria ser: 
@@ -147,13 +147,13 @@ Por quê: O código 2RS1 indica borracha, mas o texto afirma que o rolamento é 
 - [ ] confere
 - [ ] não confere. Deveria ser: 
 
-## 14. Item 472596
+## 14. Item 311960
 
-> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO DE UMA CARREIRA DE ESFERAS, VEDAÇÃO DUPLA , DIÂMETRO INTERNO: 45 MM, DIÂMETRO EXTERNO: 68 MM, LARGURA: 12 MM, REFERÊNCIA FABRICANTE 2: 6909 2RS
+> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , REFERÊNCIA FABRICANTE: 6318ZZ C3 , CARACTERÍSTICAS ADICIONAIS: RÍGIDO DE UMA CARREIRA DE ESFERAS; BLINDAGEM DUPLA , DIÂMETRO INTERNO: 90 MM, DIÂMETRO EXTERNO: 190 MM, LARGURA: 43 MM
 
-Rótulo: **resolve**: rolamento 6909, vedação 2RS, folga normal (CN)
+Rótulo: **resolve**: rolamento 6318, vedação ZZ, folga C3
 
-Por quê: A referência determina a série 6909 com duas vedações de borracha e folga normal implícita.
+Por quê: A referência determina a série 6318 com duas blindagens metálicas e folga C3.
 
 - [ ] confere
 - [ ] não confere. Deveria ser: 
@@ -169,13 +169,13 @@ Por quê: O item é um selo mecânico.
 - [ ] confere
 - [ ] não confere. Deveria ser: 
 
-## 16. Item 472516
+## 16. Item 346332
 
-> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO, 1 CARREIRA DE ESFERA, BLINDAGEM METÁLICA , DIÂMETRO INTERNO: 85 MM, DIÂMETRO EXTERNO: 150 MM, LARGURA: 28 MM, REFERÊNCIA FABRICANTE 1: 6217 ZZ C3
+> ROLAMENTO DE ESFERA, TIPO USO: REFRIGERAÇÃO , REFERÊNCIA FABRICANTE: 6203-2Z , MATERIAL: AÇO
 
-Rótulo: **resolve**: rolamento 6217, vedação ZZ, folga C3
+Rótulo: **resolve**: rolamento 6203, vedação ZZ, folga normal (CN)
 
-Por quê: A referência determina a série 6217 com duas blindagens metálicas e folga C3.
+Por quê: A referência determina a série 6203 com duas blindagens metálicas e folga normal implícita.
 
 - [ ] confere
 - [ ] não confere. Deveria ser: 
@@ -191,46 +191,46 @@ Por quê: O código 2RS1 indica borracha, mas o texto afirma que o rolamento é 
 - [ ] confere
 - [ ] não confere. Deveria ser: 
 
-## 18. Item 472458
+## 18. Item 472597
 
-> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO DE UMA CARREIRA DE ESFERAS, BLINDAGEM DUPLA , DIÂMETRO INTERNO: 35 MM, DIÂMETRO EXTERNO: 62 MM, LARGURA: 14 MM, REFERÊNCIA FABRICANTE 1: 6007 ZZ
+> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO DE UMA CARREIRA DE ESFERAS, BLINDAGEM DUPLA , DIÂMETRO INTERNO: 45 MM, DIÂMETRO EXTERNO: 68 MM, LARGURA: 12 MM, REFERÊNCIA FABRICANTE 2: 6909 ZZ
 
-Rótulo: **resolve**: rolamento 6007, vedação ZZ, folga normal (CN)
+Rótulo: **resolve**: rolamento 6909, vedação ZZ, folga normal (CN)
 
-Por quê: A referência determina a série 6007 com duas blindagens metálicas e folga normal implícita.
-
-- [ ] confere
-- [ ] não confere. Deveria ser: 
-
-## 19. Item 472446
-
-> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO DE UMA CARREIRA DE ESFERAS, BLINDAGEM DUPLA , DIÂMETRO INTERNO: 80 MM, DIÂMETRO EXTERNO: 125 MM, LARGURA: 22 MM, REFERÊNCIA FABRICANTE 1: 6016 ZZ
-
-Rótulo: **resolve**: rolamento 6016, vedação ZZ, folga normal (CN)
-
-Por quê: A referência determina a série 6016 com duas blindagens metálicas e folga normal implícita.
+Por quê: A referência determina a série 6909 com duas blindagens metálicas e folga normal implícita.
 
 - [ ] confere
 - [ ] não confere. Deveria ser: 
 
-## 20. Item 472507
+## 19. Item 346382
 
-> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO UMA CARREIRA DE ESFERA BLINDAGEM METÁLICA , DIÂMETRO INTERNO: 55 MM, DIÂMETRO EXTERNO: 100 MM, LARGURA: 21 MM, REFERÊNCIA FABRICANTE 1: 6211 Z
+> ROLAMENTO DE ESFERA, TIPO USO: REFRIGERAÇÃO , REFERÊNCIA FABRICANTE: 6212-2Z , MATERIAL: AÇO
 
-Rótulo: **resolve**: rolamento 6211, vedação Z, folga normal (CN)
+Rótulo: **resolve**: rolamento 6212, vedação ZZ, folga normal (CN)
 
-Por quê: A referência determina a série 6211 com uma blindagem metálica e folga normal implícita.
+Por quê: A referência determina a série 6212 com duas blindagens metálicas e folga normal implícita.
 
 - [ ] confere
 - [ ] não confere. Deveria ser: 
 
-## 21. Item 472502
+## 20. Item 319042
 
-> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO DE UMA CARREIRA DE ESFERAS, VEDAÇÃO DUPLA , DIÂMETRO INTERNO: 7 MM, DIÂMETRO EXTERNO: 19 MM, LARGURA: 6 MM, REFERÊNCIA FABRICANTE 1: 607 2RS
+> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , REFERÊNCIA FABRICANTE: 16011 ZZ , CARACTERÍSTICAS ADICIONAIS: RÍGIDO DE UMA CARREIRA DE ESFERAS, BLINDAGEM DUPLA , DIÂMETRO INTERNO: 55 MM, DIÂMETRO EXTERNO: 90 MM, ALTURA: 11 MM
 
-Rótulo: **resolve**: rolamento 607, vedação 2RS, folga normal (CN)
+Rótulo: **resolve**: rolamento 16011, vedação ZZ, folga normal (CN)
 
-Por quê: A referência determina a série miniatura 607 com duas vedações de borracha e folga normal implícita.
+Por quê: A referência determina a série 16011 com duas blindagens metálicas e folga normal implícita.
+
+- [ ] confere
+- [ ] não confere. Deveria ser: 
+
+## 21. Item 472542
+
+> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO DE UMA CARREIRA DE ESFERAS, VEDAÇÃO DUPLA , DIÂMETRO INTERNO: 12 MM, DIÂMETRO EXTERNO: 37 MM, LARGURA: 12 MM, REFERÊNCIA FABRICANTE 1: 6301 2RS
+
+Rótulo: **resolve**: rolamento 6301, vedação 2RS, folga normal (CN)
+
+Por quê: A referência determina a série 6301 com duas vedações de borracha e folga normal implícita.
 
 - [ ] confere
 - [ ] não confere. Deveria ser: 
@@ -246,13 +246,13 @@ Por quê: A série 6007 aparece sem código de vedação.
 - [ ] confere
 - [ ] não confere. Deveria ser: 
 
-## 23. Item 346331
+## 23. Item 346379
 
-> ROLAMENTO DE ESFERA, TIPO USO: REFRIGERAÇÃO , REFERÊNCIA FABRICANTE: 6202-2Z , MATERIAL: AÇO
+> ROLAMENTO DE ESFERA, TIPO USO: REFRIGERAÇÃO , REFERÊNCIA FABRICANTE: 6308-2Z , MATERIAL: AÇO
 
-Rótulo: **resolve**: rolamento 6202, vedação ZZ, folga normal (CN)
+Rótulo: **resolve**: rolamento 6308, vedação ZZ, folga normal (CN)
 
-Por quê: A referência determina a série 6202 com duas blindagens metálicas e folga normal implícita.
+Por quê: A referência determina a série 6308 com duas blindagens metálicas e folga normal implícita.
 
 - [ ] confere
 - [ ] não confere. Deveria ser: 
@@ -312,24 +312,24 @@ Por quê: A série 6303 aparece sem código de vedação.
 - [ ] confere
 - [ ] não confere. Deveria ser: 
 
-## 29. Item 472660
+## 29. Item 346336
 
-> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO, UMA CARREIRA DE ESFERA, BLINDAGEM METÁLICA , DIÂMETRO INTERNO: 60 MM, DIÂMETRO EXTERNO: 110 MM, LARGURA: 22 MM, REFERÊNCIA FABRICANTE 2: 6212-Z/C3
+> ROLAMENTO DE ESFERA, TIPO USO: REFRIGERAÇÃO , REFERÊNCIA FABRICANTE: 6207-2Z , MATERIAL: AÇO
 
-Rótulo: **resolve**: rolamento 6212, vedação Z, folga C3
+Rótulo: **resolve**: rolamento 6207, vedação ZZ, folga normal (CN)
 
-Por quê: A referência determina a série 6212 com uma blindagem metálica e folga C3.
+Por quê: A referência determina a série 6207 com duas blindagens metálicas e folga normal implícita.
 
 - [ ] confere
 - [ ] não confere. Deveria ser: 
 
-## 30. Item 472581
+## 30. Item 310597
 
-> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , CARACTERÍSTICAS ADICIONAIS: RÍGIDO DE UMA CARREIRA DE ESFERAS, VEDAÇÃO DUPLA , DIÂMETRO INTERNO: 5 MM, DIÂMETRO EXTERNO: 19 MM, LARGURA: 6 MM, REFERÊNCIA FABRICANTE 2: 635 2RS
+> ROLAMENTO DE ESFERA, TIPO USO: MÁQUINAS EM GERAL , REFERÊNCIA FABRICANTE: 6224 , CARACTERÍSTICAS ADICIONAIS: RÍGIDO DE UMA CARREIRA S/ BLINDAGEM , DIÂMETRO INTERNO: 120 MM, DIÂMETRO EXTERNO: 215 MM, LARGURA: 40 MM
 
-Rótulo: **resolve**: rolamento 635, vedação 2RS, folga normal (CN)
+Rótulo: **resolve**: rolamento 6224, vedação ABERTO, folga normal (CN)
 
-Por quê: A referência determina a série miniatura 635 com duas vedações de borracha e folga normal implícita.
+Por quê: A referência determina a série 6224 aberta, com folga normal implícita.
 
 - [ ] confere
 - [ ] não confere. Deveria ser: 

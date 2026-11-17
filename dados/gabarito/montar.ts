@@ -35,6 +35,13 @@ async function lerJson<T>(caminho: string): Promise<T> {
   return JSON.parse(await readFile(caminho, "utf8")) as T;
 }
 
+interface Correcao {
+  codigoItem: number;
+  decisao: "revisa";
+  motivo: "sufixo-desconhecido";
+  porque: string;
+}
+
 async function lerJsonl(caminho: string): Promise<Rotulo[]> {
   const linhas = (await readFile(caminho, "utf8")).trim().split("\n");
   return linhas.map((linha) => JSON.parse(linha) as Rotulo);
@@ -118,6 +125,9 @@ async function principal(): Promise<void> {
     throw new Error(`esperava ${textos.length} rótulos de cada rotulador, vieram ${a.size} e ${b.size}`);
   }
 
+  const correcoes = new Map(
+    (await lerJson<{ correcoes: Correcao[] }>(`${RAIZ}dados/gabarito/correcoes.json`)).correcoes.map((c) => [c.codigoItem, c]),
+  );
   const itens: Record<string, unknown>[] = [];
   const rotulosFinais = new Map<number, Rotulo>();
   for (const { codigoItem, arquivo, texto } of textos) {
@@ -155,7 +165,26 @@ async function principal(): Promise<void> {
         conferencia: "os dois rotuladores concordaram",
       });
     }
+    const correcao = correcoes.get(codigoItem);
+    if (correcao) {
+      const corrigido: Rotulo = { codigoItem, decisao: correcao.decisao, motivo: correcao.motivo, nota: correcao.porque };
+      const [atual] = itens.splice(itens.length - 1, 1);
+      itens.push({
+        codigoItem,
+        arquivo,
+        texto,
+        decisao: corrigido.decisao,
+        motivo: corrigido.motivo,
+        nota: corrigido.nota,
+        conferencia: `os dois rotuladores deram ${atual?.decisao}; corrigido depois, ver correcoes.json`,
+      });
+      rotulosFinais.set(codigoItem, corrigido);
+      continue;
+    }
     rotulosFinais.set(codigoItem, rb);
+  }
+  for (const codigo of correcoes.keys()) {
+    if (!rotulosFinais.has(codigo)) throw new Error(`correção para um item que não existe: ${codigo}`);
   }
 
   const gruposPorPeca = new Map<string, number[]>();

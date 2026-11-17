@@ -50,7 +50,7 @@ Qualquer outro sufixo é desconhecido: U, VV, 2ZR, ZR, NR, N, K, M, J, E, DDU, L
 
 **revisa.** O texto parece ser da família, mas falta algo ou há mais de uma resposta. Vai a uma pessoa. O motivo é um destes:
 
-- `sufixo-desconhecido`: há designação da família, mas a vedação não está determinada (sem código de vedação, ou com sufixo fora da tabela).
+- `sufixo-desconhecido`: há designação da família, mas a vedação não está determinada (sem código de vedação, ou com sufixo fora da tabela). Também entra aqui o texto que traz um qualificador que muda a peça e que série, vedação e folga não dizem: material inoxidável, cerâmico ou plástico (INOX, CERÂMICA, PLÁSTICO, NYLON, POLIAMIDA), híbrido, isolado, com flange, de alta temperatura. O rolamento inox 6202 2RS não é o 6202 2RS comum.
 - `designacao-ausente`: é um rolamento de esferas e o texto não traz nenhuma referência de fabricante, só palavras ("ROLAMENTO DE ESFERA, NOME: ROLAMENTO DE ESFERA", "ROLAMENTO P/ MANCAL BOMBA DE CALDO").
 - `duas-leituras`: o texto traz duas designações diferentes, ou a mesma designação com configurações diferentes, como alternativas ("6308 2RS OU 6309 2RS", "6312 ZZ C3 / 6310 ZZ C3").
 
@@ -90,4 +90,4 @@ Os itens `resolve` com a mesma série, a mesma vedação e a mesma folga formam 
 
 ## Como os rótulos foram feitos
 
-Dois rotuladores leram os textos sem ver o trabalho um do outro. Onde discordaram, valeu o que estas regras dizem. O arquivo `rotulos.json` registra, item a item, se os dois concordaram ou se foi arbitrado.
+Dois rotuladores leram os textos sem ver o trabalho um do outro. Onde discordaram, valeu o que estas regras dizem. O arquivo `rotulos.json` registra, item a item, se os dois concordaram ou se o rótulo foi corrigido depois, e `correcoes.json` diz por quê.
