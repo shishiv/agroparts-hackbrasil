@@ -229,9 +229,9 @@ async function principal(): Promise<void> {
   const ordem = sortear(amostra, amostra.length, sorteio);
 
   const md = [
-    "# Amostra de 30 rótulos para revisão",
+    "# Amostra de 30 rótulos",
     "",
-    "Para cada item: leia o texto e diga se o rótulo está certo. As regras que definem cada rótulo estão em `dados/gabarito/regras-de-rotulagem.md`.",
+    "Estes 30 rótulos foram conferidos contra catálogos públicos de fabricantes, e não revisados por pessoa. O resultado de cada item está em `docs/medicao/conferencia-amostra.md`. As regras que definem cada rótulo estão em `dados/gabarito/regras-de-rotulagem.md`.",
     "",
     `Sorteio com a semente ${SEMENTE_DA_AMOSTRA}, por faixa: ${Object.entries(COTAS_DA_AMOSTRA).map(([k, v]) => `${v} ${k}`).join(", ")}. A ordem abaixo está embaralhada.`,
     "",
@@ -243,9 +243,6 @@ async function principal(): Promise<void> {
       `Rótulo: ${rotuloPorExtenso(rotulo)}`,
       "",
       `Por quê: ${rotulo.nota}`,
-      "",
-      "- [ ] confere",
-      "- [ ] não confere. Deveria ser: ",
       "",
     ]),
   ];

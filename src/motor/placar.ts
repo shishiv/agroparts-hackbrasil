@@ -179,6 +179,7 @@ export function formatarPlacar(p: Placar): string {
     "- Os mesmos textos do CATMAT serviram para montar as listas de palavras do motor (`PALAVRAS_DE_APLICACAO` e `FRASE_CONHECIDA`, em `src/motor/familias/rolamento-rigido-de-esferas/`). Os números abaixo são medidos sobre o conjunto usado para ajustar o motor, não sobre textos nunca vistos.",
     "- No cadastro de uma usina real, a taxa de resolve deve ser menor que a deste placar.",
     "- O item 622950 (rolamento inox) foi corrigido de resolve para revisa depois da primeira versão do motor. A correção deixou o rótulo mais difícil para o motor, não mais fácil.",
+    "- O gabarito foi rotulado por dois agentes de IA. Uma amostra de 30 dos 520 rótulos foi conferida contra catálogos públicos de fabricantes (SKF e NTN para os rolamentos, e catálogos de correia e de selo mecânico para as outras peças). O resultado item a item está em `docs/medicao/conferencia-amostra.md`. Nenhuma pessoa revisou os rótulos, e os outros 490 só têm a concordância dos dois rotuladores.",
     "",
     `Impressão das leituras: \`${p.impressao}\`. É a mesma no Bun e no navegador do teste: o resumo inclui chave, atributos e trechos de cada leitura.`,
     "",
