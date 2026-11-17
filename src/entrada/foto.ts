@@ -14,8 +14,13 @@ export interface TextoDaFoto {
 
 export type Buscar = (endereco: string, pedido: RequestInit) => Promise<Pick<Response, "ok" | "status" | "json">>;
 
+export type FalhaDaFoto = "limite" | "indisponivel";
+
 export class FotoNaoLida extends Error {
-  constructor(readonly motivo: string) {
+  constructor(
+    readonly motivo: string,
+    readonly falha: FalhaDaFoto = "indisponivel",
+  ) {
     super(`a foto não virou texto: ${motivo}`);
   }
 }
@@ -43,7 +48,7 @@ export async function lerFoto(jpeg: Blob, buscar: Buscar): Promise<TextoDaFoto> 
     headers: { "content-type": "image/jpeg" },
     body: jpeg,
   });
-  if (!resposta.ok) throw new FotoNaoLida(`a função respondeu ${resposta.status}`);
+  if (!resposta.ok) throw new FotoNaoLida(`a função respondeu ${resposta.status}`, resposta.status === 429 ? "limite" : "indisponivel");
   const lido = lerTextoDaFoto(await resposta.json().catch(() => null));
   if (!lido) throw new FotoNaoLida("resposta fora do formato");
   return lido;

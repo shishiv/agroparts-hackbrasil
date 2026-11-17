@@ -41,7 +41,7 @@ const MENSAGEM: Readonly<Record<Motivo, string>> = {
   limite: "Limite da demo atingido. Tente em um minuto.",
   formato: "Este navegador grava num formato que a demo não lê.",
   "grande-demais": "A gravação ficou grande demais.",
-  indisponivel: "Não consegui transcrever.",
+  indisponivel: "A transcrição de áudio está indisponível agora.",
 };
 
 /** Monta o botão de áudio em `destino`. Ao confirmar, dispara `agroparts:peca-identificada` a partir de `destino`. */
@@ -86,7 +86,7 @@ export function montarAudio(destino: HTMLElement, ambiente: AmbienteDoAudio): vo
   function desenhar(estado: Estado): HTMLElement[] {
     switch (estado.tipo) {
       case "parado":
-        return [botao("Falar a peça", () => void gravar())];
+        return [botao("Achar peça por voz", () => void gravar())];
       case "gravando":
         return [botao("Parar", estado.parar, "gravando")];
       case "transcrevendo":

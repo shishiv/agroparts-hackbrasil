@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { mkdtemp, rm } from "node:fs/promises";
 import type { AddressInfo } from "node:net";
 import { tmpdir } from "node:os";
@@ -5,6 +6,7 @@ import { join } from "node:path";
 import { chromium, type Browser, type BrowserContext, type Page } from "playwright";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { build, preview, type PreviewServer } from "vite";
+import { BEDROCK_GRAVADO, COM_CHAVE_DA_AWS, COM_CHAVE_DO_GROQ, GROQ_GRAVADO, rotearFuncoes, type FuncaoRoteada } from "../entrada/funcoes-de-teste";
 
 const CONFIGURACAO = join(import.meta.dir, "..", "..", "vite.config.ts");
 const CELULAR = { width: 390, height: 844 };
@@ -15,7 +17,10 @@ const CELULAR = { width: 390, height: 844 };
  * ou aponte `CHROMIUM_PATH` para um Chromium, como o `bun run test:navegador` já pede.
  */
 const executavel = process.env.CHROMIUM_PATH;
-const navegador: Browser = await chromium.launch(executavel ? { executablePath: executavel } : {});
+const navegador: Browser = await chromium.launch({
+  ...(executavel ? { executablePath: executavel } : {}),
+  args: ["--use-fake-device-for-media-stream", "--use-fake-ui-for-media-stream"],
+});
 
 let saida = "";
 let servidor: PreviewServer | undefined;
@@ -47,7 +52,7 @@ interface PaginaObservada {
 }
 
 async function celular(): Promise<PaginaObservada> {
-  const contexto = await navegador.newContext({ viewport: CELULAR });
+  const contexto = await navegador.newContext({ viewport: CELULAR, permissions: ["microphone"] });
   const pagina = await contexto.newPage();
   const dados: PaginaObservada["dados"] = [];
   pagina.on("response", (resposta) => {
@@ -147,6 +152,151 @@ describe("no site construído, num celular de 390 px", () => {
       await pagina.goto(`${base}${caminho}`);
       expect(await pagina.locator("footer").innerText()).toMatch(/demonstra/i);
     }
+    await contexto.close();
+  }, 60_000);
+});
+
+describe("foto e áudio na página da máquina, com as funções respondendo a gravações", () => {
+  const FOTO = readFileSync(new URL("../../public/exemplos/nsk-608z.jpg", import.meta.url));
+  const SEM_CHAVE: FuncaoRoteada = { env: {}, gravada: BEDROCK_GRAVADO };
+
+  async function abrir004512(funcoes: Parameters<typeof rotearFuncoes>[1]) {
+    const { pagina, contexto } = await celular();
+    const erros: string[] = [];
+    pagina.on("pageerror", (erro) => erros.push(erro.message));
+    const chamadasAoProvedor = await rotearFuncoes(pagina, funcoes);
+    await pagina.goto(`${base}/e/004512`);
+    await historicoDe(pagina);
+    return { pagina, contexto, erros, chamadasAoProvedor };
+  }
+
+  async function fotografar(pagina: Page): Promise<void> {
+    const escolha = pagina.waitForEvent("filechooser");
+    await pagina.click('#entradas button:has-text("Achar peça por foto")');
+    await (await escolha).setFiles({ name: "rolamento.jpg", mimeType: "image/jpeg", buffer: FOTO });
+  }
+
+  async function falar(pagina: Page): Promise<void> {
+    await pagina.click('#entradas button:has-text("Achar peça por voz")');
+    await pagina.waitForSelector('#entradas button:has-text("Parar")');
+    await pagina.waitForTimeout(600);
+    await pagina.click('#entradas button:has-text("Parar")');
+  }
+
+  const confirmar = (pagina: Page) => pagina.click('#entradas button:has-text("Confirmar")');
+  const destacadas = (pagina: Page) => pagina.locator(".peca.destaque").evaluateAll((pecas) => pecas.map((p) => p.getAttribute("data-peca")));
+  const aviso = (pagina: Page) => pagina.locator("#avisos [data-aviso]");
+  const mensagemDeErro = (pagina: Page) => pagina.locator("#entradas").innerText();
+
+  it("a página mostra os dois botões, um ao lado do outro, sem rolar para o lado", async () => {
+    const { pagina, contexto } = await abrir004512({});
+    const caixas = await pagina.locator("#entradas button").evaluateAll((botoes) =>
+      botoes.map((b) => ({ texto: b.textContent, ...JSON.parse(JSON.stringify(b.getBoundingClientRect())) })),
+    );
+    expect(caixas.map((c) => c.texto)).toEqual(["Achar peça por foto", "Achar peça por voz"]);
+    expect(caixas[0].top).toBe(caixas[1].top);
+    expect(caixas[0].height).toBeGreaterThanOrEqual(48);
+    expect(await pagina.evaluate(() => document.documentElement.scrollWidth)).toBe(CELULAR.width);
+    await contexto.close();
+  }, 60_000);
+
+  it("foto: o texto lido aparece num campo, a pessoa o corrige, confirma, e o grupo certo fica destacado", async () => {
+    const { pagina, contexto, erros, chamadasAoProvedor } = await abrir004512({ foto: { env: COM_CHAVE_DA_AWS, gravada: BEDROCK_GRAVADO } });
+
+    await fotografar(pagina);
+    const campo = pagina.locator("#entradas textarea");
+    await campo.waitFor();
+    expect(await campo.inputValue()).toBe("JAPAN\n608\nUST");
+
+    await confirmar(pagina);
+    await aviso(pagina).waitFor();
+    expect(await destacadas(pagina)).toEqual([]);
+    expect(await aviso(pagina).getAttribute("data-aviso")).toBe("sem-chave");
+    expect(await pagina.locator("#avisos p").allInnerTexts()).toEqual([
+      "Não deu para identificar a peça.",
+      "Só rolamento rígido de esferas é identificado por enquanto.",
+      "Texto lido na foto:",
+      "JAPAN\n608\nUST",
+    ]);
+
+    await fotografar(pagina);
+    await campo.waitFor();
+    await campo.fill("Rolamento 6312 2Z C3");
+    await confirmar(pagina);
+    await pagina.waitForSelector('#avisos [data-aviso="nesta-maquina"]');
+    expect(await destacadas(pagina)).toEqual(["rolamento-rigido-de-esferas|6312|ZZ|C3"]);
+    expect(await pagina.locator("#avisos").innerText()).toBe("Peça identificada: Rolamento 6312 ZZ C3");
+
+    expect(chamadasAoProvedor).toEqual(Array(2).fill("https://bedrock-runtime.us-east-1.amazonaws.com/model/us.openai.gpt-6-luna/converse"));
+    expect(erros).toEqual([]);
+    await contexto.close();
+  }, 60_000);
+
+  it("áudio: grava no microfone, mostra o texto ouvido, a pessoa o corrige, confirma, e o grupo certo fica destacado", async () => {
+    const { pagina, contexto, erros, chamadasAoProvedor } = await abrir004512({ audio: { env: COM_CHAVE_DO_GROQ, gravada: GROQ_GRAVADO.sucesso } });
+
+    await falar(pagina);
+    const campo = pagina.locator("#audio-ouvido");
+    await campo.waitFor();
+    expect(await campo.inputValue()).toBe("Rolamento 6304 ZZ C3");
+
+    await confirmar(pagina);
+    await pagina.waitForSelector('#avisos [data-aviso="desconhecida"]');
+    expect(await pagina.locator("#avisos").innerText()).toBe("Esta peça não está no cadastro.");
+    expect(await destacadas(pagina)).toEqual([]);
+
+    await falar(pagina);
+    await campo.waitFor();
+    await campo.fill("Rolamento 6309 ZZ C3");
+    await confirmar(pagina);
+    await pagina.waitForSelector('#avisos [data-aviso="nesta-maquina"]');
+    expect(await destacadas(pagina)).toEqual(["rolamento-rigido-de-esferas|6309|ZZ|C3"]);
+    expect(await pagina.locator("#avisos").innerText()).toBe("Peça identificada: Rolamento 6309 ZZ C3");
+
+    expect(chamadasAoProvedor).toEqual(Array(2).fill("https://api.groq.com/openai/v1/audio/transcriptions"));
+    expect(erros).toEqual([]);
+    await contexto.close();
+  }, 60_000);
+
+  it("site estático sem Functions: cada botão diz que está indisponível e a página segue inteira", async () => {
+    const { pagina, contexto, erros } = await abrir004512({});
+
+    await fotografar(pagina);
+    await pagina.waitForSelector('#entradas [role="alert"]');
+    expect(await pagina.locator('#entradas [role="alert"]').innerText()).toBe("A leitura de foto está indisponível agora.");
+
+    await falar(pagina);
+    await pagina.waitForSelector("#entradas :text('A transcrição de áudio está indisponível agora.')");
+    expect(await mensagemDeErro(pagina)).toContain("Tentar de novo");
+
+    expect(await pagina.locator("[data-peca]").count()).toBe(2);
+    expect(await pagina.locator('#entradas button:has-text("Achar peça por foto")').isVisible()).toBe(true);
+    expect(erros).toEqual([]);
+    await contexto.close();
+  }, 60_000);
+
+  it("funções sem a chave do provedor: foto e áudio dizem que estão indisponíveis, sem chamar o provedor", async () => {
+    const { pagina, contexto, erros, chamadasAoProvedor } = await abrir004512({ foto: SEM_CHAVE, audio: { env: {}, gravada: GROQ_GRAVADO.sucesso } });
+
+    await fotografar(pagina);
+    await pagina.waitForSelector('#entradas [role="alert"]');
+    expect(await pagina.locator('#entradas [role="alert"]').innerText()).toBe("A leitura de foto está indisponível agora.");
+    await falar(pagina);
+    await pagina.waitForSelector("#entradas :text('A transcrição de áudio está indisponível agora.')");
+
+    expect(chamadasAoProvedor).toEqual([]);
+    expect(erros).toEqual([]);
+    await contexto.close();
+  }, 60_000);
+
+  it("limite do Groq: o áudio diz que o limite da demo foi atingido e deixa tentar de novo", async () => {
+    const { pagina, contexto, chamadasAoProvedor } = await abrir004512({ audio: { env: COM_CHAVE_DO_GROQ, gravada: GROQ_GRAVADO.limite } });
+
+    await falar(pagina);
+    await pagina.waitForSelector("#entradas :text('Limite da demo atingido. Tente em um minuto.')");
+
+    expect(await mensagemDeErro(pagina)).toContain("Tentar de novo");
+    expect(chamadasAoProvedor).toEqual(["https://api.groq.com/openai/v1/audio/transcriptions"]);
     await contexto.close();
   }, 60_000);
 });

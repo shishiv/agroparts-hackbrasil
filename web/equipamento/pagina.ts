@@ -1,15 +1,18 @@
 import { PECA_IDENTIFICADA, type PecaIdentificada } from "../../src/contrato";
 import type { IndiceDeGrupos, PaginaCarregada } from "../../src/historico";
+import type { ModuloDeEntrada } from "../entrada";
 import { campoDeNumero, type Ir } from "../inicio/casca";
 import { h, type Filho } from "../inicio/dom";
 import { carregarIndice, carregarPagina, type Buscar } from "./carregar";
-import { blocoDeSaldo, desenharHistorico } from "./desenhar";
+import { blocoDeSaldo, desenharHistorico, naoIdentificada } from "./desenhar";
 
 export interface Ambiente {
   buscar: Buscar;
   ir: Ir;
   /** Onde o evento `agroparts:peca-identificada` chega: a janela, na página de verdade. */
   escutar: EventTarget;
+  /** Os botões que viram texto a peça (foto, áudio). A página os monta quando a máquina existe. */
+  entradas: readonly ModuloDeEntrada[];
 }
 
 const estado = (nome: string, ...filhos: Filho[]): HTMLElement => h("section", { class: "estado", "data-estado": nome }, ...filhos);
@@ -51,18 +54,19 @@ export async function montarEquipamento(raiz: HTMLElement, digitado: string, amb
 
   const avisos = (): HTMLElement | null => raiz.querySelector<HTMLElement>("#avisos");
 
-  async function identificar({ leitura }: PecaIdentificada): Promise<void> {
+  async function identificar(peca: PecaIdentificada): Promise<void> {
+    const { leitura } = peca;
     const painel = avisos();
     if (!pronta || !painel) return;
     if (leitura.decisao !== "resolve") {
-      painel.replaceChildren(aviso("sem-chave", "Não deu para identificar a peça."));
+      painel.replaceChildren(aviso("sem-chave", ...naoIdentificada(peca)));
       return;
     }
     const naMaquina = destacar(raiz, leitura.chave);
     if (naMaquina) {
       naMaquina.querySelector("details")?.setAttribute("open", "");
-      naMaquina.scrollIntoView({ block: "center" });
-      painel.replaceChildren(aviso("nesta-maquina", `Peça desta máquina: ${leitura.rotulo}`));
+      naMaquina.scrollIntoView({ block: "start" });
+      painel.replaceChildren(aviso("nesta-maquina", `Peça identificada: ${leitura.rotulo}`));
       return;
     }
     try {
@@ -112,6 +116,8 @@ export async function montarEquipamento(raiz: HTMLElement, digitado: string, amb
     const { equipamento } = pagina.historico;
     raiz.ownerDocument.title = `${equipamento.nome} ${equipamento.tag} · AgroParts`;
     raiz.replaceChildren(...desenharHistorico(pagina).filter((f): f is Node | string => Boolean(f)));
+    const destino = raiz.querySelector<HTMLElement>("#entradas");
+    if (destino) for (const entrada of ambiente.entradas) entrada.montar(destino);
   }
 
   await carregar();

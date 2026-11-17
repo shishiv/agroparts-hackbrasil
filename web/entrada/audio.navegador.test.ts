@@ -77,7 +77,7 @@ const ate = <T>(verificar: () => T): Promise<T> => vi.waitFor(verificar, { timeo
 const esperar = (ms: number) => new Promise((resolver) => setTimeout(resolver, ms));
 
 async function gravarEPararDepoisDe(destino: HTMLElement, ms: number): Promise<void> {
-  botao(destino, "Falar a peça").click();
+  botao(destino, "Achar peça por voz").click();
   await ate(() => botao(destino, "Parar"));
   await esperar(ms);
   botao(destino, "Parar").click();
@@ -103,7 +103,7 @@ describe("o botão de áudio", () => {
     expect(pecas).toHaveLength(1);
     expect(pecas[0]?.origem).toEqual({ tipo: "audio", modelo: "whisper-large-v3-turbo", textoOuvido: "Rolamento 6304, ZZ, C3.", confirmadoPelaPessoa: true });
     expect(pecas[0]?.leitura).toMatchObject({ decisao: "resolve", rotulo: "Rolamento 6304 ZZ C3" });
-    expect(botao(destino, "Falar a peça")).toBeDefined();
+    expect(botao(destino, "Achar peça por voz")).toBeDefined();
   });
 
   it("o que a pessoa corrige no campo é o que o motor lê", async () => {
@@ -152,7 +152,7 @@ describe("o botão de áudio", () => {
     const { buscar, enviados } = servidor();
     const { destino } = abrir({ buscar, gravacaoMaximaMs: 500 });
 
-    botao(destino, "Falar a peça").click();
+    botao(destino, "Achar peça por voz").click();
     await ate(() => campo(destino));
 
     expect(enviados).toHaveLength(1);
@@ -170,7 +170,7 @@ describe("o botão de áudio", () => {
       },
     });
 
-    botao(destino, "Falar a peça").click();
+    botao(destino, "Achar peça por voz").click();
     await ate(() => expect(destino.textContent).toContain("Não consegui usar o microfone."));
     botao(destino, "Tentar de novo").click();
     await ate(() => botao(destino, "Parar"));
@@ -190,6 +190,31 @@ describe("o botão de áudio", () => {
 
     expect(enviados).toHaveLength(2);
     expect(enviados[1]?.bytes).toEqual(enviados[0]?.bytes);
+  });
+
+  it.each([
+    ["o site estático não tem a função (404 com HTML)", () => new Response("<!doctype html>", { status: 404 })],
+    ["a função está sem a chave do Groq (503)", () => Response.json({ erro: "sem-chave" }, { status: 503 })],
+    ["o Groq falhou (502)", () => Response.json({ erro: "groq" }, { status: 502 })],
+    ["a função responde 200 com HTML no lugar do JSON", () => new Response("<!doctype html>", { status: 200 })],
+  ])("quando %s, diz que a transcrição está indisponível e deixa tentar de novo", async (_, resposta) => {
+    const { buscar } = servidor([resposta()]);
+    const { destino, pecas, fechar } = abrir({ buscar });
+
+    await gravarEPararDepoisDe(destino, 300);
+    await ate(() => expect(destino.textContent).toContain("A transcrição de áudio está indisponível agora."));
+    fechar();
+
+    expect(botao(destino, "Tentar de novo")).toBeDefined();
+    expect(pecas).toEqual([]);
+  });
+
+  it("sem rede, diz que a transcrição está indisponível", async () => {
+    const { destino } = abrir({ buscar: () => Promise.reject(new TypeError("Failed to fetch")) });
+
+    await gravarEPararDepoisDe(destino, 300);
+
+    await ate(() => expect(destino.textContent).toContain("A transcrição de áudio está indisponível agora."));
   });
 
   it("silêncio gravado diz que não ouviu nada", async () => {

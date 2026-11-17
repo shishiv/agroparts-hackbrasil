@@ -8,6 +8,6 @@ export interface ModuloDeEntrada {
 }
 
 export const entradasRegistradas: readonly ModuloDeEntrada[] = [
-  entradaDeAudio,
   entradaDeFoto,
+  entradaDeAudio,
 ];

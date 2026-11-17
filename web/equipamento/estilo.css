@@ -32,8 +32,47 @@ p {
   margin: 0.25rem 0;
 }
 
+.entradas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.entradas > section {
+  flex: 1 1 10rem;
+}
+
+.entradas > section:has(form, p) {
+  flex-basis: 100%;
+}
+
+.entradas section button {
+  width: 100%;
+  padding-inline: 0.75rem;
+  line-height: 1.2;
+}
+
+.entradas section p {
+  margin: 0.75rem 0;
+}
+
+.entradas section > :first-child {
+  margin-top: 0;
+}
+
+.entradas section > :last-child {
+  margin-bottom: 0;
+}
+
+.entradas section form button {
+  width: auto;
+  padding-inline: 1.25rem;
+}
+
 .peca,
 .sem-chave {
+  scroll-margin-top: 0.5rem;
   padding: 1rem;
   border: 1px solid var(--linha);
   border-radius: 0.75rem;
@@ -48,6 +87,10 @@ p {
 
 .resumo {
   font-weight: 700;
+}
+
+.texto-lido {
+  white-space: pre-line;
 }
 
 .apoio,

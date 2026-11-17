@@ -53,6 +53,26 @@ describe("lerFoto", () => {
   });
 });
 
+describe("a causa da falha, para a página dizer em português", () => {
+  const falhaDe = (recebida: ReturnType<typeof resposta>) =>
+    lerFoto(new Blob(), async () => recebida).then(
+      () => "leu",
+      (erro: unknown) => (erro instanceof FotoNaoLida ? erro.falha : "outro erro"),
+    );
+
+  it("429 é o limite da demo", async () => {
+    expect(await falhaDe(resposta(429, { erro: "limite" }))).toBe("limite");
+  });
+
+  it.each([404, 405, 500, 502, 503])("%i é a função indisponível", async (status) => {
+    expect(await falhaDe(resposta(status, { erro: "qualquer" }))).toBe("indisponivel");
+  });
+
+  it("uma resposta 200 que não é o JSON da função também é indisponível", async () => {
+    expect(await falhaDe(resposta(200, new SyntaxError("<!doctype")))).toBe("indisponivel");
+  });
+});
+
 describe("identificarPeca", () => {
   const lido = { texto: "SKF 6310-2Z/C3", modelo: "us.openai.gpt-6-luna" };
 
