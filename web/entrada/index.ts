@@ -1,4 +1,5 @@
 import { entradaDeAudio } from "./audio";
+import { entradaDeFoto } from "./foto";
 
 export interface ModuloDeEntrada {
   id: string;
@@ -8,4 +9,5 @@ export interface ModuloDeEntrada {
 
 export const entradasRegistradas: readonly ModuloDeEntrada[] = [
   entradaDeAudio,
+  entradaDeFoto,
 ];
