@@ -143,6 +143,11 @@ describe("ler: o que vai a uma pessoa", () => {
     ["ROLAMENTO 6205 ZZ 30/62/16", "revisa sufixo-desconhecido"],
     ["ROLAMENTO DE ESFERA, REFERÊNCIA FABRICANTE: 6202 2RS , MATERIAL: EM AÇO INOXIDÁVEL", "revisa sufixo-desconhecido"],
     ["ROLAMENTO 6232Z", "revisa duas-leituras"],
+    ["ROLAMENTO 6082RS", "revisa duas-leituras"],
+    ["ROLAMENTO 6262Z", "revisa duas-leituras"],
+    ["ROLAMENTO 6052Z C3", "revisa duas-leituras"],
+    ["ROLAMENTO 6082-RS1", "revisa duas-leituras"],
+    ["ROLAMENTO 6262RSH", "revisa duas-leituras"],
     ["ROLAMENTO 6205 ZZ, TIPO USO: INOX", "revisa sufixo-desconhecido"],
     ["ROLAMENTO 6310 ZZ, APLICAÇÃO: MOENDA C3", "revisa sufixo-desconhecido"],
     ["ROLAMENTO 6205 ZZ, TIPO USO: 2RS", "revisa sufixo-desconhecido"],
@@ -237,6 +242,9 @@ describe("ler: o que o motor recusa", () => {
     ["ROLAMENTO 1206 EKTN9 AUTOCOMPENSADOR DE ESFERAS", "recusa fora-das-familias"],
     ["ROLAMENTO 63206 LLB/2A", "recusa fora-das-familias"],
     ["ROLAMENTO 6082 RS", "recusa fora-das-familias"],
+    ["ROLAMENTO 6082", "recusa fora-das-familias"],
+    ["ROLAMENTO 6085Z", "recusa fora-das-familias"],
+    ["ROLAMENTO 63282RS", "recusa fora-das-familias"],
     ["CORREIA TRANSMISSÃO, MATERIAL: BORRACHA , TIPO: B 58", "recusa fora-das-familias"],
   ];
   for (const [texto, esperado] of CASOS) {

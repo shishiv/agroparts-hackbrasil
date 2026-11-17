@@ -18,4 +18,8 @@ describe("normalizar", () => {
   it("não depende de localidade: o i sem ponto fica como está", () => {
     expect(normalizar("rolamento ı")).toBe("ROLAMENTO I");
   });
+
+  it("não depende de localidade: o i minúsculo vira I, e o İ e o ß ficam como estão", () => {
+    expect(normalizar("inox İ ß")).toBe("INOX İ ß");
+  });
 });

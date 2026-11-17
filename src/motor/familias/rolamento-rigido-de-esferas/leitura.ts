@@ -161,8 +161,18 @@ function entendidos(designacoes: readonly Numero[], ocorrencias: readonly Ocorre
 export function lerRolamento(n: string): Leitura {
   const campos = dividirEmCampos(n);
   const palavras = lerPalavras(n, campos);
-  const designacoes = numerosDeReferencia(n).filter((x) => ehDesignacaoDaFamilia(x.digitos));
-  if (designacoes.length === 0) return semDesignacao(palavras);
+  const numeros = numerosDeReferencia(n);
+  const designacoes = numeros.filter((x) => ehDesignacaoDaFamilia(x.digitos));
+  if (designacoes.length === 0) {
+    const miniaturaComVedacaoColada =
+      palavras.abertura !== "outra" &&
+      palavras.outrosTipos.length === 0 &&
+      numeros.some(
+        (designacao) => designacao.digitos.length === 4 && colaOUltimoDigitoDaVedacao(n, { designacao, cadeia: lerCadeia(n, designacao.trecho.fim) }),
+      );
+    if (miniaturaComVedacaoColada) return { decisao: "revisa", familia: ID_DA_FAMILIA, pendencias: ["duas-leituras"], atributos: [] };
+    return semDesignacao(palavras);
+  }
   if (palavras.abertura === "outra") {
     return { decisao: "recusa", motivo: "fora-das-familias", detalhe: "o texto é de outra peça que cita um rolamento", atributos: [] };
   }
