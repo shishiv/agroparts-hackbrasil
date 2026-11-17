@@ -1,0 +1,66 @@
+{
+  "origem": "sintetizada",
+  "descricao": "Falas sintetizadas com Piper (vozes pt_BR faber, cadu e jeff), sem ruído.",
+  "falas": [
+    {
+      "arquivo": "01.webm",
+      "esperado": "Rolamento 6310 2Z C3",
+      "dito": "rolamento seis três um zero, dois zê, cê três",
+      "voz": "faber"
+    },
+    {
+      "arquivo": "02.m4a",
+      "esperado": "Rolamento 6205 2RS",
+      "dito": "rolamento seis dois zero cinco, dois erre esse",
+      "voz": "cadu"
+    },
+    {
+      "arquivo": "03.webm",
+      "esperado": "Rolamento 6003 ZZ",
+      "dito": "rolamento seis zero zero três, zê zê",
+      "voz": "jeff"
+    },
+    {
+      "arquivo": "04.m4a",
+      "esperado": "Rolamento de esferas 6306 2RS C3",
+      "dito": "rolamento de esferas seis três zero seis, dois erre esse, cê três",
+      "voz": "faber"
+    },
+    {
+      "arquivo": "05.webm",
+      "esperado": "Rolamento 6204 2Z C3",
+      "dito": "preciso de um rolamento seis dois zero quatro, dois zê, cê três",
+      "voz": "cadu"
+    },
+    {
+      "arquivo": "06.m4a",
+      "esperado": "Rolamento 6205 2RS",
+      "dito": "rolamento sessenta e dois zero cinco, dois erre esse",
+      "voz": "jeff"
+    },
+    {
+      "arquivo": "07.webm",
+      "esperado": "Rolamento 6310 2Z C3",
+      "dito": "rolamento seis mil trezentos e dez, dois zê, cê três",
+      "voz": "faber"
+    },
+    {
+      "arquivo": "08.m4a",
+      "esperado": "Rolamento 6201 ZZ C3",
+      "dito": "rolamento seis dois zero um, zê zê, cê três",
+      "voz": "cadu"
+    },
+    {
+      "arquivo": "09.webm",
+      "esperado": "Rolamento 6305 2RSH",
+      "dito": "rolamento seis três zero cinco, dois erre esse agá",
+      "voz": "jeff"
+    },
+    {
+      "arquivo": "10.m4a",
+      "esperado": "Rolamento 6006 RS",
+      "dito": "rolamento seis zero zero seis, erre esse",
+      "voz": "faber"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+.entrada-audio {
+  margin: 1rem 0;
+}
+
+.entrada-audio p {
+  margin: 0 0 0.75rem;
+}
+
+.entrada-audio button {
+  min-height: 3rem;
+  padding: 0 1.25rem;
+  border: 2px solid var(--acento);
+  border-radius: 0.5rem;
+  background: var(--acento);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+}
+
+.entrada-audio button.secundario {
+  background: var(--papel);
+  color: var(--acento);
+}
+
+.entrada-audio button.gravando {
+  border-color: #8a1c1c;
+  background: #8a1c1c;
+}
+
+.entrada-audio .conferir label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.entrada-audio .conferir input {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0 0.75rem;
+  border: 2px solid var(--apoio);
+  border-radius: 0.5rem;
+  background: var(--papel);
+  color: var(--texto);
+  font: inherit;
+  font-size: 1.25rem;
+}
+
+.entrada-audio .conferir .acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}

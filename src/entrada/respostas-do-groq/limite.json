@@ -1,0 +1,14 @@
+{
+  "origem": "escrita à mão no formato da documentação do Groq (console.groq.com/docs/rate-limits): a chave deste ambiente aceitou 24 chamadas seguidas e não bateu no limite",
+  "status": 429,
+  "corpo": {
+    "error": {
+      "message": "Rate limit reached for model `whisper-large-v3-turbo` in organization `org_x` service tier `on_demand` on requests per minute (RPM): Limit 20, Used 20, Requested 1. Please try again in 3s.",
+      "type": "requests",
+      "code": "rate_limit_exceeded"
+    }
+  },
+  "cabecalhos": {
+    "retry-after": "3"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "origem": "gravada em 17/11/2026 em api.groq.com/openai/v1/audio/transcriptions com whisper-large-v3-turbo; fala sintetizada: rolamento seis três zero quatro, zê zê, cê três",
+  "status": 200,
+  "corpo": {
+    "text": " Rolamento 6304, ZZ, C3.",
+    "x_groq": {
+      "id": "req_01m7mxepepezdbg5kmrjrsj5kj"
+    }
+  }
+}
