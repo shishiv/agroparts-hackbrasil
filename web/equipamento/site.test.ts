@@ -10,23 +10,18 @@ const CONFIGURACAO = join(import.meta.dir, "..", "..", "vite.config.ts");
 const CELULAR = { width: 390, height: 844 };
 
 /**
- * Sem Chromium nesta máquina, estes testes são pulados com um aviso. O `bun run test:navegador`
- * também precisa do Chromium (`CHROMIUM_PATH`) e falha sem ele, então a falta não passa em branco.
+ * Sem Chromium estes testes falham, e não pulam: um verde sem navegador não prova o critério
+ * "o link e o número digitado mostram o mesmo histórico". Rode `bunx playwright install chromium`
+ * ou aponte `CHROMIUM_PATH` para um Chromium, como o `bun run test:navegador` já pede.
  */
 const executavel = process.env.CHROMIUM_PATH;
-const navegador: Browser | null = await chromium
-  .launch(executavel ? { executablePath: executavel } : {})
-  .catch((erro: Error) => {
-    console.warn(`site.test.ts: sem Chromium, testes do site pulados (${erro.message.split("\n")[0]})`);
-    return null;
-  });
+const navegador: Browser = await chromium.launch(executavel ? { executablePath: executavel } : {});
 
 let saida = "";
 let servidor: PreviewServer | undefined;
 let base = "";
 
 beforeAll(async () => {
-  if (!navegador) return;
   saida = await mkdtemp(join(tmpdir(), "agroparts-site-"));
   await build({ configFile: CONFIGURACAO, logLevel: "silent", build: { outDir: saida } });
   servidor = await preview({
@@ -39,7 +34,7 @@ beforeAll(async () => {
 }, 120_000);
 
 afterAll(async () => {
-  await navegador?.close();
+  await navegador.close();
   await servidor?.close();
   if (saida) await rm(saida, { recursive: true, force: true });
 });
@@ -52,7 +47,6 @@ interface PaginaObservada {
 }
 
 async function celular(): Promise<PaginaObservada> {
-  if (!navegador) throw new Error("sem navegador");
   const contexto = await navegador.newContext({ viewport: CELULAR });
   const pagina = await contexto.newPage();
   const dados: PaginaObservada["dados"] = [];
@@ -70,7 +64,7 @@ async function historicoDe(pagina: Page): Promise<string> {
   return pagina.locator("main").innerText();
 }
 
-describe.skipIf(!navegador)("no site construído, num celular de 390 px", () => {
+describe("no site construído, num celular de 390 px", () => {
   it("abrir o link /e/<patrimônio> e digitar o número na página inicial mostram o mesmo histórico", async () => {
     const link = await celular();
     await link.pagina.goto(`${base}/e/004512?origem=nfc`);
