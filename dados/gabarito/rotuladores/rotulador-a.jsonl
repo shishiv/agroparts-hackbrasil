@@ -1,0 +1,520 @@
+{"codigoItem":472443,"decisao":"recusa","motivo":"contradicao","nota":"Código 6017 Z (uma blindagem) junto de BLINDAGEM DUPLA."}
+{"codigoItem":472506,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6211 C3 sem código de vedação."}
+{"codigoItem":601154,"decisao":"recusa","motivo":"fora-das-familias","nota":"3313 de duas carreiras não é da série 6."}
+{"codigoItem":601435,"decisao":"recusa","motivo":"fora-das-familias","nota":"N1013 não é designação da família."}
+{"codigoItem":387948,"decisao":"resolve","serie":"6313","vedacao":"Z","folga":"CN","provas":{"serie":"6313","vedacao":"6313-Z","folga":null},"nota":"6313-Z, diâmetro 65 mm confere, folga não escrita."}
+{"codigoItem":455452,"decisao":"recusa","motivo":"fora-das-familias","nota":"GE60-XL-KRR-B é inserto, fora da família."}
+{"codigoItem":317390,"decisao":"resolve","serie":"6213","vedacao":"ZZ","folga":"CN","provas":{"serie":"6213","vedacao":"6213ZZ","folga":null},"nota":"6213ZZ com blindagem dupla, diâmetro 65 confere."}
+{"codigoItem":472645,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6210-C3 sem código de vedação."}
+{"codigoItem":606806,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor, não é rolamento."}
+{"codigoItem":274566,"decisao":"recusa","motivo":"fora-das-familias","nota":"GRAE 20 NPPB é mancal com inserto."}
+{"codigoItem":254315,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia, não é rolamento."}
+{"codigoItem":472537,"decisao":"resolve","serie":"629","vedacao":"ZZ","folga":"CN","provas":{"serie":"629","vedacao":"629 ZZ","folga":null},"nota":"629 ZZ, diâmetro 9 confere."}
+{"codigoItem":235213,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia, não é rolamento."}
+{"codigoItem":472588,"decisao":"resolve","serie":"6809","vedacao":"ZZ","folga":"CN","provas":{"serie":"6809","vedacao":"6809 ZZ","folga":null},"nota":"6809 ZZ, diâmetro 45 confere."}
+{"codigoItem":326502,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":287183,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":472450,"decisao":"resolve","serie":"6011","vedacao":"ZZ","folga":"CN","provas":{"serie":"6011","vedacao":"6011 ZZ","folga":null},"nota":"6011 ZZ, diâmetro 55 confere."}
+{"codigoItem":357380,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6312 com sufixo 2ZR fora da tabela."}
+{"codigoItem":319096,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência 3984 cônica, fora da família."}
+{"codigoItem":283529,"decisao":"resolve","serie":"6312","vedacao":"ZZ","folga":"CN","provas":{"serie":"6312","vedacao":"6312 ZZ","folga":null},"nota":"6312 ZZ, metálico confirma a blindagem."}
+{"codigoItem":606551,"decisao":"recusa","motivo":"fora-das-familias","nota":"2206 autocompensador."}
+{"codigoItem":613055,"decisao":"recusa","motivo":"fora-das-familias","nota":"Part number 820504-52 não segue a série 6."}
+{"codigoItem":472581,"decisao":"resolve","serie":"635","vedacao":"2RS","folga":"CN","provas":{"serie":"635","vedacao":"635 2RS","folga":null},"nota":"635 2RS, diâmetro 5 confere."}
+{"codigoItem":267273,"decisao":"recusa","motivo":"fora-das-familias","nota":"UCR209 é mancal com inserto."}
+{"codigoItem":250905,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia, não é rolamento."}
+{"codigoItem":317396,"decisao":"resolve","serie":"6004","vedacao":"ZZ","folga":"CN","provas":{"serie":"6004","vedacao":"6004ZZ","folga":null},"nota":"6004ZZ, diâmetro 20 confere."}
+{"codigoItem":472514,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6216 sem código de vedação."}
+{"codigoItem":472583,"decisao":"resolve","serie":"6800","vedacao":"ZZ","folga":"CN","provas":{"serie":"6800","vedacao":"6800 ZZ","folga":null},"nota":"6800 ZZ, diâmetro 10 confere."}
+{"codigoItem":472593,"decisao":"resolve","serie":"6908","vedacao":"2RS","folga":"CN","provas":{"serie":"6908","vedacao":"6908 2RS","folga":null},"nota":"6908 2RS, diâmetro 40 confere."}
+{"codigoItem":317406,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6303 sem código de vedação."}
+{"codigoItem":466753,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 2351-090-084."}
+{"codigoItem":472446,"decisao":"resolve","serie":"6016","vedacao":"ZZ","folga":"CN","provas":{"serie":"6016","vedacao":"6016 ZZ","folga":null},"nota":"6016 ZZ, diâmetro 80 confere."}
+{"codigoItem":466761,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 1517-020-083."}
+{"codigoItem":317414,"decisao":"resolve","serie":"629","vedacao":"ZZ","folga":"CN","provas":{"serie":"629","vedacao":"629ZZ","folga":null},"nota":"629ZZ, diâmetro 9 confere."}
+{"codigoItem":292853,"decisao":"resolve","serie":"6314","vedacao":"ZZ","folga":"CN","provas":{"serie":"6314","vedacao":"6314ZZ","folga":null},"nota":"6314ZZ, folga não escrita."}
+{"codigoItem":466738,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 1812-150-398."}
+{"codigoItem":472547,"decisao":"resolve","serie":"6308","vedacao":"2RS","folga":"CN","provas":{"serie":"6308","vedacao":"6308 2RS","folga":null},"nota":"6308 2RS, diâmetro 40 confere."}
+{"codigoItem":472634,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6310-C3 sem código de vedação."}
+{"codigoItem":254313,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia, não é rolamento."}
+{"codigoItem":611283,"decisao":"recusa","motivo":"fora-das-familias","nota":"Rolo de apoio NATR, referência 3020460 fora da série 6."}
+{"codigoItem":472546,"decisao":"resolve","serie":"6305","vedacao":"2RS","folga":"CN","provas":{"serie":"6305","vedacao":"6305 2RS","folga":null},"nota":"6305 2RS, diâmetro 25 confere."}
+{"codigoItem":278296,"decisao":"recusa","motivo":"fora-das-familias","nota":"UCR 211 é mancal com inserto."}
+{"codigoItem":318845,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":479590,"decisao":"resolve","serie":"6012","vedacao":"ZZ","folga":"CN","provas":{"serie":"6012","vedacao":"6012-2Z","folga":null},"nota":"6012-2Z, diâmetro 60 confere."}
+{"codigoItem":606805,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":625866,"decisao":"recusa","motivo":"fora-das-familias","nota":"1206 autocompensador."}
+{"codigoItem":611422,"decisao":"recusa","motivo":"fora-das-familias","nota":"1202 autocompensador."}
+{"codigoItem":317408,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6305 sem código de vedação."}
+{"codigoItem":472657,"decisao":"resolve","serie":"6312","vedacao":"ZZ","folga":"CN","provas":{"serie":"6312","vedacao":"6312-2Z","folga":null},"nota":"6312-2Z com blindagem metálica, diâmetro 60 confere."}
+{"codigoItem":396846,"decisao":"recusa","motivo":"fora-das-familias","nota":"GRAE 25 NPPB é mancal com inserto."}
+{"codigoItem":317424,"decisao":"resolve","serie":"6214","vedacao":"ZZ","folga":"CN","provas":{"serie":"6214","vedacao":"6214ZZ","folga":null},"nota":"6214ZZ, diâmetro 70 confere."}
+{"codigoItem":611133,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":472453,"decisao":"resolve","serie":"6010","vedacao":"2RS","folga":"CN","provas":{"serie":"6010","vedacao":"6010 2RS","folga":null},"nota":"6010 2RS, diâmetro 50 confere."}
+{"codigoItem":472630,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6208-C3 sem código de vedação."}
+{"codigoItem":601482,"decisao":"recusa","motivo":"fora-das-familias","nota":"70BER é contato angular, fora da série 6."}
+{"codigoItem":472474,"decisao":"resolve","serie":"6004","vedacao":"2RS","folga":"CN","provas":{"serie":"6004","vedacao":"6004 2RS","folga":null},"nota":"6004 2RS, diâmetro 20 confere."}
+{"codigoItem":346381,"decisao":"resolve","serie":"6306","vedacao":"ZZ","folga":"CN","provas":{"serie":"6306","vedacao":"6306-2Z","folga":null},"nota":"6306-2Z, folga não escrita."}
+{"codigoItem":601431,"decisao":"recusa","motivo":"fora-das-familias","nota":"8006 não segue a série 6."}
+{"codigoItem":472599,"decisao":"resolve","serie":"6207","vedacao":"Z","folga":"CN","provas":{"serie":"6207","vedacao":"6207-Z","folga":null},"nota":"6207-Z com blindagem metálica, diâmetro 35 confere."}
+{"codigoItem":472475,"decisao":"resolve","serie":"6003","vedacao":"ZZ","folga":"CN","provas":{"serie":"6003","vedacao":"6003 ZZ","folga":null},"nota":"6003 ZZ, diâmetro 17 confere."}
+{"codigoItem":466744,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 2351-090-106."}
+{"codigoItem":472654,"decisao":"resolve","serie":"6306","vedacao":"2RS","folga":"CN","provas":{"serie":"6306","vedacao":"6306-2RS","folga":null},"nota":"6306-2RS com vedação NBR, diâmetro 30 confere."}
+{"codigoItem":606553,"decisao":"resolve","serie":"6408","vedacao":"ZZ","folga":"CN","provas":{"serie":"6408","vedacao":"6408-ZZ","folga":null},"nota":"6408-ZZ, diâmetro 40 confere."}
+{"codigoItem":465664,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":472578,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6315 C3 sem código de vedação."}
+{"codigoItem":472557,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6314 C3/EQ sem código de vedação e com sufixo EQ fora da tabela."}
+{"codigoItem":601114,"decisao":"recusa","motivo":"fora-das-familias","nota":"3313 de duas carreiras."}
+{"codigoItem":603041,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":472649,"decisao":"resolve","serie":"6307","vedacao":"Z","folga":"C3","provas":{"serie":"6307","vedacao":"6307-Z/C3","folga":"C3"},"nota":"6307-Z/C3 com blindagem metálica, diâmetro 35 confere."}
+{"codigoItem":264287,"decisao":"resolve","serie":"6203","vedacao":"ZZ","folga":"CN","provas":{"serie":"6203","vedacao":"6203 ZZ","folga":null},"nota":"6203 ZZ, folga não escrita."}
+{"codigoItem":466755,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 1812-160-091."}
+{"codigoItem":250908,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":318846,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":472647,"decisao":"resolve","serie":"6210","vedacao":"ZZ","folga":"C3","provas":{"serie":"6210","vedacao":"6210-ZZ/C3","folga":"C3"},"nota":"6210-ZZ/C3, diâmetro 50 confere."}
+{"codigoItem":478570,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":385825,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":357282,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6212 com sufixo 2ZR fora da tabela."}
+{"codigoItem":601429,"decisao":"resolve","serie":"6311","vedacao":"ZZ","folga":"CN","provas":{"serie":"6311","vedacao":"6311 ZZ","folga":null},"nota":"6311 ZZ, diâmetro 55 confere."}
+{"codigoItem":467557,"decisao":"recusa","motivo":"fora-das-familias","nota":"EX-205-G2 é inserto, fora da série 6."}
+{"codigoItem":472513,"decisao":"resolve","serie":"6214","vedacao":"ZZ","folga":"CN","provas":{"serie":"6214","vedacao":"6214 ZZ","folga":null},"nota":"6214 ZZ, diâmetro 70 confere."}
+{"codigoItem":472512,"decisao":"resolve","serie":"6213","vedacao":"ZZ","folga":"CN","provas":{"serie":"6213","vedacao":"6213 ZZ","folga":null},"nota":"6213 ZZ, diâmetro 65 confere."}
+{"codigoItem":317391,"decisao":"resolve","serie":"6215","vedacao":"ZZ","folga":"CN","provas":{"serie":"6215","vedacao":"6215ZZ","folga":null},"nota":"6215ZZ, diâmetro 75 confere."}
+{"codigoItem":346386,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6312 C3 sem código de vedação."}
+{"codigoItem":606512,"decisao":"recusa","motivo":"fora-das-familias","nota":"3305 de contato angular, duas carreiras."}
+{"codigoItem":472535,"decisao":"resolve","serie":"626","vedacao":"2RS","folga":"CN","provas":{"serie":"626","vedacao":"626 2RS","folga":null},"nota":"626 2RS, diâmetro 6 confere."}
+{"codigoItem":466739,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 1812-150-444."}
+{"codigoItem":472636,"decisao":"resolve","serie":"6310","vedacao":"Z","folga":"CN","provas":{"serie":"6310","vedacao":"6310-Z","folga":null},"nota":"6310-Z com blindagem metálica, diâmetro 50 confere."}
+{"codigoItem":283524,"decisao":"recusa","motivo":"contradicao","nota":"Código de borracha 2RS1 junto de METÁLICO."}
+{"codigoItem":606613,"decisao":"recusa","motivo":"fora-das-familias","nota":"2312K autocompensador."}
+{"codigoItem":472510,"decisao":"resolve","serie":"6211","vedacao":"ZZ","folga":"CN","provas":{"serie":"6211","vedacao":"6211 ZZ","folga":null},"nota":"6211 ZZ, diâmetro 55 confere."}
+{"codigoItem":606554,"decisao":"resolve","serie":"6024","vedacao":"ZZ","folga":"CN","provas":{"serie":"6024","vedacao":"6024-ZZ","folga":null},"nota":"6024-ZZ, diâmetro 120 confere."}
+{"codigoItem":601302,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"625 sem código de vedação."}
+{"codigoItem":456528,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 2351-020-159."}
+{"codigoItem":317393,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6001 sem código de vedação."}
+{"codigoItem":611132,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":319045,"decisao":"recusa","motivo":"fora-das-familias","nota":"3207 de contato angular, duas carreiras."}
+{"codigoItem":353161,"decisao":"resolve","serie":"6407","vedacao":"ZZ","folga":"CN","provas":{"serie":"6407","vedacao":"6407 ZZ","folga":null},"nota":"6407 ZZ, folga não escrita."}
+{"codigoItem":248356,"decisao":"resolve","serie":"6204","vedacao":"ZZ","folga":"CN","provas":{"serie":"6204","vedacao":"6204 ZZ","folga":null},"nota":"6204 ZZ, metálico confirma."}
+{"codigoItem":606515,"decisao":"recusa","motivo":"fora-das-familias","nota":"3306 de contato angular."}
+{"codigoItem":601353,"decisao":"resolve","serie":"6018","vedacao":"2RS","folga":"CN","provas":{"serie":"6018","vedacao":"6018 2RS","folga":null},"nota":"DÚVIDA: 6018 2RS com a palavra truncada BLINDAGEM D, que as regras não listam como contradição a borracha; diâmetro 90 confere."}
+{"codigoItem":472476,"decisao":"resolve","serie":"6003","vedacao":"2RS","folga":"CN","provas":{"serie":"6003","vedacao":"6003 2RS","folga":null},"nota":"6003 2RS, diâmetro 17 confere."}
+{"codigoItem":358721,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":466746,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 1812-160-121."}
+{"codigoItem":261064,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":472454,"decisao":"resolve","serie":"6009","vedacao":"ZZ","folga":"CN","provas":{"serie":"6009","vedacao":"6009 ZZ","folga":null},"nota":"6009 ZZ, diâmetro 45 confere."}
+{"codigoItem":466745,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 2351-020-141."}
+{"codigoItem":472470,"decisao":"resolve","serie":"6006","vedacao":"2RS","folga":"CN","provas":{"serie":"6006","vedacao":"6006 2RS","folga":null},"nota":"6006 2RS, diâmetro 30 confere."}
+{"codigoItem":311960,"decisao":"resolve","serie":"6318","vedacao":"ZZ","folga":"C3","provas":{"serie":"6318","vedacao":"6318ZZ","folga":"C3"},"nota":"6318ZZ C3 com blindagem dupla, diâmetro 90 confere."}
+{"codigoItem":466757,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 2351-020-353."}
+{"codigoItem":606516,"decisao":"recusa","motivo":"fora-das-familias","nota":"3309 de contato angular."}
+{"codigoItem":381670,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":319047,"decisao":"resolve","serie":"16009","vedacao":"ZZ","folga":"CN","provas":{"serie":"16009","vedacao":"16009 ZZ","folga":null},"nota":"16009 ZZ, diâmetro 45 confere."}
+{"codigoItem":298024,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":150333,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":343106,"decisao":"recusa","motivo":"fora-das-familias","nota":"1206 autocompensador."}
+{"codigoItem":606517,"decisao":"recusa","motivo":"fora-das-familias","nota":"3310 de contato angular."}
+{"codigoItem":346332,"decisao":"resolve","serie":"6203","vedacao":"ZZ","folga":"CN","provas":{"serie":"6203","vedacao":"6203-2Z","folga":null},"nota":"6203-2Z, folga não escrita."}
+{"codigoItem":601430,"decisao":"recusa","motivo":"fora-das-familias","nota":"7606 CTPA não é da série 6."}
+{"codigoItem":290384,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6311 C3 sem código de vedação."}
+{"codigoItem":339448,"decisao":"recusa","motivo":"fora-das-familias","nota":"1315 autocompensador."}
+{"codigoItem":472486,"decisao":"resolve","serie":"6205","vedacao":"2RS","folga":"CN","provas":{"serie":"6205","vedacao":"6205 2RS","folga":null},"nota":"6205 2RS com vedação NBR, diâmetro 25 confere."}
+{"codigoItem":601481,"decisao":"recusa","motivo":"fora-das-familias","nota":"INA K. não é designação da família."}
+{"codigoItem":346424,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":472648,"decisao":"resolve","serie":"6307","vedacao":"Z","folga":"CN","provas":{"serie":"6307","vedacao":"6307-Z","folga":null},"nota":"6307-Z com blindagem metálica, diâmetro 35 confere."}
+{"codigoItem":607140,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":625865,"decisao":"recusa","motivo":"fora-das-familias","nota":"1206 autocompensador."}
+{"codigoItem":481990,"decisao":"recusa","motivo":"fora-das-familias","nota":"ER 205 16 é inserto, fora da série 6."}
+{"codigoItem":606804,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":314231,"decisao":"resolve","serie":"6301","vedacao":"ZZ","folga":"CN","provas":{"serie":"6301","vedacao":"6301 ZZ","folga":null},"nota":"6301 ZZ, diâmetro 12 confere."}
+{"codigoItem":226915,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":269754,"decisao":"resolve","serie":"16003","vedacao":"ZZ","folga":"CN","provas":{"serie":"16.003","vedacao":"16.003-2Z","folga":null},"nota":"16.003-2Z, metálico confirma."}
+{"codigoItem":264286,"decisao":"resolve","serie":"6202","vedacao":"ZZ","folga":"CN","provas":{"serie":"6202","vedacao":"6202 ZZ","folga":null},"nota":"6202 ZZ, folga não escrita."}
+{"codigoItem":317418,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"628 sem código de vedação."}
+{"codigoItem":472644,"decisao":"resolve","serie":"6210","vedacao":"2RS","folga":"CN","provas":{"serie":"6210","vedacao":"6210-2RS","folga":null},"nota":"6210-2RS com vedação NBR, diâmetro 50 confere."}
+{"codigoItem":314234,"decisao":"resolve","serie":"6306","vedacao":"ZZ","folga":"CN","provas":{"serie":"6306","vedacao":"6306 ZZ","folga":null},"nota":"6306 ZZ, diâmetro 30 confere."}
+{"codigoItem":486267,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":606541,"decisao":"recusa","motivo":"fora-das-familias","nota":"7316-B de contato angular."}
+{"codigoItem":357384,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6207 com sufixo 2ZR fora da tabela."}
+{"codigoItem":283626,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":606513,"decisao":"recusa","motivo":"fora-das-familias","nota":"3212 de contato angular."}
+{"codigoItem":601433,"decisao":"recusa","motivo":"fora-das-familias","nota":"207 NU E é cilíndrico."}
+{"codigoItem":314204,"decisao":"resolve","serie":"6307","vedacao":"ZZ","folga":"CN","provas":{"serie":"6307","vedacao":"6307 ZZ","folga":null},"nota":"6307 ZZ, diâmetro 35 confere."}
+{"codigoItem":472556,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6314 C3 sem código de vedação."}
+{"codigoItem":472596,"decisao":"resolve","serie":"6909","vedacao":"2RS","folga":"CN","provas":{"serie":"6909","vedacao":"6909 2RS","folga":null},"nota":"6909 2RS, diâmetro 45 confere."}
+{"codigoItem":285938,"decisao":"resolve","serie":"6310","vedacao":"ZZ","folga":"CN","provas":{"serie":"6310","vedacao":"6310-ZZ","folga":null},"nota":"6310-ZZ, metálico confirma."}
+{"codigoItem":472445,"decisao":"resolve","serie":"6017","vedacao":"2RS","folga":"CN","provas":{"serie":"6017","vedacao":"6017 2RS","folga":null},"nota":"6017 2RS, diâmetro 85 confere."}
+{"codigoItem":317402,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6010 sem código de vedação."}
+{"codigoItem":606809,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":317394,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6002 sem código de vedação."}
+{"codigoItem":283554,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":283555,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":606542,"decisao":"recusa","motivo":"fora-das-familias","nota":"2303 autocompensador."}
+{"codigoItem":472598,"decisao":"resolve","serie":"6207","vedacao":"2RS","folga":"CN","provas":{"serie":"6207","vedacao":"6207-2RS","folga":null},"nota":"6207-2RS com vedação NBR, diâmetro 35 confere."}
+{"codigoItem":250909,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":472640,"decisao":"recusa","motivo":"contradicao","nota":"Código de borracha 6209-2RS junto de BLINDAGEM METÁLICA."}
+{"codigoItem":472444,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6017 C3 sem código de vedação."}
+{"codigoItem":601974,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":466477,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":346382,"decisao":"resolve","serie":"6212","vedacao":"ZZ","folga":"CN","provas":{"serie":"6212","vedacao":"6212-2Z","folga":null},"nota":"6212-2Z, folga não escrita."}
+{"codigoItem":614042,"decisao":"recusa","motivo":"fora-das-familias","nota":"Rolamento linear LBE 16."}
+{"codigoItem":606546,"decisao":"recusa","motivo":"fora-das-familias","nota":"2307K autocompensador."}
+{"codigoItem":622950,"decisao":"resolve","serie":"6202","vedacao":"2RS","folga":"CN","provas":{"serie":"6202","vedacao":"6202 2RS","folga":null},"nota":"6202 2RS, diâmetro 15 confere."}
+{"codigoItem":601352,"decisao":"resolve","serie":"6001","vedacao":"ZZ","folga":"C3","provas":{"serie":"6001","vedacao":"6001 ZZ","folga":"C3"},"nota":"6001 ZZ C3, diâmetro 12 confere."}
+{"codigoItem":472503,"decisao":"resolve","serie":"607","vedacao":"ZZ","folga":"CN","provas":{"serie":"607","vedacao":"607 ZZ","folga":null},"nota":"607 ZZ, diâmetro 7 confere."}
+{"codigoItem":601303,"decisao":"recusa","motivo":"fora-das-familias","nota":"DÚVIDA: 630 Z não está na lista de miniaturas (604-609, 623-629, 633-639), embora o diâmetro 12 sugira 6301 truncado."}
+{"codigoItem":307434,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":608666,"decisao":"recusa","motivo":"fora-das-familias","nota":"2207 autocompensador."}
+{"codigoItem":254314,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":267835,"decisao":"resolve","serie":"6203","vedacao":"ZZ","folga":"CN","provas":{"serie":"6203","vedacao":"6203 ZZ","folga":null},"nota":"6203 ZZ, folga não escrita."}
+{"codigoItem":318844,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":319042,"decisao":"resolve","serie":"16011","vedacao":"ZZ","folga":"CN","provas":{"serie":"16011","vedacao":"16011 ZZ","folga":null},"nota":"16011 ZZ, diâmetro 55 confere."}
+{"codigoItem":283526,"decisao":"recusa","motivo":"contradicao","nota":"Código de borracha 2RS1 junto de METÁLICO."}
+{"codigoItem":382516,"decisao":"recusa","motivo":"fora-das-familias","nota":"UCR 207 é mancal com inserto."}
+{"codigoItem":292951,"decisao":"resolve","serie":"6212","vedacao":"ZZ","folga":"CN","provas":{"serie":"6212","vedacao":"6212 ZZ","folga":null},"nota":"6212 ZZ, folga não escrita."}
+{"codigoItem":346422,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":382530,"decisao":"recusa","motivo":"fora-das-familias","nota":"URC 205 é mancal com inserto."}
+{"codigoItem":472481,"decisao":"resolve","serie":"6203","vedacao":"2RS","folga":"CN","provas":{"serie":"6203","vedacao":"6203 2RS","folga":null},"nota":"6203 2RS com vedação NBR, diâmetro 17 confere."}
+{"codigoItem":601501,"decisao":"recusa","motivo":"fora-das-familias","nota":"25TAB06 é contato angular, fora da série 6."}
+{"codigoItem":601308,"decisao":"recusa","motivo":"fora-das-familias","nota":"3205 A de contato angular."}
+{"codigoItem":399936,"decisao":"recusa","motivo":"fora-das-familias","nota":"RAL 012NPP é inserto, fora da série 6."}
+{"codigoItem":472587,"decisao":"resolve","serie":"6809","vedacao":"2RS","folga":"CN","provas":{"serie":"6809","vedacao":"6809 2RS","folga":null},"nota":"6809 2RS, diâmetro 45 confere."}
+{"codigoItem":226916,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":601475,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"609 sem código de vedação."}
+{"codigoItem":292933,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6409 sem código de vedação."}
+{"codigoItem":466748,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 2351-090-360."}
+{"codigoItem":283521,"decisao":"recusa","motivo":"contradicao","nota":"Código de borracha 2RS1 junto de METÁLICO."}
+{"codigoItem":283523,"decisao":"recusa","motivo":"contradicao","nota":"Código de borracha 2RS1 junto de METÁLICO."}
+{"codigoItem":481989,"decisao":"resolve","serie":"6206","vedacao":"ZZ","folga":"CN","provas":{"serie":"6206","vedacao":"6206 ZZ","folga":null},"nota":"6206 ZZ, folga não escrita."}
+{"codigoItem":261066,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":601434,"decisao":"recusa","motivo":"fora-das-familias","nota":"209 NU é cilíndrico."}
+{"codigoItem":472469,"decisao":"resolve","serie":"6006","vedacao":"ZZ","folga":"CN","provas":{"serie":"6006","vedacao":"6006 ZZ","folga":null},"nota":"6006 ZZ, diâmetro 30 confere."}
+{"codigoItem":472538,"decisao":"resolve","serie":"629","vedacao":"2RS","folga":"CN","provas":{"serie":"629","vedacao":"629 2RS","folga":null},"nota":"629 2RS, diâmetro 9 confere."}
+{"codigoItem":346331,"decisao":"resolve","serie":"6202","vedacao":"ZZ","folga":"CN","provas":{"serie":"6202","vedacao":"6202-2Z","folga":null},"nota":"6202-2Z, folga não escrita."}
+{"codigoItem":478255,"decisao":"recusa","motivo":"fora-das-familias","nota":"28461803 não segue a série 6."}
+{"codigoItem":472551,"decisao":"resolve","serie":"6309","vedacao":"2RS","folga":"CN","provas":{"serie":"6309","vedacao":"6309 2RS","folga":null},"nota":"6309 2RS, diâmetro 45 confere."}
+{"codigoItem":346380,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6310 C3 sem código de vedação."}
+{"codigoItem":466742,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 2351-020-345."}
+{"codigoItem":346337,"decisao":"resolve","serie":"6208","vedacao":"Z","folga":"CN","provas":{"serie":"6208","vedacao":"6208Z","folga":null},"nota":"6208Z, folga não escrita."}
+{"codigoItem":9938,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":606800,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":346340,"decisao":"recusa","motivo":"fora-das-familias","nota":"G 209 não é designação da família."}
+{"codigoItem":605719,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6206-2RZ/C3 com sufixo 2RZ fora da tabela."}
+{"codigoItem":15881,"decisao":"recusa","motivo":"fora-das-familias","nota":"Acoplamento."}
+{"codigoItem":278297,"decisao":"recusa","motivo":"fora-das-familias","nota":"3309 de duas carreiras."}
+{"codigoItem":606469,"decisao":"recusa","motivo":"fora-das-familias","nota":"NK 8/12 TN de agulhas."}
+{"codigoItem":611136,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":317416,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"608 sem código de vedação."}
+{"codigoItem":472552,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6309 C3 sem código de vedação."}
+{"codigoItem":474207,"decisao":"resolve","serie":"6811","vedacao":"2RS","folga":"CN","provas":{"serie":"6811","vedacao":"6811 2RS","folga":null},"nota":"6811 2RS, diâmetro 55 confere."}
+{"codigoItem":606263,"decisao":"resolve","serie":"62305","vedacao":"2RS","folga":"CN","provas":{"serie":"62305","vedacao":"62305 2RS","folga":null},"nota":"62305 2RS, diâmetro 25 confere."}
+{"codigoItem":472509,"decisao":"resolve","serie":"6211","vedacao":"ZZ","folga":"C3","provas":{"serie":"6211","vedacao":"6211 ZZC3","folga":"ZZC3"},"nota":"6211 ZZC3 com blindagem metálica, diâmetro 55 confere."}
+{"codigoItem":472650,"decisao":"resolve","serie":"6307","vedacao":"2RS","folga":"CN","provas":{"serie":"6307","vedacao":"6307-2RS","folga":null},"nota":"6307-2RS com vedação NBR, diâmetro 35 confere."}
+{"codigoItem":472515,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6217 C3 sem código de vedação."}
+{"codigoItem":317412,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6312 sem código de vedação."}
+{"codigoItem":601306,"decisao":"recusa","motivo":"fora-das-familias","nota":"603 DDF não está na lista de miniaturas da família."}
+{"codigoItem":472487,"decisao":"resolve","serie":"6205","vedacao":"Z","folga":"CN","provas":{"serie":"6205","vedacao":"6205 Z","folga":null},"nota":"6205 Z com blindagem metálica, diâmetro 25 confere."}
+{"codigoItem":472555,"decisao":"resolve","serie":"6309","vedacao":"ZZ","folga":"C3","provas":{"serie":"6309","vedacao":"6309 ZZ","folga":"C3"},"nota":"6309 ZZ C3, diâmetro 45 confere."}
+{"codigoItem":312727,"decisao":"recusa","motivo":"fora-das-familias","nota":"RMS 18 em polegadas."}
+{"codigoItem":483409,"decisao":"resolve","serie":"61801","vedacao":"2RS","folga":"CN","provas":{"serie":"61801","vedacao":"61801 2RS","folga":null},"nota":"61801 2RS, diâmetro 12 confere."}
+{"codigoItem":381671,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":292855,"decisao":"resolve","serie":"6313","vedacao":"ZZ","folga":"CN","provas":{"serie":"6313","vedacao":"6313ZZ","folga":null},"nota":"6313ZZ, folga não escrita."}
+{"codigoItem":466754,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 2351-020-361."}
+{"codigoItem":226917,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":362474,"decisao":"recusa","motivo":"fora-das-familias","nota":"NU 209E cilíndrico."}
+{"codigoItem":472652,"decisao":"resolve","serie":"6200","vedacao":"2RS","folga":"CN","provas":{"serie":"6200","vedacao":"6200-2RS","folga":null},"nota":"6200-2RS com vedação NBR, diâmetro 10 confere."}
+{"codigoItem":466478,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":472472,"decisao":"resolve","serie":"6005","vedacao":"2RS","folga":"CN","provas":{"serie":"6005","vedacao":"6005 2RS","folga":null},"nota":"6005 2RS, diâmetro 25 confere."}
+{"codigoItem":317392,"decisao":"resolve","serie":"6216","vedacao":"ZZ","folga":"CN","provas":{"serie":"6216","vedacao":"6216ZZ","folga":null},"nota":"6216ZZ, diâmetro 80 confere."}
+{"codigoItem":466743,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 1812-150-436."}
+{"codigoItem":318842,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":605432,"decisao":"recusa","motivo":"fora-das-familias","nota":"2209 autocompensador."}
+{"codigoItem":283522,"decisao":"recusa","motivo":"contradicao","nota":"Código de borracha 2RS1 junto de METÁLICO."}
+{"codigoItem":610165,"decisao":"recusa","motivo":"fora-das-familias","nota":"SA 206 RLB é inserto."}
+{"codigoItem":472519,"decisao":"resolve","serie":"62208","vedacao":"2RS","folga":"CN","provas":{"serie":"62208","vedacao":"62208 2RS","folga":null},"nota":"62208 2RS, diâmetro 40 confere."}
+{"codigoItem":382515,"decisao":"recusa","motivo":"fora-das-familias","nota":"UCR 206 é mancal com inserto."}
+{"codigoItem":472508,"decisao":"resolve","serie":"6211","vedacao":"Z","folga":"C3","provas":{"serie":"6211","vedacao":"6211 ZC3","folga":"ZC3"},"nota":"6211 ZC3 com FOLGA C3, diâmetro 55 confere."}
+{"codigoItem":472540,"decisao":"resolve","serie":"6300","vedacao":"ZZ","folga":"CN","provas":{"serie":"6300","vedacao":"6300 ZZ","folga":null},"nota":"6300 ZZ, diâmetro 10 confere."}
+{"codigoItem":260981,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":472456,"decisao":"resolve","serie":"6008","vedacao":"ZZ","folga":"CN","provas":{"serie":"6008","vedacao":"6008 ZZ","folga":null},"nota":"6008 ZZ, diâmetro 40 confere."}
+{"codigoItem":485889,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6006LLUC3 com sufixo LLU fora da tabela."}
+{"codigoItem":317401,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6009 sem código de vedação."}
+{"codigoItem":611137,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":310602,"decisao":"recusa","motivo":"fora-das-familias","nota":"4208A de duas carreiras."}
+{"codigoItem":63835,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":601307,"decisao":"recusa","motivo":"fora-das-familias","nota":"APP 1705 não segue a série 6."}
+{"codigoItem":611135,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":267275,"decisao":"recusa","motivo":"fora-das-familias","nota":"UCR 209 é mancal com inserto."}
+{"codigoItem":466479,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":255525,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6307 sem código de vedação."}
+{"codigoItem":478973,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":314228,"decisao":"resolve","serie":"608","vedacao":"ZZ","folga":"CN","provas":{"serie":"608","vedacao":"608 ZZ","folga":null},"nota":"608 ZZ com blindagem dupla, diâmetro 8 confere."}
+{"codigoItem":466758,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 2351-020-353."}
+{"codigoItem":317410,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6310 sem código de vedação."}
+{"codigoItem":310600,"decisao":"recusa","motivo":"fora-das-familias","nota":"4210A de duas carreiras."}
+{"codigoItem":472479,"decisao":"resolve","serie":"6203","vedacao":"Z","folga":"C3","provas":{"serie":"6203","vedacao":"6203-Z/C3","folga":"C3"},"nota":"6203-Z/C3 com blindagem metálica, diâmetro 17 confere."}
+{"codigoItem":346333,"decisao":"resolve","serie":"6204","vedacao":"ZZ","folga":"CN","provas":{"serie":"6204","vedacao":"6204-2Z","folga":null},"nota":"6204-2Z, folga não escrita."}
+{"codigoItem":602539,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":260979,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":250902,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":472539,"decisao":"resolve","serie":"6300","vedacao":"2RS","folga":"CN","provas":{"serie":"6300","vedacao":"6300 2RS","folga":null},"nota":"6300 2RS, diâmetro 10 confere."}
+{"codigoItem":292852,"decisao":"resolve","serie":"6312","vedacao":"ZZ","folga":"CN","provas":{"serie":"6312","vedacao":"6312ZZ","folga":null},"nota":"6312ZZ, folga não escrita."}
+{"codigoItem":472642,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6209 U com sufixo U fora da tabela."}
+{"codigoItem":472482,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6204 U com sufixo U fora da tabela."}
+{"codigoItem":346339,"decisao":"recusa","motivo":"fora-das-familias","nota":"G 208 não é designação da família."}
+{"codigoItem":472541,"decisao":"resolve","serie":"63006","vedacao":"2RS","folga":"CN","provas":{"serie":"63006","vedacao":"63006 2RS","folga":null},"nota":"63006 2RS, diâmetro 30 confere."}
+{"codigoItem":346338,"decisao":"resolve","serie":"6209","vedacao":"Z","folga":"CN","provas":{"serie":"6209","vedacao":"6209Z","folga":null},"nota":"6209Z, folga não escrita."}
+{"codigoItem":346334,"decisao":"resolve","serie":"6205","vedacao":"ZZ","folga":"CN","provas":{"serie":"6205","vedacao":"6205-2Z","folga":null},"nota":"6205-2Z, folga não escrita."}
+{"codigoItem":472544,"decisao":"resolve","serie":"6302","vedacao":"2RS","folga":"CN","provas":{"serie":"6302","vedacao":"6302 2RS","folga":null},"nota":"6302 2RS, diâmetro 15 confere."}
+{"codigoItem":472545,"decisao":"resolve","serie":"6302","vedacao":"ZZ","folga":"CN","provas":{"serie":"6302","vedacao":"6302 ZZ","folga":null},"nota":"6302 ZZ, diâmetro 15 confere."}
+{"codigoItem":472632,"decisao":"resolve","serie":"6310","vedacao":"2RS","folga":"CN","provas":{"serie":"6310","vedacao":"6310-2RS","folga":null},"nota":"6310-2RS com vedação NBR, diâmetro 50 confere."}
+{"codigoItem":472590,"decisao":"resolve","serie":"6811","vedacao":"2RS","folga":"CN","provas":{"serie":"6811","vedacao":"6811 2RS","folga":null},"nota":"6811 2RS, diâmetro 55 confere."}
+{"codigoItem":601502,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"61908 sem código de vedação."}
+{"codigoItem":293116,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6306 sem código de vedação."}
+{"codigoItem":601581,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":396857,"decisao":"recusa","motivo":"contradicao","nota":"DÚVIDA: 608 ZZ (duas blindagens) junto de UMA BLINDAGEM; tratei como equivalente a UM DOS LADOS, que a regra lista."}
+{"codigoItem":261067,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":317398,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6006 sem código de vedação."}
+{"codigoItem":314229,"decisao":"resolve","serie":"6200","vedacao":"ZZ","folga":"CN","provas":{"serie":"6200","vedacao":"6200 ZZ","folga":null},"nota":"6200 ZZ com blindagem dupla, diâmetro 10 confere."}
+{"codigoItem":299482,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":466756,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 2351-020-159."}
+{"codigoItem":466759,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 2351-030-031."}
+{"codigoItem":472478,"decisao":"resolve","serie":"6001","vedacao":"2RS","folga":"CN","provas":{"serie":"6001","vedacao":"6001 2RS","folga":null},"nota":"6001 2RS, diâmetro 12 confere."}
+{"codigoItem":606812,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":612141,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":466752,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 2351-020-132."}
+{"codigoItem":472594,"decisao":"resolve","serie":"6908","vedacao":"ZZ","folga":"CN","provas":{"serie":"6908","vedacao":"6908 ZZ","folga":null},"nota":"6908 ZZ, diâmetro 40 confere."}
+{"codigoItem":472558,"decisao":"resolve","serie":"6314","vedacao":"ZZ","folga":"CN","provas":{"serie":"6314","vedacao":"6314 ZZ","folga":null},"nota":"6314 ZZ, diâmetro 70 confere."}
+{"codigoItem":472550,"decisao":"resolve","serie":"6308","vedacao":"ZZ","folga":"CN","provas":{"serie":"6308","vedacao":"6308 ZZ","folga":null},"nota":"6308 ZZ, diâmetro 40 confere."}
+{"codigoItem":472451,"decisao":"resolve","serie":"6011","vedacao":"2RS","folga":"CN","provas":{"serie":"6011","vedacao":"6011 2RS","folga":null},"nota":"6011 2RS, diâmetro 55 confere."}
+{"codigoItem":283528,"decisao":"resolve","serie":"6308","vedacao":"ZZ","folga":"CN","provas":{"serie":"6308","vedacao":"6308 ZZ","folga":null},"nota":"6308 ZZ, metálico confirma."}
+{"codigoItem":292850,"decisao":"recusa","motivo":"fora-das-familias","nota":"22213K autocompensador."}
+{"codigoItem":346425,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":476140,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":254317,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":267276,"decisao":"recusa","motivo":"fora-das-familias","nota":"UCR 210 é mancal com inserto."}
+{"codigoItem":317632,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"627 sem código de vedação."}
+{"codigoItem":606811,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":486265,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia rolamentada, não é rolamento."}
+{"codigoItem":472488,"decisao":"resolve","serie":"6206","vedacao":"2RS","folga":"CN","provas":{"serie":"6206","vedacao":"6206 2RS","folga":null},"nota":"6206 2RS com vedação NBR, diâmetro 30 confere."}
+{"codigoItem":319055,"decisao":"recusa","motivo":"fora-das-familias","nota":"RNA 4905 de agulhas."}
+{"codigoItem":466750,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 1812-160-075."}
+{"codigoItem":472518,"decisao":"resolve","serie":"62206","vedacao":"2RS","folga":"CN","provas":{"serie":"62206","vedacao":"62206 2RS","folga":null},"nota":"62206 2RS, diâmetro 30 confere."}
+{"codigoItem":624270,"decisao":"revisa","motivo":"duas-leituras","nota":"DÚVIDA: 6206 2RS1 (SKF) e 6206 DDU (NSK) como alternativas da mesma designação; DDU não é código de vedação da tabela, então não tratei como contradição."}
+{"codigoItem":601305,"decisao":"recusa","motivo":"fora-das-familias","nota":"600-W não está na lista de designações da família."}
+{"codigoItem":601500,"decisao":"recusa","motivo":"fora-das-familias","nota":"212 N ECP é cilíndrico."}
+{"codigoItem":357381,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6314 com sufixo 2ZR fora da tabela."}
+{"codigoItem":611134,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":606814,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":472483,"decisao":"resolve","serie":"6204","vedacao":"2RS","folga":"CN","provas":{"serie":"6204","vedacao":"6204 2RS","folga":null},"nota":"6204 2RS com vedação NBR, diâmetro 20 confere."}
+{"codigoItem":626233,"decisao":"recusa","motivo":"fora-das-familias","nota":"1205 autocompensador."}
+{"codigoItem":611281,"decisao":"recusa","motivo":"fora-das-familias","nota":"Rolamento linear LBE 16 UU."}
+{"codigoItem":346341,"decisao":"resolve","serie":"6209","vedacao":"ZZ","folga":"CN","provas":{"serie":"6209","vedacao":"6209-2Z","folga":null},"nota":"6209-2Z, folga não escrita."}
+{"codigoItem":601973,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":250907,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":250906,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":317403,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6012 sem código de vedação."}
+{"codigoItem":310599,"decisao":"resolve","serie":"6232","vedacao":"ABERTO","folga":"CN","provas":{"serie":"6232","vedacao":"S/ BLINDAGEM","folga":null},"nota":"6232 sem blindagem, diâmetro 160 confere."}
+{"codigoItem":388227,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6205 sem código de vedação; BLINDAGEM UM DOS LADO não é código."}
+{"codigoItem":612238,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":472639,"decisao":"resolve","serie":"6311","vedacao":"ZZ","folga":"C3","provas":{"serie":"6311","vedacao":"6311-2Z/C3","folga":"C3"},"nota":"6311-2Z/C3 com blindagem metálica, diâmetro 55 confere."}
+{"codigoItem":633501,"decisao":"resolve","serie":"61903","vedacao":"2RS","folga":"CN","provas":{"serie":"61903","vedacao":"61903 2RS1","folga":null},"nota":"61903 2RS1, diâmetro 17 confere."}
+{"codigoItem":397748,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":472448,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6013 U com sufixo U fora da tabela."}
+{"codigoItem":466760,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 1825-510-806."}
+{"codigoItem":261068,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":485890,"decisao":"resolve","serie":"6204","vedacao":"ZZ","folga":"C4","provas":{"serie":"6204","vedacao":"6204-2Z/C4","folga":"C4"},"nota":"6204-2Z/C4, diâmetro 20 confere."}
+{"codigoItem":290385,"decisao":"resolve","serie":"6211","vedacao":"Z","folga":"C3","provas":{"serie":"6211","vedacao":"6211 ZC3","folga":"ZC3"},"nota":"6211 ZC3 com FOLGA C3, diâmetro 55 confere."}
+{"codigoItem":346335,"decisao":"resolve","serie":"6206","vedacao":"ZZ","folga":"CN","provas":{"serie":"6206","vedacao":"6206-2Z","folga":null},"nota":"6206-2Z, folga não escrita."}
+{"codigoItem":466751,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 1812-160-105."}
+{"codigoItem":611559,"decisao":"recusa","motivo":"fora-das-familias","nota":"Rolamento linear KB2045-PP."}
+{"codigoItem":472449,"decisao":"recusa","motivo":"contradicao","nota":"6012 ZZ tem furo de 60 mm, mas o texto diz 65 mm."}
+{"codigoItem":607147,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":317405,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6302 sem código de vedação."}
+{"codigoItem":601354,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"627 sem código de vedação."}
+{"codigoItem":472534,"decisao":"resolve","serie":"625","vedacao":"Z","folga":"CN","provas":{"serie":"625","vedacao":"625 Z","folga":null},"nota":"625 Z com blindagem metálica, diâmetro 5 confere."}
+{"codigoItem":260980,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":311967,"decisao":"resolve","serie":"6312","vedacao":"ZZ","folga":"C3","provas":{"serie":"6312","vedacao":"6312ZZ","folga":"C3"},"nota":"6312ZZ C3 com blindagem dupla, diâmetro 60 confere."}
+{"codigoItem":472554,"decisao":"resolve","serie":"6309","vedacao":"Z","folga":"C3","provas":{"serie":"6309","vedacao":"6309 Z","folga":"C3"},"nota":"6309 Z C3 com blindagem metálica, diâmetro 45 confere."}
+{"codigoItem":606816,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":301434,"decisao":"recusa","motivo":"fora-das-familias","nota":"1308K autocompensador."}
+{"codigoItem":346384,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6314 C3 sem código de vedação."}
+{"codigoItem":472504,"decisao":"resolve","serie":"609","vedacao":"Z","folga":"CN","provas":{"serie":"609","vedacao":"609 Z","folga":null},"nota":"609 Z com blindagem metálica, diâmetro 9 confere."}
+{"codigoItem":606803,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":283556,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":479859,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":472543,"decisao":"resolve","serie":"6301","vedacao":"ZZ","folga":"CN","provas":{"serie":"6301","vedacao":"6301 ZZ","folga":null},"nota":"6301 ZZ, diâmetro 12 confere."}
+{"codigoItem":317404,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6301 sem código de vedação."}
+{"codigoItem":472549,"decisao":"resolve","serie":"6308","vedacao":"ZZ","folga":"C3","provas":{"serie":"6308","vedacao":"6308 ZZ","folga":"C3"},"nota":"6308 ZZ C3 com blindagem metálica, diâmetro 40 confere."}
+{"codigoItem":610479,"decisao":"recusa","motivo":"fora-das-familias","nota":"TAO 12X22X12 não é designação da família."}
+{"codigoItem":602489,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":601432,"decisao":"recusa","motivo":"fora-das-familias","nota":"203 NU é cilíndrico."}
+{"codigoItem":317399,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6008 sem código de vedação."}
+{"codigoItem":610521,"decisao":"recusa","motivo":"fora-das-familias","nota":"2212 autocompensador."}
+{"codigoItem":472471,"decisao":"resolve","serie":"6005","vedacao":"ZZ","folga":"CN","provas":{"serie":"6005","vedacao":"6005 ZZ","folga":null},"nota":"6005 ZZ, diâmetro 25 confere."}
+{"codigoItem":353163,"decisao":"resolve","serie":"6406","vedacao":"ZZ","folga":"CN","provas":{"serie":"6406","vedacao":"6406 ZZ","folga":null},"nota":"6406 ZZ, folga não escrita."}
+{"codigoItem":606813,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":472643,"decisao":"resolve","serie":"6209","vedacao":"Z","folga":"CN","provas":{"serie":"6209","vedacao":"6209-Z","folga":null},"nota":"6209-Z com blindagem metálica, diâmetro 45 confere."}
+{"codigoItem":317415,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"606 sem código de vedação."}
+{"codigoItem":346378,"decisao":"resolve","serie":"6307","vedacao":"ZZ","folga":"CN","provas":{"serie":"6307","vedacao":"6307-2Z","folga":null},"nota":"6307-2Z, folga não escrita."}
+{"codigoItem":226914,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":283557,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":607139,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":601480,"decisao":"resolve","serie":"61802","vedacao":"2RS","folga":"CN","provas":{"serie":"61802","vedacao":"61802 2RS","folga":null},"nota":"61802 2RS, diâmetro 15 confere."}
+{"codigoItem":248357,"decisao":"resolve","serie":"6205","vedacao":"ZZ","folga":"CN","provas":{"serie":"6205","vedacao":"6205 ZZ","folga":null},"nota":"6205 ZZ, metálico confirma."}
+{"codigoItem":606807,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":261065,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":312730,"decisao":"recusa","motivo":"fora-das-familias","nota":"CRL 22A em polegadas."}
+{"codigoItem":463415,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6204 sem código de vedação; METÁLICO E BLINDADO não determina."}
+{"codigoItem":346388,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6311 C3 sem código de vedação."}
+{"codigoItem":287339,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":263252,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":606549,"decisao":"recusa","motivo":"fora-das-familias","nota":"2208-K autocompensador."}
+{"codigoItem":292854,"decisao":"resolve","serie":"6316","vedacao":"ZZ","folga":"CN","provas":{"serie":"6316","vedacao":"6316ZZ","folga":null},"nota":"6316ZZ, folga não escrita."}
+{"codigoItem":346330,"decisao":"resolve","serie":"6201","vedacao":"ZZ","folga":"CN","provas":{"serie":"6201","vedacao":"6201-2Z","folga":null},"nota":"6201-2Z, folga não escrita."}
+{"codigoItem":472631,"decisao":"resolve","serie":"6208","vedacao":"Z","folga":"CN","provas":{"serie":"6208","vedacao":"6208-Z","folga":null},"nota":"6208-Z com blindagem metálica, diâmetro 40 confere."}
+{"codigoItem":472480,"decisao":"resolve","serie":"6203","vedacao":"Z","folga":"CN","provas":{"serie":"6203","vedacao":"6203 Z","folga":null},"nota":"6203 Z com blindagem metálica, diâmetro 17 confere."}
+{"codigoItem":472502,"decisao":"resolve","serie":"607","vedacao":"2RS","folga":"CN","provas":{"serie":"607","vedacao":"607 2RS","folga":null},"nota":"607 2RS, diâmetro 7 confere."}
+{"codigoItem":472447,"decisao":"recusa","motivo":"contradicao","nota":"6013 ZZ tem furo de 65 mm, mas o texto diz 60 mm."}
+{"codigoItem":263251,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":346420,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":248358,"decisao":"resolve","serie":"6206","vedacao":"ZZ","folga":"CN","provas":{"serie":"6206","vedacao":"6206 ZZ","folga":null},"nota":"6206 ZZ, metálico confirma."}
+{"codigoItem":472592,"decisao":"resolve","serie":"6901","vedacao":"2RS","folga":"CN","provas":{"serie":"6901","vedacao":"6901 2RS","folga":null},"nota":"6901 2RS, diâmetro 12 confere."}
+{"codigoItem":472579,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6317 sem código de vedação."}
+{"codigoItem":362473,"decisao":"recusa","motivo":"fora-das-familias","nota":"3308 de duas carreiras."}
+{"codigoItem":624253,"decisao":"recusa","motivo":"fora-das-familias","nota":"1311 autocompensador."}
+{"codigoItem":263253,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":472585,"decisao":"resolve","serie":"6808","vedacao":"2RS","folga":"CN","provas":{"serie":"6808","vedacao":"6808 2RS","folga":null},"nota":"6808 2RS, diâmetro 40 confere."}
+{"codigoItem":310597,"decisao":"resolve","serie":"6224","vedacao":"ABERTO","folga":"CN","provas":{"serie":"6224","vedacao":"S/ BLINDAGEM","folga":null},"nota":"6224 sem blindagem, diâmetro 120 confere."}
+{"codigoItem":246446,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":317397,"decisao":"resolve","serie":"6005","vedacao":"ZZ","folga":"CN","provas":{"serie":"6005","vedacao":"6005ZZ","folga":null},"nota":"6005ZZ, diâmetro 25 confere."}
+{"codigoItem":287340,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":346421,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":472542,"decisao":"resolve","serie":"6301","vedacao":"2RS","folga":"CN","provas":{"serie":"6301","vedacao":"6301 2RS","folga":null},"nota":"6301 2RS, diâmetro 12 confere."}
+{"codigoItem":466749,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 1812-110-213."}
+{"codigoItem":606468,"decisao":"recusa","motivo":"fora-das-familias","nota":"NK 10/12 TN de agulhas."}
+{"codigoItem":226913,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":466740,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 2351-020-167."}
+{"codigoItem":472651,"decisao":"resolve","serie":"608","vedacao":"2RS","folga":"CN","provas":{"serie":"608","vedacao":"608-2RS","folga":null},"nota":"608-2RS com vedação NBR, diâmetro 8 confere."}
+{"codigoItem":472597,"decisao":"resolve","serie":"6909","vedacao":"ZZ","folga":"CN","provas":{"serie":"6909","vedacao":"6909 ZZ","folga":null},"nota":"6909 ZZ, diâmetro 45 confere."}
+{"codigoItem":472600,"decisao":"resolve","serie":"6208","vedacao":"2RS","folga":"CN","provas":{"serie":"6208","vedacao":"6208-2RS","folga":null},"nota":"6208-2RS com vedação NBR, diâmetro 40 confere."}
+{"codigoItem":606514,"decisao":"recusa","motivo":"fora-das-familias","nota":"3213 de contato angular."}
+{"codigoItem":478854,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":346379,"decisao":"resolve","serie":"6308","vedacao":"ZZ","folga":"CN","provas":{"serie":"6308","vedacao":"6308-2Z","folga":null},"nota":"6308-2Z, folga não escrita."}
+{"codigoItem":633500,"decisao":"recusa","motivo":"fora-das-familias","nota":"2203 autocompensador."}
+{"codigoItem":606802,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":606801,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":602624,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6306 VV C3 com sufixo VV fora da tabela."}
+{"codigoItem":261069,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":283258,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":606601,"decisao":"recusa","motivo":"fora-das-familias","nota":"7405-BG de contato angular."}
+{"codigoItem":317400,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6007 sem código de vedação."}
+{"codigoItem":387945,"decisao":"resolve","serie":"6308","vedacao":"Z","folga":"CN","provas":{"serie":"6308","vedacao":"6308-Z","folga":null},"nota":"6308-Z, diâmetro 40 confere."}
+{"codigoItem":472637,"decisao":"recusa","motivo":"contradicao","nota":"Código de borracha 6311-2RS junto de BLINDAGEM METÁLICA."}
+{"codigoItem":235214,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":250904,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":472646,"decisao":"resolve","serie":"6210","vedacao":"ZZ","folga":"CN","provas":{"serie":"6210","vedacao":"6210-ZZ","folga":null},"nota":"6210-ZZ com blindagem metálica, diâmetro 50 confere."}
+{"codigoItem":247832,"decisao":"resolve","serie":"6205","vedacao":"2RS","folga":"CN","provas":{"serie":"6205","vedacao":"6205-2-RS1","folga":null},"nota":"6205-2-RS1, folga não escrita."}
+{"codigoItem":481991,"decisao":"resolve","serie":"6201","vedacao":"2RS","folga":"C3","provas":{"serie":"6201","vedacao":"6201 2RS","folga":"C3"},"nota":"6201 2RS-C3."}
+{"codigoItem":357383,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6205 com sufixo 2ZR fora da tabela."}
+{"codigoItem":472584,"decisao":"recusa","motivo":"fora-das-familias","nota":"DÚVIDA: 68062 não é forma da família (680dd não existe na tabela), embora o diâmetro 30 sugira 6806 com dígito a mais."}
+{"codigoItem":407703,"decisao":"recusa","motivo":"fora-das-familias","nota":"4211A de duas carreiras."}
+{"codigoItem":263254,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":311968,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6319 sem código de vedação."}
+{"codigoItem":466747,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 2351-090-092."}
+{"codigoItem":472660,"decisao":"resolve","serie":"6212","vedacao":"Z","folga":"C3","provas":{"serie":"6212","vedacao":"6212-Z/C3","folga":"C3"},"nota":"6212-Z/C3 com blindagem metálica, diâmetro 60 confere."}
+{"codigoItem":606808,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":472477,"decisao":"resolve","serie":"6001","vedacao":"ZZ","folga":"CN","provas":{"serie":"6001","vedacao":"6001 ZZ","folga":null},"nota":"6001 ZZ, diâmetro 12 confere."}
+{"codigoItem":254316,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":311969,"decisao":"resolve","serie":"6309","vedacao":"ZZ","folga":"CN","provas":{"serie":"6309","vedacao":"6309ZZ","folga":null},"nota":"6309ZZ, diâmetro 45 confere."}
+{"codigoItem":339447,"decisao":"recusa","motivo":"fora-das-familias","nota":"2215 autocompensador."}
+{"codigoItem":15962,"decisao":"revisa","motivo":"designacao-ausente","nota":"Rolamento de esfera sem nenhuma referência."}
+{"codigoItem":486266,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia rolamentada, não é rolamento."}
+{"codigoItem":317407,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6304 sem código de vedação."}
+{"codigoItem":357382,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6206 com sufixo 2ZR fora da tabela."}
+{"codigoItem":465665,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":472442,"decisao":"resolve","serie":"6017","vedacao":"ZZ","folga":"CN","provas":{"serie":"6017","vedacao":"6017 ZZ","folga":null},"nota":"6017 ZZ, diâmetro 85 confere."}
+{"codigoItem":472586,"decisao":"resolve","serie":"6808","vedacao":"ZZ","folga":"CN","provas":{"serie":"6808","vedacao":"6808 ZZ","folga":null},"nota":"6808 ZZ, diâmetro 40 confere."}
+{"codigoItem":317411,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6311 sem código de vedação."}
+{"codigoItem":311963,"decisao":"resolve","serie":"6318","vedacao":"ZZ","folga":"C3","provas":{"serie":"6318","vedacao":"6318ZZ","folga":"C3"},"nota":"6318ZZ C3 com blindagem dupla, diâmetro 90 confere."}
+{"codigoItem":606499,"decisao":"recusa","motivo":"fora-das-familias","nota":"Acoplamento."}
+{"codigoItem":601301,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6002-W com sufixo W fora da tabela."}
+{"codigoItem":606547,"decisao":"recusa","motivo":"fora-das-familias","nota":"2309K autocompensador."}
+{"codigoItem":472452,"decisao":"resolve","serie":"6010","vedacao":"ZZ","folga":"CN","provas":{"serie":"6010","vedacao":"6010 ZZ","folga":null},"nota":"6010 ZZ, diâmetro 50 confere."}
+{"codigoItem":317417,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"626 sem código de vedação."}
+{"codigoItem":472473,"decisao":"resolve","serie":"6004","vedacao":"ZZ","folga":"CN","provas":{"serie":"6004","vedacao":"6004 ZZ","folga":null},"nota":"6004 ZZ, diâmetro 20 confere."}
+{"codigoItem":250903,"decisao":"recusa","motivo":"fora-das-familias","nota":"Correia."}
+{"codigoItem":472658,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6212-C3 sem código de vedação."}
+{"codigoItem":472507,"decisao":"resolve","serie":"6211","vedacao":"Z","folga":"CN","provas":{"serie":"6211","vedacao":"6211 Z","folga":null},"nota":"6211 Z com blindagem metálica, diâmetro 55 confere."}
+{"codigoItem":472653,"decisao":"resolve","serie":"6200","vedacao":"Z","folga":"CN","provas":{"serie":"6200","vedacao":"6200-Z","folga":null},"nota":"6200-Z com blindagem metálica, diâmetro 10 confere."}
+{"codigoItem":346385,"decisao":"resolve","serie":"6312","vedacao":"Z","folga":"C3","provas":{"serie":"6312","vedacao":"6312 Z","folga":"C3"},"nota":"6312 Z C3."}
+{"codigoItem":472485,"decisao":"resolve","serie":"6202","vedacao":"2RS","folga":"CN","provas":{"serie":"6202","vedacao":"6202 2RS","folga":null},"nota":"6202 2RS com vedação NBR, diâmetro 15 confere."}
+{"codigoItem":472591,"decisao":"resolve","serie":"6814","vedacao":"ZZ","folga":"CN","provas":{"serie":"6814","vedacao":"6814 ZZ","folga":null},"nota":"6814 ZZ, diâmetro 70 confere."}
+{"codigoItem":346423,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":292851,"decisao":"recusa","motivo":"fora-das-familias","nota":"22215K autocompensador."}
+{"codigoItem":606518,"decisao":"recusa","motivo":"fora-das-familias","nota":"7205-B de contato angular."}
+{"codigoItem":610941,"decisao":"recusa","motivo":"fora-das-familias","nota":"LR50/6NPPU é rolo de leva, fora da série 6."}
+{"codigoItem":624172,"decisao":"recusa","motivo":"fora-das-familias","nota":"2306 autocompensador."}
+{"codigoItem":472457,"decisao":"resolve","serie":"6008","vedacao":"2RS","folga":"CN","provas":{"serie":"6008","vedacao":"6008 2RS","folga":null},"nota":"6008 2RS, diâmetro 40 confere."}
+{"codigoItem":605430,"decisao":"resolve","serie":"6305","vedacao":"ZZ","folga":"CN","provas":{"serie":"6305","vedacao":"6305 ZZ","folga":null},"nota":"6305 ZZ, diâmetro 25 confere."}
+{"codigoItem":606810,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":472501,"decisao":"resolve","serie":"605","vedacao":"Z","folga":"CN","provas":{"serie":"605","vedacao":"605 Z","folga":null},"nota":"605 Z com blindagem metálica, diâmetro 5 confere."}
+{"codigoItem":605233,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":472517,"decisao":"resolve","serie":"62205","vedacao":"2RS","folga":"CN","provas":{"serie":"62205","vedacao":"62205 2RS","folga":null},"nota":"62205 2RS, diâmetro 25 confere."}
+{"codigoItem":601304,"decisao":"recusa","motivo":"fora-das-familias","nota":"793 não segue a série 6."}
+{"codigoItem":601428,"decisao":"recusa","motivo":"fora-das-familias","nota":"208 NU é cilíndrico."}
+{"codigoItem":283625,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":611938,"decisao":"resolve","serie":"61801","vedacao":"ZZ","folga":"CN","provas":{"serie":"61801","vedacao":"61801 2Z","folga":null},"nota":"61801 2Z, diâmetro 12 confere."}
+{"codigoItem":317413,"decisao":"recusa","motivo":"fora-das-familias","nota":"4203ZZ de duas carreiras."}
+{"codigoItem":472536,"decisao":"resolve","serie":"627","vedacao":"ZZ","folga":"CN","provas":{"serie":"627","vedacao":"627 ZZ","folga":null},"nota":"627 ZZ, diâmetro 7 confere."}
+{"codigoItem":317409,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6309 sem código de vedação."}
+{"codigoItem":295603,"decisao":"revisa","motivo":"designacao-ausente","nota":"Rolamento de esfera aberto em polegadas sem nenhuma referência."}
+{"codigoItem":605431,"decisao":"resolve","serie":"6302","vedacao":"ZZ","folga":"CN","provas":{"serie":"6302","vedacao":"6302 ZZ","folga":null},"nota":"6302 ZZ, diâmetro 15 confere."}
+{"codigoItem":248360,"decisao":"resolve","serie":"6208","vedacao":"ZZ","folga":"CN","provas":{"serie":"6208","vedacao":"6208 ZZ","folga":null},"nota":"6208 ZZ, metálico confirma."}
+{"codigoItem":396758,"decisao":"resolve","serie":"6901","vedacao":"ZZ","folga":"CN","provas":{"serie":"6901","vedacao":"6901 ZZ","folga":null},"nota":"6901 ZZ, folga não escrita."}
+{"codigoItem":366359,"decisao":"recusa","motivo":"fora-das-familias","nota":"3320 de duas carreiras."}
+{"codigoItem":283525,"decisao":"recusa","motivo":"contradicao","nota":"Código de borracha 2RS1 junto de METÁLICO."}
+{"codigoItem":472484,"decisao":"resolve","serie":"6202","vedacao":"ZZ","folga":"C3","provas":{"serie":"6202","vedacao":"6202-ZZ/C3","folga":"C3"},"nota":"6202-ZZ/C3 com blindagem metálica, diâmetro 15 confere."}
+{"codigoItem":479589,"decisao":"resolve","serie":"6013","vedacao":"ZZ","folga":"CN","provas":{"serie":"6013","vedacao":"6013 ZZ","folga":null},"nota":"6013 ZZ, diâmetro 65 confere."}
+{"codigoItem":466741,"decisao":"recusa","motivo":"fora-das-familias","nota":"Referência de veículo 2351-020-205."}
+{"codigoItem":606539,"decisao":"recusa","motivo":"fora-das-familias","nota":"7308 de contato angular."}
+{"codigoItem":248359,"decisao":"resolve","serie":"6207","vedacao":"ZZ","folga":"CN","provas":{"serie":"6207","vedacao":"6207 ZZ","folga":null},"nota":"6207 ZZ, metálico confirma."}
+{"codigoItem":472582,"decisao":"resolve","serie":"6800","vedacao":"2RS","folga":"CN","provas":{"serie":"6800","vedacao":"6800 2RS","folga":null},"nota":"6800 2RS, diâmetro 10 confere."}
+{"codigoItem":318843,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":472505,"decisao":"resolve","serie":"6211","vedacao":"2RS","folga":"CN","provas":{"serie":"6211","vedacao":"6211 2RS","folga":null},"nota":"6211 2RS, diâmetro 55 confere."}
+{"codigoItem":264285,"decisao":"resolve","serie":"6201","vedacao":"ZZ","folga":"CN","provas":{"serie":"6201","vedacao":"6201 ZZ","folga":null},"nota":"6201 ZZ, folga não escrita."}
+{"codigoItem":601309,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6209 NR com sufixo NR fora da tabela."}
+{"codigoItem":626492,"decisao":"recusa","motivo":"fora-das-familias","nota":"1205 autocompensador."}
+{"codigoItem":267274,"decisao":"recusa","motivo":"fora-das-familias","nota":"UCR210 é mancal com inserto."}
+{"codigoItem":396858,"decisao":"recusa","motivo":"contradicao","nota":"DÚVIDA: 6406 ZZ (duas blindagens) junto de UMA BLINDAGEM; tratei como equivalente a UM DOS LADOS, que a regra lista."}
+{"codigoItem":454274,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":151026,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":472520,"decisao":"resolve","serie":"624","vedacao":"ZZ","folga":"CN","provas":{"serie":"624","vedacao":"624 ZZ","folga":null},"nota":"624 ZZ, diâmetro 4 confere."}
+{"codigoItem":472580,"decisao":"recusa","motivo":"fora-das-familias","nota":"63206 não é forma da família (632dd não está na tabela)."}
+{"codigoItem":472441,"decisao":"resolve","serie":"6019","vedacao":"ZZ","folga":"CN","provas":{"serie":"6019","vedacao":"6019 ZZ","folga":null},"nota":"6019 ZZ, diâmetro 95 confere."}
+{"codigoItem":472455,"decisao":"resolve","serie":"6009","vedacao":"2RS","folga":"CN","provas":{"serie":"6009","vedacao":"6009 2RS","folga":null},"nota":"6009 2RS, diâmetro 45 confere."}
+{"codigoItem":601975,"decisao":"recusa","motivo":"fora-das-familias","nota":"Selo mecânico."}
+{"codigoItem":317395,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6003 sem código de vedação."}
+{"codigoItem":472458,"decisao":"resolve","serie":"6007","vedacao":"ZZ","folga":"CN","provas":{"serie":"6007","vedacao":"6007 ZZ","folga":null},"nota":"6007 ZZ, diâmetro 35 confere."}
+{"codigoItem":472516,"decisao":"resolve","serie":"6217","vedacao":"ZZ","folga":"C3","provas":{"serie":"6217","vedacao":"6217 ZZ","folga":"C3"},"nota":"6217 ZZ C3 com blindagem metálica, diâmetro 85 confere."}
+{"codigoItem":624165,"decisao":"recusa","motivo":"fora-das-familias","nota":"2306 autocompensador."}
+{"codigoItem":606540,"decisao":"recusa","motivo":"fora-das-familias","nota":"7309-BW de contato angular."}
+{"codigoItem":283527,"decisao":"recusa","motivo":"contradicao","nota":"Código de borracha 2RS1 junto de METÁLICO."}
+{"codigoItem":472655,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6306-C3 sem código de vedação."}
+{"codigoItem":317388,"decisao":"resolve","serie":"6211","vedacao":"ZZ","folga":"CN","provas":{"serie":"6211","vedacao":"6211ZZ","folga":null},"nota":"6211ZZ, diâmetro 55 confere."}
+{"codigoItem":472468,"decisao":"resolve","serie":"6007","vedacao":"2RS","folga":"CN","provas":{"serie":"6007","vedacao":"6007 2RS","folga":null},"nota":"6007 2RS, diâmetro 35 confere."}
+{"codigoItem":472641,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6209-C3 sem código de vedação."}
+{"codigoItem":311966,"decisao":"resolve","serie":"626","vedacao":"ZZ","folga":"CN","provas":{"serie":"626","vedacao":"626ZZ","folga":null},"nota":"626ZZ, diâmetro 6 confere."}
+{"codigoItem":472511,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6213 sem código de vedação."}
+{"codigoItem":607142,"decisao":"recusa","motivo":"fora-das-familias","nota":"Acoplamento."}
+{"codigoItem":352270,"decisao":"recusa","motivo":"fora-das-familias","nota":"Cônico, referência fora da série 6."}
+{"codigoItem":346383,"decisao":"resolve","serie":"6211","vedacao":"Z","folga":"C3","provas":{"serie":"6211","vedacao":"6211ZC3","folga":"6211ZC3"},"nota":"6211ZC3, folga C3."}
+{"codigoItem":472440,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6020 sem código de vedação."}
+{"codigoItem":606817,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":310598,"decisao":"resolve","serie":"6228","vedacao":"ABERTO","folga":"CN","provas":{"serie":"6228","vedacao":"S/ BLINDAGEM","folga":null},"nota":"6228 sem blindagem, diâmetro 140 confere."}
+{"codigoItem":606815,"decisao":"recusa","motivo":"fora-das-familias","nota":"Retentor."}
+{"codigoItem":346336,"decisao":"resolve","serie":"6207","vedacao":"ZZ","folga":"CN","provas":{"serie":"6207","vedacao":"6207-2Z","folga":null},"nota":"6207-2Z, folga não escrita."}
+{"codigoItem":472656,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6312-C3 sem código de vedação."}
+{"codigoItem":346387,"decisao":"resolve","serie":"6309","vedacao":"ZZ","folga":"CN","provas":{"serie":"6309","vedacao":"6309-2Z","folga":null},"nota":"6309-2Z, folga não escrita."}
+{"codigoItem":328774,"decisao":"recusa","motivo":"fora-das-familias","nota":"Polia."}
+{"codigoItem":472548,"decisao":"revisa","motivo":"sufixo-desconhecido","nota":"6308 C3 sem código de vedação."}

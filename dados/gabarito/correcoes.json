@@ -1,0 +1,10 @@
+{
+  "correcoes": [
+    {
+      "codigoItem": 622950,
+      "decisao": "revisa",
+      "motivo": "sufixo-desconhecido",
+      "porque": "O texto diz MATERIAL: EM AÇO INOXIDÁVEL. O rolamento inox 6202 2RS não é o 6202 2RS comum, e as regras de rotulagem não olhavam o material. Com o rótulo antigo (resolve), ele entrava no grupo do item 472485, que é o rolamento comum: um par falso."
+    }
+  ]
+}

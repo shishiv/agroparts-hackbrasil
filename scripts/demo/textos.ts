@@ -58,7 +58,7 @@ function montarTecnico(parte: Parte, sorteio: Sorteio, medidas: string): TextoDe
     m.solto(" ");
     m.atributo("folga", "C3", "C3");
   }
-  m.solto(` - ${medidas} MM - ${sorteio.escolher(["UMA CARREIRA", "1 CARREIRA", "S/ CAGE"])}`);
+  m.solto(` - ${medidas} MM - ${sorteio.escolher(["UMA CARREIRA", "1 CARREIRA", "UMA CARREIRA DE ESFERAS"])}`);
   return { texto: m.texto, atributos: m.atributos };
 }
 
