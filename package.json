@@ -18,6 +18,7 @@
     "gerar-demo": "bun run scripts/gerar-demo.ts",
     "gerar-paginas": "bun run scripts/gerar-paginas.ts",
     "placar": "bun run scripts/placar.ts",
+    "conferencia-amostra": "bun run scripts/conferencia-amostra.ts",
     "familia-jev": "bun run scripts/familia-jev.ts"
   },
   "dependencies": {
