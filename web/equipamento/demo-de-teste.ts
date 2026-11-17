@@ -1,20 +1,18 @@
 import type { ExportacaoDaUsina, Unificacao } from "../../src/contrato";
-import { lerExportacao, lerLeiturasDeExemplo } from "../../src/exportacao";
+import { lerExportacao } from "../../src/exportacao";
 import { CAMINHO_DO_INDICE, caminhoDoEquipamento, indiceDeGrupos, paginaDoEquipamento } from "../../src/historico";
-import { agrupar } from "../../src/unificacao/agrupar";
+import { unificar } from "../../src/motor";
 import consumo from "../../dados/demo/consumo.csv?raw";
 import equipamentos from "../../dados/demo/equipamentos.csv?raw";
 import estoque from "../../dados/demo/estoque.csv?raw";
 import materiais from "../../dados/demo/materiais.csv?raw";
-import exemploJson from "../../dados/demo/unificacao-de-exemplo.json?raw";
 import type { Buscar } from "./carregar";
 
 const lido = lerExportacao({ equipamentos, materiais, consumo, estoque });
-const exemplo = lerLeiturasDeExemplo(exemploJson);
-if (!lido.ok || !exemplo.ok) throw new Error("demo ilegível");
+if (!lido.ok) throw new Error("demo ilegível");
 
 export const exportacaoDaDemo: ExportacaoDaUsina = lido.valor;
-export const unificacaoDaDemo: Unificacao = agrupar(exemplo.valor.versaoRegras, exemplo.valor.leituras);
+export const unificacaoDaDemo: Unificacao = unificar(exportacaoDaDemo.materiais);
 
 export interface ServidorDeTeste {
   buscar: Buscar;

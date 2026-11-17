@@ -97,6 +97,10 @@ summary {
   background: #f4f4ee;
 }
 
+.atributos {
+  color: var(--apoio);
+}
+
 mark {
   padding: 0 0.125rem;
   border-radius: 0.125rem;
