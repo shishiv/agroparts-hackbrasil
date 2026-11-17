@@ -97,6 +97,7 @@ describe("a página mostra a conta que se faz à mão", () => {
       const material = exportacaoDaDemo.materiais.find((m) => m.codigo === item.dataset.codigo);
       if (!material) throw new Error(`código ${item.dataset.codigo} fora do cadastro`);
       const esperado = (unificacaoDaDemo.leituras.get(material.codigo)?.atributos ?? [])
+        .filter((a) => a.trecho.inicio < a.trecho.fim)
         .toSorted((a, b) => a.trecho.inicio - b.trecho.inicio)
         .map((a) => material.descricao.slice(a.trecho.inicio, a.trecho.fim));
       const marcado = [...item.querySelectorAll("mark")].map((m) => m.textContent);
@@ -104,6 +105,25 @@ describe("a página mostra a conta que se faz à mão", () => {
       conferidos += marcado.length;
     }
     expect(conferidos).toBeGreaterThan(5);
+  });
+
+  it("004512: a folga que o texto escreve aparece com o valor lido, junto da série e da vedação", async () => {
+    const { raiz } = await abrir("004512");
+    const doCodigo = (codigo: string) =>
+      [...raiz.querySelectorAll(`.peca .codigos [data-codigo="${codigo}"] [data-atributo]`)].map((a) => a.textContent);
+    expect(doCodigo("10066")).toEqual(["série 6309", "vedação ZZ", "folga C3"]);
+    expect(doCodigo("10091")).toEqual(["série 6312", "vedação ZZ", "folga C3"]);
+  });
+
+  it("004540: a folga normal, que o texto não escreve, aparece dita em palavras e não marca trecho nenhum", async () => {
+    const { raiz } = await abrir("004540");
+    const codigos = [...raiz.querySelectorAll<HTMLElement>(".peca .codigos [data-codigo]")];
+    expect(codigos.map((c) => c.dataset.codigo).sort()).toEqual(["10076", "10131", "10176", "10251"]);
+    for (const item of codigos) {
+      const folga = item.querySelector('[data-atributo="folga"]');
+      expect(folga?.textContent, item.dataset.codigo).toBe("folga normal (não escrita no texto)");
+      expect([...item.querySelectorAll("mark")].every((m) => m.textContent !== ""), item.dataset.codigo).toBe(true);
+    }
   });
 
   it("mostra, separado, o saldo sob outro código e deixa de fora o saldo zerado", async () => {

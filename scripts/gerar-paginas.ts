@@ -1,10 +1,10 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import type { Plugin } from "vite";
-import type { CadastroMaterial, ErroDeLinha, ExportacaoDaUsina, Unificacao } from "../src/contrato";
-import { ARQUIVO_EXEMPLO, ARQUIVOS, lerExportacao, lerLeiturasDeExemplo } from "../src/exportacao";
+import type { ErroDeLinha, ExportacaoDaUsina } from "../src/contrato";
+import { ARQUIVOS, lerExportacao } from "../src/exportacao";
 import { CAMINHO_DO_INDICE, caminhoDoEquipamento, indiceDeGrupos, paginaDoEquipamento } from "../src/historico";
-import { agrupar } from "../src/unificacao/agrupar";
+import { unificar } from "../src/motor";
 
 const PASTA_DA_DEMO = new URL("../dados/demo/", import.meta.url);
 
@@ -32,24 +32,10 @@ async function lerExportacaoDaDemo(): Promise<ExportacaoDaUsina> {
   return lido.valor;
 }
 
-/**
- * Único ponto em que a unificação entra nas páginas.
- *
- * Hoje lê as leituras que o gerador da demo escreveu em `unificacao-de-exemplo.json`.
- * Quando a fatia 1 (`src/motor/`) passar no gabarito, o corpo inteiro vira uma linha,
- * `return unificar(materiais)`, e as duas leituras do exemplo saem. Os testes da página
- * não dependem do texto de chave ou de rótulo, então não mudam.
- */
-async function unificarCadastro(_materiais: readonly CadastroMaterial[]): Promise<Unificacao> {
-  const exemplo = lerLeiturasDeExemplo(await lerDaDemo(ARQUIVO_EXEMPLO));
-  if (!exemplo.ok) throw new Error(descreverErros(ARQUIVO_EXEMPLO, exemplo.erros));
-  return agrupar(exemplo.valor.versaoRegras, exemplo.valor.leituras);
-}
-
 /** Um JSON por equipamento e o índice de grupos, na mesma ordem em toda execução. */
 export async function gerarPaginas(): Promise<readonly ArquivoGerado[]> {
   const exportacao = await lerExportacaoDaDemo();
-  const unificacao = await unificarCadastro(exportacao.materiais);
+  const unificacao = unificar(exportacao.materiais);
   const maquinas = exportacao.equipamentos.map((e) => ({
     caminho: caminhoDoEquipamento(e.patrimonio),
     conteudo: JSON.stringify(paginaDoEquipamento(exportacao, unificacao, e.patrimonio)),

@@ -86,6 +86,17 @@ describe("no site construído, num celular de 390 px", () => {
     await digitado.contexto.close();
   }, 60_000);
 
+  it("mostra a folga normal como não escrita no texto, sem marcar nada, com o motor real no build", async () => {
+    const { pagina, contexto } = await celular();
+    await pagina.goto(`${base}/e/004540`);
+    await historicoDe(pagina);
+    const folgas = await pagina.locator('.codigos [data-atributo="folga"]').allTextContents();
+    expect(folgas).toHaveLength(4);
+    expect(new Set(folgas)).toEqual(new Set(["folga normal (não escrita no texto)"]));
+    expect(await pagina.locator(".codigos mark").evaluateAll((marcas) => marcas.filter((m) => m.textContent === ""))).toEqual([]);
+    await contexto.close();
+  }, 60_000);
+
   it("baixa só o JSON da própria máquina", async () => {
     const { pagina, dados, contexto } = await celular();
     await pagina.goto(`${base}/e/004540`);

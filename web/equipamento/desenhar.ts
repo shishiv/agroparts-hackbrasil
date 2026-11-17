@@ -41,6 +41,28 @@ function motivoDaLeitura(leitura: Exclude<Leitura, { decisao: "resolve" }>): str
   return leitura.decisao === "revisa" ? leitura.pendencias.map((p) => PENDENCIAS[p]).join(" ") : MOTIVOS[leitura.motivo];
 }
 
+const NOMES_DE_ATRIBUTO: Readonly<Record<string, string>> = { serie: "série", vedacao: "vedação", folga: "folga" };
+
+/**
+ * O motor grava trecho vazio (início igual ao fim) para o que o texto não escreve, como a folga normal.
+ * Esse atributo não tem o que marcar no texto, então a página o diz em palavras.
+ */
+function atributoEmPalavras(atributo: Atributo): string {
+  const nome = NOMES_DE_ATRIBUTO[atributo.nome] ?? atributo.nome;
+  const valor = atributo.nome === "folga" && atributo.valor === "CN" ? "normal" : atributo.valor;
+  const naoEscrito = atributo.trecho.inicio === atributo.trecho.fim ? " (não escrita no texto)" : "";
+  return `${nome} ${valor}${naoEscrito}`;
+}
+
+function atributosDoCodigo(atributos: readonly Atributo[]): HTMLElement | null {
+  if (atributos.length === 0) return null;
+  const itens = atributos.flatMap((a, i) => [
+    i > 0 ? " · " : null,
+    h("span", { "data-atributo": a.nome }, atributoEmPalavras(a)),
+  ]);
+  return h("p", { class: "atributos" }, ...itens);
+}
+
 /** O texto original com os trechos que o motor leu marcados, na ordem em que aparecem. */
 function textoComTrechos(descricao: string, atributos: readonly Atributo[]): Filho[] {
   const trechos = atributos
@@ -133,6 +155,7 @@ function codigoDaPeca(codigo: CodigoLegado, uso: ReadonlyMap<CodigoLegado, Uso>,
         : " · nunca usado nesta máquina",
     ),
     texto ? h("p", { class: "original" }, ...textoComTrechos(texto.descricao, texto.atributos)) : null,
+    texto ? atributosDoCodigo(texto.atributos) : null,
   );
 }
 
