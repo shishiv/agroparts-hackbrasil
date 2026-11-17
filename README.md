@@ -25,7 +25,7 @@ Fornecedor, órgão comprador e preço das compras públicas não entram. O test
 | Rota | Arquivos |
 |---|---|
 | `/` | `web/index.html`, `web/inicio/main.ts` |
-| `/e/<patrimônio>` | `web/equipamento/index.html`, `web/equipamento/main.ts`. `public/_redirects` reescreve tudo que está sob `/e/` para `/equipamento/`, e `vite.config.ts` faz o mesmo no `dev` e no `preview`. Por isso o JSON de cada máquina não pode ficar sob `/e/`. |
+| `/e/<patrimônio>` | `web/equipamento/index.html`, `web/equipamento/main.ts`. A página baixa só `/maquinas/<patrimônio>.json`; `/grupos.json` é o índice de grupos com saldo. `public/_redirects` reescreve tudo que está sob `/e/` para `/equipamento/`, e `vite.config.ts` faz o mesmo no `dev` e no `preview`. Por isso o JSON de cada máquina não pode ficar sob `/e/`. |
 | `/diagnostico` | `web/diagnostico/index.html`, `web/diagnostico/main.ts` |
 
 ## Comandos
@@ -42,13 +42,14 @@ bun run baixar-catmat    # baixa de novo dados/catmat/
 bunx playwright install chromium && bun run test:navegador   # ou CHROMIUM_PATH=<chrome>
 ```
 
-`bun run placar`, `gerar-paginas` e `familia-jev` apontam para arquivos que as próximas fatias preenchem.
+`bun run gerar-paginas [pasta]` grava os JSON das máquinas e `/grupos.json` (padrão `dist/`); o `bun run build` e o `bun run dev` já fazem isso pelo plugin de `scripts/gerar-paginas.ts`. `bun run placar` e `familia-jev` apontam para arquivos que as próximas fatias preenchem.
 
 ## Pastas
 
 - `src/contrato/`: tipos e marcas, sem lógica.
 - `src/unificacao/agrupar.ts`: a única função que monta `Unificacao`.
 - `src/exportacao/`: lê os quatro CSV e os JSON da demo na fronteira; só ela cria valores marcados.
+- `src/historico/`: monta o histórico unificado de cada equipamento e o JSON que a página baixa.
 - `web/`: páginas. `web/entrada/index.ts` registra foto e áudio.
 - `functions/api/`: funções do Cloudflare Pages, só para foto e áudio.
 - `scripts/`: gerador da demo, download do CATMAT e scripts das fatias seguintes.
