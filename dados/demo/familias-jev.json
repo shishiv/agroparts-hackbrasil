@@ -1,0 +1,41 @@
+{
+  "versao": "familias-jev-1",
+  "modelo": "jev-1.14.0",
+  "geradoEm": "2026-11-17",
+  "regra": {"versao":"regra-1","noulMinimo":0.7,"escolhaMinima":0.5},
+  "classes": {
+    "3020": {"nome":"ENGRENAGENS, POLIAS, COROAS DENTADAS E CORRENTES DE TRANSMISSÃO","grupo":"EQUIPAMENTOS DE TRANSMISSÃO DE FORÇA MECÂNICA"},
+    "3030": {"nome":"CORREAME, CORREIAS DE TRANSMISSÃO, CORREIAS DOS VENTILADORESE ACESSÓRIOS","grupo":"EQUIPAMENTOS DE TRANSMISSÃO DE FORÇA MECÂNICA"},
+    "3040": {"nome":"EQUIPAMENTOS DIVERSOS DE TRANSMISSÃO DE FORÇA","grupo":"EQUIPAMENTOS DE TRANSMISSÃO DE FORÇA MECÂNICA"},
+    "3110": {"nome":"ROLAMENTOS ANTIFRICÇÃO NÃO MONTADOS","grupo":"ROLAMENTOS E MANCAIS"},
+    "4720": {"nome":"MANGUEIRAS E TUBULAÇÕES FLEXÍVEIS","grupo":"CANOS, TUBOS, MANGUEIRAS E ACESSÓRIOS"},
+    "5330": {"nome":"GAXETAS E OUTROS MATERIAIS PARA VEDAÇÃO","grupo":"FERRAGENS E ABRASIVOS"}
+  },
+  "semTexto": ["10282"],
+  "sugestoes": [
+    {"codigo":"10002","resposta":{"tipo":"nenhuma"},"probabilidade":0.05,"confianca":0.4,"modelo":"jev-1.14.0","jev":{"escolha":"5330","probabilidadeDaEscolha":0.4,"noul":0.95}},
+    {"codigo":"10012","resposta":{"tipo":"classe","classe":"3110"},"probabilidade":0.65,"confianca":0.65,"modelo":"jev-1.14.0","jev":{"escolha":"3110","probabilidadeDaEscolha":0.65,"noul":0.96}},
+    {"codigo":"10019","resposta":{"tipo":"classe","classe":"5330"},"probabilidade":0.51,"confianca":0.51,"modelo":"jev-1.14.0","jev":{"escolha":"5330","probabilidadeDaEscolha":0.51,"noul":0.94}},
+    {"codigo":"10020","resposta":{"tipo":"classe","classe":"3020"},"probabilidade":0.82,"confianca":0.82,"modelo":"jev-1.14.0","jev":{"escolha":"3020","probabilidadeDaEscolha":0.82,"noul":0.8}},
+    {"codigo":"10032","resposta":{"tipo":"classe","classe":"3030"},"probabilidade":0.96,"confianca":0.96,"modelo":"jev-1.14.0","jev":{"escolha":"3030","probabilidadeDaEscolha":0.96,"noul":0.98}},
+    {"codigo":"10041","resposta":{"tipo":"classe","classe":"3110"},"probabilidade":0.87,"confianca":0.87,"modelo":"jev-1.14.0","jev":{"escolha":"3110","probabilidadeDaEscolha":0.87,"noul":0.97}},
+    {"codigo":"10046","resposta":{"tipo":"classe","classe":"4720"},"probabilidade":0.89,"confianca":0.89,"modelo":"jev-1.14.0","jev":{"escolha":"4720","probabilidadeDaEscolha":0.89,"noul":0.97}},
+    {"codigo":"10062","resposta":{"tipo":"classe","classe":"3110"},"probabilidade":0.61,"confianca":0.61,"modelo":"jev-1.14.0","jev":{"escolha":"3110","probabilidadeDaEscolha":0.61,"noul":0.96}},
+    {"codigo":"10089","resposta":{"tipo":"classe","classe":"3110"},"probabilidade":0.91,"confianca":0.91,"modelo":"jev-1.14.0","jev":{"escolha":"3110","probabilidadeDaEscolha":0.91,"noul":0.98}},
+    {"codigo":"10108","resposta":{"tipo":"classe","classe":"3030"},"probabilidade":0.95,"confianca":0.95,"modelo":"jev-1.14.0","jev":{"escolha":"3030","probabilidadeDaEscolha":0.95,"noul":0.98}},
+    {"codigo":"10125","resposta":{"tipo":"classe","classe":"3110"},"probabilidade":0.88,"confianca":0.88,"modelo":"jev-1.14.0","jev":{"escolha":"3110","probabilidadeDaEscolha":0.88,"noul":0.98}},
+    {"codigo":"10144","resposta":{"tipo":"classe","classe":"3030"},"probabilidade":0.95,"confianca":0.95,"modelo":"jev-1.14.0","jev":{"escolha":"3030","probabilidadeDaEscolha":0.95,"noul":0.98}},
+    {"codigo":"10148","resposta":{"tipo":"classe","classe":"3030"},"probabilidade":0.92,"confianca":0.92,"modelo":"jev-1.14.0","jev":{"escolha":"3030","probabilidadeDaEscolha":0.92,"noul":0.98}},
+    {"codigo":"10172","resposta":{"tipo":"classe","classe":"3110"},"probabilidade":0.91,"confianca":0.91,"modelo":"jev-1.14.0","jev":{"escolha":"3110","probabilidadeDaEscolha":0.91,"noul":0.98}},
+    {"codigo":"10192","resposta":{"tipo":"classe","classe":"5330"},"probabilidade":0.82,"confianca":0.82,"modelo":"jev-1.14.0","jev":{"escolha":"5330","probabilidadeDaEscolha":0.82,"noul":0.86}},
+    {"codigo":"10203","resposta":{"tipo":"classe","classe":"3110"},"probabilidade":0.89,"confianca":0.89,"modelo":"jev-1.14.0","jev":{"escolha":"3110","probabilidadeDaEscolha":0.89,"noul":0.97}},
+    {"codigo":"10222","resposta":{"tipo":"classe","classe":"3020"},"probabilidade":0.78,"confianca":0.78,"modelo":"jev-1.14.0","jev":{"escolha":"3020","probabilidadeDaEscolha":0.78,"noul":0.93}},
+    {"codigo":"10230","resposta":{"tipo":"classe","classe":"3110"},"probabilidade":0.92,"confianca":0.92,"modelo":"jev-1.14.0","jev":{"escolha":"3110","probabilidadeDaEscolha":0.92,"noul":0.98}},
+    {"codigo":"10234","resposta":{"tipo":"classe","classe":"3110"},"probabilidade":0.94,"confianca":0.94,"modelo":"jev-1.14.0","jev":{"escolha":"3110","probabilidadeDaEscolha":0.94,"noul":0.96}},
+    {"codigo":"10241","resposta":{"tipo":"nenhuma"},"probabilidade":0.31,"confianca":0.62,"modelo":"jev-1.14.0","jev":{"escolha":"5330","probabilidadeDaEscolha":0.62,"noul":0.69}},
+    {"codigo":"10247","resposta":{"tipo":"classe","classe":"3110"},"probabilidade":0.91,"confianca":0.91,"modelo":"jev-1.14.0","jev":{"escolha":"3110","probabilidadeDaEscolha":0.91,"noul":0.98}},
+    {"codigo":"10267","resposta":{"tipo":"classe","classe":"3110"},"probabilidade":0.87,"confianca":0.87,"modelo":"jev-1.14.0","jev":{"escolha":"3110","probabilidadeDaEscolha":0.87,"noul":0.98}},
+    {"codigo":"10272","resposta":{"tipo":"nenhuma"},"probabilidade":0.25,"confianca":0.48,"modelo":"jev-1.14.0","jev":{"escolha":"3040","probabilidadeDaEscolha":0.48,"noul":0.75}},
+    {"codigo":"10276","resposta":{"tipo":"nenhuma"},"probabilidade":0.16,"confianca":0.48,"modelo":"jev-1.14.0","jev":{"escolha":"5330","probabilidadeDaEscolha":0.48,"noul":0.84}}
+  ]
+}
