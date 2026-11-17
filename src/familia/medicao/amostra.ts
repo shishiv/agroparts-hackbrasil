@@ -77,6 +77,12 @@ export function sortearItens(candidatos: readonly ItemPublico[], quantos: number
     .sort((a, b) => a.codigoItem - b.codigoItem);
 }
 
+/** Os itens da amostra cujo texto é igual ao de uma descrição que o Jev já viu, como a do cadastro da demo. */
+export function itensJaVistos(amostra: Amostra, descricoesVistas: readonly string[]): number[] {
+  const vistas = new Set(descricoesVistas.map(chaveDoTexto));
+  return amostra.itens.filter((i) => vistas.has(chaveDoTexto(i.descricao))).map((i) => i.codigoItem);
+}
+
 export function escreverAmostra(amostra: Amostra): string {
   const linhas = [
     "{",

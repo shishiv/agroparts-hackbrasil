@@ -1,7 +1,7 @@
 import type { Classe } from "../classes";
 import { MODELO_DO_JEV } from "../pergunta";
 import type { Amostra } from "./amostra";
-import { intervaloDeWilson, type Avaliacao, type Fracao, type Resultados, type Veredito } from "./avaliar";
+import { avaliar, intervaloDeWilson, type Avaliacao, type Fracao, type Resultados, type Veredito } from "./avaliar";
 import type { Protocolo } from "./protocolo";
 
 /** Preço de entrada do Jev 1.14 em dólares por milhão de tokens, na tabela de https://docs.typesafe.ai/models.md. */
@@ -12,6 +12,8 @@ export interface DadosDoRelatorio {
   amostra: Amostra;
   /** As classes que o Jev recebeu como opção, sem contar "nenhuma". */
   classesOferecidas: readonly Classe[];
+  /** Itens da amostra com o mesmo texto de uma descrição que o Jev viu quando a pergunta foi ajustada. */
+  itensJaVistos: readonly number[];
   /** Ausentes antes da medição: o relatório sai só com o protocolo. */
   medicao: { resultados: Resultados; avaliacao: Avaliacao } | null;
 }
@@ -98,6 +100,12 @@ function secaoDoResultado(dados: DadosDoRelatorio, resultados: Resultados, avali
     : "O selo de família sugerida não entra, porque a precisão ou os controles não passaram.";
   const custo = (resultados.tokensDeEntrada / 1_000_000) * DOLARES_POR_MILHAO_DE_TOKENS;
 
+  const vistos = new Set(dados.itensJaVistos);
+  const semOsVistos = vistos.size === 0 ? null : avaliar({ ...dados.amostra, itens: dados.amostra.itens.filter((i) => !vistos.has(i.codigoItem)) }, resultados, dados.protocolo);
+  const jaVistos = semOsVistos
+    ? `Itens da amostra com o mesmo texto de um código da demo, que o Jev já tinha visto quando a pergunta foi ajustada: ${[...vistos].join(", ")}. Sem eles, a precisão das sugestões é ${semOsVistos.vereditos.precisao.k} de ${semOsVistos.vereditos.precisao.n} (${percentual(semOsVistos.vereditos.precisao)}) e os controles em "nenhuma" são ${semOsVistos.vereditos.controles.k} de ${semOsVistos.vereditos.controles.n}.\n\n`
+    : "";
+
   const porClasse = avaliacao.porClasse.map((r) => [
     r.classe.codigo,
     r.classe.nome.slice(0, 60),
@@ -136,7 +144,7 @@ ${linhaDoVeredito(vereditos.controles)}
 ${linhaDoVeredito(vereditos.cobertura)}
 ${linhaDoVeredito(vereditos.inversao)}
 
-Escolha do Choice sem a regra: ${dentro.escolhaCerta} de ${dentro.itens} itens de classes oferecidas na classe certa (${comIntervalo({ k: dentro.escolhaCerta, n: dentro.itens })}). Nas ${fora.itens} amostras de classes não oferecidas, ${fora.emNenhuma} terminaram em "nenhuma".
+${jaVistos}Escolha do Choice sem a regra: ${dentro.escolhaCerta} de ${dentro.itens} itens de classes oferecidas na classe certa (${comIntervalo({ k: dentro.escolhaCerta, n: dentro.itens })}). Nas ${fora.itens} amostras de classes não oferecidas, ${fora.emNenhuma} terminaram em "nenhuma".
 
 ### Por classe
 

@@ -51,6 +51,8 @@ O selo de família sugerida não entra, porque a precisão ou os controles não 
 | cobertura | 167 de 200 | 83,5% (78% a 88%) | 60% | passou |
 | concordância ao inverter a ordem | 16 de 20 | 80,0% (58% a 92%) | 85% | não passou |
 
+Itens da amostra com o mesmo texto de um código da demo, que o Jev já tinha visto quando a pergunta foi ajustada: 283258, 15881, 625866. Sem eles, a precisão das sugestões é 145 de 165 (87,9%) e os controles em "nenhuma" são 21 de 30.
+
 Escolha do Choice sem a regra: 159 de 200 itens de classes oferecidas na classe certa (79,5% (73% a 85%)). Nas 30 amostras de classes não oferecidas, 21 terminaram em "nenhuma".
 
 ### Por classe

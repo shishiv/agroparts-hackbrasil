@@ -1,7 +1,9 @@
 import { existsSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
+import { lerMateriais } from "../../exportacao";
+import { alvosDoJev } from "../alvos";
 import { classesOferecidas, lerClassesDaArvore } from "../classes";
-import { escreverAmostra, lerAmostra } from "./amostra";
+import { escreverAmostra, itensJaVistos, lerAmostra } from "./amostra";
 import { avaliar } from "./avaliar";
 import { PROTOCOLO } from "./protocolo";
 import { formatarRelatorio } from "./relatorio";
@@ -47,7 +49,10 @@ describe("docs/medicao/familia.md", () => {
       : null;
     if (resultados && !resultados.ok) throw new Error("familia-respostas.json ilegível");
     const medicao = resultados?.ok ? { resultados: resultados.valor, avaliacao: avaliar(amostra, resultados.valor, PROTOCOLO) } : null;
-    const esperado = formatarRelatorio({ protocolo: PROTOCOLO, amostra, classesOferecidas: oferecidas(), medicao });
+    const materiais = lerMateriais(lerTexto("dados/demo/materiais.csv"));
+    if (!materiais.ok) throw new Error("materiais.csv ilegível");
+    const jaVistos = itensJaVistos(amostra, alvosDoJev(materiais.valor).comTexto.map((m) => m.descricao));
+    const esperado = formatarRelatorio({ protocolo: PROTOCOLO, amostra, classesOferecidas: oferecidas(), itensJaVistos: jaVistos, medicao });
     expect(lerTexto("docs/medicao/familia.md")).toBe(esperado);
   });
 });

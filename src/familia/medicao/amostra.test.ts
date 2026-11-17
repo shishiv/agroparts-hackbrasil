@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { escreverAmostra, hashDe, lerAmostra, lerItemDaApi, semRepeticao, sortearItens, type ItemPublico } from "./amostra";
+import { escreverAmostra, hashDe, itensJaVistos, lerAmostra, lerItemDaApi, semRepeticao, sortearItens, type ItemPublico } from "./amostra";
 
 function item(codigoItem: number, descricao: string, codigoClasse = "3030"): ItemPublico {
   return { codigoItem, codigoClasse, nomePdm: "CORREIA", descricao };
@@ -59,6 +59,20 @@ describe("sortearItens", () => {
 describe("semRepeticao", () => {
   it("fica com o item de menor código de cada texto, sem olhar maiúscula nem espaço", () => {
     expect(semRepeticao([item(9, "x  y"), item(3, "X Y"), item(4, "Z")]).map((i) => i.codigoItem)).toEqual([3, 4]);
+  });
+});
+
+describe("itensJaVistos", () => {
+  it("acha os itens cujo texto é igual a uma descrição vista, sem olhar maiúscula nem espaço", () => {
+    const amostra = {
+      fonte: "t",
+      consultadoEm: "2026-11-17",
+      protocolo: "p",
+      semente: "s",
+      classes: [],
+      itens: [item(1, "POLIA, NOME: POLIA"), item(2, "CORREIA V")],
+    };
+    expect(itensJaVistos(amostra, ["polia,  nome: polia", "outra coisa"])).toEqual([1]);
   });
 });
 
