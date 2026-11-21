@@ -1,40 +1,58 @@
 .entrada-foto button {
-  min-height: 3rem;
+  min-height: 3.5rem;
   padding: 0 1.25rem;
-  border: 0;
-  border-radius: 0.5rem;
-  background: var(--acento);
-  color: #ffffff;
-  font: inherit;
-  font-weight: 700;
+  border: 1px solid var(--sinal);
+  border-radius: 0.375rem;
+  background: var(--sinal);
+  color: var(--sinal-texto);
+  font: 600 1rem/1.2 var(--mono);
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.entrada-foto button:hover {
+  background: var(--texto);
 }
 
 .entrada-foto button.secundario {
-  border: 2px solid var(--apoio);
+  border-color: var(--regua);
   background: transparent;
   color: var(--texto);
 }
 
+.entrada-foto button.secundario:hover {
+  border-color: var(--texto);
+}
+
 .entrada-foto label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
+  margin-bottom: 0.625rem;
+  color: var(--apoio);
+  font: 400 1rem/1.4 var(--mono);
+  text-transform: uppercase;
 }
 
 .entrada-foto textarea {
   display: block;
   width: 100%;
-  padding: 0.75rem;
-  border: 2px solid var(--apoio);
+  max-width: 48rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--regua);
   border-radius: 0.5rem;
-  background: var(--papel);
+  background: var(--painel);
   color: var(--texto);
-  font: inherit;
-  font-size: 1.25rem;
+  font: 400 1.25rem/1.4 var(--mono);
+}
+
+.entrada-foto textarea:focus-visible {
+  border-color: var(--sinal);
+  outline: none;
 }
 
 .entrada-acoes {
   display: flex;
   gap: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
 }

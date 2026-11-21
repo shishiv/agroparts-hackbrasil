@@ -1,4 +1,3 @@
-import "../inicio/base.css";
 import "./estilo.css";
 import { entradasRegistradas } from "../entrada";
 import { rodape, topo } from "../inicio/casca";

@@ -1,12 +1,46 @@
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  src: url("/fontes/archivo.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fontes/ibm-plex-mono-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("/fontes/ibm-plex-mono-600.woff2") format("woff2");
+}
+
 :root {
-  color-scheme: light;
-  --fundo: #f4f3ee;
-  --papel: #ffffff;
-  --texto: #1b221d;
-  --apoio: #485349;
-  --linha: #c9cdc2;
-  --acento: #1d5a31;
-  --acento-fundo: #e3f0e4;
+  color-scheme: dark;
+  --preto: #000000;
+  --palco: #0a0a0a;
+  --painel: #151515;
+  --painel-alto: #1e1e1e;
+  --grade: #262626;
+  --regua: #383838;
+  --apoio: #a3a3a3;
+  --texto: #eeeeee;
+  --sinal: #fff313;
+  --sinal-texto: #000000;
+  --alerta: #ff5a36;
+  --margem: clamp(1rem, 2.5vw, 2.25rem);
+  --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --suave: cubic-bezier(0.22, 1, 0.36, 1);
+  --grade-tecnica: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Crect x='.5' y='.5' width='96' height='96' fill='none' stroke='%23262626'/%3E%3Ccircle cx='48.5' cy='48.5' r='47' fill='none' stroke='%231c1c1c'/%3E%3C/svg%3E");
 }
 
 * {
@@ -16,6 +50,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  background: var(--preto);
 }
 
 body {
@@ -23,96 +58,218 @@ body {
   flex-direction: column;
   min-height: 100dvh;
   margin: 0;
-  background: var(--fundo);
+  background: var(--preto);
   color: var(--texto);
-  font: 1rem/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font: 400 1rem/1.5 var(--sans);
   overflow-wrap: anywhere;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
 }
 
 main {
   flex: 1;
-  width: 100%;
-  max-width: 40rem;
-  margin: 0 auto;
-  padding: 1rem;
+  width: min(100%, 120rem);
+  margin-inline: auto;
+  padding: 0 var(--margem) 3rem;
 }
 
-.topo,
-.rodape {
-  width: 100%;
-  max-width: 40rem;
-  margin: 0 auto;
-  padding: 0 1rem;
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.75rem, 6vw, 5.5rem);
+  line-height: 1;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* Rótulo técnico: mono, caixa alta, com o ponto da referência antes. */
+.rotulo,
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin: 0 0 1rem;
+  color: var(--apoio);
+  font: 400 1rem/1.4 var(--mono);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h2::before {
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+  content: "";
+}
+
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  width: min(100%, 120rem);
+  margin-inline: auto;
+  padding: 0.75rem var(--margem);
+  border-bottom: 1px solid transparent;
+  background: rgb(0 0 0 / 0.82);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
 }
 
 .topo a {
   display: inline-flex;
   align-items: center;
   min-height: 2.75rem;
-  color: var(--acento);
-  font-weight: 700;
+  padding: 0 0.875rem;
+  border-radius: 0.375rem;
+  background: var(--sinal);
+  color: var(--sinal-texto);
+  font: 600 1rem/1 var(--mono);
+  letter-spacing: -0.02em;
   text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.topo a:hover {
+  background: var(--texto);
 }
 
 .rodape {
-  margin-top: 1rem;
-  padding-block: 1rem;
-  border-top: 1px solid var(--linha);
+  width: min(100%, 120rem);
+  margin-inline: auto;
+  padding: 1.25rem var(--margem) 1.5rem;
+  border-top: 1px solid var(--grade);
   color: var(--apoio);
-  text-align: center;
+  font: 400 1rem/1.5 var(--mono);
 }
 
 .rodape p {
   margin: 0;
 }
 
-h1 {
-  margin: 0 0 1rem;
-  font-size: 1.75rem;
-  line-height: 1.2;
+/* A placa de patrimônio desenhada: a mesma na página inicial e no topo da página da máquina. */
+.placa {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 1.75rem 2rem rgb(0 0 0 / 0.75));
 }
 
-p + .numero {
-  margin-top: 1rem;
+.placa text {
+  font-family: var(--mono);
+}
+
+.onda,
+.varredura {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.varredura {
+  transform-box: view-box;
+}
+
+/* O campo do número da placa: um controle de equipamento, não um formulário de cadastro. */
+form.numero {
+  max-width: 34rem;
 }
 
 .numero label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
+  margin-bottom: 0.625rem;
+  color: var(--apoio);
+  font: 400 1rem/1.4 var(--mono);
+  text-transform: uppercase;
 }
 
 .numero-linha {
   display: flex;
-  gap: 0.5rem;
+  border: 1px solid var(--regua);
+  border-radius: 0.5rem;
+  background: var(--painel);
+  transition: border-color 0.2s;
+}
+
+.numero-linha:focus-within {
+  border-color: var(--sinal);
 }
 
 .numero input {
   flex: 1;
   min-width: 0;
-  min-height: 3rem;
-  padding: 0 0.75rem;
-  border: 2px solid var(--apoio);
-  border-radius: 0.5rem;
-  background: var(--papel);
+  min-height: 3.5rem;
+  padding: 0 1rem;
+  border: 0;
+  border-radius: 0.5rem 0 0 0.5rem;
+  background: transparent;
   color: var(--texto);
-  font: inherit;
-  font-size: 1.25rem;
+  font: 600 1.5rem/1 var(--mono);
+  letter-spacing: 0.04em;
+}
+
+.numero input:focus-visible {
+  outline: none;
 }
 
 .numero button,
 .estado button {
-  min-height: 3rem;
-  padding: 0 1.25rem;
+  min-height: 3.5rem;
+  padding: 0 1.5rem;
   border: 0;
-  border-radius: 0.5rem;
-  background: var(--acento);
-  color: #ffffff;
-  font: inherit;
-  font-weight: 700;
+  border-radius: 0.375rem;
+  background: var(--sinal);
+  color: var(--sinal-texto);
+  font: 600 1rem/1 var(--mono);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.numero button {
+  margin: 0.25rem;
+  min-height: 3rem;
+}
+
+.numero button:hover,
+.estado button:hover {
+  background: var(--texto);
 }
 
 :focus-visible {
-  outline: 3px solid var(--acento);
-  outline-offset: 2px;
+  outline: 2px dashed var(--sinal);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--sinal);
+  color: var(--sinal-texto);
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0s !important;
+  }
 }

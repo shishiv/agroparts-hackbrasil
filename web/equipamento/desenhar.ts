@@ -13,6 +13,7 @@ import type {
 } from "../../src/contrato";
 import { somarQuantidades, type PaginaCarregada, type TextoDoCodigo } from "../../src/historico";
 import { h, type Filho } from "../inicio/dom";
+import { desenharPlaca } from "../inicio/placa";
 
 type Achado = Extract<PaginaCarregada, { tipo: "achado" }>;
 type Peca = Extract<ItemDoHistorico, { tipo: "peca" }>;
@@ -211,8 +212,14 @@ function desenharPeca(item: Peca, textos: Textos): HTMLElement {
       "data-codigos": String(item.codigosUsadosAqui.length),
     },
     h("h3", {}, item.grupo.rotulo),
-    h("p", { class: "resumo" }, `${contagem(item.trocas.length, "troca", "trocas")} · ${total}`),
-    h("p", {}, `Última troca ${dataBR(item.ultimaTroca)} · ${contagem(item.codigosUsadosAqui.length, "código usado aqui", "códigos usados aqui")}`),
+    h("p", { class: "resumo" }, contagem(item.trocas.length, "troca", "trocas"), h("span", { class: "ponto" }, " · "), h("span", {}, total)),
+    h(
+      "p",
+      {},
+      h("span", {}, `Última troca ${dataBR(item.ultimaTroca)}`),
+      " · ",
+      h("span", {}, contagem(item.codigosUsadosAqui.length, "código usado aqui", "códigos usados aqui")),
+    ),
     saldoNosCodigosDaMaquina(item),
     blocoDeSaldo(
       "outro",
@@ -256,6 +263,7 @@ function cabecalhoDaMaquina(equipamento: Equipamento): HTMLElement {
     { class: "maquina" },
     h("h1", {}, equipamento.nome),
     h("p", {}, `${equipamento.tag} · ${equipamento.area} · patrimônio ${equipamento.patrimonio}`),
+    desenharPlaca(equipamento.patrimonio, { decorativa: true }),
   );
 }
 

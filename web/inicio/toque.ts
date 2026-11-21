@@ -27,14 +27,20 @@ export function montarToque(ir: Ir, tempos: Tempos = TEMPOS_DO_TOQUE): HTMLEleme
   const mudar = (estado: Estado) => secao.setAttribute("data-estado", estado);
   const estado = () => secao.getAttribute("data-estado");
 
-  const placas = placasDaDemo().map((equipamento) => {
+  const placas = placasDaDemo().map((equipamento, ordem) => {
     const legenda = h("span", { class: "legenda", role: "status" }, textoDe(equipamento));
     const botao = h(
       "button",
-      { type: "button", class: "placa-toque", "data-patrimonio": equipamento.patrimonio },
+      { type: "button", class: "placa-toque", "data-patrimonio": equipamento.patrimonio, style: `--ordem: ${ordem}` },
       desenharPlaca(equipamento.patrimonio),
       legenda,
     );
+    // O brilho do alumínio acompanha o ponteiro: a placa parece um objeto, não uma figura.
+    botao.addEventListener("pointermove", (evento) => {
+      const caixa = botao.getBoundingClientRect();
+      botao.style.setProperty("--luz-x", `${(((evento.clientX - caixa.left) / caixa.width) * 100).toFixed(1)}%`);
+      botao.style.setProperty("--luz-y", `${(((evento.clientY - caixa.top) / caixa.height) * 100).toFixed(1)}%`);
+    });
     botao.addEventListener("click", () => {
       if (estado() !== "parado") return;
       const endereco = enderecoDoEquipamento(equipamento.patrimonio);
