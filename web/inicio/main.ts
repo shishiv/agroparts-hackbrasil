@@ -1,4 +1,3 @@
-import "./base.css";
 import "./placa.css";
 import { rodape } from "./casca";
 import { montarInicio } from "./inicio";

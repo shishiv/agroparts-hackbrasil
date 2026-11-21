@@ -1,4 +1,3 @@
-import "../inicio/base.css";
 import "./estilo.css";
 import materiaisDaDemo from "../../dados/demo/materiais.csv?raw";
 import { topo } from "../inicio/casca";
