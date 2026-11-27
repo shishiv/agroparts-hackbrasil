@@ -24,7 +24,16 @@ const dataBR = (iso: string): string => `${iso.slice(8, 10)}/${iso.slice(5, 7)}/
 
 const numeroBR = (n: number): string => String(n).replace(".", ",");
 
-const comUnidade = (n: number, unidade: string): string => `${numeroBR(n)} ${unidade}`;
+/** As unidades da exportação que têm nome por extenso; as outras aparecem como vieram. */
+const UNIDADES: Readonly<Record<string, readonly [string, string]>> = { UN: ["unidade", "unidades"], PC: ["peça", "peças"] };
+
+const nomeDaUnidade = (unidade: string, n = 2): string => UNIDADES[unidade]?.[n === 1 ? 0 : 1] ?? unidade;
+
+const comUnidade = (n: number, unidade: string): string => `${numeroBR(n)} ${nomeDaUnidade(unidade, n)}`;
+
+function juntarComE(itens: readonly string[]): string {
+  return itens.length < 2 ? itens.join("") : `${itens.slice(0, -1).join(", ")} e ${itens.at(-1)}`;
+}
 
 const contagem = (n: number, singular: string, plural: string): string => `${n} ${n === 1 ? singular : plural}`;
 
@@ -140,7 +149,7 @@ function linhaDeSaldo(saldo: Saldo): HTMLElement {
     "li",
     { "data-codigo": saldo.codigo, "data-saldo": String(saldo.quantidade) },
     h("strong", {}, saldo.codigo),
-    `: ${ondeGuardado(saldo)}`,
+    `: ${saldo.quantidade === 0 ? "estoque zerado" : ondeGuardado(saldo)}`,
   );
 }
 
@@ -163,7 +172,7 @@ function saldoNosCodigosDaMaquina(item: Peca): HTMLElement {
       ? doCodigo.map((saldo) => linhaDeSaldo(saldo))
       : [h("li", { "data-codigo": codigo }, h("strong", {}, codigo), ": não tem no almoxarifado")];
   });
-  return blocoComLinhas("aqui", "Estoque dos códigos desta máquina", linhas);
+  return blocoComLinhas("aqui", "Estoque de cada código desta máquina", linhas);
 }
 
 /**
@@ -186,7 +195,9 @@ function ondeTem(item: Peca): HTMLElement {
         h(
           "li",
           { "data-codigo": saldo.codigo, ...(deOutro ? { "data-outro-codigo": "" } : {}) },
-          deOutro ? `${ondeGuardado(saldo)}, guardado com outro código (${saldo.codigo})` : `${ondeGuardado(saldo)}, código ${saldo.codigo}`,
+          h("span", { class: "quanto" }, ondeGuardado(saldo)),
+          " ",
+          h("span", { class: "codigo" }, deOutro ? `com o código ${saldo.codigo}, outro código da mesma peça` : `com o código ${saldo.codigo}`),
         ),
       ),
     ),
@@ -228,7 +239,7 @@ function desenharPeca(item: Peca, textos: Textos): HTMLElement {
   const uso = usoPorCodigo(item.trocas);
   const total =
     item.quantidadeTotal === null
-      ? `em unidades diferentes (${[...new Set(item.trocas.map((t) => t.unidade))].join(" e ")}), por isso sem soma`
+      ? `contadas em ${juntarComE([...new Set(item.trocas.map((t) => nomeDaUnidade(t.unidade)))])}, por isso sem soma`
       : `${comUnidade(item.quantidadeTotal, item.trocas[0].unidade)} no total`;
   return h(
     "li",
@@ -241,7 +252,7 @@ function desenharPeca(item: Peca, textos: Textos): HTMLElement {
       "data-codigos": String(item.codigosUsadosAqui.length),
     },
     h("h3", {}, item.grupo.rotulo),
-    h("p", { class: "resumo" }, contagem(item.trocas.length, "troca", "trocas"), h("span", { class: "ponto" }, ", "), h("span", {}, total)),
+    h("p", { class: "resumo" }, `Trocada ${contagem(item.trocas.length, "vez", "vezes")}`, h("span", { class: "ponto" }, ", "), h("span", {}, total)),
     h(
       "p",
       { class: "quando" },
@@ -253,7 +264,7 @@ function desenharPeca(item: Peca, textos: Textos): HTMLElement {
     h(
       "details",
       {},
-      h("summary", {}, "Ver estoque por código, textos originais e trocas"),
+      h("summary", {}, "Ver estoque, textos e trocas"),
       h(
         "div",
         { class: "estoques" },
@@ -264,7 +275,7 @@ function desenharPeca(item: Peca, textos: Textos): HTMLElement {
           item.saldoSobOutroCodigo.filter((s) => s.quantidade > 0),
         ),
       ),
-      h("h4", {}, "Códigos da peça e o texto de cada um"),
+      h("h4", {}, "Como cada código aparece no cadastro"),
       h("ul", { class: "codigos" }, ...item.grupo.codigos.map((c) => codigoDaPeca(c, uso, textos))),
       h("h4", {}, "Trocas nesta máquina"),
       listaDeTrocas(item.trocas),
@@ -296,7 +307,7 @@ function cabecalhoDaMaquina(equipamento: Equipamento): HTMLElement {
     "section",
     { class: "maquina" },
     h("h1", {}, equipamento.nome),
-    h("p", {}, `${equipamento.tag} · ${equipamento.area} · patrimônio ${equipamento.patrimonio}`),
+    h("p", {}, `${equipamento.tag} · setor ${equipamento.area} · placa ${equipamento.patrimonio}`),
     desenharPlaca(equipamento.patrimonio, { decorativa: true }),
   );
 }
@@ -317,7 +328,7 @@ export function desenharHistorico(achado: Achado): Filho[] {
       h(
         "section",
         { class: "sem-chave-lista" },
-        h("h2", {}, "Trocas fora da conta"),
+        h("h2", {}, "Trocas sem peça identificada"),
         h("p", { class: "explica" }, "O texto destes códigos não diz qual é a peça, então as trocas deles não entram na soma de nenhuma peça."),
         h("ul", {}, ...semChave.map((s) => desenharSemChave(s, textos))),
       ),
