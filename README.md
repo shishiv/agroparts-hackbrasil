@@ -1,25 +1,35 @@
-# AgroParts
+# AgroParts: a peça que falta pode estar na prateleira com outro código
 
-Quando a mesma peça de manutenção tem vários códigos no cadastro da usina, o estoque fica escondido e o histórico de troca da máquina se parte. A AgroParts soma os códigos que são a mesma peça e mostra o resultado na página da máquina, aberta pela placa de patrimônio (na demo, o toque na placa é simulado). Projeto da Hack Brasil 2026.
+A AgroParts mostra, na página da máquina de uma usina de cana, o estoque e o histórico de trocas de uma peça, mesmo quando a usina deu a ela códigos e textos diferentes.
 
-Demo: [agroparts-hackbrasil.pages.dev](https://agroparts-hackbrasil.pages.dev). Os dados da demo são de uma usina fictícia.
+No meio da safra, uma máquina para e espera por uma peça que já estava na prateleira, com outro código. O almoxarife, que cuida do depósito de peças da usina, procura o código pedido, não acha saldo e pede uma compra de urgência. O mecânico também não acha o histórico de trocas da máquina, porque cada colega lançou a troca com um código diferente.
+
+A AgroParts lê o texto de cada código e junta os que são a mesma peça. O mecânico toca a placa de patrimônio da máquina com o celular (na demo, o toque é simulado), abre a página dela e vê todas as trocas da peça. O almoxarife vê o saldo sob qualquer código da peça e o endereço dela no depósito. Hoje a AgroParts só junta códigos de um tipo de peça, o rolamento rígido de esferas.
+
+Demo: [agroparts-hackbrasil.pages.dev](https://agroparts-hackbrasil.pages.dev). Os dados da demo são de uma usina fictícia. Projeto da Hack Brasil 2026.
 
 ## O problema
 
-O rolamento 6309 ZZ C3 da bomba de caldo B-104 (patrimônio 004512) tem três códigos em `dados/demo/materiais.csv`:
+No meio da safra, uma máquina para e o mecânico pede ao almoxarife um rolamento, pelo código que a máquina sempre usou. O almoxarife procura esse código no estoque e não vê saldo, porque a peça está guardada sob outro código. Ele pede uma compra de urgência. A usina paga por uma peça que já tinha, e a máquina fica parada até a peça nova chegar.
+
+O mecânico perde o histórico. Ele quer saber quando e quantas vezes a máquina já trocou aquele rolamento. Cada colega lançou a troca com o código que conhecia, e as trocas ficam divididas entre os códigos. Quem abre um código vê só uma parte e não sabe quantas trocas a máquina já teve.
+
+Isso acontece porque o cadastro da usina trata cada código como uma peça diferente. Se dois colegas escrevem o mesmo rolamento de jeitos diferentes, a usina passa a ter dois códigos para ele, e nada no cadastro avisa que são a mesma peça.
+
+A demo reproduz os dois casos, com dados inventados, na bomba de caldo B-104 (patrimônio 004512) e no rolamento 6309 ZZ C3:
+
+- **Estoque escondido.** A bomba trocou esse rolamento 12 vezes, 22 unidades no total, sob os códigos 10165 e 10066. Nenhum dos dois tem linha em `dados/demo/estoque.csv`. As 3 unidades que a usina tem estão sob o 10059, no endereço B-05-1, um código que nenhuma troca de `dados/demo/consumo.csv` usa. A última das 12 trocas, em 23/07/2026, foi numa ordem de "Parada não programada" e usou o 10165.
+- **Histórico partido.** Das 12 trocas, 7 estão sob o 10165 e 5 sob o 10066. Nenhum dos dois códigos mostra sozinho as 12 trocas e as 22 unidades.
+
+O cadastro tem três códigos para esse rolamento (`dados/demo/materiais.csv`):
 
 | Código | Texto no cadastro |
 |---|---|
 | 10059 | `ROL. 6309-2Z C3 45X100X25` |
 | 10066 | `ROL 6309 ZZ-C3` |
-| 10165 | texto longo do CATMAT, que termina em `REFERÊNCIA FABRICANTE 2: 6309 ZZ C3` |
+| 10165 | texto longo do catálogo público CATMAT, que termina em `REFERÊNCIA FABRICANTE 2: 6309 ZZ C3` |
 
-Isso tem dois efeitos:
-
-- **Estoque escondido.** A bomba troca esse rolamento com os códigos 10066 e 10165, e `dados/demo/estoque.csv` não tem linha para nenhum dos dois. As 3 unidades estão sob o 10059, no endereço B-05-1, um código que nenhuma troca de `dados/demo/consumo.csv` usa.
-- **Histórico partido.** `dados/demo/consumo.csv` tem 12 trocas dessa peça na bomba, 7 sob o 10165 e 5 sob o 10066. Nenhum dos dois códigos mostra sozinho as 12 trocas e as 22 unidades.
-
-O erro contrário também acontece: o SKU da usina pode juntar peças diferentes. O gerador da demo planta 5 SKUs que misturam peças, entre 22 SKUs (`resumo` em `dados/demo/esperado-skus.json`). O ROL-6210 de `dados/demo/materiais.csv` junta rolamentos 6210 com vedação e folga diferentes.
+O erro contrário também acontece: o SKU da usina, o rótulo que ela já dá a um grupo de códigos, pode juntar peças diferentes. O gerador da demo planta 5 SKUs que misturam peças, entre 22 SKUs (`resumo` em `dados/demo/esperado-skus.json`). O ROL-6210 de `dados/demo/materiais.csv` junta rolamentos 6210 com vedação e folga diferentes.
 
 ## Para quem
 
