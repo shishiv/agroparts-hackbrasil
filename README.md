@@ -2,15 +2,17 @@
 
 A AgroParts mostra, na página da máquina de uma usina de cana, o estoque e o histórico de trocas de uma peça, mesmo quando a usina deu a ela códigos e textos diferentes.
 
-No meio da safra, uma máquina para e espera por uma peça que já estava na prateleira, com outro código. O almoxarife, que cuida do depósito de peças da usina, procura o código pedido, não acha saldo e pede uma compra de urgência. O mecânico também não acha o histórico de trocas da máquina, porque cada colega lançou a troca com um código diferente.
+Na safra, cada hora de máquina parada é produção perdida. Nem todo tempo parado é conserto. Pode ser espera: a máquina fica parada até chegar uma peça que a usina já tinha no almoxarifado, o depósito de peças, cadastrada com outro código. O almoxarife procura o código que o mecânico pediu, não acha a peça e pede uma compra de urgência. O mecânico também não acha o histórico de trocas da máquina, porque cada colega lançou a troca com um código diferente.
 
-A AgroParts lê o texto de cada código e junta os que são a mesma peça. O mecânico toca a placa de patrimônio da máquina com o celular (na demo, o toque é simulado), abre a página dela e vê todas as trocas da peça. O almoxarife vê o saldo sob qualquer código da peça e o endereço dela no depósito. Hoje a AgroParts só junta códigos de um tipo de peça, o rolamento rígido de esferas.
+A AgroParts lê o texto de cada código e junta os que são a mesma peça. Ela só junta quando os textos mostram que a peça é a mesma, com o mesmo número de rolamento, a mesma vedação e a mesma folga. Texto parecido não basta. Na dúvida, não adivinha: manda para uma pessoa decidir. O mecânico toca a placa de patrimônio da máquina com o celular (na demo, o toque é simulado) e vê todas as trocas da peça. O almoxarife vê quantas peças há, sob qualquer código, e onde estão guardadas. Hoje isso vale para um tipo de peça, o rolamento rígido de esferas.
+
+No teste com 520 descrições públicas do governo (CATMAT), ela juntou 33 dos 38 pares de códigos que eram a mesma peça e nenhum par de peças diferentes. Dois agentes de IA marcaram as respostas certas, sem revisão de pessoa, e as mesmas descrições serviram para ajustar as regras de leitura. Numa usina real, ela deve resolver menos casos sozinha.
 
 Demo: [agroparts-hackbrasil.pages.dev](https://agroparts-hackbrasil.pages.dev). Os dados da demo são de uma usina fictícia. Projeto da Hack Brasil 2026.
 
 ## O problema
 
-No meio da safra, uma máquina para e o mecânico pede ao almoxarife um rolamento, pelo código que a máquina sempre usou. O almoxarife procura esse código no estoque e não vê saldo, porque a peça está guardada sob outro código. Ele pede uma compra de urgência. A usina paga por uma peça que já tinha, e a máquina fica parada até a peça nova chegar.
+No meio da safra, uma máquina para e o mecânico pede ao almoxarife um rolamento, pelo código que a máquina sempre usou. O almoxarife procura esse código no estoque e não encontra peça nenhuma, porque ela está guardada sob outro código. Ele pede uma compra de urgência. A usina paga por uma peça que já tinha, e a máquina fica parada até a peça nova chegar. Esse tempo parado não é conserto. É espera.
 
 O mecânico perde o histórico. Ele quer saber quando e quantas vezes a máquina já trocou aquele rolamento. Cada colega lançou a troca com o código que conhecia, e as trocas ficam divididas entre os códigos. Quem abre um código vê só uma parte e não sabe quantas trocas a máquina já teve.
 
@@ -29,7 +31,7 @@ O cadastro tem três códigos para esse rolamento (`dados/demo/materiais.csv`):
 | 10066 | `ROL 6309 ZZ-C3` |
 | 10165 | texto longo do catálogo público CATMAT, que termina em `REFERÊNCIA FABRICANTE 2: 6309 ZZ C3` |
 
-O erro contrário também acontece: o SKU da usina, o rótulo que ela já dá a um grupo de códigos, pode juntar peças diferentes. O gerador da demo planta 5 SKUs que misturam peças, entre 22 SKUs (`resumo` em `dados/demo/esperado-skus.json`). O ROL-6210 de `dados/demo/materiais.csv` junta rolamentos 6210 com vedação e folga diferentes.
+O erro contrário também acontece: o rótulo que a usina já dá a um grupo de códigos, o SKU, pode juntar peças diferentes. O gerador da demo planta 5 SKUs que misturam peças, entre 22 SKUs (`resumo` em `dados/demo/esperado-skus.json`). O ROL-6210 de `dados/demo/materiais.csv` junta rolamentos 6210 com vedação e folga diferentes.
 
 ## Para quem
 
@@ -40,7 +42,7 @@ Hoje o motor soma só o rolamento rígido de esferas. As outras peças aparecem 
 
 ## A solução
 
-A AgroParts lê a exportação da usina (equipamentos, materiais, consumo e estoque) e não substitui o CMMS. Os termos estão em `CONTEXT.md`.
+A AgroParts lê a exportação da usina (equipamentos, materiais, consumo e estoque) e não substitui o sistema de manutenção que a usina já usa. Os termos estão em `CONTEXT.md`.
 
 - **Página da máquina.** A placa de patrimônio abre `/e/<patrimônio>`. A página soma as trocas por peça, mostra o saldo dos códigos que a máquina usa e o saldo sob outro código.
 - **Motor.** Lê o texto de cada código e conclui `resolve`, `revisa` ou `recusa`. Só uma regra junta dois códigos: os dois têm a mesma chave de identidade. A semelhança de texto nunca junta. Na dúvida, o texto vai para uma pessoa. O motor não faz rede e roda igual no Bun e no navegador (`src/motor/README.md`).
