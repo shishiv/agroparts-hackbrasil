@@ -212,16 +212,11 @@
   }
 }
 
-/* No computador: a marca e o campo na primeira linha, as três placas lado a lado embaixo. */
+/* No computador: a marca, o campo embaixo dela e as três placas lado a lado, alinhados com o rodapé. */
 @media (min-width: 64rem) {
   .palco {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 30rem);
-    align-items: center;
-    align-content: center;
-    min-height: calc(100dvh - 5rem);
-    column-gap: 3rem;
-    row-gap: clamp(2rem, 5vh, 3.5rem);
-    padding-block: 2.5rem 4rem;
+    row-gap: 2rem;
+    padding-block: clamp(2.5rem, 8vh, 5rem) 4rem;
   }
 
   .palco > h1 {
@@ -229,11 +224,12 @@
   }
 
   .palco > form {
+    width: min(100%, 34rem);
     padding: 1.25rem;
   }
 
   .palco > .toque {
-    grid-column: 1 / -1;
+    margin-top: 1rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 

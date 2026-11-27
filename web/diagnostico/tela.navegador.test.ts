@@ -130,7 +130,7 @@ describe("os números da tela batem com o que o gerador plantou", () => {
 
   it("a mistura diz quantas peças junta e em que a chave difere", () => {
     const resumo = montar().querySelector('[data-sku="ROL-6210"] .resumo-do-sku')?.textContent;
-    expect(resumo).toBe("Junta 3 peças diferentes, que mudam em vedação e folga");
+    expect(resumo).toBe("Junta 3 peças diferentes: mudam a vedação e a folga");
   });
 });
 

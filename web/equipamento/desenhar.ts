@@ -172,7 +172,8 @@ function saldoNosCodigosDaMaquina(item: Peca): HTMLElement {
       ? doCodigo.map((saldo) => linhaDeSaldo(saldo))
       : [h("li", { "data-codigo": codigo }, h("strong", {}, codigo), ": não tem no almoxarifado")];
   });
-  return blocoComLinhas("aqui", "Estoque de cada código desta máquina", linhas);
+  const usados = item.codigosUsadosAqui.length;
+  return blocoComLinhas("aqui", usados === 1 ? "Estoque do código usado nesta máquina" : `Estoque dos ${usados} códigos usados nesta máquina`, linhas);
 }
 
 /**
@@ -187,7 +188,6 @@ function ondeTem(item: Peca): HTMLElement {
   return h(
     "div",
     { class: "onde", "data-onde": outro.length > 0 ? "outro-codigo" : "tem" },
-    h("p", {}, "Tem no almoxarifado"),
     h(
       "ul",
       {},
@@ -195,9 +195,9 @@ function ondeTem(item: Peca): HTMLElement {
         h(
           "li",
           { "data-codigo": saldo.codigo, ...(deOutro ? { "data-outro-codigo": "" } : {}) },
-          h("span", { class: "quanto" }, ondeGuardado(saldo)),
+          h("span", { class: "quanto" }, `Tem ${ondeGuardado(saldo)}.`),
           " ",
-          h("span", { class: "codigo" }, deOutro ? `com o código ${saldo.codigo}, outro código da mesma peça` : `com o código ${saldo.codigo}`),
+          h("span", { class: "codigo" }, deOutro ? `Procure o código ${saldo.codigo}: é a mesma peça, com outro código.` : `Procure o código ${saldo.codigo}.`),
         ),
       ),
     ),
@@ -253,13 +253,7 @@ function desenharPeca(item: Peca, textos: Textos): HTMLElement {
     },
     h("h3", {}, item.grupo.rotulo),
     h("p", { class: "resumo" }, `Trocada ${contagem(item.trocas.length, "vez", "vezes")}`, h("span", { class: "ponto" }, ", "), h("span", {}, total)),
-    h(
-      "p",
-      { class: "quando" },
-      h("span", {}, `Última troca em ${dataBR(item.ultimaTroca)}`),
-      " · ",
-      h("span", {}, contagem(item.codigosUsadosAqui.length, "código usado nesta máquina", "códigos usados nesta máquina")),
-    ),
+    h("p", { class: "quando" }, `Última troca em ${dataBR(item.ultimaTroca)}`),
     ondeTem(item),
     h(
       "details",

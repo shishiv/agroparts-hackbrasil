@@ -114,7 +114,7 @@ function cartaoDaMistura(sku: SkuDiagnosticado, veredicto: Veredicto<"mistura">,
     "article",
     { class: "cartao mistura", "data-sku": veredicto.sku, "data-veredicto": "mistura" },
     h("h3", {}, veredicto.sku),
-    h("p", { class: "resumo-do-sku" }, `Junta ${veredicto.chaves.length} peças diferentes, que mudam em ${juntarComE(diferem.map(nomeDoAtributo))}`),
+    h("p", { class: "resumo-do-sku" }, `Junta ${veredicto.chaves.length} peças diferentes: ${diferem.length > 1 ? "mudam" : "muda"} ${juntarComE(diferem.map((a) => `a ${nomeDoAtributo(a)}`))}`),
     codigosDoSku(sku, analise, diferem),
   );
 }
@@ -169,9 +169,9 @@ function painelDeResumo(resumo: Resumo): HTMLElement {
       "ul",
       {},
       numero("misturas", "cor-mistura", resumo.misturas, "item mistura peças diferentes", "itens misturam peças diferentes"),
-      numero("fragmentacoes", "cor-fragmentacao", resumo.fragmentacoes, "peça está em mais de um item", "peças estão em mais de um item"),
+      numero("fragmentacoes", "cor-fragmentacao", resumo.fragmentacoes, "peça aparece em mais de um item", "peças aparecem em mais de um item"),
       numero("coerentes", "cor-coerente", resumo.coerentes, "item está certo", "itens estão certos"),
-      numero("inconclusivos", "cor-inconclusivo", resumo.inconclusivos, "item não dá para conferir", "itens não dá para conferir"),
+      numero("inconclusivos", "cor-inconclusivo", resumo.inconclusivos, "item não pôde ser conferido", "itens não puderam ser conferidos"),
     ),
   );
 }
@@ -187,14 +187,14 @@ function desenharResultado(analise: Analise): Node[] {
     secao("misturas", "Itens que misturam peças diferentes", "O mesmo item junta códigos de peças que não são iguais.", "Nenhum.", misturas, "div"),
     secao(
       "fragmentacoes",
-      "Peças que estão em mais de um item",
+      "Peças que aparecem em mais de um item",
       "Os códigos da mesma peça foram postos em itens diferentes.",
       "Nenhuma.",
       fragmentacoes.map((f) => cartaoDaFragmentacao(f, analise)),
       "div",
     ),
     secao("coerentes", "Itens certos", "Todos os códigos do item são da mesma peça.", "Nenhum.", coerentes, "ul"),
-    secao("inconclusivos", "Itens que não dá para conferir", "Algum código do item não tem texto bastante para dizer qual é a peça.", "Nenhum.", inconclusivos, "ul"),
+    secao("inconclusivos", "Itens que não puderam ser conferidos", "Algum código do item não tem texto bastante para dizer qual é a peça.", "Nenhum.", inconclusivos, "ul"),
   ];
 }
 
@@ -263,7 +263,7 @@ export function montarDiagnostico(raiz: HTMLElement, csvDaDemo: string): void {
   voltar.addEventListener("click", () => mostrar(null, analiseDaDemo));
 
   raiz.replaceChildren(
-    h("h1", {}, "Conferir o cadastro de peças"),
+    h("h1", {}, "Cadastro de peças"),
     h("p", { class: "explica" }, "A usina agrupa os códigos de material em itens. Aqui conferimos se cada item junta só códigos da mesma peça."),
     fonte,
     h(
