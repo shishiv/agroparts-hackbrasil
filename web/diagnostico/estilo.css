@@ -364,3 +364,46 @@ details[open] > .blocos {
 .vazio {
   color: var(--apoio);
 }
+
+/* No celular, os quatro totais viram linhas: o número, o ponto da cor e a frase numa linha só. */
+@media (max-width: 47.99rem) {
+  .painel ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .painel li,
+  .painel li:nth-child(odd) {
+    border-right: 0;
+    border-bottom: 1px solid var(--linha);
+  }
+
+  .painel li:last-child {
+    border-bottom: 0;
+  }
+
+  .numero,
+  .painel li:nth-child(odd) .numero {
+    grid-template-columns: 2.5rem auto minmax(0, 1fr);
+    grid-template-rows: auto;
+    align-items: baseline;
+    min-height: 3rem;
+    padding: var(--e-3) 0;
+  }
+
+  .numero strong {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .numero::before {
+    grid-row: 1;
+    grid-column: 2;
+    margin-top: 0;
+    align-self: center;
+  }
+
+  .numero span {
+    grid-row: 1;
+    grid-column: 3;
+  }
+}

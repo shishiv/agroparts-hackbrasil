@@ -35,49 +35,92 @@ interface Setor {
   h: number;
 }
 
-/** A planta da usina na ordem do caminho da cana: recepção, preparo, extração, caldo e filtração; a caldeira embaixo. */
-const SETORES: readonly Setor[] = [
-  { nome: "Recepção", x: 16, y: 44, w: 104, h: 128 },
-  { nome: "Preparo", x: 140, y: 44, w: 176, h: 128 },
-  { nome: "Extração", x: 336, y: 44, w: 176, h: 128 },
-  { nome: "Caldo", x: 532, y: 44, w: 132, h: 128 },
-  { nome: "Caldeira", x: 336, y: 212, w: 176, h: 108 },
-  { nome: "Filtração", x: 532, y: 212, w: 132, h: 108 },
-];
+/** Um jeito de desenhar a planta: o tamanho, os setores, as setas do caminho da cana e a plaqueta do nome. */
+interface Desenho {
+  classe: string;
+  largura: number;
+  altura: number;
+  setores: readonly Setor[];
+  setas: readonly (readonly [number, number, number, number, boolean])[];
+  notas: readonly (readonly [number, number, string])[];
+  plaqueta: readonly [number, number, number];
+}
 
-/** O desenho da usina: setores, o caminho da cana e uma marca numerada por máquina, que abre a página dela. */
-export function mapa(usina: Usina): HTMLElement {
+/** No computador, a planta na ordem do caminho da cana: recepção, preparo, extração, caldo e filtração; a caldeira embaixo. */
+const LARGA: Desenho = {
+  classe: "planta planta-larga",
+  largura: 680,
+  altura: 340,
+  setores: [
+    { nome: "Recepção", x: 16, y: 44, w: 104, h: 128 },
+    { nome: "Preparo", x: 140, y: 44, w: 176, h: 128 },
+    { nome: "Extração", x: 336, y: 44, w: 176, h: 128 },
+    { nome: "Caldo", x: 532, y: 44, w: 132, h: 128 },
+    { nome: "Caldeira", x: 336, y: 212, w: 176, h: 108 },
+    { nome: "Filtração", x: 532, y: 212, w: 132, h: 108 },
+  ],
+  setas: [
+    [120, 108, 138, 108, false],
+    [316, 108, 334, 108, false],
+    [512, 108, 530, 108, false],
+    [598, 172, 598, 210, false],
+    [424, 210, 424, 174, true],
+  ],
+  notas: [
+    [18, 28, "cana"],
+    [430, 196, "vapor"],
+  ],
+  plaqueta: [16, 296, 176],
+};
+
+/** No celular, os mesmos setores em duas colunas, na mesma ordem, para caber sem rolar para o lado. */
+const ESTREITA: Desenho = {
+  classe: "planta planta-estreita",
+  largura: 340,
+  altura: 452,
+  setores: [
+    { nome: "Recepção", x: 4, y: 8, w: 150, h: 128 },
+    { nome: "Preparo", x: 176, y: 8, w: 160, h: 128 },
+    { nome: "Extração", x: 4, y: 158, w: 150, h: 128 },
+    { nome: "Caldo", x: 176, y: 158, w: 160, h: 128 },
+    { nome: "Caldeira", x: 4, y: 308, w: 150, h: 128 },
+    { nome: "Filtração", x: 176, y: 308, w: 160, h: 128 },
+  ],
+  setas: [
+    [154, 72, 174, 72, false],
+    [176, 120, 154, 174, false],
+    [154, 222, 174, 222, false],
+    [256, 286, 256, 306, false],
+    [79, 306, 79, 288, true],
+  ],
+  notas: [],
+  plaqueta: [0, 0, 0],
+};
+
+function desenharPlanta(usina: Usina, d: Desenho): SVGSVGElement {
   const comEscondida = new Set(usina.escondidas.map((e) => e.equipamento.patrimonio));
   const indice = new Map(usina.maquinas.map((m, i) => [m.equipamento.patrimonio, i]));
-  const desenho = s("svg", { viewBox: "0 0 680 360", class: "planta", role: "group", "aria-label": "Planta da usina, com as máquinas numeradas" });
+  const id = d.classe.endsWith("larga") ? "l" : "e";
+  const desenho = s("svg", { viewBox: `0 0 ${d.largura} ${d.altura}`, class: d.classe, role: "group", "aria-label": "Planta da usina, com as máquinas numeradas" });
   desenho.append(
-    s("defs", {}, s("pattern", { id: "pontos", width: "12", height: "12", patternUnits: "userSpaceOnUse" }, s("circle", { cx: "1", cy: "1", r: "0.8", fill: "#d9d6c9" }))),
-    s("rect", { x: "0", y: "0", width: "680", height: "360", fill: "url(#pontos)" }),
+    s(
+      "defs",
+      {},
+      s("pattern", { id: `pontos-${id}`, width: "12", height: "12", patternUnits: "userSpaceOnUse" }, s("circle", { cx: "1", cy: "1", r: "0.8", fill: "#d9d6c9" })),
+      s("marker", { id: `ponta-${id}`, viewBox: "0 0 8 8", refX: "7", refY: "4", markerWidth: "7", markerHeight: "7", orient: "auto-start-reverse" }, s("path", { d: "M0 0 L8 4 L0 8 z", class: "ponta" })),
+    ),
+    s("rect", { x: "0", y: "0", width: String(d.largura), height: String(d.altura), fill: `url(#pontos-${id})` }),
   );
-  const seta = (x1: number, y1: number, x2: number, y2: number, tracejada = false) =>
-    s("path", {
-      d: `M${x1} ${y1} L${x2} ${y2}`,
-      class: tracejada ? "fluxo vapor" : "fluxo",
-      "marker-end": "url(#ponta)",
-    });
-  desenho.querySelector("defs")?.append(
-    s("marker", { id: "ponta", viewBox: "0 0 8 8", refX: "7", refY: "4", markerWidth: "7", markerHeight: "7", orient: "auto-start-reverse" }, s("path", { d: "M0 0 L8 4 L0 8 z", class: "ponta" })),
-  );
-  desenho.append(
-    seta(120, 108, 138, 108),
-    seta(316, 108, 334, 108),
-    seta(512, 108, 530, 108),
-    seta(598, 172, 598, 210),
-    seta(424, 210, 424, 174, true),
-    s("text", { x: "18", y: "28", class: "nota-planta" }, "cana"),
-    s("text", { x: "430", y: "196", class: "nota-planta" }, "vapor"),
-  );
-  for (const setor of SETORES) {
+  for (const [x1, y1, x2, y2, vapor] of d.setas) {
+    desenho.append(s("path", { d: `M${x1} ${y1} L${x2} ${y2}`, class: vapor ? "fluxo vapor" : "fluxo", "marker-end": `url(#ponta-${id})` }));
+  }
+  for (const [x, y, texto] of d.notas) desenho.append(s("text", { x: String(x), y: String(y), class: "nota-planta" }, texto));
+  for (const setor of d.setores) {
     const daqui = usina.maquinas.filter((m) => m.equipamento.area === setor.nome);
     const g = s("g", { class: "setor" });
     g.append(
       s("rect", { x: String(setor.x), y: String(setor.y), width: String(setor.w), height: String(setor.h), rx: "6" }),
-      s("text", { x: String(setor.x + 10), y: String(setor.y + 20), class: "nome-setor" }, setor.nome),
+      s("text", { x: String(setor.x + 10), y: String(setor.y + 22), class: "nome-setor" }, setor.nome),
     );
     daqui.forEach((m, k) => {
       const passo = setor.w / (daqui.length + 1);
@@ -85,24 +128,35 @@ export function mapa(usina: Usina): HTMLElement {
       const cy = setor.y + setor.h / 2 + 2;
       const i = indice.get(m.equipamento.patrimonio) ?? 0;
       const escondida = comEscondida.has(m.equipamento.patrimonio);
-      const marca = s(
-        "a",
-        { href: enderecoDoEquipamento(m.equipamento.patrimonio), class: `marca-maquina${escondida ? " escondida" : ""}`, "aria-label": `${numeroDaMaquina(i)}, ${m.equipamento.nome} ${m.equipamento.tag}` },
-        s("title", {}, `${m.equipamento.nome} ${m.equipamento.tag}`),
-        escondida ? s("circle", { cx: String(cx), cy: String(cy), r: "21", class: "anel" }) : s("g", {}),
-        s("circle", { cx: String(cx), cy: String(cy), r: "15", class: "ponto" }),
-        s("text", { x: String(cx), y: String(cy + 4.5), "text-anchor": "middle", class: "numero-maquina" }, numeroDaMaquina(i)),
-        s("text", { x: String(cx), y: String(cy + 38), "text-anchor": "middle", class: "tag-planta" }, m.equipamento.tag),
+      g.append(
+        s(
+          "a",
+          { href: enderecoDoEquipamento(m.equipamento.patrimonio), class: `marca-maquina${escondida ? " escondida" : ""}`, "aria-label": `${numeroDaMaquina(i)}, ${m.equipamento.nome} ${m.equipamento.tag}` },
+          s("title", {}, `${m.equipamento.nome} ${m.equipamento.tag}`),
+          escondida ? s("circle", { cx: String(cx), cy: String(cy), r: "21", class: "anel" }) : s("g", {}),
+          s("circle", { cx: String(cx), cy: String(cy), r: "15", class: "ponto" }),
+          s("text", { x: String(cx), y: String(cy + 5), "text-anchor": "middle", class: "numero-maquina" }, numeroDaMaquina(i)),
+          s("text", { x: String(cx), y: String(cy + 40 + (passo < 56 && k % 2 === 1 ? 18 : 0)), "text-anchor": "middle", class: "tag-planta" }, m.equipamento.tag),
+        ),
       );
-      g.append(marca);
     });
     desenho.append(g);
   }
-  desenho.append(
-    s("rect", { x: "16", y: "296", width: "176", height: "24", rx: "3", class: "placa-planta" }),
-    s("text", { x: "104", y: "312.5", "text-anchor": "middle", class: "nome-planta" }, "Usina Modelo"),
-  );
+  const [px, py, pw] = d.plaqueta;
+  if (pw > 0) {
+    desenho.append(
+      s("rect", { x: String(px), y: String(py), width: String(pw), height: "24", rx: "3", class: "placa-planta" }),
+      s("text", { x: String(px + pw / 2), y: String(py + 16.5), "text-anchor": "middle", class: "nome-planta" }, "Usina Modelo"),
+    );
+  }
+  return desenho;
+}
 
+const SETORES = LARGA.setores;
+
+/** O mapa da usina: a planta (larga no computador, em duas colunas no celular), a legenda e os setores. */
+export function mapa(usina: Usina): HTMLElement {
+  const desenho = h("div", { class: "planta-dupla" }, desenharPlanta(usina, LARGA), desenharPlanta(usina, ESTREITA));
   const setores = SETORES.map((setor) => {
     const daqui = usina.maquinas.filter((m) => m.equipamento.area === setor.nome);
     const trocas = daqui.reduce((a, m) => a + m.trocas, 0);
@@ -198,6 +252,29 @@ export function paraRevisar(usina: Usina): HTMLElement {
   );
 }
 
+/** Uma curva que passa por todos os pontos sem inventar picos entre eles (cúbica monótona, Fritsch e Carlson). */
+function curvaMonotona(pontos: readonly (readonly [number, number])[]): string {
+  const n = pontos.length;
+  if (n < 2) return "";
+  const dx = (i: number) => (pontos[i + 1]?.[0] ?? 0) - (pontos[i]?.[0] ?? 0);
+  const inclinacao = Array.from({ length: n - 1 }, (_, i) => ((pontos[i + 1]?.[1] ?? 0) - (pontos[i]?.[1] ?? 0)) / dx(i));
+  const t = pontos.map((_, i) => {
+    if (i === 0) return inclinacao[0] ?? 0;
+    if (i === n - 1) return inclinacao[n - 2] ?? 0;
+    const a = inclinacao[i - 1] ?? 0;
+    const b = inclinacao[i] ?? 0;
+    return a * b <= 0 ? 0 : (2 * a * b) / (a + b);
+  });
+  let d = `M${pontos[0]?.[0].toFixed(1)} ${pontos[0]?.[1].toFixed(1)}`;
+  for (let i = 0; i < n - 1; i++) {
+    const [x0, y0] = pontos[i] ?? [0, 0];
+    const [x1, y1] = pontos[i + 1] ?? [0, 0];
+    const h3 = dx(i) / 3;
+    d += ` C${(x0 + h3).toFixed(1)} ${(y0 + (t[i] ?? 0) * h3).toFixed(1)} ${(x1 - h3).toFixed(1)} ${(y1 - (t[i + 1] ?? 0) * h3).toFixed(1)} ${x1.toFixed(1)} ${y1.toFixed(1)}`;
+  }
+  return d;
+}
+
 const MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
 
 /** Trocas por mês, de todas as máquinas: uma linha, a grade e os rótulos, sem enfeite. */
@@ -208,7 +285,8 @@ export function grafico(porMes: readonly TrocasDoMes[]): HTMLElement {
   const maximo = Math.max(10, Math.ceil(Math.max(...porMes.map((p) => p.trocas)) / 10) * 10);
   const x = (i: number) => m.esq + (i * (L - m.esq - m.dir)) / Math.max(1, porMes.length - 1);
   const y = (v: number) => m.cima + (1 - v / maximo) * (A - m.cima - m.baixo);
-  const pontos = porMes.map((p, i) => `${x(i).toFixed(1)},${y(p.trocas).toFixed(1)}`);
+  const pontos = porMes.map((p, i) => [x(i), y(p.trocas)] as const);
+  const curva = curvaMonotona(pontos);
   const svg = s("svg", { viewBox: `0 0 ${L} ${A}`, class: "grafico-linha", role: "img", "aria-label": `Trocas por mês, de ${porMes[0]?.mes} a ${porMes.at(-1)?.mes}` });
   for (let v = 0; v <= maximo; v += maximo / 4) {
     svg.append(
@@ -217,12 +295,12 @@ export function grafico(porMes: readonly TrocasDoMes[]): HTMLElement {
     );
   }
   porMes.forEach((p, i) => {
-    if (i % 3 !== 0) return;
+    if (i % 6 !== 0 && i !== porMes.length - 1) return;
     svg.append(s("text", { x: x(i).toFixed(1), y: String(A - 8), "text-anchor": "middle", class: "rotulo-eixo" }, `${MESES[Number(p.mes.slice(5, 7)) - 1]} ${p.mes.slice(2, 4)}`));
   });
   svg.append(
-    s("polygon", { points: `${x(0)},${y(0)} ${pontos.join(" ")} ${x(porMes.length - 1)},${y(0)}`, class: "area" }),
-    s("polyline", { points: pontos.join(" "), class: "linha" }),
+    s("path", { d: `${curva} L${x(porMes.length - 1).toFixed(1)} ${y(0).toFixed(1)} L${x(0).toFixed(1)} ${y(0).toFixed(1)} Z`, class: "area" }),
+    s("path", { d: curva, class: "linha" }),
   );
   const ip = porMes.reduce((melhor, p, i) => (p.trocas > (porMes[melhor]?.trocas ?? -1) ? i : melhor), 0);
   const pico = porMes[ip] ?? { mes: "0000-01", trocas: 0 };

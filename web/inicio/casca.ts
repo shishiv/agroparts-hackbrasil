@@ -118,6 +118,7 @@ function lateral(lugar: Lugar): HTMLElement {
         ),
       ),
     ),
+    h("p", { class: "nota-lateral" }, "Usina fictícia. Nenhum equipamento real conectado; a leitura da placa é simulada."),
   );
 }
 
@@ -140,7 +141,7 @@ function barra(lugar: Lugar, trilha: readonly string[]): HTMLElement {
       { class: "trilha", "aria-label": "Você está em" },
       h("ol", {}, ...trilha.map((parte, i) => h("li", i === trilha.length - 1 ? { "aria-current": "page" } : {}, parte))),
     ),
-    h("span", { class: "demonstracao" }, "Demonstração"),
+    h("span", { class: "demonstracao", title: "Demonstração" }, h("span", {}, "Demonstração")),
     visita,
   );
 }

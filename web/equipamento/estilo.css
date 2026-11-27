@@ -634,3 +634,29 @@ mark {
     animation: none;
   }
 }
+
+/* No celular, a ficha vira três linhas de rótulo e valor, sem células apertadas. */
+@media (max-width: 29.99rem) {
+  .ficha {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ficha > div,
+  .ficha > div:first-child {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--e-3);
+    padding: var(--e-1) 0;
+    border-left: 0;
+  }
+
+  .ficha > div + div {
+    border-top: 1px solid var(--linha);
+  }
+
+  .ficha dd {
+    margin: 0;
+    text-align: right;
+  }
+}

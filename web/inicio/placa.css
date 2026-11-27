@@ -41,32 +41,35 @@
 
 /* O mapa: a planta numa moldura de papel pontilhado, a legenda e os setores embaixo, como abas. */
 .quadro-planta {
-  margin: 0 calc(-1 * var(--e-4));
-  overflow-x: auto;
-  border-block: 1px solid var(--linha);
+  border: 1px solid var(--linha);
+  border-radius: 0.5rem;
   background: #faf9f3;
-}
-
-@media (min-width: 48rem) {
-  .quadro-planta {
-    margin: 0;
-    border: 1px solid var(--linha);
-    border-radius: 0.5rem;
-  }
 }
 
 .planta {
   display: block;
   width: 100%;
-  min-width: 36rem;
   height: auto;
 }
 
+.planta-larga {
+  display: none;
+}
+
+@media (min-width: 48rem) {
+  .planta-larga {
+    display: block;
+  }
+
+  .planta-estreita {
+    display: none;
+  }
+}
+
 .setor rect {
-  fill: #eaefe5;
-  stroke: #9fb39f;
-  stroke-dasharray: 5 3;
-  stroke-width: 1.2;
+  fill: #ecf0e7;
+  stroke: #b7c6b4;
+  stroke-width: 1;
 }
 
 .nome-setor {
@@ -75,8 +78,8 @@
 }
 
 .fluxo {
-  stroke: #a9b3a7;
-  stroke-width: 1.5;
+  stroke: #9aa898;
+  stroke-width: 2;
 }
 
 .fluxo.vapor {
@@ -247,14 +250,23 @@
 /* "Para revisar": o caso principal, com o número em destaque e o botão, e os outros casos em linhas. */
 .revisar {
   display: grid;
+  align-content: start;
   gap: var(--e-3);
+  padding: var(--e-4);
+  border: 1px solid var(--linha);
+  border-radius: 0.75rem;
+  background: var(--superficie);
+}
+
+@media (min-width: 48rem) {
+  .revisar {
+    padding: var(--e-5);
+  }
 }
 
 @media (min-width: 64rem) {
-  .revisar {
-    min-height: 100%;
-    padding-left: var(--e-6);
-    border-left: 1px solid var(--linha);
+  .grade-painel {
+    align-items: stretch;
   }
 }
 
@@ -317,16 +329,25 @@
   text-underline-offset: 0.2em;
 }
 
+/* O número da máquina, como no mapa: o ponto verde com o anel âmbar da peça guardada com outro código. */
 .casos .num {
   display: grid;
   flex: none;
   place-items: center;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--verde);
+  box-shadow: 0 0 0 2px var(--superficie), 0 0 0 3.5px var(--ambar);
+  color: #ffffff;
+  font: 600 var(--t-r1) / 1 var(--sans);
+}
+
+.casos .num.alerta {
   border-radius: 0.375rem;
   background: var(--ambar-claro);
+  box-shadow: none;
   color: var(--ambar);
-  font: 600 var(--t-r1) / 1 var(--mono);
 }
 
 .casos strong,
@@ -392,7 +413,7 @@
 @media (min-width: 64rem) {
   .grafico-linha .rotulo-eixo,
   .grafico-linha .rotulo-pico {
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 

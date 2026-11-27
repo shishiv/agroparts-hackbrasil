@@ -338,6 +338,14 @@ a {
   stroke-linejoin: round;
 }
 
+.nota-lateral {
+  margin-top: auto;
+  padding: var(--e-3) var(--e-2) 0;
+  border-top: 1px solid var(--linha);
+  color: var(--apoio);
+  font-size: var(--t-r1);
+}
+
 .maquinas .num {
   flex: none;
   width: 1.75rem;
@@ -505,6 +513,7 @@ a {
 }
 
 @media (max-width: 29.99rem) {
+  .demonstracao span,
   .acao-visita span {
     position: absolute;
     width: 1px;
@@ -525,10 +534,15 @@ a {
     grid-template-columns: 16rem minmax(0, 1fr);
   }
 
+  .casca {
+    background: linear-gradient(to right, var(--lateral) 16rem, var(--fundo) 16rem);
+  }
+
   .lateral {
     position: sticky;
     top: 0;
     grid-row: 1 / -1;
+    align-self: start;
     width: auto;
     height: 100dvh;
     transform: none;
@@ -635,6 +649,10 @@ a {
 
   .indicadores > div:first-child {
     padding-left: 0;
+  }
+
+  .indicadores dt {
+    min-height: 2.7em;
   }
 
   .indicadores dd {
