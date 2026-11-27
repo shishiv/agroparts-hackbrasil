@@ -1,25 +1,37 @@
-# AgroParts
+# AgroParts: a peça que falta pode estar na prateleira com outro código
 
-Quando a mesma peça de manutenção tem vários códigos no cadastro da usina, o estoque fica escondido e o histórico de troca da máquina se parte. A AgroParts soma os códigos que são a mesma peça e mostra o resultado na página da máquina, aberta pela placa de patrimônio (na demo, o toque na placa é simulado). Projeto da Hack Brasil 2026.
+A AgroParts mostra, na página da máquina de uma usina de cana, o estoque e o histórico de trocas de uma peça, mesmo quando a usina deu a ela códigos e textos diferentes.
 
-Demo: [agroparts-hackbrasil.pages.dev](https://agroparts-hackbrasil.pages.dev). Os dados da demo são de uma usina fictícia.
+Na safra, cada hora de máquina parada é produção perdida. Nem todo tempo parado é conserto. Pode ser espera: a máquina fica parada até chegar uma peça que a usina já tinha no almoxarifado, o depósito de peças, cadastrada com outro código. O almoxarife procura o código que o mecânico pediu, não acha a peça e pede uma compra de urgência. O mecânico também não acha o histórico de trocas da máquina, porque cada colega lançou a troca com um código diferente.
+
+A AgroParts lê o texto de cada código e junta os que são a mesma peça. Ela só junta quando os textos mostram que a peça é a mesma, com o mesmo número de rolamento, a mesma vedação e a mesma folga. Texto parecido não basta. Na dúvida, não adivinha: manda para uma pessoa decidir. O mecânico toca a placa de patrimônio da máquina com o celular (na demo, o toque é simulado) e vê todas as trocas da peça. O almoxarife vê quantas peças há, sob qualquer código, e onde estão guardadas. Hoje isso vale para um tipo de peça, o rolamento rígido de esferas.
+
+No teste com 520 descrições públicas do governo (CATMAT), ela juntou 33 dos 38 pares de códigos que eram a mesma peça e nenhum par de peças diferentes. Dois agentes de IA marcaram as respostas certas, sem revisão de pessoa, e as mesmas descrições serviram para ajustar as regras de leitura. Numa usina real, ela deve resolver menos casos sozinha.
+
+Demo: [agroparts-hackbrasil.pages.dev](https://agroparts-hackbrasil.pages.dev). Os dados da demo são de uma usina fictícia. Projeto da Hack Brasil 2026.
 
 ## O problema
 
-O rolamento 6309 ZZ C3 da bomba de caldo B-104 (patrimônio 004512) tem três códigos em `dados/demo/materiais.csv`:
+No meio da safra, uma máquina para e o mecânico pede ao almoxarife um rolamento, pelo código que a máquina sempre usou. O almoxarife procura esse código no estoque e não encontra peça nenhuma, porque ela está guardada sob outro código. Ele pede uma compra de urgência. A usina paga por uma peça que já tinha, e a máquina fica parada até a peça nova chegar. Esse tempo parado não é conserto. É espera.
+
+O mecânico perde o histórico. Ele quer saber quando e quantas vezes a máquina já trocou aquele rolamento. Cada colega lançou a troca com o código que conhecia, e as trocas ficam divididas entre os códigos. Quem abre um código vê só uma parte e não sabe quantas trocas a máquina já teve.
+
+Isso acontece porque o cadastro da usina trata cada código como uma peça diferente. Se dois colegas escrevem o mesmo rolamento de jeitos diferentes, a usina passa a ter dois códigos para ele, e nada no cadastro avisa que são a mesma peça.
+
+A demo reproduz os dois casos, com dados inventados, na bomba de caldo B-104 (patrimônio 004512) e no rolamento 6309 ZZ C3:
+
+- **Estoque escondido.** A bomba trocou esse rolamento 12 vezes, 22 unidades no total, sob os códigos 10165 e 10066. Nenhum dos dois tem linha em `dados/demo/estoque.csv`. As 3 unidades que a usina tem estão sob o 10059, no endereço B-05-1, um código que nenhuma troca de `dados/demo/consumo.csv` usa. A última das 12 trocas, em 23/07/2026, foi numa ordem de "Parada não programada" e usou o 10165.
+- **Histórico partido.** Das 12 trocas, 7 estão sob o 10165 e 5 sob o 10066. Nenhum dos dois códigos mostra sozinho as 12 trocas e as 22 unidades.
+
+O cadastro tem três códigos para esse rolamento (`dados/demo/materiais.csv`):
 
 | Código | Texto no cadastro |
 |---|---|
 | 10059 | `ROL. 6309-2Z C3 45X100X25` |
 | 10066 | `ROL 6309 ZZ-C3` |
-| 10165 | texto longo do CATMAT, que termina em `REFERÊNCIA FABRICANTE 2: 6309 ZZ C3` |
+| 10165 | texto longo do catálogo público CATMAT, que termina em `REFERÊNCIA FABRICANTE 2: 6309 ZZ C3` |
 
-Isso tem dois efeitos:
-
-- **Estoque escondido.** A bomba troca esse rolamento com os códigos 10066 e 10165, e `dados/demo/estoque.csv` não tem linha para nenhum dos dois. As 3 unidades estão sob o 10059, no endereço B-05-1, um código que nenhuma troca de `dados/demo/consumo.csv` usa.
-- **Histórico partido.** `dados/demo/consumo.csv` tem 12 trocas dessa peça na bomba, 7 sob o 10165 e 5 sob o 10066. Nenhum dos dois códigos mostra sozinho as 12 trocas e as 22 unidades.
-
-O erro contrário também acontece: o SKU da usina pode juntar peças diferentes. O gerador da demo planta 5 SKUs que misturam peças, entre 22 SKUs (`resumo` em `dados/demo/esperado-skus.json`). O ROL-6210 de `dados/demo/materiais.csv` junta rolamentos 6210 com vedação e folga diferentes.
+O erro contrário também acontece: o rótulo que a usina já dá a um grupo de códigos, o SKU, pode juntar peças diferentes. O gerador da demo planta 5 SKUs que misturam peças, entre 22 SKUs (`resumo` em `dados/demo/esperado-skus.json`). O ROL-6210 de `dados/demo/materiais.csv` junta rolamentos 6210 com vedação e folga diferentes.
 
 ## Para quem
 
@@ -30,7 +42,7 @@ Hoje o motor soma só o rolamento rígido de esferas. As outras peças aparecem 
 
 ## A solução
 
-A AgroParts lê a exportação da usina (equipamentos, materiais, consumo e estoque) e não substitui o CMMS. Os termos estão em `CONTEXT.md`.
+A AgroParts lê a exportação da usina (equipamentos, materiais, consumo e estoque) e não substitui o sistema de manutenção que a usina já usa. Os termos estão em `CONTEXT.md`.
 
 - **Página da máquina.** A placa de patrimônio abre `/e/<patrimônio>`. A página soma as trocas por peça, mostra o saldo dos códigos que a máquina usa e o saldo sob outro código.
 - **Motor.** Lê o texto de cada código e conclui `resolve`, `revisa` ou `recusa`. Só uma regra junta dois códigos: os dois têm a mesma chave de identidade. A semelhança de texto nunca junta. Na dúvida, o texto vai para uma pessoa. O motor não faz rede e roda igual no Bun e no navegador (`src/motor/README.md`).
