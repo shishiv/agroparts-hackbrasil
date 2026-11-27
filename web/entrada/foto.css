@@ -1,34 +1,49 @@
+/* O botão de foto: branco, com o ícone da câmera. Na conferência, "Confirmar" é o botão principal. */
 .entrada-foto button {
-  min-height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3.25rem;
   padding: 0 1.25rem;
-  border: 1px solid var(--sinal-forte);
+  border: 1px solid var(--linha-forte);
   border-radius: 0.625rem;
-  background: var(--sinal);
-  color: var(--sinal-texto);
-  font: 650 1rem/1.2 var(--sans);
+  background: var(--superficie);
+  color: var(--texto);
+  font: 600 1rem/1.2 var(--sans);
   cursor: pointer;
   transition:
     background-color 0.2s,
-    color 0.2s;
+    border-color 0.2s;
 }
 
 .entrada-foto button:hover {
-  background: #ffdc4a;
+  border-color: var(--texto);
 }
 
-.entrada-foto button.secundario {
-  border-color: var(--linha-forte);
-  background: var(--superficie);
-  color: var(--texto);
+.entrada-foto > button:first-child::before {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: currentColor;
+  -webkit-mask: var(--icone-camera) center / contain no-repeat;
+  mask: var(--icone-camera) center / contain no-repeat;
+  content: "";
 }
 
-.entrada-foto button.secundario:hover {
-  background: var(--poco);
+.entrada-foto button[type="submit"] {
+  border-color: var(--tinta);
+  background: var(--tinta);
+  color: #ffffff;
+}
+
+.entrada-foto button[type="submit"]:hover {
+  background: var(--tinta-alta);
 }
 
 .entrada-foto label {
   display: block;
-  margin-bottom: 0.625rem;
+  margin-bottom: 0.5rem;
   color: var(--texto);
   font-weight: 600;
 }
@@ -37,18 +52,18 @@
   display: block;
   width: 100%;
   max-width: 48rem;
-  padding: 0.875rem 1rem;
+  padding: 0.75rem 0.875rem;
   border: 1px solid var(--linha-forte);
   border-radius: 0.625rem;
   background: var(--superficie);
   color: var(--texto);
-  font: 400 1.125rem/1.5 var(--mono);
+  font: 400 1.0625rem/1.5 var(--mono);
 }
 
 .entrada-foto textarea:focus-visible {
   border-color: var(--texto);
   outline: none;
-  box-shadow: 0 0 0 3px rgb(255 210 26 / 0.55);
+  box-shadow: 0 0 0 3px rgb(24 33 28 / 0.1);
 }
 
 .entrada-acoes {

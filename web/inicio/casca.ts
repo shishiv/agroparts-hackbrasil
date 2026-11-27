@@ -1,6 +1,6 @@
 import { h } from "./dom";
 
-export const TEXTO_DO_RODAPE = "Dados de demonstração: CATMAT público e usina fictícia";
+export const TEXTO_DO_RODAPE = "Dados de demonstração: usina fictícia, com descrições de peças do catálogo público CATMAT";
 
 export type Ir = (endereco: string) => void;
 

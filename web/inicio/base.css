@@ -24,29 +24,36 @@
 }
 
 /*
- * Tema claro de oficina: fundo cinza-claro frio, fichas brancas, tinta quase preta.
- * O amarelo de segurança marca só as ações e o estoque achado. Mono só nos códigos e no texto do cadastro.
+ * Tema claro e calmo: fundo quase branco, fichas brancas com borda fina, tinta escura.
+ * Cor só onde ajuda a decidir: o verde diz que a peça está guardada; o amarelo fica no quadrado
+ * da marca e no marca-texto dos trechos lidos. Mono só nos códigos e no texto do cadastro.
  */
 :root {
   color-scheme: light;
-  --fundo: #eef1ef;
+  --fundo: #f6f7f6;
   --superficie: #ffffff;
-  --poco: #f5f7f6;
-  --linha: #e0e5e2;
-  --linha-forte: #c5ccc8;
-  --texto: #121a16;
-  --apoio: #545f5a;
-  --sinal: #ffd21a;
-  --sinal-forte: #f0bd00;
-  --sinal-claro: #fff6cc;
-  --sinal-texto: #121a16;
+  --poco: #f3f5f4;
+  --linha: #e3e7e5;
+  --linha-forte: #cbd2ce;
+  --texto: #18211c;
+  --apoio: #59645f;
+  --tinta: #1f2a24;
+  --tinta-alta: #34423b;
+  --marca: #ffd21a;
+  --marca-borda: #e5b700;
+  --realce: #fff0a3;
+  --tem: #1d6f46;
+  --tem-claro: #eef7f1;
+  --tem-borda: #cfe5d7;
   --alerta: #c4320e;
-  --sombra: 0 1px 2px rgb(18 26 22 / 0.05), 0 2px 8px rgb(18 26 22 / 0.04);
   --margem: clamp(1rem, 2.5vw, 2.25rem);
   --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --suave: cubic-bezier(0.22, 1, 0.36, 1);
-  --grade-tecnica: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Crect x='.5' y='.5' width='96' height='96' fill='none' stroke='%23d9dfdb'/%3E%3Ccircle cx='48.5' cy='48.5' r='47' fill='none' stroke='%23e3e8e5'/%3E%3C/svg%3E");
+  --icone-camera: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 8h3l1.5-2h7L17 8h3v11H4z'/%3E%3Ccircle cx='12' cy='13' r='3.5'/%3E%3C/svg%3E");
+  --icone-microfone: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='3' width='6' height='11' rx='3'/%3E%3Cpath d='M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21'/%3E%3C/svg%3E");
+  --icone-seguir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6 4l4 4-4 4' fill='none' stroke='%2359645f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --icone-abrir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' fill='none' stroke='%2318211c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 * {
@@ -75,7 +82,7 @@ body {
 
 main {
   flex: 1;
-  width: min(100%, 90rem);
+  width: min(100%, 80rem);
   margin-inline: auto;
   padding: 0 var(--margem) 3rem;
 }
@@ -84,16 +91,16 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.015em;
   text-wrap: balance;
 }
 
 h1 {
-  margin: 0 0 1rem;
-  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
-  line-height: 1.05;
-  letter-spacing: -0.035em;
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.875rem, 3.6vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 
 strong {
@@ -101,23 +108,30 @@ strong {
 }
 
 h2 {
-  margin: 0 0 1rem;
+  margin: 0 0 0.75rem;
   color: var(--texto);
-  font-size: 1.375rem;
-  line-height: 1.2;
+  font-size: clamp(1.1875rem, 1.4vw, 1.375rem);
+  line-height: 1.25;
 }
 
-/* A barra do topo: branca, com a marca à esquerda e o quadrado amarelo da tag antes dela. */
+/* Frase curta que explica a seção em palavras do dia a dia. */
+.explica {
+  max-width: 44rem;
+  margin: -0.25rem 0 1rem;
+  color: var(--apoio);
+}
+
+/* A barra do topo: branca, com a marca e o quadrado amarelo da placa antes dela. */
 .topo {
   position: sticky;
   top: 0;
   z-index: 10;
   display: flex;
   align-items: center;
-  min-height: 3.75rem;
-  padding: 0.5rem var(--margem);
+  min-height: 3.25rem;
+  padding: 0.25rem var(--margem);
   border-bottom: 1px solid var(--linha);
-  background: rgb(255 255 255 / 0.92);
+  background: rgb(255 255 255 / 0.94);
   -webkit-backdrop-filter: saturate(1.4) blur(14px);
   backdrop-filter: saturate(1.4) blur(14px);
 }
@@ -125,31 +139,30 @@ h2 {
 .topo a {
   display: inline-flex;
   align-items: center;
-  gap: 0.625rem;
+  gap: 0.5rem;
   min-height: 2.75rem;
   color: var(--texto);
-  font: 750 1.25rem/1 var(--sans);
-  font-stretch: 112%;
-  letter-spacing: -0.03em;
+  font: 650 1.125rem/1 var(--sans);
+  font-stretch: 108%;
+  letter-spacing: -0.02em;
   text-decoration: none;
 }
 
 .topo a::before {
-  width: 1.375rem;
-  height: 1.375rem;
-  border-radius: 0.375rem;
-  background: var(--sinal);
-  box-shadow: inset 0 0 0 1.5px var(--sinal-forte);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+  background: var(--marca);
+  box-shadow: inset 0 0 0 1px var(--marca-borda);
   content: "";
 }
 
 .rodape {
-  width: min(100%, 90rem);
+  width: min(100%, 80rem);
   margin-inline: auto;
   padding: 1.25rem var(--margem) 1.75rem;
   border-top: 1px solid var(--linha);
   color: var(--apoio);
-  font-size: 0.9375rem;
 }
 
 .rodape p {
@@ -161,7 +174,7 @@ h2 {
   display: block;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 0.375rem 0.5rem rgb(18 26 22 / 0.14)) drop-shadow(0 1px 1px rgb(18 26 22 / 0.12));
+  filter: drop-shadow(0 1px 1.5px rgb(24 33 28 / 0.16));
 }
 
 .placa text {
@@ -179,7 +192,7 @@ h2 {
   transform-box: view-box;
 }
 
-/* O campo do número da placa: um controle grande, com o botão amarelo dentro. */
+/* O campo do número da placa, com o botão dentro. */
 form.numero {
   max-width: 34rem;
 }
@@ -194,9 +207,8 @@ form.numero {
 .numero-linha {
   display: flex;
   border: 1px solid var(--linha-forte);
-  border-radius: 0.75rem;
+  border-radius: 0.625rem;
   background: var(--superficie);
-  box-shadow: var(--sombra);
   transition:
     border-color 0.2s,
     box-shadow 0.2s;
@@ -204,19 +216,19 @@ form.numero {
 
 .numero-linha:focus-within {
   border-color: var(--texto);
-  box-shadow: 0 0 0 3px rgb(255 210 26 / 0.55);
+  box-shadow: 0 0 0 3px rgb(24 33 28 / 0.1);
 }
 
 .numero input {
   flex: 1;
   min-width: 0;
-  min-height: 3.5rem;
+  min-height: 3.25rem;
   padding: 0 1rem;
   border: 0;
-  border-radius: 0.75rem 0 0 0.75rem;
+  border-radius: 0.625rem 0 0 0.625rem;
   background: transparent;
   color: var(--texto);
-  font: 600 1.5rem/1 var(--mono);
+  font: 600 1.375rem/1 var(--mono);
   letter-spacing: 0.04em;
 }
 
@@ -224,16 +236,16 @@ form.numero {
   outline: none;
 }
 
-/* O botão principal: amarelo de segurança, tinta escura, borda um tom acima para não sumir no branco. */
+/* O botão principal: tinta escura e texto branco. Um por tela, sem cor de enfeite. */
 .numero button,
 .estado button {
-  min-height: 3.5rem;
-  padding: 0 1.5rem;
-  border: 1px solid var(--sinal-forte);
-  border-radius: 0.625rem;
-  background: var(--sinal);
-  color: var(--sinal-texto);
-  font: 650 1rem/1 var(--sans);
+  min-height: 3rem;
+  padding: 0 1.375rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--tinta);
+  color: #ffffff;
+  font: 600 1rem/1 var(--sans);
   cursor: pointer;
   transition:
     background-color 0.2s,
@@ -241,13 +253,13 @@ form.numero {
 }
 
 .numero button {
-  min-height: 3rem;
+  min-height: 2.75rem;
   margin: 0.25rem;
 }
 
 .numero button:hover,
 .estado button:hover {
-  background: #ffdc4a;
+  background: var(--tinta-alta);
 }
 
 .numero button:active,
@@ -261,8 +273,8 @@ form.numero {
 }
 
 ::selection {
-  background: var(--sinal);
-  color: var(--sinal-texto);
+  background: var(--realce);
+  color: var(--texto);
 }
 
 @view-transition {

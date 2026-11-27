@@ -3,7 +3,7 @@ import { enderecoDoEquipamento, type Ir } from "./casca";
 import { h } from "./dom";
 import { desenharPlaca, placasDaDemo } from "./placa";
 
-export const AVISO_DA_DEMONSTRACAO = "Demonstração: simula o toque na tag NFC";
+export const AVISO_DA_DEMONSTRACAO = "Demonstração: o toque do celular na placa é simulado";
 
 export interface Tempos {
   /** Quanto a tela mostra "lendo", antes de a tag responder. */
@@ -16,7 +16,11 @@ export const TEMPOS_DO_TOQUE: Tempos = { lendoMs: 600, lidaMs: 500 };
 
 type Estado = "parado" | "lendo" | "lida";
 
-const textoDe = (equipamento: Equipamento) => `${equipamento.tag} · ${equipamento.nome}`;
+/** A legenda da placa: o nome da máquina primeiro, a tag dela depois. */
+const legendaDe = (equipamento: Equipamento): HTMLElement[] => [
+  h("span", { class: "nome" }, equipamento.nome),
+  h("span", { class: "tag" }, equipamento.tag),
+];
 
 /**
  * A simulação do toque na tag NFC: cada placa é um botão. Tocar nela mostra a leitura e abre
@@ -28,7 +32,7 @@ export function montarToque(ir: Ir, tempos: Tempos = TEMPOS_DO_TOQUE): HTMLEleme
   const estado = () => secao.getAttribute("data-estado");
 
   const placas = placasDaDemo().map((equipamento, ordem) => {
-    const legenda = h("span", { class: "legenda", role: "status" }, textoDe(equipamento));
+    const legenda = h("span", { class: "legenda", role: "status" }, ...legendaDe(equipamento));
     const botao = h(
       "button",
       { type: "button", class: "placa-toque", "data-patrimonio": equipamento.patrimonio, style: `--ordem: ${ordem}` },
@@ -46,16 +50,16 @@ export function montarToque(ir: Ir, tempos: Tempos = TEMPOS_DO_TOQUE): HTMLEleme
       const endereco = enderecoDoEquipamento(equipamento.patrimonio);
       botao.setAttribute("data-lendo", "");
       mudar("lendo");
-      legenda.textContent = "Lendo a tag (simulada)…";
+      legenda.textContent = "Lendo a placa…";
       setTimeout(() => {
         mudar("lida");
-        legenda.textContent = `Tag lida (simulada): abrindo a página de ${equipamento.patrimonio}`;
+        legenda.textContent = `Placa lida. Abrindo a máquina ${equipamento.patrimonio}…`;
         setTimeout(() => ir(endereco), tempos.lidaMs);
       }, tempos.lendoMs);
     });
     const voltar = () => {
       botao.removeAttribute("data-lendo");
-      legenda.textContent = textoDe(equipamento);
+      legenda.replaceChildren(...legendaDe(equipamento));
     };
     return { botao, voltar };
   });
@@ -68,7 +72,7 @@ export function montarToque(ir: Ir, tempos: Tempos = TEMPOS_DO_TOQUE): HTMLEleme
   });
 
   secao.append(
-    h("h2", {}, "Toque numa placa"),
+    h("h2", {}, "Ou toque numa placa"),
     h("p", { class: "aviso-demo" }, AVISO_DA_DEMONSTRACAO),
     ...placas.map(({ botao }) => botao),
   );
