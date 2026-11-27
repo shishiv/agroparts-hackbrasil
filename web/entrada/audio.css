@@ -5,11 +5,11 @@
 .entrada-audio button {
   min-height: 3.5rem;
   padding: 0 1.25rem;
-  border: 1px solid var(--sinal);
-  border-radius: 0.375rem;
+  border: 1px solid var(--sinal-forte);
+  border-radius: 0.625rem;
   background: var(--sinal);
   color: var(--sinal-texto);
-  font: 600 1rem/1.2 var(--mono);
+  font: 650 1rem/1.2 var(--sans);
   cursor: pointer;
   transition:
     background-color 0.2s,
@@ -17,24 +17,24 @@
 }
 
 .entrada-audio button:hover {
-  background: var(--texto);
+  background: #ffdc4a;
 }
 
 .entrada-audio button.secundario {
-  border-color: var(--regua);
-  background: transparent;
+  border-color: var(--linha-forte);
+  background: var(--superficie);
   color: var(--texto);
 }
 
 .entrada-audio button.secundario:hover {
-  border-color: var(--texto);
+  background: var(--poco);
 }
 
 /* Gravando: vermelho de microfone aberto, com o ponto que pulsa enquanto ouve. */
 .entrada-audio button.gravando {
   border-color: var(--alerta);
   background: var(--alerta);
-  color: var(--sinal-texto);
+  color: #ffffff;
 }
 
 .entrada-audio button.gravando::before {
@@ -63,9 +63,8 @@
 .entrada-audio .conferir label {
   display: block;
   margin-bottom: 0.625rem;
-  color: var(--apoio);
-  font: 400 1rem/1.4 var(--mono);
-  text-transform: uppercase;
+  color: var(--texto);
+  font-weight: 600;
 }
 
 .entrada-audio .conferir input {
@@ -73,16 +72,17 @@
   max-width: 48rem;
   min-height: 3.5rem;
   padding: 0 1rem;
-  border: 1px solid var(--regua);
-  border-radius: 0.5rem;
-  background: var(--painel);
+  border: 1px solid var(--linha-forte);
+  border-radius: 0.625rem;
+  background: var(--superficie);
   color: var(--texto);
-  font: 400 1.25rem/1.4 var(--mono);
+  font: 400 1.125rem/1.5 var(--mono);
 }
 
 .entrada-audio .conferir input:focus-visible {
-  border-color: var(--sinal);
+  border-color: var(--texto);
   outline: none;
+  box-shadow: 0 0 0 3px rgb(255 210 26 / 0.55);
 }
 
 .entrada-audio .conferir .acoes {

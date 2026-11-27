@@ -23,24 +23,30 @@
   src: url("/fontes/ibm-plex-mono-600.woff2") format("woff2");
 }
 
+/*
+ * Tema claro de oficina: fundo cinza-claro frio, fichas brancas, tinta quase preta.
+ * O amarelo de segurança marca só as ações e o estoque achado. Mono só nos códigos e no texto do cadastro.
+ */
 :root {
-  color-scheme: dark;
-  --preto: #000000;
-  --palco: #0a0a0a;
-  --painel: #151515;
-  --painel-alto: #1e1e1e;
-  --grade: #262626;
-  --regua: #383838;
-  --apoio: #a3a3a3;
-  --texto: #eeeeee;
-  --sinal: #fff313;
-  --sinal-texto: #000000;
-  --alerta: #ff5a36;
+  color-scheme: light;
+  --fundo: #eef1ef;
+  --superficie: #ffffff;
+  --poco: #f5f7f6;
+  --linha: #e0e5e2;
+  --linha-forte: #c5ccc8;
+  --texto: #121a16;
+  --apoio: #545f5a;
+  --sinal: #ffd21a;
+  --sinal-forte: #f0bd00;
+  --sinal-claro: #fff6cc;
+  --sinal-texto: #121a16;
+  --alerta: #c4320e;
+  --sombra: 0 1px 2px rgb(18 26 22 / 0.05), 0 2px 8px rgb(18 26 22 / 0.04);
   --margem: clamp(1rem, 2.5vw, 2.25rem);
   --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --suave: cubic-bezier(0.22, 1, 0.36, 1);
-  --grade-tecnica: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Crect x='.5' y='.5' width='96' height='96' fill='none' stroke='%23262626'/%3E%3Ccircle cx='48.5' cy='48.5' r='47' fill='none' stroke='%231c1c1c'/%3E%3C/svg%3E");
+  --grade-tecnica: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Crect x='.5' y='.5' width='96' height='96' fill='none' stroke='%23d9dfdb'/%3E%3Ccircle cx='48.5' cy='48.5' r='47' fill='none' stroke='%23e3e8e5'/%3E%3C/svg%3E");
 }
 
 * {
@@ -50,7 +56,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  background: var(--preto);
+  background: var(--fundo);
 }
 
 body {
@@ -58,9 +64,10 @@ body {
   flex-direction: column;
   min-height: 100dvh;
   margin: 0;
-  background: var(--preto);
+  background: var(--fundo);
   color: var(--texto);
   font: 400 1rem/1.5 var(--sans);
+  font-variant-numeric: tabular-nums;
   overflow-wrap: anywhere;
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
@@ -68,7 +75,7 @@ body {
 
 main {
   flex: 1;
-  width: min(100%, 120rem);
+  width: min(100%, 90rem);
   margin-inline: auto;
   padding: 0 var(--margem) 3rem;
 }
@@ -77,83 +84,72 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: 300;
-  letter-spacing: -0.04em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
 h1 {
   margin: 0 0 1rem;
-  font-size: clamp(2.75rem, 6vw, 5.5rem);
-  line-height: 1;
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
 }
 
 strong {
   font-weight: 600;
 }
 
-/* Rótulo técnico: mono, caixa alta, com o ponto da referência antes. */
-.rotulo,
 h2 {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
   margin: 0 0 1rem;
-  color: var(--apoio);
-  font: 400 1rem/1.4 var(--mono);
-  letter-spacing: 0;
-  text-transform: uppercase;
+  color: var(--texto);
+  font-size: 1.375rem;
+  line-height: 1.2;
 }
 
-h2::before {
-  flex: none;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: currentColor;
-  content: "";
-}
-
+/* A barra do topo: branca, com a marca à esquerda e o quadrado amarelo da tag antes dela. */
 .topo {
   position: sticky;
   top: 0;
   z-index: 10;
   display: flex;
   align-items: center;
-  width: min(100%, 120rem);
-  margin-inline: auto;
-  padding: 0.75rem var(--margem);
-  border-bottom: 1px solid transparent;
-  background: rgb(0 0 0 / 0.82);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
+  min-height: 3.75rem;
+  padding: 0.5rem var(--margem);
+  border-bottom: 1px solid var(--linha);
+  background: rgb(255 255 255 / 0.92);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  backdrop-filter: saturate(1.4) blur(14px);
 }
 
 .topo a {
   display: inline-flex;
   align-items: center;
+  gap: 0.625rem;
   min-height: 2.75rem;
-  padding: 0 0.875rem;
-  border-radius: 0.375rem;
-  background: var(--sinal);
-  color: var(--sinal-texto);
-  font: 600 1rem/1 var(--mono);
-  letter-spacing: -0.02em;
+  color: var(--texto);
+  font: 750 1.25rem/1 var(--sans);
+  font-stretch: 112%;
+  letter-spacing: -0.03em;
   text-decoration: none;
-  transition: background-color 0.2s, color 0.2s;
 }
 
-.topo a:hover {
-  background: var(--texto);
+.topo a::before {
+  width: 1.375rem;
+  height: 1.375rem;
+  border-radius: 0.375rem;
+  background: var(--sinal);
+  box-shadow: inset 0 0 0 1.5px var(--sinal-forte);
+  content: "";
 }
 
 .rodape {
-  width: min(100%, 120rem);
+  width: min(100%, 90rem);
   margin-inline: auto;
-  padding: 1.25rem var(--margem) 1.5rem;
-  border-top: 1px solid var(--grade);
+  padding: 1.25rem var(--margem) 1.75rem;
+  border-top: 1px solid var(--linha);
   color: var(--apoio);
-  font: 400 1rem/1.5 var(--mono);
+  font-size: 0.9375rem;
 }
 
 .rodape p {
@@ -165,7 +161,7 @@ h2::before {
   display: block;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 1.75rem 2rem rgb(0 0 0 / 0.75));
+  filter: drop-shadow(0 0.375rem 0.5rem rgb(18 26 22 / 0.14)) drop-shadow(0 1px 1px rgb(18 26 22 / 0.12));
 }
 
 .placa text {
@@ -183,29 +179,32 @@ h2::before {
   transform-box: view-box;
 }
 
-/* O campo do número da placa: um controle de equipamento, não um formulário de cadastro. */
+/* O campo do número da placa: um controle grande, com o botão amarelo dentro. */
 form.numero {
   max-width: 34rem;
 }
 
 .numero label {
   display: block;
-  margin-bottom: 0.625rem;
-  color: var(--apoio);
-  font: 400 1rem/1.4 var(--mono);
-  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--texto);
+  font-weight: 600;
 }
 
 .numero-linha {
   display: flex;
-  border: 1px solid var(--regua);
-  border-radius: 0.5rem;
-  background: var(--painel);
-  transition: border-color 0.2s;
+  border: 1px solid var(--linha-forte);
+  border-radius: 0.75rem;
+  background: var(--superficie);
+  box-shadow: var(--sombra);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .numero-linha:focus-within {
-  border-color: var(--sinal);
+  border-color: var(--texto);
+  box-shadow: 0 0 0 3px rgb(255 210 26 / 0.55);
 }
 
 .numero input {
@@ -214,7 +213,7 @@ form.numero {
   min-height: 3.5rem;
   padding: 0 1rem;
   border: 0;
-  border-radius: 0.5rem 0 0 0.5rem;
+  border-radius: 0.75rem 0 0 0.75rem;
   background: transparent;
   color: var(--texto);
   font: 600 1.5rem/1 var(--mono);
@@ -225,31 +224,39 @@ form.numero {
   outline: none;
 }
 
+/* O botão principal: amarelo de segurança, tinta escura, borda um tom acima para não sumir no branco. */
 .numero button,
 .estado button {
   min-height: 3.5rem;
   padding: 0 1.5rem;
-  border: 0;
-  border-radius: 0.375rem;
+  border: 1px solid var(--sinal-forte);
+  border-radius: 0.625rem;
   background: var(--sinal);
   color: var(--sinal-texto);
-  font: 600 1rem/1 var(--mono);
+  font: 650 1rem/1 var(--sans);
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition:
+    background-color 0.2s,
+    transform 0.15s;
 }
 
 .numero button {
-  margin: 0.25rem;
   min-height: 3rem;
+  margin: 0.25rem;
 }
 
 .numero button:hover,
 .estado button:hover {
-  background: var(--texto);
+  background: #ffdc4a;
+}
+
+.numero button:active,
+.estado button:active {
+  transform: scale(0.98);
 }
 
 :focus-visible {
-  outline: 2px dashed var(--sinal);
+  outline: 2px solid var(--texto);
   outline-offset: 3px;
 }
 
