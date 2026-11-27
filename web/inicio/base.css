@@ -24,36 +24,62 @@
 }
 
 /*
- * Tema claro e calmo: fundo quase branco, fichas brancas com borda fina, tinta escura.
- * Cor só onde ajuda a decidir: o verde diz que a peça está guardada; o amarelo fica no quadrado
- * da marca e no marca-texto dos trechos lidos. Mono só nos códigos e no texto do cadastro.
+ * Sistema do site: página branca, grade de 12 colunas, fios finos no lugar de caixas.
+ * Tipografia numa escala fluida de razão 1,2 (de 360 a 1440 px): a hierarquia vem do peso,
+ * da cor e do espaço, não do tamanho. A cor de estado só aparece no "tem no almoxarifado".
+ * O amarelo fica no quadrado da marca e no marca-texto dos trechos lidos. Mono só nos códigos.
  */
 :root {
   color-scheme: light;
-  --fundo: #f6f7f6;
+  --fundo: #ffffff;
   --superficie: #ffffff;
-  --poco: #f3f5f4;
-  --linha: #e3e7e5;
-  --linha-forte: #cbd2ce;
-  --texto: #18211c;
-  --apoio: #59645f;
-  --tinta: #1f2a24;
-  --tinta-alta: #34423b;
+  --poco: #f4f5f4;
+  --linha: #e5e8e6;
+  --linha-forte: #c9cfcb;
+  --regua: #1b231e;
+  --texto: #161d19;
+  --apoio: #59635e;
+  --tinta: #1b231e;
+  --tinta-alta: #333f38;
   --marca: #ffd21a;
   --marca-borda: #e5b700;
   --realce: #fff0a3;
-  --tem: #1d6f46;
-  --tem-claro: #eef7f1;
-  --tem-borda: #cfe5d7;
+  --tem: #1b6e45;
+  --tem-claro: #eef6f1;
+  --tem-borda: #cde3d6;
   --alerta: #c4320e;
-  --margem: clamp(1rem, 2.5vw, 2.25rem);
+
+  --t-r1: 1rem;
+  --t-0: clamp(1rem, 0.979rem + 0.093vw, 1.0625rem);
+  --t-1: clamp(1.125rem, 1.083rem + 0.185vw, 1.25rem);
+  --t-2: clamp(1.3125rem, 1.25rem + 0.278vw, 1.5rem);
+  --t-3: clamp(1.5rem, 1.396rem + 0.463vw, 1.8125rem);
+  --t-4: clamp(1.75rem, 1.604rem + 0.648vw, 2.1875rem);
+
+  --e-1: 0.25rem;
+  --e-2: 0.5rem;
+  --e-3: 0.75rem;
+  --e-4: 1rem;
+  --e-5: 1.5rem;
+  --e-6: 2rem;
+  --e-7: clamp(2.5rem, 2rem + 2vw, 4rem);
+
+  --margem: clamp(1rem, 0.6rem + 1.8vw, 2.5rem);
+  --vao: clamp(1rem, 0.8rem + 0.6vw, 1.5rem);
   --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --suave: cubic-bezier(0.22, 1, 0.36, 1);
   --icone-camera: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 8h3l1.5-2h7L17 8h3v11H4z'/%3E%3Ccircle cx='12' cy='13' r='3.5'/%3E%3C/svg%3E");
   --icone-microfone: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='3' width='6' height='11' rx='3'/%3E%3Cpath d='M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21'/%3E%3C/svg%3E");
-  --icone-seguir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6 4l4 4-4 4' fill='none' stroke='%2359645f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  --icone-abrir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' fill='none' stroke='%2318211c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --icone-seguir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 11.5l7-7M6 4.5h5.5V10' fill='none' stroke='%23161d19' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --icone-abrir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 3v10M3 8h10' fill='none' stroke='%23161d19' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* No computador, os rótulos descem um passo da escala; no celular ficam em 16 px. */
+@media (min-width: 64rem) {
+  :root {
+    --t-r1: 0.875rem;
+  }
 }
 
 * {
@@ -73,7 +99,7 @@ body {
   margin: 0;
   background: var(--fundo);
   color: var(--texto);
-  font: 400 1rem/1.5 var(--sans);
+  font: 400 var(--t-0) / 1.5 var(--sans);
   font-variant-numeric: tabular-nums;
   overflow-wrap: anywhere;
   overflow-x: clip;
@@ -82,46 +108,100 @@ body {
 
 main {
   flex: 1;
-  width: min(100%, 80rem);
-  margin-inline: auto;
-  padding: 0 var(--margem) 3rem;
+  width: 100%;
+  padding: 0 var(--margem) var(--e-7);
 }
 
 h1,
 h2,
 h3,
 h4 {
+  margin: 0;
   font-weight: 600;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
   text-wrap: balance;
 }
 
 h1 {
-  margin: 0 0 0.75rem;
-  font-size: clamp(1.875rem, 3.6vw, 3rem);
+  font-size: var(--t-4);
+  font-weight: 600;
   line-height: 1.1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: var(--t-0);
+  line-height: 1.35;
+}
+
+h3 {
+  font-size: var(--t-1);
+  line-height: 1.3;
+}
+
+h4 {
+  color: var(--apoio);
+  font-size: var(--t-r1);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+p {
+  margin: 0;
 }
 
 strong {
   font-weight: 600;
 }
 
-h2 {
-  margin: 0 0 0.75rem;
-  color: var(--texto);
-  font-size: clamp(1.1875rem, 1.4vw, 1.375rem);
-  line-height: 1.25;
-}
-
-/* Frase curta que explica a seção em palavras do dia a dia. */
+/* A frase que explica a seção em palavras do dia a dia. */
 .explica {
-  max-width: 44rem;
-  margin: -0.25rem 0 1rem;
+  max-width: 40rem;
   color: var(--apoio);
 }
 
-/* A barra do topo: branca, com a marca e o quadrado amarelo da placa antes dela. */
+/*
+ * Cabeçalho de seção, como numa página editorial: o fio escuro em cima e o título pequeno e firme.
+ * No computador, o título ocupa a coluna de rótulos (1 a 3) e o conteúdo, as colunas 4 a 12.
+ * Vale para as seções da página da máquina e do diagnóstico, que têm classes próprias.
+ */
+:is(.secao-grade, .pecas, .sem-chave-lista, .secao) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: var(--e-4);
+  margin-top: var(--e-7);
+  padding-top: var(--e-3);
+  border-top: 1px solid var(--regua);
+}
+
+@media (min-width: 64rem) {
+  :is(.secao-grade, .pecas, .sem-chave-lista, .secao) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--vao);
+    align-items: start;
+  }
+
+  :is(.secao-grade, .pecas, .sem-chave-lista, .secao) > h2,
+  :is(.secao-grade, .pecas, .sem-chave-lista, .secao) > .explica {
+    grid-column: 1 / 4;
+  }
+
+  :is(.secao-grade, .pecas, .sem-chave-lista, .secao) > h2 {
+    grid-row: 1;
+  }
+
+  :is(.secao-grade, .pecas, .sem-chave-lista, .secao) > .explica {
+    grid-row: 2;
+    font-size: var(--t-r1);
+  }
+
+  :is(.secao-grade, .pecas, .sem-chave-lista, .secao) > :not(h2, .explica) {
+    grid-column: 4 / -1;
+    grid-row: 1 / span 3;
+  }
+}
+
+/* A barra do topo: a marca com o quadrado amarelo da placa, sobre o branco, com um fio fino embaixo. */
 .topo {
   position: sticky;
   top: 0;
@@ -129,9 +209,9 @@ h2 {
   display: flex;
   align-items: center;
   min-height: 3.25rem;
-  padding: 0.25rem var(--margem);
+  padding: 0 var(--margem);
   border-bottom: 1px solid var(--linha);
-  background: rgb(255 255 255 / 0.94);
+  background: rgb(255 255 255 / 0.92);
   -webkit-backdrop-filter: saturate(1.4) blur(14px);
   backdrop-filter: saturate(1.4) blur(14px);
 }
@@ -142,27 +222,29 @@ h2 {
   gap: 0.5rem;
   min-height: 2.75rem;
   color: var(--texto);
-  font: 650 1.125rem/1 var(--sans);
+  font: 650 var(--t-0) / 1 var(--sans);
   font-stretch: 108%;
   letter-spacing: -0.02em;
   text-decoration: none;
 }
 
-.topo a::before {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 0.25rem;
+.topo a::before,
+.marca::before {
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 0.1875rem;
   background: var(--marca);
   box-shadow: inset 0 0 0 1px var(--marca-borda);
   content: "";
 }
 
 .rodape {
-  width: min(100%, 80rem);
-  margin-inline: auto;
-  padding: 1.25rem var(--margem) 1.75rem;
+  width: 100%;
+  margin-top: auto;
+  padding: var(--e-4) var(--margem) var(--e-5);
   border-top: 1px solid var(--linha);
   color: var(--apoio);
+  font-size: var(--t-r1);
 }
 
 .rodape p {
@@ -174,7 +256,7 @@ h2 {
   display: block;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 1px 1.5px rgb(24 33 28 / 0.16));
+  filter: drop-shadow(0 1px 1px rgb(22 29 25 / 0.18)) drop-shadow(0 6px 10px rgb(22 29 25 / 0.08));
 }
 
 .placa text {
@@ -192,22 +274,65 @@ h2 {
   transform-box: view-box;
 }
 
+/* Os códigos como pequenas etiquetas: o código em mono e o saldo ao lado. */
+.chip {
+  display: inline-flex;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid var(--linha-forte);
+  border-radius: 0.375rem;
+  background: var(--superficie);
+  font: 400 var(--t-r1) / 1 var(--mono);
+  white-space: nowrap;
+}
+
+.chip > span {
+  padding: 0.375rem 0.5rem;
+}
+
+.chip-saldo {
+  border-left: 1px solid var(--linha);
+  color: var(--apoio);
+}
+
+.chip.sem {
+  border-style: dashed;
+  color: var(--apoio);
+}
+
+.chip.sem .chip-codigo {
+  text-decoration: line-through;
+  text-decoration-color: var(--linha-forte);
+}
+
+.chip.achado {
+  border-color: var(--tem);
+  color: var(--tem);
+  font-weight: 600;
+}
+
+.chip.achado .chip-saldo {
+  border-left-color: var(--tem-borda);
+  background: var(--tem-claro);
+  color: var(--tem);
+}
+
 /* O campo do número da placa, com o botão dentro. */
 form.numero {
-  max-width: 34rem;
+  max-width: 30rem;
 }
 
 .numero label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--e-2);
   color: var(--texto);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .numero-linha {
   display: flex;
   border: 1px solid var(--linha-forte);
-  border-radius: 0.625rem;
+  border-radius: 0.5rem;
   background: var(--superficie);
   transition:
     border-color 0.2s,
@@ -216,19 +341,19 @@ form.numero {
 
 .numero-linha:focus-within {
   border-color: var(--texto);
-  box-shadow: 0 0 0 3px rgb(24 33 28 / 0.1);
+  box-shadow: 0 0 0 3px rgb(22 29 25 / 0.08);
 }
 
 .numero input {
   flex: 1;
   min-width: 0;
-  min-height: 3.25rem;
-  padding: 0 1rem;
+  min-height: 3rem;
+  padding: 0 0.875rem;
   border: 0;
-  border-radius: 0.625rem 0 0 0.625rem;
+  border-radius: 0.5rem 0 0 0.5rem;
   background: transparent;
   color: var(--texto);
-  font: 600 1.375rem/1 var(--mono);
+  font: 400 var(--t-1) / 1 var(--mono);
   letter-spacing: 0.04em;
 }
 
@@ -236,16 +361,16 @@ form.numero {
   outline: none;
 }
 
-/* O botão principal: tinta escura e texto branco. Um por tela, sem cor de enfeite. */
+/* O botão principal: tinta escura e texto branco. Um por tela. */
 .numero button,
 .estado button {
-  min-height: 3rem;
-  padding: 0 1.375rem;
+  min-height: 2.75rem;
+  padding: 0 1.25rem;
   border: 0;
-  border-radius: 0.5rem;
+  border-radius: 0.375rem;
   background: var(--tinta);
   color: #ffffff;
-  font: 600 1rem/1 var(--sans);
+  font: 500 var(--t-0) / 1 var(--sans);
   cursor: pointer;
   transition:
     background-color 0.2s,
@@ -253,8 +378,7 @@ form.numero {
 }
 
 .numero button {
-  min-height: 2.75rem;
-  margin: 0.25rem;
+  margin: 0.125rem;
 }
 
 .numero button:hover,

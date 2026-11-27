@@ -8,13 +8,13 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 3.25rem;
+  min-height: 3rem;
   padding: 0 1.25rem;
   border: 1px solid var(--linha-forte);
-  border-radius: 0.625rem;
+  border-radius: 0.5rem;
   background: var(--superficie);
   color: var(--texto);
-  font: 600 1rem/1.2 var(--sans);
+  font: 500 var(--t-0)/1.2 var(--sans);
   cursor: pointer;
   transition:
     background-color 0.2s,
@@ -78,16 +78,16 @@
   display: block;
   margin-bottom: 0.5rem;
   color: var(--texto);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .entrada-audio .conferir input {
   width: 100%;
   max-width: 48rem;
-  min-height: 3.25rem;
+  min-height: 3rem;
   padding: 0 0.875rem;
   border: 1px solid var(--linha-forte);
-  border-radius: 0.625rem;
+  border-radius: 0.5rem;
   background: var(--superficie);
   color: var(--texto);
   font: 400 1.0625rem/1.4 var(--mono);

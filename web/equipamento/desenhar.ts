@@ -188,6 +188,7 @@ function ondeTem(item: Peca): HTMLElement {
   return h(
     "div",
     { class: "onde", "data-onde": outro.length > 0 ? "outro-codigo" : "tem" },
+    outro.length > 0 ? trilha(item, outro.map((o) => o.saldo)) : null,
     h(
       "ul",
       {},
@@ -235,12 +236,29 @@ function codigoDaPeca(codigo: CodigoLegado, uso: ReadonlyMap<CodigoLegado, Uso>,
   );
 }
 
+/**
+ * O desenho da revelação: os códigos que a máquina usa, sem estoque, e a linha que leva ao código
+ * da mesma peça que tem estoque. A frase ao lado já diz o mesmo, então o desenho fica fora da leitura de tela.
+ */
+function trilha(item: Peca, outros: readonly Saldo[]): HTMLElement {
+  const saldoDe = (codigo: CodigoLegado) => item.saldoAqui.filter((s) => s.codigo === codigo).reduce((soma, s) => soma + s.quantidade, 0);
+  const chip = (codigo: CodigoLegado, quantidade: number, classe: string) =>
+    h("span", { class: `chip ${classe}` }, h("span", { class: "chip-codigo" }, codigo), h("span", { class: "chip-saldo" }, String(quantidade)));
+  return h(
+    "div",
+    { class: "trilha", "aria-hidden": "true" },
+    h("span", { class: "trilha-de" }, ...item.codigosUsadosAqui.map((c) => chip(c, saldoDe(c), saldoDe(c) > 0 ? "com" : "sem"))),
+    h("span", { class: "trilha-alvo" }, h("span", { class: "trilha-seta" }), h("span", { class: "trilha-para" }, ...outros.map((o) => chip(o.codigo, o.quantidade, "achado")))),
+  );
+}
+
 function desenharPeca(item: Peca, textos: Textos): HTMLElement {
   const uso = usoPorCodigo(item.trocas);
-  const total =
+  const total: Filho[] =
     item.quantidadeTotal === null
-      ? `contadas em ${juntarComE([...new Set(item.trocas.map((t) => nomeDaUnidade(t.unidade)))])}, por isso sem soma`
-      : `${comUnidade(item.quantidadeTotal, item.trocas[0].unidade)} no total`;
+      ? ["sem soma", h("span", { class: "nota" }, `contadas em ${juntarComE([...new Set(item.trocas.map((t) => nomeDaUnidade(t.unidade)))])}`)]
+      : [comUnidade(item.quantidadeTotal, item.trocas[0].unidade)];
+  const celula = (rotulo: string, ...valor: Filho[]) => h("div", {}, h("dt", {}, rotulo), h("dd", {}, ...valor));
   return h(
     "li",
     {
@@ -252,8 +270,13 @@ function desenharPeca(item: Peca, textos: Textos): HTMLElement {
       "data-codigos": String(item.codigosUsadosAqui.length),
     },
     h("h3", {}, item.grupo.rotulo),
-    h("p", { class: "resumo" }, `Trocada ${contagem(item.trocas.length, "vez", "vezes")}`, h("span", { class: "ponto" }, ", "), h("span", {}, total)),
-    h("p", { class: "quando" }, `Última troca em ${dataBR(item.ultimaTroca)}`),
+    h(
+      "dl",
+      { class: "ficha" },
+      celula("Trocada", contagem(item.trocas.length, "vez", "vezes")),
+      celula("No total", ...total),
+      celula("Última troca", dataBR(item.ultimaTroca)),
+    ),
     ondeTem(item),
     h(
       "details",
@@ -306,6 +329,22 @@ function cabecalhoDaMaquina(equipamento: Equipamento): HTMLElement {
   );
 }
 
+/** A conta da seção em uma frase: quantas peças, quantas trocas e quantas estão guardadas com outro código. */
+function resumoDasPecas(pecas: readonly Peca[]): HTMLElement {
+  const trocas = pecas.reduce((soma, p) => soma + p.trocas.length, 0);
+  const comOutro = pecas.filter((p) => p.saldoSobOutroCodigo.some((s) => s.quantidade > 0)).length;
+  const partes = [contagem(pecas.length, "peça", "peças"), contagem(trocas, "troca", "trocas")];
+  const outro =
+    comOutro === 0
+      ? ""
+      : pecas.length === 1
+        ? " Ela tem estoque guardado com outro código."
+        : comOutro === 1
+          ? " Uma delas tem estoque guardado com outro código."
+          : ` ${comOutro === pecas.length ? `As ${comOutro}` : comOutro} têm estoque guardado com outro código.`;
+  return h("p", { class: "explica" }, `${partes.join(", ")}.${outro}`);
+}
+
 export function desenharHistorico(achado: Achado): Filho[] {
   const textos: Textos = new Map(achado.textos.map((t) => [t.codigo, t]));
   const { equipamento, itens } = achado.historico;
@@ -317,7 +356,13 @@ export function desenharHistorico(achado: Achado): Filho[] {
     h("div", { id: "avisos", role: "status" }),
     itens.length === 0 && h("p", { class: "vazio" }, "Nenhuma troca registrada nesta máquina."),
     pecas.length > 0 &&
-      h("section", { class: "pecas" }, h("h2", {}, "Peças trocadas nesta máquina"), h("ul", {}, ...pecas.map((p) => desenharPeca(p, textos)))),
+      h(
+        "section",
+        { class: "pecas" },
+        h("h2", {}, "Peças trocadas nesta máquina"),
+        resumoDasPecas(pecas),
+        h("ul", {}, ...pecas.map((p) => desenharPeca(p, textos))),
+      ),
     semChave.length > 0 &&
       h(
         "section",

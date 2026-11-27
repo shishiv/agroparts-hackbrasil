@@ -1,76 +1,64 @@
 @import "../inicio/base.css";
 
 /*
- * Página da máquina, pensada para quem está na frente dela com o celular: o nome da máquina,
- * os botões de foto e voz, e uma ficha por peça que responde primeiro quantas trocas houve
- * e onde a peça está guardada. O resto fica dentro da ficha, para abrir quando precisar.
+ * Página da máquina. Para quem está de pé ao lado dela: o nome, os botões de foto e voz, e cada
+ * peça como uma linha de dados com fios finos. A linha responde quantas trocas houve e onde a peça
+ * está guardada; estoque por código, textos originais e trocas abrem a pedido.
  */
 
 .maquina {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(7rem, 22vw, 17rem);
-  grid-template-areas:
-    "dados placa"
-    "nome placa";
-  align-items: end;
-  column-gap: clamp(1rem, 4vw, 3rem);
-  padding-block: clamp(1.25rem, 4vw, 3rem) clamp(1rem, 2vw, 1.5rem);
-}
-
-.maquina h1 {
-  grid-area: nome;
-  margin: 0;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: var(--e-2);
+  padding-block: var(--e-6) var(--e-5);
 }
 
 .maquina p {
-  grid-area: dados;
-  margin: 0 0 0.375rem;
   color: var(--apoio);
 }
 
 .maquina .placa {
-  grid-area: placa;
-  align-self: center;
+  display: none;
 }
 
-h2 {
-  margin: clamp(1.75rem, 4vw, 2.75rem) 0 0.875rem;
-}
+@media (min-width: 40rem) {
+  .maquina {
+    grid-template-columns: minmax(0, 1fr) clamp(9rem, 18vw, 14rem);
+    grid-template-areas:
+      "dados placa"
+      "nome placa";
+    column-gap: var(--vao);
+    align-items: end;
+  }
 
-h3 {
-  margin: 0;
-  font-size: 1.125rem;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-}
+  .maquina p {
+    grid-area: dados;
+  }
 
-h4 {
-  margin: 0;
-  color: var(--apoio);
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.4;
-  letter-spacing: 0;
+  .maquina h1 {
+    grid-area: nome;
+  }
+
+  .maquina .placa {
+    display: block;
+    grid-area: placa;
+    align-self: center;
+  }
 }
 
 ul,
 ol {
   display: grid;
-  gap: 0.75rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-p {
-  margin: 0.25rem 0;
-}
-
-/* Os botões de foto e de voz: brancos, com o ícone do que fazem, lado a lado no celular. */
+/* Foto e voz: dois botões de contorno, com o ícone do que fazem, lado a lado. */
 .entradas {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.625rem;
+  gap: var(--e-2);
 }
 
 .entradas > section {
@@ -79,20 +67,19 @@ p {
 
 .entradas > section:has(form, p) {
   flex-basis: 100%;
-  padding: 1rem;
+  padding: var(--e-4);
   border: 1px solid var(--linha);
-  border-radius: 0.875rem;
-  background: var(--superficie);
+  border-radius: 0.5rem;
 }
 
 .entradas section button {
   width: 100%;
-  padding-inline: 0.75rem;
+  padding-inline: var(--e-3);
   line-height: 1.2;
 }
 
 .entradas section p {
-  margin: 0.75rem 0;
+  margin: var(--e-3) 0;
 }
 
 .entradas section > :first-child {
@@ -105,104 +92,93 @@ p {
 
 .entradas section form button {
   width: auto;
-  padding-inline: 1.375rem;
+  padding-inline: 1.25rem;
 }
 
 @media (min-width: 48rem) {
   .entradas > section {
-    flex: 0 1 16rem;
+    flex: 0 1 14rem;
   }
 }
 
-/* A ficha de cada peça. */
-.pecas > ul {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr));
-  align-items: start;
-}
-
+/* As peças: uma linha por peça, separadas por fio fino; o fio escuro da seção fica em cima de todas. */
+.pecas > ul,
 .sem-chave-lista > ul {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
-  align-items: start;
+  gap: 0;
 }
 
-.peca,
-.sem-chave {
+.peca {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: var(--e-3);
   scroll-margin-top: 4.5rem;
-  padding: 1rem 1rem 0.25rem;
-  border: 1px solid var(--linha);
-  border-radius: 0.875rem;
-  background: var(--superficie);
-  transition:
-    border-color 0.3s,
-    box-shadow 0.3s;
+  padding-block: var(--e-5);
+  border-top: 1px solid var(--linha);
+  transition: background-color 0.4s;
 }
 
-.sem-chave h3 {
-  font: 600 1.125rem/1.3 var(--mono);
-  letter-spacing: 0;
+.peca:first-child {
+  padding-top: var(--e-1);
+  border-top: 0;
 }
 
-/* A peça que a foto ou a voz acabou de achar: borda escura, sem cor de enfeite. */
+/* A peça que a foto ou a voz acabou de achar: um fio escuro à esquerda, sem cor de enfeite. */
 .peca.destaque {
-  border-color: var(--texto);
-  box-shadow: 0 0 0 1px var(--texto);
+  margin-inline: calc(-1 * var(--e-3));
+  padding-inline: calc(var(--e-3) - 2px) var(--e-3);
+  border-left: 2px solid var(--texto);
+  background: var(--poco);
 }
 
-.resumo {
-  margin: 0.375rem 0 0.125rem;
-  font-size: 1.3125rem;
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+/* A ficha: três células de dado, rótulo pequeno em cima e valor embaixo, separadas por fio. */
+.ficha {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
 }
 
-/* A conta em duas linhas: quantas vezes foi trocada, e embaixo o total ou por que não há soma. */
-.resumo .ponto {
-  display: none;
+.ficha > div {
+  padding-inline: var(--e-3);
+  border-left: 1px solid var(--linha);
 }
 
-.resumo span:not(.ponto) {
-  display: block;
-  margin-top: 0.125rem;
-  font-size: 1.0625rem;
-  font-weight: 500;
-  letter-spacing: 0;
+.ficha > div:first-child {
+  padding-left: 0;
+  border-left: 0;
 }
 
-.peca:not([data-total]) .resumo span:not(.ponto) {
+.ficha dt {
   color: var(--apoio);
+  font-size: var(--t-r1);
+  line-height: 1.4;
+}
+
+.ficha dd {
+  margin: var(--e-1) 0 0;
+  font-weight: 500;
+  line-height: 1.3;
+  overflow-wrap: normal;
+}
+
+.ficha .nota {
+  display: block;
+  color: var(--apoio);
+  font-size: var(--t-r1);
   font-weight: 400;
 }
 
-.peca > .quando span {
-  white-space: nowrap;
-}
-
-.peca > .quando,
-.sem-chave > p:not([class]) {
-  color: var(--apoio);
-}
-
-/* Onde tem a peça: a resposta da ficha. Verde claro quando está guardada, cinza quando não tem. */
+/* Onde tem: a única cor da página. A trilha mostra os códigos sem estoque e o código que tem. */
 .onde {
-  margin: 0.875rem 0 0;
-  padding: 0.75rem 0.875rem;
-  border: 1px solid var(--linha);
-  border-radius: 0.625rem;
-  background: var(--poco);
+  display: grid;
+  gap: var(--e-3);
 }
 
 p.onde {
   color: var(--apoio);
 }
 
-div.onde {
-  border-color: var(--tem-borda);
-  background: var(--tem-claro);
-}
-
 .onde ul {
-  gap: 0.625rem;
+  gap: var(--e-3);
 }
 
 .onde li {
@@ -210,13 +186,12 @@ div.onde {
   padding-left: 1rem;
 }
 
-/* O ponto verde de "tem", antes de cada endereço. */
 .onde li::before {
   position: absolute;
   top: 0.5625rem;
   left: 0;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.4375rem;
+  height: 0.4375rem;
   border-radius: 50%;
   background: var(--tem);
   content: "";
@@ -233,6 +208,88 @@ div.onde {
   color: var(--apoio);
 }
 
+.trilha,
+.trilha-de,
+.trilha-alvo,
+.trilha-para {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-2);
+}
+
+.trilha-alvo {
+  flex-wrap: nowrap;
+}
+
+/* A linha que leva dos códigos desta máquina ao código que tem a peça. */
+.trilha-seta {
+  position: relative;
+  flex: 0 0 1.75rem;
+  height: 1px;
+  background: var(--tem);
+  transform-origin: left center;
+}
+
+.trilha-seta::after {
+  position: absolute;
+  top: -3px;
+  right: 0;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid var(--tem);
+  border-right: 1px solid var(--tem);
+  transform: rotate(45deg);
+  content: "";
+}
+
+/*
+ * A revelação, ao abrir a página: os códigos da máquina aparecem riscados, a linha corre até
+ * o código que tem a peça e ele acende. Menos de um segundo, e só uma vez.
+ */
+.trilha .chip.sem .chip-codigo {
+  animation: riscar 0.4s 0.25s both;
+}
+
+.trilha-seta {
+  animation: correr 0.45s 0.45s var(--suave) both;
+}
+
+.trilha .chip.achado {
+  animation: acender 0.5s 0.8s var(--suave) both;
+}
+
+.onde > ul {
+  animation: surgir 0.5s 0.95s var(--suave) both;
+}
+
+@keyframes riscar {
+  from {
+    text-decoration-color: transparent;
+  }
+}
+
+@keyframes correr {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes acender {
+  from {
+    border-color: var(--linha-forte);
+    color: var(--apoio);
+    opacity: 0.4;
+  }
+}
+
+@keyframes surgir {
+  from {
+    opacity: 0;
+    transform: translateY(0.25rem);
+  }
+}
+
 .texto-lido {
   white-space: pre-line;
 }
@@ -242,32 +299,76 @@ div.onde {
   color: var(--apoio);
 }
 
-.motivo {
-  margin-top: 0.375rem;
-}
-
-/* Estoque por código, dentro da ficha: linhas com régua fina, o código em mono. */
-.estoques {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 0.5rem;
-}
-
-.estoque h4 {
-  padding-bottom: 0.375rem;
-}
-
-.estoque ul {
-  gap: 0;
-}
-
-.estoque li {
-  padding: 0.625rem 0;
+/* O que abre a pedido: um fio, o rótulo e o sinal de mais, que vira um x quando abre. */
+details {
   border-top: 1px solid var(--linha);
 }
 
-.estoque strong {
+summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-4);
+  min-height: 2.875rem;
+  padding-block: var(--e-2);
+  font-weight: 500;
+  list-style: none;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--icone-abrir) center / 1rem no-repeat;
+  transition: transform 0.25s var(--suave);
+  content: "";
+}
+
+details[open] > summary::after {
+  transform: rotate(45deg);
+}
+
+details[open] {
+  padding-bottom: var(--e-3);
+}
+
+details h4 {
+  margin: var(--e-5) 0 var(--e-2);
+}
+
+.estoques {
+  display: grid;
+  gap: var(--e-5);
+  margin-top: var(--e-2);
+}
+
+.estoques h4 {
+  margin: 0 0 var(--e-2);
+}
+
+.estoque ul,
+.codigos,
+.trocas {
+  gap: 0;
+}
+
+.estoque li,
+.codigos li,
+.trocas li {
+  padding-block: var(--e-3);
+  border-top: 1px solid var(--linha);
+}
+
+.estoque strong,
+.codigos strong,
+.trocas strong {
   font-family: var(--mono);
+  font-weight: 400;
 }
 
 /* Código que o almoxarifado não tem: a linha fica em cor de apoio, só o código continua em tinta. */
@@ -279,112 +380,84 @@ div.onde {
   color: var(--texto);
 }
 
-details {
-  margin-top: 1rem;
-  border-top: 1px solid var(--linha);
-}
-
-summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  min-height: 3.25rem;
-  padding-block: 0.375rem;
-  font-weight: 600;
-  list-style: none;
-  cursor: pointer;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-/* O controle de abrir: a seta num círculo, que gira quando abre. */
-summary::after {
-  flex: none;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background: var(--icone-abrir) center / 1rem no-repeat, var(--poco);
-  box-shadow: inset 0 0 0 1px var(--linha);
-  transition: transform 0.25s var(--suave);
-  content: "";
-}
-
-details[open] > summary::after {
-  transform: rotate(180deg);
-}
-
-details[open] {
-  padding-bottom: 0.75rem;
-}
-
-details h4 {
-  margin: 1.5rem 0 0.375rem;
-}
-
-.estoques h4 {
-  margin-top: 0;
-}
-
-.codigos {
-  gap: 0;
-}
-
-.codigos li,
-.trocas li {
-  padding: 0.75rem 0;
-  border-top: 1px solid var(--linha);
-}
-
-.codigos strong,
-.trocas strong {
-  font-family: var(--mono);
-}
-
 .original:empty {
   display: none;
 }
 
 /* O texto do cadastro como veio do sistema antigo, num poço cinza; os trechos lidos marcados a marca-texto. */
 .original {
-  margin: 0.5rem 0;
-  padding: 0.625rem 0.75rem;
-  border-radius: 0.5rem;
+  margin: var(--e-2) 0;
+  padding: var(--e-2) var(--e-3);
+  border-radius: 0.375rem;
   background: var(--poco);
   color: var(--tinta-alta);
-  font-size: 1rem;
-  line-height: 1.55;
+  font-size: var(--t-r1);
+  line-height: 1.6;
 }
 
 .atributos {
   color: var(--apoio);
+  font-size: var(--t-r1);
 }
 
+/* O trecho que o motor leu: um traço de marca-texto embaixo, que não parece botão. */
 mark {
-  margin-inline: 0.0625rem;
-  padding: 0.0625rem 0.1875rem;
-  border-radius: 0.1875rem;
-  background: var(--realce);
+  padding-inline: 0.0625rem;
+  background: none;
+  box-shadow: inset 0 -0.42em var(--realce);
   color: var(--texto);
+  font-weight: 600;
 }
 
-.trocas {
-  gap: 0;
+.trocas li p + p {
+  font-size: var(--t-r1);
 }
 
-/* O retorno da foto e da voz: uma ficha branca logo abaixo dos botões. */
+/* Trocas sem peça identificada: fichas lado a lado, com fio fino. */
+.sem-chave {
+  display: grid;
+  align-content: start;
+  gap: var(--e-2);
+  padding-block: var(--e-4);
+  border-top: 1px solid var(--linha);
+}
+
+.sem-chave:first-child {
+  padding-top: var(--e-1);
+  border-top: 0;
+}
+
+.sem-chave h3 {
+  font: 400 var(--t-1) / 1.3 var(--mono);
+  letter-spacing: 0;
+}
+
+.sem-chave > p:not([class]) {
+  color: var(--apoio);
+}
+
+@media (min-width: 48rem) {
+  .sem-chave-lista > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--vao);
+  }
+
+  .sem-chave:nth-child(2) {
+    padding-top: var(--e-1);
+    border-top: 0;
+  }
+}
+
+/* O retorno da foto e da voz, logo abaixo dos botões. */
 .aviso {
-  margin: 1rem 0 0;
-  padding: 1rem;
+  margin-top: var(--e-4);
+  padding: var(--e-4);
   border: 1px solid var(--linha);
-  border-radius: 0.875rem;
-  background: var(--superficie);
+  border-radius: 0.5rem;
 }
 
 .aviso p {
-  margin: 0 0 0.5rem;
+  margin: 0 0 var(--e-2);
 }
 
 .aviso p:last-child {
@@ -392,85 +465,75 @@ mark {
 }
 
 .aviso .estoque {
-  margin-top: 0.5rem;
+  margin-top: var(--e-2);
 }
 
 .vazio {
-  margin-top: 2rem;
+  margin-top: var(--e-6);
   color: var(--apoio);
 }
 
-/* Carregando, máquina não encontrada e erro de rede. */
+/* Carregando, máquina não encontrada e erro de rede: uma coluna estreita com o fio da seção em cima. */
 .estado {
   display: grid;
   align-content: start;
   grid-template-columns: minmax(0, 1fr);
-  gap: 1rem;
+  gap: var(--e-3);
   justify-items: start;
+  max-width: 34rem;
   min-height: 55dvh;
-  padding-block: clamp(2rem, 6vw, 5rem) 2rem;
-}
-
-.estado h1 {
-  margin: 0;
+  padding-top: var(--e-7);
 }
 
 .estado p {
-  margin: 0;
   color: var(--apoio);
 }
 
 .estado form.numero {
   width: 100%;
-  margin-top: 0.5rem;
+  margin-top: var(--e-4);
+  padding-top: var(--e-3);
+  border-top: 1px solid var(--regua);
 }
 
 /*
- * No computador, cada peça vira uma linha de painel: o nome e as trocas à esquerda, onde tem à direita.
- * Aberta, a ficha põe os códigos e as trocas lado a lado, para o texto do cadastro não virar uma linha de 1200 px.
+ * No computador, a linha da peça ocupa as colunas de conteúdo: o nome, a ficha e onde tem lado a lado.
+ * Aberta, a linha põe o estoque, os códigos e as trocas em duas colunas de leitura.
  */
 @media (min-width: 64rem) {
-  .pecas > ul {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   .peca {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-rows: auto auto 1fr;
-    column-gap: clamp(2rem, 4vw, 4rem);
+    grid-template-columns: minmax(0, 2.5fr) minmax(0, 4.5fr) minmax(0, 5fr);
+    column-gap: var(--vao);
     align-items: start;
-    padding: 1.5rem 1.5rem 0.25rem;
   }
 
-  .peca > h3,
-  .peca > .resumo,
-  .peca > .quando {
+  .peca > h3 {
     grid-column: 1;
   }
 
-  .peca > .onde {
+  .peca > .ficha {
     grid-column: 2;
-    grid-row: 1 / 4;
-    margin-top: 0;
+  }
+
+  .peca > .onde {
+    grid-column: 3;
   }
 
   .peca > details {
     grid-column: 1 / -1;
-    margin-top: 1.25rem;
   }
 
   .peca > details[open]::details-content {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    column-gap: clamp(2rem, 4vw, 4rem);
+    column-gap: var(--e-6);
     align-items: start;
   }
 
   .peca .estoques {
     grid-column: 1 / -1;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    column-gap: clamp(2rem, 4vw, 4rem);
+    column-gap: var(--e-6);
   }
 
   .peca details > h4:nth-of-type(1),
@@ -478,11 +541,13 @@ mark {
     grid-column: 1;
   }
 
-  .peca details > h4:nth-of-type(1) {
+  .peca details > h4:nth-of-type(1),
+  .peca details > h4:nth-of-type(2) {
     grid-row: 2;
   }
 
-  .peca details > .codigos {
+  .peca details > .codigos,
+  .peca details > .trocas {
     grid-row: 3;
   }
 
@@ -490,35 +555,24 @@ mark {
   .peca details > .trocas {
     grid-column: 2;
   }
-
-  .peca details > h4:nth-of-type(2) {
-    grid-row: 2;
-  }
-
-  .peca details > .trocas {
-    grid-row: 3;
-  }
 }
 
-/* No celular a placa do topo ficaria pequena demais para ler; o número já está na linha de dados. */
+/* No celular os botões dividem a largura: o ícone sobe para o texto caber numa linha. */
 @media (max-width: 29.99rem) {
-  /* Os dois botões dividem a largura: o ícone sobe para o texto caber numa linha. */
   .entradas > section > button:only-child,
   .entrada-foto > button:first-child {
     flex-direction: column;
     gap: 0.25rem;
-    min-height: 4rem;
-    padding-block: 0.5rem;
+    min-height: 3.75rem;
+    padding-block: var(--e-2);
   }
+}
 
-  .maquina {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-      "dados"
-      "nome";
-  }
-
-  .maquina .placa {
-    display: none;
+@media (prefers-reduced-motion: reduce) {
+  .trilha .chip.sem .chip-codigo,
+  .trilha-seta,
+  .trilha .chip.achado,
+  .onde > ul {
+    animation: none;
   }
 }

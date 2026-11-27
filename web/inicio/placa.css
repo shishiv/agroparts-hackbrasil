@@ -1,66 +1,68 @@
 @import "./base.css";
 
-/* Página inicial: a marca, o campo do número e as placas para tocar, cada uma numa ficha branca. */
+/*
+ * Página inicial. No celular: a marca, o campo do número e as placas uma embaixo da outra.
+ * No computador: grade de 12 colunas, assimétrica. A marca e o campo nas colunas 1 a 4,
+ * as placas nas colunas 6 a 12, a placa principal maior que as outras duas.
+ */
 .palco {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   align-content: start;
-  gap: 1.5rem;
-  padding-top: 1.25rem;
+  gap: var(--e-6);
+  padding-top: var(--e-5);
 }
 
 .palco > h1 {
-  margin: 0;
-  font-size: 1.75rem;
+  font-size: var(--t-2);
   font-stretch: 108%;
   font-weight: 650;
-  line-height: 1;
   letter-spacing: -0.03em;
 }
 
 /* O quadrado amarelo da placa antes da marca, o mesmo da barra do topo nas outras páginas. */
 .palco > h1::before {
   display: inline-block;
-  width: 0.78em;
-  height: 0.78em;
-  margin-right: 0.36em;
-  vertical-align: -0.06em;
-  border-radius: 0.18em;
+  width: 0.7em;
+  height: 0.7em;
+  margin-right: 0.3em;
+  vertical-align: -0.04em;
+  border-radius: 0.15em;
   background: var(--marca);
   box-shadow: inset 0 0 0 1px var(--marca-borda);
   content: "";
 }
 
 .palco > form {
-  padding: 1rem;
-  border: 1px solid var(--linha);
-  border-radius: 0.875rem;
-  background: var(--superficie);
+  padding-top: var(--e-3);
+  border-top: 1px solid var(--regua);
 }
 
 .toque {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 0.75rem;
+  gap: var(--e-3);
   align-items: start;
-}
-
-.toque h2 {
-  margin: 0.25rem 0 0;
+  padding-top: var(--e-3);
+  border-top: 1px solid var(--regua);
 }
 
 .aviso-demo {
-  margin: -0.5rem 0 0.25rem;
+  margin-bottom: var(--e-2);
   color: var(--apoio);
 }
 
+/* Cada placa é um objeto sobre um fundo calmo, com a legenda numa linha embaixo, como numa ficha de catálogo. */
 .placa-toque {
   position: relative;
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
+  align-items: stretch;
   width: 100%;
-  padding: 0.75rem 0.75rem 0;
+  padding: 0;
+  overflow: hidden;
   border: 1px solid var(--linha);
-  border-radius: 0.875rem;
+  border-radius: 0.625rem;
   background: var(--superficie);
   color: inherit;
   font: inherit;
@@ -68,26 +70,37 @@
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition:
-    transform 0.5s var(--suave),
-    box-shadow 0.3s,
     border-color 0.3s,
+    box-shadow 0.4s var(--suave),
     opacity 0.35s;
   animation: chegar 0.7s var(--suave) both;
-  animation-delay: calc(var(--ordem, 0) * 90ms + 80ms);
+  animation-delay: calc(var(--ordem, 0) * 80ms + 60ms);
+}
+
+.placa-toque > svg {
+  box-sizing: content-box;
+  width: calc(100% - 2 * var(--e-4));
+  padding: var(--e-4);
+  background: var(--poco);
+  transition:
+    transform 0.6s var(--suave),
+    background-color 0.4s;
 }
 
 .placa-toque:focus-visible {
   outline-offset: 3px;
 }
 
-/* O brilho do metal, que segue o ponteiro. Fica só sobre o desenho, com o mesmo canto da placa. */
+/* O brilho do metal, que segue o ponteiro. Fica só sobre o desenho. */
 .placa-toque::before {
   position: absolute;
-  inset: 0.75rem 0.75rem auto;
+  top: var(--e-4);
+  left: var(--e-4);
+  width: calc(55% - 2 * var(--e-4));
   z-index: 1;
   aspect-ratio: 320 / 132;
   border-radius: 3.125% / 7.58%;
-  background: radial-gradient(circle at var(--luz-x, 30%) var(--luz-y, 20%), rgb(255 255 255 / 0.7), transparent 42%);
+  background: radial-gradient(circle at var(--luz-x, 30%) var(--luz-y, 20%), rgb(255 255 255 / 0.75), transparent 42%);
   mix-blend-mode: overlay;
   opacity: 0;
   transition: opacity 0.3s;
@@ -95,16 +108,18 @@
   pointer-events: none;
 }
 
-/* A legenda: o nome da máquina, a tag ao lado em cor de apoio, e a seta para a direita, de abrir a página. */
+/* A legenda: o nome da máquina, a tag ao lado em cor de apoio, e a seta de abrir no fim. */
 .legenda {
   display: block;
-  min-height: 3rem;
-  margin: 0.625rem -0.75rem 0;
-  padding: 0.75rem 2.25rem 0.75rem 0.75rem;
-  border-top: 1px solid var(--linha);
-  background: var(--icone-seguir) right 0.875rem center / 1rem no-repeat;
+  align-self: center;
+  padding: var(--e-3) 2.25rem var(--e-3) var(--e-4);
+  background: var(--icone-seguir) right var(--e-3) center / 1rem no-repeat;
   color: var(--texto);
   line-height: 1.35;
+}
+
+.legenda .setor {
+  color: var(--apoio);
 }
 
 .legenda .nome {
@@ -114,13 +129,16 @@
 .legenda .tag {
   margin-left: 0.25rem;
   color: var(--apoio);
+  white-space: nowrap;
 }
 
 @media (hover: hover) {
   .placa-toque:hover {
     border-color: var(--linha-forte);
-    box-shadow: 0 6px 20px rgb(24 33 28 / 0.07);
-    transform: translateY(-0.125rem);
+  }
+
+  .placa-toque:hover > svg {
+    transform: translateY(-0.1875rem);
   }
 
   .placa-toque:hover::before {
@@ -128,18 +146,30 @@
   }
 }
 
-.placa-toque:active {
-  transform: scale(0.99);
+.placa-toque:active > svg {
+  transform: scale(0.985);
 }
 
-/* A leitura: a ficha tocada ganha a borda escura, as outras apagam. */
+/*
+ * O toque: a placa tocada fica em evidência, as outras recuam, a linha de leitura corre no metal,
+ * as ondas da tag pulsam e a legenda diz o que está acontecendo.
+ */
 .toque:not([data-estado="parado"]) .placa-toque:not([data-lendo]) {
-  opacity: 0.4;
+  opacity: 0.35;
 }
 
 .placa-toque[data-lendo] {
   border-color: var(--texto);
-  box-shadow: 0 0 0 1px var(--texto);
+  box-shadow: 0 0 0 1px var(--texto), 0 18px 40px -18px rgb(22 29 25 / 0.35);
+}
+
+.placa-toque[data-lendo] > svg {
+  transform: translateY(-0.25rem);
+}
+
+.toque[data-estado="lida"] .placa-toque[data-lendo] .legenda {
+  color: var(--tem);
+  font-weight: 600;
 }
 
 .placa-toque[data-lendo] path.onda-nfc {
@@ -165,7 +195,7 @@
 @keyframes chegar {
   from {
     opacity: 0;
-    transform: translateY(1rem);
+    transform: translateY(0.75rem);
   }
 }
 
@@ -195,46 +225,188 @@
   }
 }
 
-@media (min-width: 40rem) {
-  .toque {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 1rem;
-    row-gap: 1rem;
-  }
-
-  .toque h2,
-  .aviso-demo {
-    grid-column: 1 / -1;
-  }
-
-  .toque .placa-toque:first-of-type {
-    grid-column: 1 / -1;
-  }
-}
-
-/* No computador: a marca, o campo embaixo dela e as três placas lado a lado, alinhados com o rodapé. */
 @media (min-width: 64rem) {
   .palco {
-    row-gap: 2rem;
-    padding-block: clamp(2.5rem, 8vh, 5rem) 4rem;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: auto auto 1fr;
+    align-items: start;
+    column-gap: var(--vao);
+    row-gap: var(--e-6);
+    padding-top: var(--e-7);
+  }
+
+  .palco > h1,
+  .palco > form {
+    grid-column: 1 / 6;
   }
 
   .palco > h1 {
-    font-size: 2.5rem;
+    grid-row: 1;
+    font-size: var(--t-3);
   }
 
   .palco > form {
-    width: min(100%, 34rem);
-    padding: 1.25rem;
+    grid-row: 2;
+  }
+
+  .palco > .historia {
+    grid-column: 1 / 6;
+    grid-row: 3;
+    margin-top: var(--e-4);
   }
 
   .palco > .toque {
-    margin-top: 1rem;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-column: 7 / -1;
+    grid-row: 1 / -1;
   }
 
-  .toque .placa-toque:first-of-type {
-    grid-column: auto;
+  .palco > .toque {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: var(--vao);
+  }
+
+  .toque .placa-toque {
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  }
+
+  .toque .placa-toque::before {
+    width: calc(40% - 2 * var(--e-4));
+  }
+
+  .aviso-demo {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: var(--t-r1);
+  }
+}
+
+/*
+ * A história: três passos, um por linha, com o desenho dos códigos à esquerda e a frase à direita.
+ * No celular fica depois das placas; no computador, na coluna da esquerda, embaixo do campo.
+ * Os passos aparecem quando a rolagem chega neles.
+ */
+.historia {
+  display: grid;
+  gap: var(--e-4);
+  margin-top: var(--e-5);
+  padding-top: var(--e-3);
+  border-top: 1px solid var(--regua);
+}
+
+.historia[hidden] {
+  display: none;
+}
+
+.passos {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.passo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: var(--e-1);
+  padding-block: var(--e-4);
+  border-top: 1px solid var(--linha);
+}
+
+.passo:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.passo-desenho {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--e-2);
+}
+
+.passo h3 {
+  font-size: var(--t-0);
+}
+
+@media (min-width: 30rem) {
+  .passo {
+    grid-template-columns: 9.5rem minmax(0, 1fr);
+    column-gap: var(--vao);
+  }
+
+  .passo-desenho {
+    grid-row: 1 / span 3;
+    align-items: flex-start;
+    margin: 0.125rem 0 0;
+  }
+
+  .passo > :not(.passo-desenho) {
+    grid-column: 2;
+  }
+}
+
+.trilha-de,
+.trilha-para {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+}
+
+.passo p {
+  color: var(--apoio);
+}
+
+.seguir {
+  justify-self: start;
+  margin-top: var(--e-2);
+  padding: var(--e-2) 1.5rem var(--e-2) 0;
+  background: var(--icone-seguir) right center / 1rem no-repeat;
+  color: var(--texto);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--linha-forte);
+  text-underline-offset: 0.25em;
+}
+
+.seguir:hover {
+  text-decoration-color: currentColor;
+}
+
+/* A rolagem só revela; ela continua sendo da pessoa. */
+.historia[data-rolagem] .passo {
+  opacity: 0;
+  transform: translateY(0.75rem);
+  transition:
+    opacity 0.6s var(--suave),
+    transform 0.6s var(--suave);
+}
+
+.historia[data-rolagem] .passo[data-visto] {
+  opacity: 1;
+  transform: none;
+}
+
+.historia[data-rolagem] .passo[data-visto] .chip.sem .chip-codigo {
+  animation: riscar 0.5s 0.35s both;
+}
+
+.historia[data-rolagem] .passo[data-visto] .chip.achado {
+  animation: achar 0.6s 0.3s var(--suave) both;
+}
+
+@keyframes riscar {
+  from {
+    text-decoration-color: transparent;
+  }
+}
+
+@keyframes achar {
+  from {
+    border-color: var(--linha-forte);
+    color: var(--apoio);
+    transform: scale(0.96);
   }
 }
 
@@ -243,8 +415,9 @@
     animation: none;
   }
 
-  .placa-toque:hover,
-  .placa-toque:active {
+  .placa-toque:hover > svg,
+  .placa-toque:active > svg,
+  .placa-toque[data-lendo] > svg {
     transform: none;
   }
 

@@ -16,11 +16,13 @@ export const TEMPOS_DO_TOQUE: Tempos = { lendoMs: 600, lidaMs: 500 };
 
 type Estado = "parado" | "lendo" | "lida";
 
-/** A legenda da placa: o nome da máquina primeiro, a tag dela depois. */
+/** A legenda da placa: o nome da máquina, a tag dela ao lado e o setor embaixo. */
 const legendaDe = (equipamento: Equipamento): Node[] => [
   h("span", { class: "nome" }, equipamento.nome),
   document.createTextNode(" "),
   h("span", { class: "tag" }, equipamento.tag),
+  h("br"),
+  h("span", { class: "setor" }, `setor ${equipamento.area}`),
 ];
 
 /**
