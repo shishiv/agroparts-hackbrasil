@@ -75,7 +75,7 @@ export function montarToque(ir: Ir, tempos: Tempos = TEMPOS_DO_TOQUE): HTMLEleme
   });
 
   secao.append(
-    h("h2", {}, "Ou toque numa placa"),
+    h("h2", {}, "Toque numa placa"),
     h("p", { class: "aviso-demo" }, AVISO_DA_DEMONSTRACAO),
     ...placas.map(({ botao }) => botao),
   );

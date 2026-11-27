@@ -23,38 +23,52 @@
   src: url("/fontes/ibm-plex-mono-600.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fontes/instrument-serif-400.woff2") format("woff2");
+}
+
 /*
- * Sistema do site: página branca, grade de 12 colunas, fios finos no lugar de caixas.
- * Tipografia numa escala fluida de razão 1,2 (de 360 a 1440 px): a hierarquia vem do peso,
- * da cor e do espaço, não do tamanho. A cor de estado só aparece no "tem no almoxarifado".
- * O amarelo fica no quadrado da marca e no marca-texto dos trechos lidos. Mono só nos códigos.
+ * A casca de painel da AgroParts: fundo creme quente, verde-escuro como cor principal e quase
+ * nenhuma outra cor. Títulos numa serifada de exibição, texto em Archivo, números tabulares.
+ * O âmbar marca só o que pede atenção; o amarelo fica no quadrado da marca e no marca-texto.
  */
 :root {
   color-scheme: light;
-  --fundo: #ffffff;
-  --superficie: #ffffff;
-  --poco: #f4f5f4;
-  --linha: #e5e8e6;
-  --linha-forte: #c9cfcb;
-  --regua: #1b231e;
-  --texto: #161d19;
-  --apoio: #59635e;
-  --tinta: #1b231e;
-  --tinta-alta: #333f38;
+  --fundo: #f6f5ef;
+  --lateral: #f0efe7;
+  --superficie: #fcfbf7;
+  --poco: #efeee6;
+  --linha: #e2e0d5;
+  --linha-forte: #cbc8ba;
+  --texto: #1f2823;
+  --apoio: #5a625c;
+  --verde: #2e5a43;
+  --verde-alto: #234835;
+  --verde-claro: #e3eadf;
+  --verde-medio: #c9d6c4;
+  --tinta: #2e5a43;
+  --tinta-alta: #23483a;
+  --ambar: #8a4f0c;
+  --ambar-claro: #f5e8d4;
   --marca: #ffd21a;
   --marca-borda: #e5b700;
-  --realce: #fff0a3;
-  --tem: #1b6e45;
-  --tem-claro: #eef6f1;
-  --tem-borda: #cde3d6;
-  --alerta: #c4320e;
+  --realce: #fbe7a1;
+  --tem: #2e6a47;
+  --tem-claro: #e8f0e7;
+  --tem-borda: #c6d9c6;
+  --alerta: #b3381a;
+  --regua: #1f2823;
 
   --t-r1: 1rem;
   --t-0: clamp(1rem, 0.979rem + 0.093vw, 1.0625rem);
   --t-1: clamp(1.125rem, 1.083rem + 0.185vw, 1.25rem);
   --t-2: clamp(1.3125rem, 1.25rem + 0.278vw, 1.5rem);
   --t-3: clamp(1.5rem, 1.396rem + 0.463vw, 1.8125rem);
-  --t-4: clamp(1.75rem, 1.604rem + 0.648vw, 2.1875rem);
+  --t-titulo: clamp(2.375rem, 2.1rem + 1.1vw, 3.125rem);
 
   --e-1: 0.25rem;
   --e-2: 0.5rem;
@@ -62,17 +76,19 @@
   --e-4: 1rem;
   --e-5: 1.5rem;
   --e-6: 2rem;
-  --e-7: clamp(2.5rem, 2rem + 2vw, 4rem);
+  --e-7: clamp(2.5rem, 2rem + 2vw, 3.5rem);
 
   --margem: clamp(1rem, 0.6rem + 1.8vw, 2.5rem);
   --vao: clamp(1rem, 0.8rem + 0.6vw, 1.5rem);
   --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --suave: cubic-bezier(0.22, 1, 0.36, 1);
   --icone-camera: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 8h3l1.5-2h7L17 8h3v11H4z'/%3E%3Ccircle cx='12' cy='13' r='3.5'/%3E%3C/svg%3E");
   --icone-microfone: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='3' width='6' height='11' rx='3'/%3E%3Cpath d='M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21'/%3E%3C/svg%3E");
-  --icone-seguir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 11.5l7-7M6 4.5h5.5V10' fill='none' stroke='%23161d19' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  --icone-abrir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 3v10M3 8h10' fill='none' stroke='%23161d19' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  --icone-seguir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4' fill='none' stroke='%232e5a43' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --icone-seguir-branco: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --icone-abrir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 3v10M3 8h10' fill='none' stroke='%231f2823' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 /* No computador, os rótulos descem um passo da escala; no celular ficam em 16 px. */
@@ -93,8 +109,6 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   min-height: 100dvh;
   margin: 0;
   background: var(--fundo);
@@ -107,9 +121,10 @@ body {
 }
 
 main {
-  flex: 1;
+  display: block;
   width: 100%;
-  padding: 0 var(--margem) var(--e-7);
+  max-width: 84rem;
+  padding: var(--e-6) var(--margem) var(--e-7);
 }
 
 h1,
@@ -118,15 +133,13 @@ h3,
 h4 {
   margin: 0;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
   text-wrap: balance;
 }
 
 h1 {
-  font-size: var(--t-4);
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.025em;
+  font: 400 var(--t-titulo) / 1.05 var(--serif);
+  letter-spacing: -0.01em;
 }
 
 h2 {
@@ -154,101 +167,531 @@ strong {
   font-weight: 600;
 }
 
-/* A frase que explica a seção em palavras do dia a dia. */
+a {
+  color: inherit;
+}
+
+.so-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .explica {
-  max-width: 40rem;
+  max-width: 44rem;
   color: var(--apoio);
 }
 
-/*
- * Cabeçalho de seção, como numa página editorial: o fio escuro em cima e o título pequeno e firme.
- * No computador, o título ocupa a coluna de rótulos (1 a 3) e o conteúdo, as colunas 4 a 12.
- * Vale para as seções da página da máquina e do diagnóstico, que têm classes próprias.
- */
-:is(.secao-grade, .pecas, .sem-chave-lista, .secao) {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  row-gap: var(--e-4);
-  margin-top: var(--e-7);
-  padding-top: var(--e-3);
-  border-top: 1px solid var(--regua);
+/* O sobretítulo: no computador em caixa alta espaçada, como no painel de referência; no celular, em texto normal. */
+.sobre {
+  color: var(--apoio);
+  font-size: var(--t-r1);
+  font-weight: 500;
 }
 
 @media (min-width: 64rem) {
-  :is(.secao-grade, .pecas, .sem-chave-lista, .secao) {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    column-gap: var(--vao);
-    align-items: start;
-  }
-
-  :is(.secao-grade, .pecas, .sem-chave-lista, .secao) > h2,
-  :is(.secao-grade, .pecas, .sem-chave-lista, .secao) > .explica {
-    grid-column: 1 / 4;
-  }
-
-  :is(.secao-grade, .pecas, .sem-chave-lista, .secao) > h2 {
-    grid-row: 1;
-  }
-
-  :is(.secao-grade, .pecas, .sem-chave-lista, .secao) > .explica {
-    grid-row: 2;
-    font-size: var(--t-r1);
-  }
-
-  :is(.secao-grade, .pecas, .sem-chave-lista, .secao) > :not(h2, .explica) {
-    grid-column: 4 / -1;
-    grid-row: 1 / span 3;
+  .sobre {
+    font-size: 0.8125rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 }
 
-/* A barra do topo: a marca com o quadrado amarelo da placa, sobre o branco, com um fio fino embaixo. */
-.topo {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+/* --- A casca --- */
+
+.casca {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+}
+
+.lateral {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 40;
   display: flex;
-  align-items: center;
-  min-height: 3.25rem;
-  padding: 0 var(--margem);
-  border-bottom: 1px solid var(--linha);
-  background: rgb(255 255 255 / 0.92);
-  -webkit-backdrop-filter: saturate(1.4) blur(14px);
-  backdrop-filter: saturate(1.4) blur(14px);
+  flex-direction: column;
+  gap: var(--e-5);
+  width: min(19rem, 86vw);
+  padding: var(--e-5) var(--e-4);
+  overflow-y: auto;
+  border-right: 1px solid var(--linha);
+  background: var(--lateral);
+  transform: translateX(-102%);
+  transition: transform 0.3s var(--suave);
 }
 
-.topo a {
+[data-menu] .lateral {
+  transform: none;
+}
+
+[data-menu]::after {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgb(31 40 35 / 0.28);
+  content: "";
+}
+
+.marca {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  min-height: 2.75rem;
   color: var(--texto);
-  font: 650 var(--t-0) / 1 var(--sans);
-  font-stretch: 108%;
-  letter-spacing: -0.02em;
+  font: 400 1.875rem / 1 var(--serif);
+  letter-spacing: -0.01em;
   text-decoration: none;
 }
 
-.topo a::before,
 .marca::before {
-  width: 0.875rem;
-  height: 0.875rem;
-  border-radius: 0.1875rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.25rem;
   background: var(--marca);
   box-shadow: inset 0 0 0 1px var(--marca-borda);
   content: "";
 }
 
+.usina {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  padding: var(--e-3);
+  border: 1px solid var(--linha);
+  border-radius: 0.5rem;
+  background: var(--superficie);
+  line-height: 1.3;
+}
+
+.usina-sigla {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.375rem;
+  background: var(--verde-claro);
+  color: var(--verde);
+  font: 400 1.25rem / 1 var(--serif);
+}
+
+.usina strong,
+.usina span span {
+  display: block;
+}
+
+.usina span span {
+  color: var(--apoio);
+  font-size: var(--t-r1);
+}
+
+.lateral nav ul {
+  display: grid;
+  gap: 0.125rem;
+  margin: 0 0 var(--e-5);
+  padding: 0;
+  list-style: none;
+}
+
+.grupo {
+  margin: 0 0 var(--e-2) var(--e-2);
+  color: var(--apoio);
+  font-size: var(--t-r1);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lateral nav a {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  min-height: 2.5rem;
+  padding: var(--e-2) var(--e-2);
+  border-radius: 0.375rem;
+  color: var(--texto);
+  font-size: var(--t-r1);
+  text-decoration: none;
+}
+
+.lateral nav a:hover {
+  background: var(--poco);
+}
+
+.lateral nav a[aria-current] {
+  background: var(--verde-claro);
+  color: var(--verde-alto);
+  font-weight: 600;
+}
+
+.icone {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.maquinas .num {
+  flex: none;
+  width: 1.75rem;
+  color: var(--apoio);
+  font-family: var(--mono);
+}
+
+.maquinas .nome-maquina {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.maquinas .tag-maquina {
+  display: none;
+}
+
+/* A barra de cima: o menu (no celular), a trilha, o aviso de demonstração e a visita guiada. */
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  min-height: 3.5rem;
+  padding: 0 var(--margem);
+  border-bottom: 1px solid var(--linha);
+  background: rgb(246 245 239 / 0.94);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.abrir-menu {
+  display: grid;
+  font-size: 1rem;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-left: -0.625rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.375rem;
+  background: none;
+  color: var(--texto);
+  cursor: pointer;
+}
+
+.trilha {
+  flex: 1;
+  min-width: 0;
+}
+
+.trilha ol {
+  display: flex;
+  gap: var(--e-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--t-r1);
+  white-space: nowrap;
+}
+
+.trilha li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trilha li + li::before {
+  margin-right: var(--e-2);
+  color: var(--linha-forte);
+  content: "/";
+}
+
+.trilha li:not(:last-child) {
+  display: none;
+}
+
+.trilha li:last-child::before {
+  display: none;
+}
+
+.demonstracao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--apoio);
+  font-size: var(--t-r1);
+  white-space: nowrap;
+}
+
+.demonstracao::before {
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-radius: 50%;
+  background: var(--verde);
+  content: "";
+}
+
+.acao-visita {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  min-height: 2.75rem;
+  padding: 0 var(--e-2);
+  border: 0;
+  border-radius: 0.375rem;
+  background: none;
+  color: var(--texto);
+  font: 500 var(--t-r1) / 1 var(--sans);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.acao-visita:hover {
+  background: var(--poco);
+}
+
 .rodape {
   width: 100%;
-  margin-top: auto;
-  padding: var(--e-4) var(--margem) var(--e-5);
+  max-width: 84rem;
+  padding: var(--e-4) var(--margem) calc(var(--e-5) + 4.5rem);
   border-top: 1px solid var(--linha);
   color: var(--apoio);
   font-size: var(--t-r1);
 }
 
-.rodape p {
+/* As abas do celular, presas embaixo, como num aplicativo. */
+.abas {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 0.25rem 0 calc(0.25rem + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--linha);
+  background: rgb(252 251 247 / 0.97);
+}
+
+.abas a {
+  display: grid;
+  justify-items: center;
+  gap: 0.125rem;
+  min-height: 3.5rem;
+  padding: 0.375rem 0 0.25rem;
+  color: var(--apoio);
+  font-size: 1rem;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.abas a[aria-current] {
+  color: var(--verde-alto);
+  font-weight: 600;
+}
+
+.abas a[aria-current] .icone {
+  padding: 0.0625rem 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--verde-claro);
+  box-sizing: content-box;
+}
+
+@media (max-width: 29.99rem) {
+  .acao-visita span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .acao-visita .icone {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .casca {
+    grid-template-columns: 16rem minmax(0, 1fr);
+  }
+
+  .lateral {
+    position: sticky;
+    top: 0;
+    grid-row: 1 / -1;
+    width: auto;
+    height: 100dvh;
+    transform: none;
+    transition: none;
+  }
+
+  [data-menu]::after {
+    display: none;
+  }
+
+  .casca > :not(.lateral) {
+    grid-column: 2;
+  }
+
+  .abrir-menu,
+  .abas {
+    display: none;
+  }
+
+  .trilha li:not(:last-child) {
+    display: list-item;
+    color: var(--apoio);
+  }
+
+  .trilha li:last-child::before {
+    display: inline;
+  }
+
+  .barra {
+    gap: var(--e-5);
+  }
+
+  .rodape {
+    padding-bottom: var(--e-5);
+  }
+}
+
+/* A página de erro, sem a casca: a marca e o título. */
+.pagina-simples {
+  display: grid;
+  gap: var(--e-6);
+  padding: var(--e-6) var(--margem);
+}
+
+/* --- Peças comuns --- */
+
+/*
+ * A faixa de indicadores. No celular, uma linha por número, rótulo à esquerda e valor à direita;
+ * no computador, células lado a lado com fios finos entre elas.
+ */
+.indicadores {
+  display: grid;
+  margin: var(--e-5) 0;
+  border-block: 1px solid var(--linha);
+}
+
+.indicadores > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--e-4);
+  padding: var(--e-2) 0;
+}
+
+.indicadores > div + div {
+  border-top: 1px solid var(--linha);
+}
+
+.indicadores dt {
+  color: var(--apoio);
+  font-size: var(--t-r1);
+  line-height: 1.35;
+}
+
+.indicadores dd {
   margin: 0;
+  color: var(--apoio);
+  font-size: var(--t-r1);
+  white-space: nowrap;
+}
+
+.indicadores dd strong {
+  color: var(--texto);
+  font-size: var(--t-1);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 48rem) {
+  .indicadores {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    margin: var(--e-6) 0;
+  }
+
+  .indicadores > div {
+    display: block;
+    padding: var(--e-4) var(--e-5);
+  }
+
+  .indicadores > div + div {
+    border-top: 0;
+    border-left: 1px solid var(--linha);
+  }
+
+  .indicadores > div:first-child {
+    padding-left: 0;
+  }
+
+  .indicadores dd {
+    margin-top: var(--e-2);
+  }
+
+  .indicadores dd strong {
+    font-size: var(--t-3);
+  }
+}
+
+/* O cabeçalho dos painéis: título pequeno e firme, e um link verde à direita. */
+.cabeca-painel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-4);
+  margin-bottom: var(--e-4);
+}
+
+.cabeca-painel h2 {
+  font-size: var(--t-1);
+  font-weight: 600;
+}
+
+.cabeca-painel a {
+  padding-right: 1.375rem;
+  background: var(--icone-seguir) right center / 1rem no-repeat;
+  color: var(--verde);
+  font-size: var(--t-r1);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contador {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  background: var(--verde-claro);
+  color: var(--verde-alto);
+  font-size: var(--t-r1);
+  font-weight: 600;
+}
+
+.cartao-painel {
+  padding: var(--e-4);
+  border: 1px solid var(--linha);
+  border-radius: 0.75rem;
+  background: var(--superficie);
+}
+
+@media (min-width: 48rem) {
+  .cartao-painel {
+    padding: var(--e-5);
+  }
 }
 
 /* A placa de patrimônio desenhada: a mesma na página inicial e no topo da página da máquina. */
@@ -256,7 +699,7 @@ strong {
   display: block;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 1px 1px rgb(22 29 25 / 0.18)) drop-shadow(0 6px 10px rgb(22 29 25 / 0.08));
+  filter: drop-shadow(0 1px 1px rgb(31 40 35 / 0.18)) drop-shadow(0 6px 10px rgb(31 40 35 / 0.08));
 }
 
 .placa text {
@@ -319,13 +762,15 @@ strong {
 
 /* O campo do número da placa, com o botão dentro. */
 form.numero {
-  max-width: 30rem;
+  width: 100%;
+  max-width: 26rem;
 }
 
 .numero label {
   display: block;
   margin-bottom: var(--e-2);
   color: var(--texto);
+  font-size: var(--t-r1);
   font-weight: 500;
 }
 
@@ -340,8 +785,8 @@ form.numero {
 }
 
 .numero-linha:focus-within {
-  border-color: var(--texto);
-  box-shadow: 0 0 0 3px rgb(22 29 25 / 0.08);
+  border-color: var(--verde);
+  box-shadow: 0 0 0 3px rgb(46 90 67 / 0.14);
 }
 
 .numero input {
@@ -361,16 +806,17 @@ form.numero {
   outline: none;
 }
 
-/* O botão principal: tinta escura e texto branco. Um por tela. */
+/* O botão principal: o verde-escuro do painel e texto branco. */
 .numero button,
-.estado button {
+.estado button,
+.botao-principal {
   min-height: 2.75rem;
   padding: 0 1.25rem;
   border: 0;
   border-radius: 0.375rem;
-  background: var(--tinta);
+  background: var(--verde);
   color: #ffffff;
-  font: 500 var(--t-0) / 1 var(--sans);
+  font: 600 var(--t-r1) / 1 var(--sans);
   cursor: pointer;
   transition:
     background-color 0.2s,
@@ -382,8 +828,9 @@ form.numero {
 }
 
 .numero button:hover,
-.estado button:hover {
-  background: var(--tinta-alta);
+.estado button:hover,
+.botao-principal:hover {
+  background: var(--verde-alto);
 }
 
 .numero button:active,
@@ -391,14 +838,124 @@ form.numero {
   transform: scale(0.98);
 }
 
+.botao-principal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3.25rem;
+  padding: 0 var(--e-4);
+  background-image: var(--icone-seguir-branco);
+  background-position: right var(--e-4) center;
+  background-repeat: no-repeat;
+  background-size: 1.125rem;
+  text-decoration: none;
+}
+
 :focus-visible {
-  outline: 2px solid var(--texto);
+  outline: 2px solid var(--verde);
   outline-offset: 3px;
 }
 
 ::selection {
   background: var(--realce);
   color: var(--texto);
+}
+
+/* A visita guiada: o cartão preso embaixo e o alvo com um contorno verde. */
+[data-visita-alvo] {
+  position: relative;
+  z-index: 5;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 0 0.625rem var(--fundo), 0 0 0 calc(0.625rem + 2px) var(--verde), 0 0 0 100vmax rgb(246 245 239 / 0.72);
+  scroll-margin-top: 5.5rem;
+}
+
+.visita {
+  position: fixed;
+  inset: auto var(--e-4) calc(4.75rem + env(safe-area-inset-bottom)) var(--e-4);
+  z-index: 50;
+  display: grid;
+  gap: var(--e-2);
+  max-width: 28rem;
+  margin-inline: auto;
+  padding: var(--e-4) var(--e-5) var(--e-5);
+  border-radius: 0.75rem;
+  background: var(--verde-alto);
+  color: #ffffff;
+  box-shadow: 0 18px 40px -12px rgb(31 40 35 / 0.45);
+  animation: surgir-visita 0.35s var(--suave) both;
+}
+
+.visita h2 {
+  font: 400 1.75rem / 1.1 var(--serif);
+}
+
+.visita p {
+  color: #e4ece6;
+}
+
+.visita-cabeca {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contador-visita {
+  color: #c9d8cd;
+  font-size: var(--t-r1);
+}
+
+.visita button {
+  min-height: 2.75rem;
+  padding: 0 var(--e-4);
+  border: 1px solid #ffffff;
+  border-radius: 0.375rem;
+  background: #ffffff;
+  color: var(--verde-alto);
+  font: 600 var(--t-r1) / 1 var(--sans);
+  cursor: pointer;
+}
+
+.visita button.secundario {
+  border-color: rgb(255 255 255 / 0.4);
+  background: transparent;
+  color: #ffffff;
+}
+
+.visita button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.visita .fechar {
+  width: 2.75rem;
+  margin-right: -0.75rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.visita-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--e-2);
+  margin-top: var(--e-2);
+}
+
+@media (min-width: 64rem) {
+  .visita {
+    inset: auto var(--margem) var(--e-6) auto;
+    margin: 0;
+  }
+}
+
+@keyframes surgir-visita {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
 }
 
 @view-transition {
@@ -414,5 +971,6 @@ form.numero {
   *::before,
   *::after {
     transition-duration: 0s !important;
+    animation-duration: 0s !important;
   }
 }

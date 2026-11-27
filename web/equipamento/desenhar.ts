@@ -319,30 +319,33 @@ function desenharSemChave(item: SemChave, textos: Textos): HTMLElement {
   );
 }
 
-function cabecalhoDaMaquina(equipamento: Equipamento): HTMLElement {
+function cabecalhoDaMaquina(equipamento: Equipamento, pecas: readonly Peca[], semChave: readonly SemChave[]): HTMLElement {
   return h(
     "section",
     { class: "maquina" },
     h("h1", {}, equipamento.nome),
     h("p", {}, `${equipamento.tag} · setor ${equipamento.area} · placa ${equipamento.patrimonio}`),
     desenharPlaca(equipamento.patrimonio, { decorativa: true }),
+    indicadoresDaMaquina(pecas, semChave),
   );
 }
 
-/** A conta da seção em uma frase: quantas peças, quantas trocas e quantas estão guardadas com outro código. */
-function resumoDasPecas(pecas: readonly Peca[]): HTMLElement {
-  const trocas = pecas.reduce((soma, p) => soma + p.trocas.length, 0);
-  const comOutro = pecas.filter((p) => p.saldoSobOutroCodigo.some((s) => s.quantidade > 0)).length;
-  const partes = [contagem(pecas.length, "peça", "peças"), contagem(trocas, "troca", "trocas")];
-  const outro =
-    comOutro === 0
-      ? ""
-      : pecas.length === 1
-        ? " Ela tem estoque guardado com outro código."
-        : comOutro === 1
-          ? " Uma delas tem estoque guardado com outro código."
-          : ` ${comOutro === pecas.length ? `As ${comOutro}` : comOutro} têm estoque guardado com outro código.`;
-  return h("p", { class: "explica" }, `${partes.join(", ")}.${outro}`);
+/** A faixa de indicadores da máquina: peças com conta, trocas, a última troca e o que está guardado com outro código. */
+function indicadoresDaMaquina(pecas: readonly Peca[], semChave: readonly SemChave[]): HTMLElement {
+  const trocas = pecas.reduce((soma, p) => soma + p.trocas.length, 0) + semChave.reduce((soma, c) => soma + c.trocas.length, 0);
+  const ultima = [...pecas.map((p) => p.ultimaTroca), ...semChave.map((c) => c.trocas[0].data)].toSorted().at(-1);
+  const guardadas = pecas.flatMap((p) => p.saldoSobOutroCodigo.filter((s) => s.quantidade > 0));
+  const unidadesGuardadas = guardadas.reduce((soma, s) => soma + s.quantidade, 0);
+  const celula = (rotulo: string, valor: string, unidade = "") =>
+    h("div", {}, h("dt", {}, rotulo), h("dd", {}, h("strong", {}, valor), unidade ? ` ${unidade}` : null));
+  return h(
+    "dl",
+    { class: "indicadores" },
+    celula("Peças com as trocas somadas", String(pecas.length)),
+    celula("Trocas no histórico", String(trocas)),
+    celula("Última troca", ultima ? dataBR(ultima) : "nenhuma"),
+    celula("Guardadas com outro código", String(unidadesGuardadas), unidadesGuardadas === 1 ? "unidade" : "unidades"),
+  );
 }
 
 export function desenharHistorico(achado: Achado): Filho[] {
@@ -351,7 +354,7 @@ export function desenharHistorico(achado: Achado): Filho[] {
   const pecas = itens.filter((i): i is Peca => i.tipo === "peca");
   const semChave = itens.filter((i): i is SemChave => i.tipo === "codigo-sem-chave");
   return [
-    cabecalhoDaMaquina(equipamento),
+    cabecalhoDaMaquina(equipamento, pecas, semChave),
     h("div", { id: "entradas", class: "entradas" }),
     h("div", { id: "avisos", role: "status" }),
     itens.length === 0 && h("p", { class: "vazio" }, "Nenhuma troca registrada nesta máquina."),
@@ -360,7 +363,6 @@ export function desenharHistorico(achado: Achado): Filho[] {
         "section",
         { class: "pecas" },
         h("h2", {}, "Peças trocadas nesta máquina"),
-        resumoDasPecas(pecas),
         h("ul", {}, ...pecas.map((p) => desenharPeca(p, textos))),
       ),
     semChave.length > 0 &&

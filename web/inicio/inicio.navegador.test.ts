@@ -141,9 +141,11 @@ describe("a placa simulada, só para demonstração", () => {
     await vi.waitFor(() => expect(destinos).toEqual(["/e/004512", "/e/004512"]));
   });
 
-  it("o campo de número continua no lugar e sem mudança, antes das placas", () => {
+  it("o campo de número fica no cabeçalho, junto do título, e vem antes das placas", () => {
     const { raiz } = abrir();
-    const filhos = [...raiz.children].map((f) => f.tagName.toLowerCase());
-    expect(filhos).toEqual(["h1", "form", "section"]);
+    const formulario = raiz.querySelector("form.numero");
+    const placas = raiz.querySelector("section.toque");
+    expect(formulario?.closest(".cabecalho")?.querySelector("h1")?.textContent).toBe("Visão geral");
+    expect(formulario && placas && formulario.compareDocumentPosition(placas) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   });
 });

@@ -1,14 +1,14 @@
 import "./placa.css";
-import { rodape } from "./casca";
-import { h } from "./dom";
-import { montarHistoria } from "./historia";
+import { montarCasca } from "./casca";
 import { montarInicio } from "./inicio";
+import { usinaDaDemo } from "./usina";
+import { iniciarVisita, passosDaVisita } from "./visita";
 
 const raiz = document.getElementById("app");
 if (!raiz) throw new Error("a página não tem #app");
+montarCasca(raiz, { tipo: "visao" }, ["Usina Modelo", "Visão geral"]);
 montarInicio(raiz, (endereco) => location.assign(endereco));
-// A história entra no fim do palco: no celular fica depois das placas, no computador ocupa a coluna da esquerda.
-const historia = h("section", { class: "historia", hidden: true });
-raiz.append(historia);
-raiz.after(rodape());
-void montarHistoria(historia, (endereco) => fetch(endereco));
+
+const visitar = () => iniciarVisita(passosDaVisita(usinaDaDemo()));
+document.querySelector("[data-visita]")?.addEventListener("click", visitar);
+if (new URLSearchParams(location.search).has("visita")) visitar();
