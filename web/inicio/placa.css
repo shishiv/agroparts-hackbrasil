@@ -97,13 +97,10 @@
 
 /* A legenda: o nome da máquina, a tag ao lado em cor de apoio, e a seta para a direita, de abrir a página. */
 .legenda {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  column-gap: 0.5rem;
+  display: block;
   min-height: 3rem;
   margin: 0.625rem -0.75rem 0;
-  padding: 0.5rem 2.25rem 0.5rem 0.75rem;
+  padding: 0.75rem 2.25rem 0.75rem 0.75rem;
   border-top: 1px solid var(--linha);
   background: var(--icone-seguir) right 0.875rem center / 1rem no-repeat;
   color: var(--texto);
@@ -115,6 +112,7 @@
 }
 
 .legenda .tag {
+  margin-left: 0.25rem;
   color: var(--apoio);
 }
 

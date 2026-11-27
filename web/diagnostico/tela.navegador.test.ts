@@ -130,7 +130,7 @@ describe("os números da tela batem com o que o gerador plantou", () => {
 
   it("a mistura diz quantas peças junta e em que a chave difere", () => {
     const resumo = montar().querySelector('[data-sku="ROL-6210"] .resumo-do-sku')?.textContent;
-    expect(resumo).toBe("Junta 3 peças diferentes · difere em vedação e folga");
+    expect(resumo).toBe("Junta 3 peças diferentes, que mudam em vedação e folga");
   });
 });
 
@@ -145,7 +145,7 @@ describe("carregar outro cadastro de materiais", () => {
     );
     await escolherArquivo(tela, arquivo);
 
-    expect(tela.querySelector(".fonte")?.textContent).toBe("meus-materiais.csv · 4 códigos · 2 SKUs");
+    expect(tela.querySelector(".fonte")?.textContent).toBe("meus-materiais.csv · 4 códigos · 2 itens da usina");
     expect(numerosDoResumo(tela)).toEqual({ misturas: 1, fragmentacoes: 1, coerentes: 1, inconclusivos: 0 });
     expect(todos(tela, "[data-veredicto][data-sku]").map((s) => (s as HTMLElement).dataset.sku)).toEqual(["B", "A"]);
 
@@ -178,7 +178,7 @@ describe("carregar outro cadastro de materiais", () => {
     await escolherArquivo(tela, new File(["x"], "ruim.csv"));
     await escolherArquivo(tela, new File([csv("1;ROL 6310 ZZ;UN;A")], "bom.csv"));
     expect(tela.querySelector<HTMLElement>('[role="alert"]')?.hidden).toBe(true);
-    expect(tela.querySelector(".fonte")?.textContent).toBe("bom.csv · 1 código · 1 SKU");
+    expect(tela.querySelector(".fonte")?.textContent).toBe("bom.csv · 1 código · 1 item da usina");
   });
 
   it("lê o que o Excel brasileiro grava em Windows-1252, sem trocar o acento por �", async () => {

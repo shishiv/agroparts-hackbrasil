@@ -17,8 +17,9 @@ export const TEMPOS_DO_TOQUE: Tempos = { lendoMs: 600, lidaMs: 500 };
 type Estado = "parado" | "lendo" | "lida";
 
 /** A legenda da placa: o nome da máquina primeiro, a tag dela depois. */
-const legendaDe = (equipamento: Equipamento): HTMLElement[] => [
+const legendaDe = (equipamento: Equipamento): Node[] => [
   h("span", { class: "nome" }, equipamento.nome),
+  document.createTextNode(" "),
   h("span", { class: "tag" }, equipamento.tag),
 ];
 
@@ -50,10 +51,10 @@ export function montarToque(ir: Ir, tempos: Tempos = TEMPOS_DO_TOQUE): HTMLEleme
       const endereco = enderecoDoEquipamento(equipamento.patrimonio);
       botao.setAttribute("data-lendo", "");
       mudar("lendo");
-      legenda.textContent = "Lendo a placa…";
+      legenda.textContent = "Lendo a placa (simulada)…";
       setTimeout(() => {
         mudar("lida");
-        legenda.textContent = `Placa lida. Abrindo a máquina ${equipamento.patrimonio}…`;
+        legenda.textContent = `Placa lida (simulada): abrindo a máquina ${equipamento.patrimonio}`;
         setTimeout(() => ir(endereco), tempos.lidaMs);
       }, tempos.lendoMs);
     });

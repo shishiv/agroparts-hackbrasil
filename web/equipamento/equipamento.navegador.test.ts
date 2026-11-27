@@ -150,10 +150,10 @@ describe("a página mostra a conta que se faz à mão", () => {
   it("004512: código fora do almoxarifado e código com saldo zero se leem diferente", async () => {
     const { raiz } = await abrir("004512");
     const linha = (codigo: string) => raiz.querySelector<HTMLElement>(`[data-estoque="aqui"] [data-codigo="${codigo}"]`)?.textContent;
-    expect(linha("10066")).toBe("10066 · o almoxarifado não tem este código");
-    expect(linha("10071")).toBe("10071 · o almoxarifado tem este código, saldo 0 UN");
-    expect(linha("10091")).toBe("10091 · o almoxarifado tem este código, saldo 2 UN · endereço A-03-5");
-    expect(raiz.querySelector('[data-estoque="outro"] [data-codigo="10059"]')?.textContent).toBe("10059 · saldo 3 UN · endereço B-05-1");
+    expect(linha("10066")).toBe("10066: não tem no almoxarifado");
+    expect(linha("10071")).toBe("10071: 0 UN no almoxarifado");
+    expect(linha("10091")).toBe("10091: 2 UN no endereço A-03-5");
+    expect(raiz.querySelector('[data-estoque="outro"] [data-codigo="10059"]')?.textContent).toBe("10059: 3 UN no endereço B-05-1");
   });
 
   it("explica por que um código sem chave ficou fora da soma", async () => {

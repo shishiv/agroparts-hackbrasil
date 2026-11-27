@@ -83,12 +83,12 @@ describe("a placa simulada, só para demonstração", () => {
       expect(desenho?.textContent).toContain("NFC");
       expect(desenho?.querySelector("image")).toBeNull();
     }
-    expect(placa(raiz, "004512").textContent).toContain("B-104 · Bomba de caldo");
+    expect(placa(raiz, "004512").textContent).toContain("Bomba de caldo B-104");
   });
 
   it("diz na tela que é uma demonstração que simula a tag", () => {
     const { raiz } = abrir();
-    expect(AVISO_DA_DEMONSTRACAO).toBe("Demonstração: simula o toque na tag NFC");
+    expect(AVISO_DA_DEMONSTRACAO).toBe("Demonstração: o toque do celular na placa é simulado");
     expect(raiz.querySelector(".aviso-demo")?.textContent).toBe(AVISO_DA_DEMONSTRACAO);
   });
 
@@ -97,10 +97,10 @@ describe("a placa simulada, só para demonstração", () => {
     const botao = placa(raiz, "004512");
     botao.click();
     expect(botao.hasAttribute("data-lendo")).toBe(true);
-    expect(botao.textContent).toContain("Lendo a tag (simulada)");
+    expect(botao.textContent).toContain("Lendo a placa (simulada)");
     expect(destinos).toEqual([]);
 
-    await vi.waitFor(() => expect(botao.textContent).toContain("Tag lida (simulada): abrindo a página de 004512"));
+    await vi.waitFor(() => expect(botao.textContent).toContain("Placa lida (simulada): abrindo a máquina 004512"));
     expect(destinos).toEqual([]);
     await vi.waitFor(() => expect(destinos).toEqual(["/e/004512"]));
   });
@@ -135,7 +135,7 @@ describe("a placa simulada, só para demonstração", () => {
 
     window.dispatchEvent(new PageTransitionEvent("pageshow", { persisted: true }));
     expect(botao.hasAttribute("data-lendo")).toBe(false);
-    expect(botao.textContent).toContain("B-104 · Bomba de caldo");
+    expect(botao.textContent).toContain("Bomba de caldo B-104");
 
     botao.click();
     await vi.waitFor(() => expect(destinos).toEqual(["/e/004512", "/e/004512"]));
