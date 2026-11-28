@@ -149,7 +149,7 @@ A ideia veio de um projeto anterior do time. Todo o código deste repositório f
 | Gabarito da demo | `dados/demo/esperado-particao.json`, `dados/demo/esperado-skus.json`, `dados/demo/unificacao-de-exemplo.json` | Inventado junto com o cenário, a partir dos campos estruturados do CATMAT (série, vedação, folga). Nada disso vem da saída do motor. `esperado-skus.json` traz as misturas e fragmentações plantadas, e `unificacao-de-exemplo.json` traz chaves, rótulos e trechos provisórios. |
 | Sugestões do Jev para códigos da demo | `dados/demo/familias-jev.json` | Resposta do Jev gravada em 17/11/2026. Nenhuma página lê este arquivo. |
 | Fotos de exemplo | `public/exemplos/` | Públicas, da Wikimedia Commons, com autor e licença em `public/exemplos/CREDITOS.txt`. |
-| Fontes Archivo, IBM Plex Mono e Instrument Serif | `public/fontes/` | SIL Open Font License 1.1, com os créditos em `public/fontes/CREDITOS.txt`. |
+| Fontes Archivo e IBM Plex Mono | `public/fontes/` | SIL Open Font License 1.1, com os créditos em `public/fontes/CREDITOS.txt`. |
 | Falas de exemplo | `dados/audio/sinteticas/` | Voz de máquina, gerada com o Piper a partir de conjuntos de voz com licença CC0. Ver `docs/medicao/audio.md`. |
 
 Fornecedor, órgão comprador e preço das compras públicas não entram. O teste de `scripts/gerar-demo.test.ts` falha se algum texto da demo tiver formato de CPF, CNPJ, e-mail, telefone ou 11 dígitos seguidos.

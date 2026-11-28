@@ -1,6 +1,6 @@
 Créditos das fontes de public/fontes/
 
-As três famílias estão sob a SIL Open Font License 1.1, que permite usar, embutir e redistribuir a fonte com software, inclusive num repositório AGPL 3.0, desde que a fonte não seja vendida sozinha. O texto completo da licença de cada uma está ao lado.
+As duas famílias estão sob a SIL Open Font License 1.1, que permite usar, embutir e redistribuir a fonte com software, inclusive num repositório AGPL 3.0, desde que a fonte não seja vendida sozinha. O texto completo da licença de cada uma está ao lado.
 Os arquivos são os recortes "latin" (U+0000 a U+00FF e pontuação), que cobrem o português. Nada foi alterado.
 
 archivo.woff2
@@ -14,9 +14,3 @@ ibm-plex-mono-400.woff2, ibm-plex-mono-600.woff2
   Autor: IBM Corp., https://github.com/IBM/plex
   Licença: SIL OFL 1.1 (OFL-ibm-plex-mono.txt)
   Fonte: pacote npm @fontsource/ibm-plex-mono 5.3.0, arquivos files/ibm-plex-mono-latin-400-normal.woff2 e -600-normal.woff2
-
-instrument-serif-400.woff2
-  Família: Instrument Serif, peso 400, normal
-  Autor: The Instrument Serif Project Authors, https://github.com/Instrument/instrument-serif
-  Licença: SIL OFL 1.1 (OFL-instrument-serif.txt)
-  Fonte: Google Fonts, recorte latin, https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjg.woff2

@@ -6,7 +6,7 @@ import { grafico, indicadores, mapa, paraRevisar } from "./visao";
 
 /**
  * A visão geral da usina: o título e o campo do número da placa, a faixa de indicadores,
- * o mapa com as máquinas e o painel "Para revisar", as trocas por mês e as placas para tocar.
+ * o cadastro código por código, o caminho da cana e as trocas por mês, e ao lado "Para revisar" e as placas.
  */
 export function montarInicio(raiz: HTMLElement, ir: Ir, tempos?: Tempos): void {
   const usina = usinaDaDemo();
@@ -28,7 +28,6 @@ export function montarInicio(raiz: HTMLElement, ir: Ir, tempos?: Tempos): void {
       campoDeNumero(ir),
     ),
     indicadores(usina),
-    h("div", { class: "grade-painel" }, mapa(usina), paraRevisar(usina)),
-    h("div", { class: "grade-painel" }, grafico(usina.porMes), toque),
+    h("div", { class: "grade-painel" }, h("div", { class: "coluna" }, mapa(usina), grafico(usina.porMes)), h("div", { class: "coluna" }, paraRevisar(usina), toque)),
   );
 }

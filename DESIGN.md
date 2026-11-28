@@ -4,9 +4,9 @@ Regras para quem cria ou muda a interface em `web/`. Cada regra traz o porquê. 
 
 ## Cor
 
-- As telas usam fundo claro: o creme `--fundo` (`#f6f5ef`), com as fichas em `--superficie`. Nunca um palco escuro.
+- As telas usam fundo claro: o neutro `--fundo` (`#f1f2ef`), com as fichas brancas em `--superficie`. Nunca um palco escuro.
   Por quê: a versão escura ficou feia.
-- A cor marca só um estado que pede decisão. O verde-escuro `--verde` fica nas ações e na navegação ativa. O âmbar `--ambar` fica só na peça guardada com outro código. Nunca use blocos de cor chapada, bordas coloridas grossas ou números grandes coloridos.
+- A cor marca só um estado que pede decisão. As ações usam a tinta quase preta `--acao`. O verde `--tem` fica só no que tem no almoxarifado, e o âmbar `--ambar` só na peça guardada com outro código. O amarelo `--marca` fica na placa da marca e na placa de patrimônio. Nunca use blocos de cor chapada, bordas coloridas grossas ou números grandes coloridos.
   Por quê: a cor tem de apontar o que fazer. Cor em toda parte pesa e deixa de apontar.
 
 ## Texto
@@ -18,7 +18,7 @@ Regras para quem cria ou muda a interface em `web/`. Cada regra traz o porquê. 
 
 ## Tipografia
 
-- Só o título da página é grande: Instrument Serif em `--t-titulo`, até cerca de 50 px. Os números dos indicadores chegam no máximo a `--t-3` (cerca de 29 px). O resto segue a escala de razão 1,2, de `--t-r1` a `--t-3`.
+- Só o título da página é grande: Archivo largo (`--largo`) em `--t-titulo`, até cerca de 42 px. Os números dos indicadores chegam no máximo a `--t-3` (cerca de 29 px). O resto segue a escala de razão 1,2, de `--t-r1` a `--t-3`.
   Por quê: letra grande demais deixa a tela pesada e tira o foco do dado.
 
 ## Layout

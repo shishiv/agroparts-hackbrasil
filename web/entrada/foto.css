@@ -32,13 +32,13 @@
 }
 
 .entrada-foto button[type="submit"] {
-  border-color: var(--tinta);
-  background: var(--tinta);
+  border-color: var(--acao);
+  background: var(--acao);
   color: #ffffff;
 }
 
 .entrada-foto button[type="submit"]:hover {
-  background: var(--tinta-alta);
+  background: var(--acao-alta);
 }
 
 .entrada-foto label {

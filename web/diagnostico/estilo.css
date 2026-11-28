@@ -301,7 +301,7 @@ summary::before {
 
 .original {
   margin: var(--e-1) 0 0;
-  color: var(--tinta-alta);
+  color: var(--acao-alta);
   font-size: var(--t-r1);
   line-height: 1.6;
 }

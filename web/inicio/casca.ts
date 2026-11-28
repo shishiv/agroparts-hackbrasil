@@ -14,14 +14,15 @@ export const enderecoDoEquipamento = (patrimonio: string): string => `/e/${encod
 /** O endereço que abre a página inicial já com a visita guiada. */
 export const ENDERECO_DA_VISITA = "/?visita=1";
 
-/** As máquinas da demo na ordem da exportação; o número de cada uma (01, 02…) é o mesmo no mapa e na barra lateral. */
+/** As máquinas da demo na ordem da exportação. */
 export function maquinasDaDemo(): readonly Equipamento[] {
   const lido = lerEquipamentos(equipamentosDaDemo);
   if (!lido.ok) throw new Error("equipamentos da demo ilegíveis");
   return lido.valor;
 }
 
-export const numeroDaMaquina = (indice: number): string => String(indice + 1).padStart(2, "0");
+/** Os setores da usina na ordem do caminho da cana; a caldeira queima o bagaço da extração. */
+export const SETORES = ["Recepção", "Preparo", "Extração", "Caldo", "Caldeira", "Filtração"] as const;
 
 /** O campo de número de patrimônio: o que a placa abre sozinha, a pessoa digita aqui. */
 export function campoDeNumero(ir: Ir, digitado = ""): HTMLFormElement {
@@ -83,12 +84,7 @@ function lateral(lugar: Lugar): HTMLElement {
     "aside",
     { class: "lateral", id: "navegacao", "aria-label": "Navegação" },
     h("a", { class: "marca", href: "/" }, "AgroParts"),
-    h(
-      "div",
-      { class: "usina" },
-      h("span", { class: "usina-sigla", "aria-hidden": "true" }, "UM"),
-      h("span", {}, h("strong", {}, "Usina Modelo"), h("span", {}, "fictícia, para demonstração")),
-    ),
+    h("p", { class: "usina" }, h("strong", {}, "Usina Modelo"), h("span", {}, "fictícia, para demonstração")),
     h(
       "nav",
       { "aria-label": "Páginas" },
@@ -103,16 +99,28 @@ function lateral(lugar: Lugar): HTMLElement {
       h(
         "ul",
         { class: "maquinas" },
-        ...maquinas.map((m, i) =>
+        ...SETORES.map((setor) =>
           h(
             "li",
             {},
-            link(
-              enderecoDoEquipamento(m.patrimonio),
-              lugar.tipo === "maquina" && lugar.patrimonio === m.patrimonio,
-              h("span", { class: "num" }, numeroDaMaquina(i)),
-              h("span", { class: "nome-maquina" }, m.nome),
-              h("span", { class: "tag-maquina" }, m.tag),
+            h("p", { class: "setor-lateral" }, setor),
+            h(
+              "ul",
+              {},
+              ...maquinas
+                .filter((m) => m.area === setor)
+                .map((m) =>
+                  h(
+                    "li",
+                    {},
+                    link(
+                      enderecoDoEquipamento(m.patrimonio),
+                      lugar.tipo === "maquina" && lugar.patrimonio === m.patrimonio,
+                      h("span", { class: "tag-maquina" }, m.tag),
+                      h("span", { class: "nome-maquina" }, m.nome),
+                    ),
+                  ),
+                ),
             ),
           ),
         ),

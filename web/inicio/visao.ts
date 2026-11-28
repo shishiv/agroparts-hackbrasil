@@ -1,5 +1,5 @@
-import type { Equipamento } from "../../src/contrato";
-import { enderecoDoEquipamento, numeroDaMaquina } from "./casca";
+import type { CodigoLegado } from "../../src/contrato";
+import { enderecoDoEquipamento, SETORES } from "./casca";
 import { h, s } from "./dom";
 import type { PecaEscondida, TrocasDoMes, Usina } from "./usina";
 
@@ -12,174 +12,222 @@ const unidades = (n: number, unidade: string): string =>
 
 const minuscula = (texto: string): string => texto.charAt(0).toLowerCase() + texto.slice(1);
 
-/** A faixa de indicadores: só números que a exportação da demo e o motor provam. */
-export function indicadores({ indicadores: i }: Usina): HTMLElement {
+/** A tag de uma máquina numa plaqueta pequena, como a placa de patrimônio; a mesma no fluxograma, na lateral e nos casos. */
+const plaqueta = (tag: string, classe = ""): HTMLElement => h("span", { class: `plaqueta${classe ? ` ${classe}` : ""}` }, tag);
+
+/**
+ * O cadastro, código por código: os indicadores e um quadradinho por código, agrupados nas peças
+ * que o motor juntou. Os códigos que esperam uma pessoa e os que o motor não junta ficam no fim.
+ */
+export function indicadores(usina: Usina): HTMLElement {
+  const { indicadores: i, unificacao } = usina;
   const celula = (rotulo: string, valor: number, unidade: string) =>
     h("div", {}, h("dt", {}, rotulo), h("dd", {}, h("strong", {}, numeroBR(valor)), unidade && h("span", {}, ` ${unidade}`)));
+  const comEscondida = new Set(usina.escondidas.map((e) => e.peca.grupo.chave));
+  const achados = new Set(usina.escondidas.flatMap((e) => e.achados.map((x) => x.codigo)));
+  const quadrados = (n: number) => Array.from({ length: n }, () => h("i", {}));
+  const grupos = [...unificacao.grupos.values()].toSorted((a, b) => b.codigos.length - a.codigos.length);
+  const decisoes = [...unificacao.leituras.values()];
+  const revisar = decisoes.filter((l) => l.decisao === "revisa").length;
+  const fora = decisoes.filter((l) => l.decisao === "recusa").length;
   return h(
-    "dl",
-    { class: "indicadores", "data-visita-passo": "1" },
-    celula("Códigos no cadastro", i.codigos, ""),
-    celula("Peças que o motor juntou", i.pecas, i.pecas === 1 ? "peça" : "peças"),
-    celula("Trocas no histórico", i.trocas, ""),
-    celula("Guardadas com outro código", i.unidadesComOutroCodigo, "unidades"),
-    celula("Códigos para uma pessoa revisar", i.paraRevisar, ""),
+    "section",
+    { class: "cartao-painel cadastro-visao", "data-visita-passo": "1" },
+    h("div", { class: "cabeca-painel" }, h("h2", {}, "O cadastro, código por código"), h("a", { href: "/diagnostico/" }, "Cadastro de peças")),
+    h(
+      "dl",
+      { class: "indicadores" },
+      celula("Códigos no cadastro", i.codigos, ""),
+      celula("Peças que o motor juntou", i.pecas, i.pecas === 1 ? "peça" : "peças"),
+      celula("Trocas no histórico", i.trocas, ""),
+      celula("Guardadas com outro código", i.unidadesComOutroCodigo, "unidades"),
+      celula("Códigos para uma pessoa revisar", i.paraRevisar, ""),
+    ),
+    h(
+      "div",
+      {
+        class: "unidades",
+        role: "img",
+        "aria-label": `${i.codigos} códigos: ${unificacao.grupos.size} peças juntadas, ${revisar} para uma pessoa revisar e ${fora} que o motor não junta`,
+      },
+      ...grupos.map((g) =>
+        h("span", { class: `junta${comEscondida.has(g.chave) ? " escondida" : ""}`, title: g.rotulo }, ...g.codigos.map((c) => h("i", achados.has(c) ? { class: "achado" } : {}))),
+      ),
+      h("span", { class: "junta solta a-revisar" }, ...quadrados(revisar)),
+      h("span", { class: "junta solta fora" }, ...quadrados(fora)),
+    ),
+    h(
+      "div",
+      { class: "legenda-planta" },
+      h("span", { class: "chave chave-codigo" }, "Um código; juntos, a mesma peça"),
+      h("span", { class: "chave chave-escondida" }, "Peça guardada com outro código"),
+      h("span", { class: "chave chave-revisar" }, "Para uma pessoa revisar"),
+      h("span", { class: "chave chave-fora" }, "O motor não junta"),
+    ),
   );
 }
 
-interface Setor {
+/** Uma corrente do fluxograma: os pontos, o nome e onde o nome fica. */
+interface Corrente {
+  pontos: readonly (readonly [number, number])[];
   nome: string;
-  x: number;
-  y: number;
-  w: number;
-  h: number;
+  rotulo: readonly [number, number, "start" | "end"];
+  vapor?: boolean;
 }
 
-/** Um jeito de desenhar a planta: o tamanho, os setores, as setas do caminho da cana e a plaqueta do nome. */
+/** Um setor no desenho: a faixa que ele ocupa, a altura da linha das máquinas e onde fica o nome. */
+interface Faixa {
+  x: number;
+  w: number;
+  y: number;
+  /** O nome em cima (computador, linha de cima) ou embaixo (linha de baixo). */
+  nome: "cima" | "baixo" | "lado";
+}
+
 interface Desenho {
   classe: string;
   largura: number;
   altura: number;
-  setores: readonly Setor[];
-  setas: readonly (readonly [number, number, number, number, boolean])[];
-  notas: readonly (readonly [number, number, string])[];
-  plaqueta: readonly [number, number, number];
+  raio: number;
+  faixas: Readonly<Record<(typeof SETORES)[number], Faixa>>;
+  correntes: readonly Corrente[];
 }
 
-/** No computador, a planta na ordem do caminho da cana: recepção, preparo, extração, caldo e filtração; a caldeira embaixo. */
-const LARGA: Desenho = {
-  classe: "planta planta-larga",
-  largura: 680,
-  altura: 340,
-  setores: [
-    { nome: "Recepção", x: 16, y: 44, w: 104, h: 128 },
-    { nome: "Preparo", x: 140, y: 44, w: 176, h: 128 },
-    { nome: "Extração", x: 336, y: 44, w: 176, h: 128 },
-    { nome: "Caldo", x: 532, y: 44, w: 132, h: 128 },
-    { nome: "Caldeira", x: 336, y: 212, w: 176, h: 108 },
-    { nome: "Filtração", x: 532, y: 212, w: 132, h: 108 },
+/**
+ * No computador, o caminho da cana da esquerda para a direita: recepção, preparo, extração e caldo
+ * na linha de cima; embaixo, a caldeira que queima o bagaço e devolve vapor, e a filtração do caldo.
+ */
+const LARGO: Desenho = {
+  classe: "fluxo fluxo-largo",
+  largura: 760,
+  altura: 300,
+  raio: 19,
+  faixas: {
+    Recepção: { x: 12, w: 92, y: 116, nome: "cima" },
+    Preparo: { x: 124, w: 204, y: 116, nome: "cima" },
+    Extração: { x: 348, w: 204, y: 116, nome: "cima" },
+    Caldo: { x: 572, w: 176, y: 116, nome: "cima" },
+    Caldeira: { x: 348, w: 204, y: 236, nome: "baixo" },
+    Filtração: { x: 572, w: 176, y: 236, nome: "baixo" },
+  },
+  correntes: [
+    { pontos: [[4, 116], [552, 116]], nome: "cana", rotulo: [4, 104, "start"] },
+    { pontos: [[552, 116], [736, 116], [736, 236], [700, 236]], nome: "caldo", rotulo: [730, 180, "end"] },
+    { pontos: [[536, 116], [536, 236], [501, 236]], nome: "bagaço", rotulo: [542, 180, "start"] },
+    { pontos: [[399, 236], [364, 236], [364, 137]], nome: "vapor", rotulo: [358, 180, "end"], vapor: true },
   ],
-  setas: [
-    [120, 108, 138, 108, false],
-    [316, 108, 334, 108, false],
-    [512, 108, 530, 108, false],
-    [598, 172, 598, 210, false],
-    [424, 210, 424, 174, true],
-  ],
-  notas: [
-    [18, 28, "cana"],
-    [430, 196, "vapor"],
-  ],
-  plaqueta: [16, 296, 176],
 };
 
-/** No celular, os mesmos setores em duas colunas, na mesma ordem, para caber sem rolar para o lado. */
-const ESTREITA: Desenho = {
-  classe: "planta planta-estreita",
+/** No celular, o mesmo caminho de cima para baixo, um setor por linha, com as máquinas lado a lado. */
+const ALTO: Desenho = {
+  classe: "fluxo fluxo-alto",
   largura: 340,
-  altura: 452,
-  setores: [
-    { nome: "Recepção", x: 4, y: 8, w: 150, h: 128 },
-    { nome: "Preparo", x: 176, y: 8, w: 160, h: 128 },
-    { nome: "Extração", x: 4, y: 158, w: 150, h: 128 },
-    { nome: "Caldo", x: 176, y: 158, w: 160, h: 128 },
-    { nome: "Caldeira", x: 4, y: 308, w: 150, h: 128 },
-    { nome: "Filtração", x: 176, y: 308, w: 160, h: 128 },
+  altura: 592,
+  raio: 24,
+  faixas: {
+    Recepção: { x: 44, w: 296, y: 64, nome: "lado" },
+    Preparo: { x: 44, w: 296, y: 164, nome: "lado" },
+    Extração: { x: 44, w: 296, y: 264, nome: "lado" },
+    Caldeira: { x: 70, w: 270, y: 364, nome: "lado" },
+    Caldo: { x: 44, w: 296, y: 464, nome: "lado" },
+    Filtração: { x: 44, w: 296, y: 564, nome: "lado" },
+  },
+  correntes: [
+    { pontos: [[18, 16], [18, 564], [42, 564]], nome: "", rotulo: [0, 0, "start"] },
+    ...[64, 164, 264, 464].map((y): Corrente => ({ pontos: [[18, y], [42, y]], nome: "", rotulo: [0, 0, "start"] })),
+    { pontos: [[44, 290], [44, 364], [68, 364]], nome: "", rotulo: [0, 0, "start"] },
   ],
-  setas: [
-    [154, 72, 174, 72, false],
-    [176, 120, 154, 174, false],
-    [154, 222, 174, 222, false],
-    [256, 286, 256, 306, false],
-    [79, 306, 79, 288, true],
-  ],
-  notas: [],
-  plaqueta: [0, 0, 0],
 };
 
-function desenharPlanta(usina: Usina, d: Desenho): SVGSVGElement {
+/** A tag partida no balão, como num fluxograma: as letras em cima e o número embaixo. */
+function partesDaTag(tag: string): readonly [string, string] {
+  const [letras = tag, numero = ""] = tag.split("-");
+  return [letras, numero];
+}
+
+function desenharFluxo(usina: Usina, d: Desenho): SVGSVGElement {
   const comEscondida = new Set(usina.escondidas.map((e) => e.equipamento.patrimonio));
-  const indice = new Map(usina.maquinas.map((m, i) => [m.equipamento.patrimonio, i]));
-  const id = d.classe.endsWith("larga") ? "l" : "e";
-  const desenho = s("svg", { viewBox: `0 0 ${d.largura} ${d.altura}`, class: d.classe, role: "group", "aria-label": "Planta da usina, com as máquinas numeradas" });
+  const id = d.classe.endsWith("largo") ? "l" : "a";
+  const desenho = s("svg", { viewBox: `0 0 ${d.largura} ${d.altura}`, class: d.classe, role: "group", "aria-label": "Fluxograma da usina, com as máquinas pela tag" });
   desenho.append(
     s(
       "defs",
       {},
-      s("pattern", { id: `pontos-${id}`, width: "12", height: "12", patternUnits: "userSpaceOnUse" }, s("circle", { cx: "1", cy: "1", r: "0.8", fill: "#d9d6c9" })),
-      s("marker", { id: `ponta-${id}`, viewBox: "0 0 8 8", refX: "7", refY: "4", markerWidth: "7", markerHeight: "7", orient: "auto-start-reverse" }, s("path", { d: "M0 0 L8 4 L0 8 z", class: "ponta" })),
+      s("marker", { id: `ponta-${id}`, viewBox: "0 0 8 8", refX: "7", refY: "4", markerWidth: "6", markerHeight: "6", orient: "auto-start-reverse" }, s("path", { d: "M0 0 L8 4 L0 8 z", class: "ponta" })),
     ),
-    s("rect", { x: "0", y: "0", width: String(d.largura), height: String(d.altura), fill: `url(#pontos-${id})` }),
   );
-  for (const [x1, y1, x2, y2, vapor] of d.setas) {
-    desenho.append(s("path", { d: `M${x1} ${y1} L${x2} ${y2}`, class: vapor ? "fluxo vapor" : "fluxo", "marker-end": `url(#ponta-${id})` }));
+  for (const c of d.correntes) {
+    desenho.append(s("polyline", { points: c.pontos.map((p) => p.join(",")).join(" "), class: c.vapor ? "corrente vapor" : "corrente", "marker-end": d === LARGO ? `url(#ponta-${id})` : undefined }));
+    const [x, y, ancora] = c.rotulo;
+    if (d === LARGO) desenho.append(s("text", { x: String(x), y: String(y), "text-anchor": ancora, class: "nome-corrente" }, c.nome));
   }
-  for (const [x, y, texto] of d.notas) desenho.append(s("text", { x: String(x), y: String(y), class: "nota-planta" }, texto));
-  for (const setor of d.setores) {
-    const daqui = usina.maquinas.filter((m) => m.equipamento.area === setor.nome);
+  for (const setor of SETORES) {
+    const f = d.faixas[setor];
+    const daqui = usina.maquinas.filter((m) => m.equipamento.area === setor);
     const g = s("g", { class: "setor" });
-    g.append(
-      s("rect", { x: String(setor.x), y: String(setor.y), width: String(setor.w), height: String(setor.h), rx: "6" }),
-      s("text", { x: String(setor.x + 10), y: String(setor.y + 22), class: "nome-setor" }, setor.nome),
-    );
+    if (f.nome === "lado") {
+      g.append(s("text", { x: String(f.x), y: String(f.y - d.raio - 12), class: "nome-setor" }, setor));
+    } else {
+      const yNome = f.nome === "cima" ? f.y - d.raio - 30 : f.y + d.raio + 34;
+      const yCota = f.nome === "cima" ? yNome + 10 : yNome - 18;
+      g.append(
+        s("path", { d: `M${f.x} ${yCota - 4} V${yCota + 4} M${f.x} ${yCota} H${f.x + f.w} M${f.x + f.w} ${yCota - 4} V${yCota + 4}`, class: "cota" }),
+        s("text", { x: String(f.x), y: String(yNome), class: "nome-setor" }, setor),
+      );
+    }
     daqui.forEach((m, k) => {
-      const passo = setor.w / (daqui.length + 1);
-      const cx = setor.x + passo * (k + 1);
-      const cy = setor.y + setor.h / 2 + 2;
-      const i = indice.get(m.equipamento.patrimonio) ?? 0;
+      const passo = f.nome === "lado" ? d.raio * 2 + 14 : f.w / (daqui.length + 1);
+      const cx = f.nome === "lado" ? f.x + d.raio + k * passo : f.x + passo * (k + 1);
+      const cy = f.y;
       const escondida = comEscondida.has(m.equipamento.patrimonio);
+      const [letras, numero] = partesDaTag(m.equipamento.tag);
       g.append(
         s(
           "a",
-          { href: enderecoDoEquipamento(m.equipamento.patrimonio), class: `marca-maquina${escondida ? " escondida" : ""}`, "aria-label": `${numeroDaMaquina(i)}, ${m.equipamento.nome} ${m.equipamento.tag}` },
+          { href: enderecoDoEquipamento(m.equipamento.patrimonio), class: `balao${escondida ? " escondida" : ""}`, "aria-label": `${m.equipamento.nome} ${m.equipamento.tag}` },
           s("title", {}, `${m.equipamento.nome} ${m.equipamento.tag}`),
-          escondida ? s("circle", { cx: String(cx), cy: String(cy), r: "21", class: "anel" }) : s("g", {}),
-          s("circle", { cx: String(cx), cy: String(cy), r: "15", class: "ponto" }),
-          s("text", { x: String(cx), y: String(cy + 5), "text-anchor": "middle", class: "numero-maquina" }, numeroDaMaquina(i)),
-          s("text", { x: String(cx), y: String(cy + 40 + (passo < 56 && k % 2 === 1 ? 18 : 0)), "text-anchor": "middle", class: "tag-planta" }, m.equipamento.tag),
+          escondida ? s("circle", { cx: String(cx), cy: String(cy), r: String(d.raio + 5), class: "anel" }) : s("g", {}),
+          s("circle", { cx: String(cx), cy: String(cy), r: String(d.raio), class: "corpo" }),
+          s("path", { d: `M${cx - d.raio} ${cy} H${cx + d.raio}`, class: "divisa" }),
+          s("text", { x: String(cx), y: String(cy - d.raio * 0.2), "text-anchor": "middle", class: "letras" }, letras),
+          s("text", { x: String(cx), y: String(cy + d.raio * 0.68), "text-anchor": "middle", class: "numero-tag" }, numero),
         ),
       );
     });
+    if (f.nome === "lado" && daqui.length > 0) {
+      const trocas = daqui.reduce((a, m) => a + m.trocas, 0);
+      g.append(s("text", { x: String(d.largura), y: String(f.y - d.raio - 12), "text-anchor": "end", class: "conta-setor" }, contagem(trocas, "troca", "trocas")));
+    }
     desenho.append(g);
-  }
-  const [px, py, pw] = d.plaqueta;
-  if (pw > 0) {
-    desenho.append(
-      s("rect", { x: String(px), y: String(py), width: String(pw), height: "24", rx: "3", class: "placa-planta" }),
-      s("text", { x: String(px + pw / 2), y: String(py + 16.5), "text-anchor": "middle", class: "nome-planta" }, "Usina Modelo"),
-    );
   }
   return desenho;
 }
 
-const SETORES = LARGA.setores;
-
-/** O mapa da usina: a planta (larga no computador, em duas colunas no celular), a legenda e os setores. */
+/** O caminho da cana: o fluxograma (largo no computador, de cima para baixo no celular), a legenda e os setores. */
 export function mapa(usina: Usina): HTMLElement {
-  const desenho = h("div", { class: "planta-dupla" }, desenharPlanta(usina, LARGA), desenharPlanta(usina, ESTREITA));
+  const desenho = h("div", { class: "fluxo-duplo" }, desenharFluxo(usina, LARGO), desenharFluxo(usina, ALTO));
   const setores = SETORES.map((setor) => {
-    const daqui = usina.maquinas.filter((m) => m.equipamento.area === setor.nome);
+    const daqui = usina.maquinas.filter((m) => m.equipamento.area === setor);
     const trocas = daqui.reduce((a, m) => a + m.trocas, 0);
-    return h("li", {}, h("strong", {}, setor.nome), h("span", {}, `${contagem(daqui.length, "máquina", "máquinas")} · ${contagem(trocas, "troca", "trocas")}`));
+    return h("li", {}, h("strong", {}, setor), h("span", {}, `${contagem(daqui.length, "máquina", "máquinas")} · ${contagem(trocas, "troca", "trocas")}`));
   });
 
   return h(
     "section",
     { class: "cartao-painel mapa", "data-visita-passo": "2" },
-    h("div", { class: "cabeca-painel" }, h("h2", {}, "Mapa da usina"), h("a", { href: "/diagnostico/" }, "Cadastro de peças")),
-    h("div", { class: "quadro-planta" }, desenho),
+    h("div", { class: "cabeca-painel" }, h("h2", {}, "Caminho da cana")),
+    h("div", { class: "quadro-fluxo" }, desenho),
     h(
       "div",
       { class: "legenda-planta" },
-      h("span", { class: "chave chave-maquina" }, "Máquina, toque para abrir"),
+      h("span", { class: "chave chave-maquina" }, "Máquina pela tag, toque para abrir"),
       h("span", { class: "chave chave-escondida" }, "Peça guardada com outro código"),
     ),
     h("ul", { class: "setores" }, ...setores),
-    h("p", { class: "fonte-planta" }, `${usina.maquinas.length} máquinas em ${SETORES.length} setores. Planta esquemática de uma usina fictícia.`),
   );
 }
 
-function linhaDoCaso({ equipamento, peca, achados }: PecaEscondida, indiceDe: (e: Equipamento) => number): HTMLElement {
+function linhaDoCaso({ equipamento, peca, achados }: PecaEscondida): HTMLElement {
   const primeiro = achados[0];
   return h(
     "li",
@@ -187,43 +235,60 @@ function linhaDoCaso({ equipamento, peca, achados }: PecaEscondida, indiceDe: (e
     h(
       "a",
       { href: enderecoDoEquipamento(equipamento.patrimonio) },
-      h("span", { class: "num" }, numeroDaMaquina(indiceDe(equipamento))),
+      plaqueta(equipamento.tag, "escondida"),
       h(
         "span",
         {},
-        h("strong", {}, `${equipamento.nome} ${equipamento.tag}`),
+        h("strong", {}, equipamento.nome),
         h("span", {}, `${peca.grupo.rotulo}: ${unidades(primeiro.quantidade, primeiro.unidade)} com o código ${primeiro.codigo}`),
       ),
     ),
   );
 }
 
-/** "Para revisar": o caso principal com o número de destaque e o botão, e os outros casos embaixo. */
+/** A ligação do caso: os códigos da máquina sem saldo, a seta e a etiqueta da prateleira onde a peça está. */
+function ligacao({ peca, achados }: PecaEscondida): HTMLElement {
+  const saldoDe = (codigo: CodigoLegado) => peca.saldoAqui.filter((x) => x.codigo === codigo).reduce((soma, x) => soma + x.quantidade, 0);
+  const achado = achados[0];
+  return h(
+    "div",
+    { class: "ligacao", "aria-hidden": "true" },
+    h(
+      "span",
+      { class: "ligacao-de" },
+      ...peca.codigosUsadosAqui.map((c) => h("span", { class: "chip sem" }, h("span", { class: "chip-codigo" }, c), h("span", { class: "chip-saldo" }, String(saldoDe(c))))),
+    ),
+    h("span", { class: "ligacao-seta" }),
+    h(
+      "span",
+      { class: "etiqueta" },
+      h("span", { class: "etiqueta-endereco" }, achado.endereco ?? "almoxarifado"),
+      h("span", { class: "etiqueta-linha" }, h("span", {}, achado.codigo), h("span", {}, unidades(achado.quantidade, achado.unidade))),
+    ),
+  );
+}
+
+/** "Para revisar": o caso principal como a ligação da placa à prateleira, e os outros casos embaixo. */
 export function paraRevisar(usina: Usina): HTMLElement {
   const casos = [...usina.escondidas].toSorted((a, b) => (a.equipamento.patrimonio === "004512" ? -1 : b.equipamento.patrimonio === "004512" ? 1 : 0));
-  const indice = new Map(usina.maquinas.map((m, i) => [m.equipamento.patrimonio, i]));
-  const indiceDe = (e: Equipamento) => indice.get(e.patrimonio) ?? 0;
   const [principal, ...outros] = casos;
   const corpo: HTMLElement[] = [];
   if (principal) {
-    const achado = principal.achados[0];
     const usados = principal.peca.codigosUsadosAqui;
     corpo.push(
-      h("p", { class: "sobre" }, "Peça guardada com outro código"),
-      h("h3", {}, `${principal.equipamento.nome} ${principal.equipamento.tag}`),
       h(
-        "p",
-        { class: "explica" },
-        `O almoxarifado não tem ${usados.length === 1 ? "o código" : "os códigos"} que esta máquina usa para o ${minuscula(principal.peca.grupo.rotulo)}. A mesma peça está guardada com outro código.`,
+        "div",
+        { class: "caso" },
+        h("p", { class: "caso-maquina" }, plaqueta(principal.equipamento.patrimonio, "patrimonio"), h("strong", {}, `${principal.equipamento.nome} ${principal.equipamento.tag}`)),
+        h("p", { class: "caso-peca" }, principal.peca.grupo.rotulo),
+        ligacao(principal),
+        h(
+          "p",
+          { class: "explica" },
+          `O almoxarifado não tem ${usados.length === 1 ? "o código" : "os códigos"} que esta máquina usa para o ${minuscula(principal.peca.grupo.rotulo)}. A mesma peça está guardada com outro código.`,
+        ),
+        h("a", { class: "botao-principal", href: enderecoDoEquipamento(principal.equipamento.patrimonio) }, `Abrir a máquina ${principal.equipamento.patrimonio}`),
       ),
-      h(
-        "p",
-        { class: "destaque" },
-        h("strong", {}, numeroBR(achado.quantidade)),
-        h("span", { class: "unidade" }, achado.unidade === "UN" ? "unidades" : achado.unidade),
-        h("span", { class: "onde-fica" }, `${achado.endereco === null ? "no almoxarifado" : `no endereço ${achado.endereco}`}, código ${achado.codigo}`),
-      ),
-      h("a", { class: "botao-principal", href: enderecoDoEquipamento(principal.equipamento.patrimonio) }, `Abrir a máquina ${principal.equipamento.patrimonio}`),
     );
   }
   const misturas = usina.resumoDoCadastro.misturas;
@@ -235,7 +300,7 @@ export function paraRevisar(usina: Usina): HTMLElement {
     h(
       "ul",
       { class: "casos" },
-      ...outros.slice(0, 3).map((c) => linhaDoCaso(c, indiceDe)),
+      ...outros.slice(0, 3).map((c) => linhaDoCaso(c)),
       misturas > 0
         ? h(
             "li",
@@ -243,7 +308,7 @@ export function paraRevisar(usina: Usina): HTMLElement {
             h(
               "a",
               { href: "/diagnostico/#misturas" },
-              h("span", { class: "num alerta" }, String(misturas)),
+              plaqueta(String(misturas), "alerta"),
               h("span", {}, h("strong", {}, "Cadastro de peças"), h("span", {}, `${contagem(misturas, "item mistura", "itens misturam")} peças diferentes`)),
             ),
           )
@@ -252,68 +317,35 @@ export function paraRevisar(usina: Usina): HTMLElement {
   );
 }
 
-/** Uma curva que passa por todos os pontos sem inventar picos entre eles (cúbica monótona, Fritsch e Carlson). */
-function curvaMonotona(pontos: readonly (readonly [number, number])[]): string {
-  const n = pontos.length;
-  if (n < 2) return "";
-  const dx = (i: number) => (pontos[i + 1]?.[0] ?? 0) - (pontos[i]?.[0] ?? 0);
-  const inclinacao = Array.from({ length: n - 1 }, (_, i) => ((pontos[i + 1]?.[1] ?? 0) - (pontos[i]?.[1] ?? 0)) / dx(i));
-  const t = pontos.map((_, i) => {
-    if (i === 0) return inclinacao[0] ?? 0;
-    if (i === n - 1) return inclinacao[n - 2] ?? 0;
-    const a = inclinacao[i - 1] ?? 0;
-    const b = inclinacao[i] ?? 0;
-    return a * b <= 0 ? 0 : (2 * a * b) / (a + b);
-  });
-  let d = `M${pontos[0]?.[0].toFixed(1)} ${pontos[0]?.[1].toFixed(1)}`;
-  for (let i = 0; i < n - 1; i++) {
-    const [x0, y0] = pontos[i] ?? [0, 0];
-    const [x1, y1] = pontos[i + 1] ?? [0, 0];
-    const h3 = dx(i) / 3;
-    d += ` C${(x0 + h3).toFixed(1)} ${(y0 + (t[i] ?? 0) * h3).toFixed(1)} ${(x1 - h3).toFixed(1)} ${(y1 - (t[i + 1] ?? 0) * h3).toFixed(1)} ${x1.toFixed(1)} ${y1.toFixed(1)}`;
-  }
-  return d;
-}
-
 const MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
 
-/** Trocas por mês, de todas as máquinas: uma linha, a grade e os rótulos, sem enfeite. */
+/** Trocas por mês, de todas as máquinas: uma barra por mês, porque cada mês é uma contagem; janeiro abre o ano. */
 export function grafico(porMes: readonly TrocasDoMes[]): HTMLElement {
-  const L = 680;
-  const A = 200;
-  const m = { esq: 32, dir: 8, cima: 12, baixo: 28 };
   const maximo = Math.max(10, Math.ceil(Math.max(...porMes.map((p) => p.trocas)) / 10) * 10);
-  const x = (i: number) => m.esq + (i * (L - m.esq - m.dir)) / Math.max(1, porMes.length - 1);
-  const y = (v: number) => m.cima + (1 - v / maximo) * (A - m.cima - m.baixo);
-  const pontos = porMes.map((p, i) => [x(i), y(p.trocas)] as const);
-  const curva = curvaMonotona(pontos);
-  const svg = s("svg", { viewBox: `0 0 ${L} ${A}`, class: "grafico-linha", role: "img", "aria-label": `Trocas por mês, de ${porMes[0]?.mes} a ${porMes.at(-1)?.mes}` });
-  for (let v = 0; v <= maximo; v += maximo / 4) {
-    svg.append(
-      s("line", { x1: String(m.esq), x2: String(L - m.dir), y1: y(v).toFixed(1), y2: y(v).toFixed(1), class: v === 0 ? "eixo" : "grade" }),
-      s("text", { x: String(m.esq - 8), y: (y(v) + 4).toFixed(1), "text-anchor": "end", class: "rotulo-eixo" }, String(v)),
-    );
-  }
-  porMes.forEach((p, i) => {
-    if (i % 6 !== 0 && i !== porMes.length - 1) return;
-    svg.append(s("text", { x: x(i).toFixed(1), y: String(A - 8), "text-anchor": "middle", class: "rotulo-eixo" }, `${MESES[Number(p.mes.slice(5, 7)) - 1]} ${p.mes.slice(2, 4)}`));
-  });
-  svg.append(
-    s("path", { d: `${curva} L${x(porMes.length - 1).toFixed(1)} ${y(0).toFixed(1)} L${x(0).toFixed(1)} ${y(0).toFixed(1)} Z`, class: "area" }),
-    s("path", { d: curva, class: "linha" }),
-  );
   const ip = porMes.reduce((melhor, p, i) => (p.trocas > (porMes[melhor]?.trocas ?? -1) ? i : melhor), 0);
-  const pico = porMes[ip] ?? { mes: "0000-01", trocas: 0 };
-  svg.append(
-    s("circle", { cx: x(ip).toFixed(1), cy: y(pico.trocas).toFixed(1), r: "3.5", class: "pico" }),
-    s("text", { x: (x(ip) + 8).toFixed(1), y: (y(pico.trocas) + 4).toFixed(1), class: "rotulo-pico" }, `${pico.trocas} em ${MESES[Number(pico.mes.slice(5)) - 1]}`),
-  );
   const total = porMes.reduce((a, p) => a + p.trocas, 0);
+  const nomeDoMes = (mes: string) => `${MESES[Number(mes.slice(5, 7)) - 1]} ${mes.slice(0, 4)}`;
+  const barras = porMes.map((p, i) => {
+    const janeiro = p.mes.endsWith("-01");
+    return h(
+      "li",
+      { class: `${i === ip ? "pico" : ""}${janeiro ? " ano" : ""}`.trim() || undefined, style: `--v: ${(p.trocas / maximo).toFixed(3)}`, title: `${nomeDoMes(p.mes)}: ${contagem(p.trocas, "troca", "trocas")}` },
+      h("span", { class: "barra-mes" }),
+      i === ip ? h("span", { class: "valor-pico" }, String(p.trocas)) : null,
+      janeiro ? h("span", { class: "rotulo-ano" }, p.mes.slice(0, 4)) : null,
+    );
+  });
+  const grade = [maximo, maximo / 2, 0].map((v) => h("li", {}, String(v)));
   return h(
     "section",
     { class: "cartao-painel grafico" },
     h("div", { class: "cabeca-painel" }, h("h2", {}, "Trocas por mês")),
-    h("div", { class: "rolagem" }, svg),
-    h("p", { class: "fonte-planta" }, h("span", { class: "chave chave-linha" }, `${contagem(total, "troca", "trocas")} em ${porMes.length} meses, todas as máquinas`), h("span", {}, "dados fictícios")),
+    h(
+      "div",
+      { class: "barras-quadro", role: "img", "aria-label": `Trocas por mês, de ${nomeDoMes(porMes[0]?.mes ?? "")} a ${nomeDoMes(porMes.at(-1)?.mes ?? "")}; o maior mês teve ${porMes[ip]?.trocas ?? 0}` },
+      h("ol", { class: "escala", "aria-hidden": "true" }, ...grade),
+      h("ol", { class: "barras", "aria-hidden": "true" }, ...barras),
+    ),
+    h("p", { class: "fonte-planta" }, h("span", {}, `${contagem(total, "troca", "trocas")} em ${porMes.length} meses, todas as máquinas`), h("span", {}, "dados fictícios")),
   );
 }

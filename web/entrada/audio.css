@@ -36,13 +36,13 @@
 }
 
 .entrada-audio button[type="submit"] {
-  border-color: var(--tinta);
-  background: var(--tinta);
+  border-color: var(--acao);
+  background: var(--acao);
   color: #ffffff;
 }
 
 .entrada-audio button[type="submit"]:hover {
-  background: var(--tinta-alta);
+  background: var(--acao-alta);
 }
 
 /* Gravando: vermelho de microfone aberto, com o ponto que pulsa enquanto ouve. */

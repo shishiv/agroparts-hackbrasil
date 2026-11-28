@@ -23,52 +23,43 @@
   src: url("/fontes/ibm-plex-mono-600.woff2") format("woff2");
 }
 
-@font-face {
-  font-family: "Instrument Serif";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src: url("/fontes/instrument-serif-400.woff2") format("woff2");
-}
-
 /*
- * A casca de painel da AgroParts: fundo creme quente, verde-escuro como cor principal e quase
- * nenhuma outra cor. Títulos numa serifada de exibição, texto em Archivo, números tabulares.
- * O âmbar marca só o que pede atenção; o amarelo fica no quadrado da marca e no marca-texto.
+ * A casca de painel da AgroParts: fundo neutro frio, fichas brancas e tinta quase preta nas ações.
+ * Títulos em Archivo largo, como a gravação de uma placa; texto em Archivo; números tabulares.
+ * O verde marca só o que tem no almoxarifado, o âmbar só a peça guardada com outro código, e o
+ * amarelo fica na placa da marca e no marca-texto.
  */
 :root {
   color-scheme: light;
-  --fundo: #f6f5ef;
-  --lateral: #f0efe7;
-  --superficie: #fcfbf7;
-  --poco: #efeee6;
-  --linha: #e2e0d5;
-  --linha-forte: #cbc8ba;
-  --texto: #1f2823;
-  --apoio: #5a625c;
-  --verde: #2e5a43;
-  --verde-alto: #234835;
-  --verde-claro: #e3eadf;
-  --verde-medio: #c9d6c4;
-  --tinta: #2e5a43;
-  --tinta-alta: #23483a;
+  --fundo: #f1f2ef;
+  --lateral: #fafbf9;
+  --superficie: #ffffff;
+  --poco: #eaece8;
+  --linha: #dfe2dd;
+  --linha-forte: #c3c8c1;
+  --texto: #161d1a;
+  --apoio: #555e58;
+  --acao: #1d2622;
+  --acao-alta: #0b100e;
+  --acao-claro: #e6e9e4;
+  --acao-medio: #c9cec7;
   --ambar: #8a4f0c;
   --ambar-claro: #f5e8d4;
   --marca: #ffd21a;
-  --marca-borda: #e5b700;
+  --marca-borda: #d9a900;
   --realce: #fbe7a1;
   --tem: #2e6a47;
   --tem-claro: #e8f0e7;
   --tem-borda: #c6d9c6;
   --alerta: #b3381a;
-  --regua: #1f2823;
+  --regua: #161d1a;
 
   --t-r1: 1rem;
   --t-0: clamp(1rem, 0.979rem + 0.093vw, 1.0625rem);
   --t-1: clamp(1.125rem, 1.083rem + 0.185vw, 1.25rem);
   --t-2: clamp(1.3125rem, 1.25rem + 0.278vw, 1.5rem);
   --t-3: clamp(1.5rem, 1.396rem + 0.463vw, 1.8125rem);
-  --t-titulo: clamp(2.375rem, 2.1rem + 1.1vw, 3.125rem);
+  --t-titulo: clamp(2rem, 1.8rem + 0.9vw, 2.625rem);
 
   --e-1: 0.25rem;
   --e-2: 0.5rem;
@@ -81,12 +72,12 @@
   --margem: clamp(1rem, 0.6rem + 1.8vw, 2.5rem);
   --vao: clamp(1rem, 0.8rem + 0.6vw, 1.5rem);
   --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --largo: 118%;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --suave: cubic-bezier(0.22, 1, 0.36, 1);
   --icone-camera: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 8h3l1.5-2h7L17 8h3v11H4z'/%3E%3Ccircle cx='12' cy='13' r='3.5'/%3E%3C/svg%3E");
   --icone-microfone: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='3' width='6' height='11' rx='3'/%3E%3Cpath d='M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21'/%3E%3C/svg%3E");
-  --icone-seguir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4' fill='none' stroke='%232e5a43' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --icone-seguir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4' fill='none' stroke='%231d2622' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   --icone-seguir-branco: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   --icone-abrir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 3v10M3 8h10' fill='none' stroke='%231f2823' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
 }
@@ -138,8 +129,9 @@ h4 {
 }
 
 h1 {
-  font: 400 var(--t-titulo) / 1.05 var(--serif);
-  letter-spacing: -0.01em;
+  font: 650 var(--t-titulo) / 1.05 var(--sans);
+  font-stretch: var(--largo);
+  letter-spacing: -0.02em;
 }
 
 h2 {
@@ -185,19 +177,11 @@ a {
   color: var(--apoio);
 }
 
-/* O sobretítulo: no computador em caixa alta espaçada, como no painel de referência; no celular, em texto normal. */
+/* A linha de contexto acima do título: texto normal, sem caixa alta. */
 .sobre {
   color: var(--apoio);
   font-size: var(--t-r1);
   font-weight: 500;
-}
-
-@media (min-width: 64rem) {
-  .sobre {
-    font-size: 0.8125rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
 }
 
 /* --- A casca --- */
@@ -232,58 +216,43 @@ a {
   position: fixed;
   inset: 0;
   z-index: 30;
-  background: rgb(31 40 35 / 0.28);
+  background: rgb(22 29 26 / 0.28);
   content: "";
 }
 
+/* A marca: a placa de patrimônio amarela, com os dois rebites, e o nome em Archivo largo. */
 .marca {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.625rem;
   color: var(--texto);
-  font: 400 1.875rem / 1 var(--serif);
-  letter-spacing: -0.01em;
+  font: 720 1.3125rem / 1 var(--sans);
+  font-stretch: 125%;
+  letter-spacing: -0.015em;
   text-decoration: none;
 }
 
 .marca::before {
-  width: 1.25rem;
-  height: 1.25rem;
-  border-radius: 0.25rem;
-  background: var(--marca);
+  width: 1.75rem;
+  height: 1.125rem;
+  border-radius: 0.1875rem;
+  background:
+    radial-gradient(circle at 0.3125rem 50%, var(--marca-borda) 0.0938rem, transparent 0.125rem),
+    radial-gradient(circle at calc(100% - 0.3125rem) 50%, var(--marca-borda) 0.0938rem, transparent 0.125rem),
+    var(--marca);
   box-shadow: inset 0 0 0 1px var(--marca-borda);
   content: "";
 }
 
 .usina {
-  display: flex;
-  align-items: center;
-  gap: var(--e-3);
-  padding: var(--e-3);
-  border: 1px solid var(--linha);
-  border-radius: 0.5rem;
-  background: var(--superficie);
+  display: grid;
+  gap: 0.125rem;
+  padding: 0 var(--e-2) var(--e-4);
+  border-bottom: 1px solid var(--linha);
   line-height: 1.3;
 }
 
-.usina-sigla {
-  display: grid;
-  flex: none;
-  place-items: center;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 0.375rem;
-  background: var(--verde-claro);
-  color: var(--verde);
-  font: 400 1.25rem / 1 var(--serif);
-}
-
-.usina strong,
-.usina span span {
-  display: block;
-}
-
-.usina span span {
+.usina span {
   color: var(--apoio);
   font-size: var(--t-r1);
 }
@@ -298,11 +267,16 @@ a {
 
 .grupo {
   margin: 0 0 var(--e-2) var(--e-2);
+  color: var(--texto);
+  font-size: var(--t-r1);
+  font-weight: 650;
+}
+
+/* O nome do setor sobre as máquinas dele, na ordem do caminho da cana. */
+.setor-lateral {
+  margin: var(--e-2) 0 0 var(--e-2);
   color: var(--apoio);
   font-size: var(--t-r1);
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .lateral nav a {
@@ -322,8 +296,8 @@ a {
 }
 
 .lateral nav a[aria-current] {
-  background: var(--verde-claro);
-  color: var(--verde-alto);
+  background: var(--acao-claro);
+  color: var(--acao-alta);
   font-weight: 600;
 }
 
@@ -346,11 +320,23 @@ a {
   font-size: var(--t-r1);
 }
 
-.maquinas .num {
+.lateral nav .maquinas ul {
+  margin: 0;
+}
+
+.lateral nav li {
+  min-width: 0;
+}
+
+.maquinas .tag-maquina {
   flex: none;
-  width: 1.75rem;
+  width: 3.75rem;
   color: var(--apoio);
   font-family: var(--mono);
+}
+
+.maquinas a[aria-current] .tag-maquina {
+  color: var(--texto);
 }
 
 .maquinas .nome-maquina {
@@ -359,10 +345,6 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.maquinas .tag-maquina {
-  display: none;
 }
 
 /* A barra de cima: o menu (no celular), a trilha, o aviso de demonstração e a visita guiada. */
@@ -376,7 +358,7 @@ a {
   min-height: 3.5rem;
   padding: 0 var(--margem);
   border-bottom: 1px solid var(--linha);
-  background: rgb(246 245 239 / 0.94);
+  background: rgb(241 242 239 / 0.97);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
@@ -443,7 +425,7 @@ a {
   width: 0.4375rem;
   height: 0.4375rem;
   border-radius: 50%;
-  background: var(--verde);
+  background: var(--acao);
   content: "";
 }
 
@@ -485,7 +467,7 @@ a {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   padding: 0.25rem 0 calc(0.25rem + env(safe-area-inset-bottom));
   border-top: 1px solid var(--linha);
-  background: rgb(252 251 247 / 0.97);
+  background: rgb(255 255 255 / 0.97);
 }
 
 .abas a {
@@ -501,14 +483,14 @@ a {
 }
 
 .abas a[aria-current] {
-  color: var(--verde-alto);
+  color: var(--acao-alta);
   font-weight: 600;
 }
 
 .abas a[aria-current] .icone {
   padding: 0.0625rem 0.75rem;
   border-radius: 0.5rem;
-  background: var(--verde-claro);
+  background: var(--acao-claro);
   box-sizing: content-box;
 }
 
@@ -681,7 +663,7 @@ a {
 .cabeca-painel a {
   padding-right: 1.375rem;
   background: var(--icone-seguir) right center / 1rem no-repeat;
-  color: var(--verde);
+  color: var(--acao);
   font-size: var(--t-r1);
   font-weight: 600;
   text-decoration: none;
@@ -693,8 +675,8 @@ a {
   min-width: 1.75rem;
   padding: 0.125rem 0.5rem;
   border-radius: 0.25rem;
-  background: var(--verde-claro);
-  color: var(--verde-alto);
+  background: var(--acao-claro);
+  color: var(--acao-alta);
   font-size: var(--t-r1);
   font-weight: 600;
 }
@@ -717,7 +699,7 @@ a {
   display: block;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 1px 1px rgb(31 40 35 / 0.18)) drop-shadow(0 6px 10px rgb(31 40 35 / 0.08));
+  filter: drop-shadow(0 1px 1px rgb(22 29 26 / 0.18)) drop-shadow(0 6px 10px rgb(22 29 26 / 0.08));
 }
 
 .placa text {
@@ -803,8 +785,8 @@ form.numero {
 }
 
 .numero-linha:focus-within {
-  border-color: var(--verde);
-  box-shadow: 0 0 0 3px rgb(46 90 67 / 0.14);
+  border-color: var(--acao);
+  box-shadow: 0 0 0 3px rgb(29 38 34 / 0.14);
 }
 
 .numero input {
@@ -832,7 +814,7 @@ form.numero {
   padding: 0 1.25rem;
   border: 0;
   border-radius: 0.375rem;
-  background: var(--verde);
+  background: var(--acao);
   color: #ffffff;
   font: 600 var(--t-r1) / 1 var(--sans);
   cursor: pointer;
@@ -848,7 +830,7 @@ form.numero {
 .numero button:hover,
 .estado button:hover,
 .botao-principal:hover {
-  background: var(--verde-alto);
+  background: var(--acao-alta);
 }
 
 .numero button:active,
@@ -870,7 +852,7 @@ form.numero {
 }
 
 :focus-visible {
-  outline: 2px solid var(--verde);
+  outline: 2px solid var(--acao);
   outline-offset: 3px;
 }
 
@@ -884,7 +866,7 @@ form.numero {
   position: relative;
   z-index: 5;
   border-radius: 0.75rem;
-  box-shadow: 0 0 0 0.625rem var(--fundo), 0 0 0 calc(0.625rem + 2px) var(--verde), 0 0 0 100vmax rgb(246 245 239 / 0.72);
+  box-shadow: 0 0 0 0.625rem var(--fundo), 0 0 0 calc(0.625rem + 2px) var(--acao), 0 0 0 100vmax rgb(241 242 239 / 0.72);
   scroll-margin-top: 5.5rem;
 }
 
@@ -898,14 +880,15 @@ form.numero {
   margin-inline: auto;
   padding: var(--e-4) var(--e-5) var(--e-5);
   border-radius: 0.75rem;
-  background: var(--verde-alto);
+  background: var(--acao-alta);
   color: #ffffff;
-  box-shadow: 0 18px 40px -12px rgb(31 40 35 / 0.45);
+  box-shadow: 0 18px 40px -12px rgb(22 29 26 / 0.45);
   animation: surgir-visita 0.35s var(--suave) both;
 }
 
 .visita h2 {
-  font: 400 1.75rem / 1.1 var(--serif);
+  font: 650 var(--t-2) / 1.15 var(--sans);
+  font-stretch: var(--largo);
 }
 
 .visita p {
@@ -929,7 +912,7 @@ form.numero {
   border: 1px solid #ffffff;
   border-radius: 0.375rem;
   background: #ffffff;
-  color: var(--verde-alto);
+  color: var(--acao-alta);
   font: 600 var(--t-r1) / 1 var(--sans);
   cursor: pointer;
 }
@@ -990,5 +973,17 @@ form.numero {
   *::after {
     transition-duration: 0s !important;
     animation-duration: 0s !important;
+  }
+}
+
+/* No computador, a lista de máquinas fica mais justa para caber inteira na lateral. */
+@media (min-width: 64rem) {
+  .lateral nav .maquinas a {
+    min-height: 2rem;
+    padding-block: 0.25rem;
+  }
+
+  .lateral nav ul {
+    margin-bottom: var(--e-4);
   }
 }
