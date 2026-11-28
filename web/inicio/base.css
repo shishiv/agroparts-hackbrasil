@@ -23,24 +23,70 @@
   src: url("/fontes/ibm-plex-mono-600.woff2") format("woff2");
 }
 
+/*
+ * A casca de painel da AgroParts: fundo neutro frio, fichas brancas e tinta quase preta nas ações.
+ * Títulos em Archivo largo, como a gravação de uma placa; texto em Archivo; números tabulares.
+ * O verde marca só o que tem no almoxarifado, o âmbar só a peça guardada com outro código, e o
+ * amarelo fica na placa da marca e no marca-texto.
+ */
 :root {
-  color-scheme: dark;
-  --preto: #000000;
-  --palco: #0a0a0a;
-  --painel: #151515;
-  --painel-alto: #1e1e1e;
-  --grade: #262626;
-  --regua: #383838;
-  --apoio: #a3a3a3;
-  --texto: #eeeeee;
-  --sinal: #fff313;
-  --sinal-texto: #000000;
-  --alerta: #ff5a36;
-  --margem: clamp(1rem, 2.5vw, 2.25rem);
+  color-scheme: light;
+  --fundo: #f1f2ef;
+  --lateral: #fafbf9;
+  --superficie: #ffffff;
+  --poco: #eaece8;
+  --linha: #dfe2dd;
+  --linha-forte: #c3c8c1;
+  --texto: #161d1a;
+  --apoio: #555e58;
+  --acao: #1d2622;
+  --acao-alta: #0b100e;
+  --acao-claro: #e6e9e4;
+  --acao-medio: #c9cec7;
+  --ambar: #8a4f0c;
+  --ambar-claro: #f5e8d4;
+  --marca: #ffd21a;
+  --marca-borda: #d9a900;
+  --realce: #fbe7a1;
+  --tem: #2e6a47;
+  --tem-claro: #e8f0e7;
+  --tem-borda: #c6d9c6;
+  --alerta: #b3381a;
+  --regua: #161d1a;
+
+  --t-r1: 1rem;
+  --t-0: clamp(1rem, 0.979rem + 0.093vw, 1.0625rem);
+  --t-1: clamp(1.125rem, 1.083rem + 0.185vw, 1.25rem);
+  --t-2: clamp(1.3125rem, 1.25rem + 0.278vw, 1.5rem);
+  --t-3: clamp(1.5rem, 1.396rem + 0.463vw, 1.8125rem);
+  --t-titulo: clamp(2rem, 1.8rem + 0.9vw, 2.625rem);
+
+  --e-1: 0.25rem;
+  --e-2: 0.5rem;
+  --e-3: 0.75rem;
+  --e-4: 1rem;
+  --e-5: 1.5rem;
+  --e-6: 2rem;
+  --e-7: clamp(2.5rem, 2rem + 2vw, 3.5rem);
+
+  --margem: clamp(1rem, 0.6rem + 1.8vw, 2.5rem);
+  --vao: clamp(1rem, 0.8rem + 0.6vw, 1.5rem);
   --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --largo: 118%;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --suave: cubic-bezier(0.22, 1, 0.36, 1);
-  --grade-tecnica: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Crect x='.5' y='.5' width='96' height='96' fill='none' stroke='%23262626'/%3E%3Ccircle cx='48.5' cy='48.5' r='47' fill='none' stroke='%231c1c1c'/%3E%3C/svg%3E");
+  --icone-camera: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 8h3l1.5-2h7L17 8h3v11H4z'/%3E%3Ccircle cx='12' cy='13' r='3.5'/%3E%3C/svg%3E");
+  --icone-microfone: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='3' width='6' height='11' rx='3'/%3E%3Cpath d='M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21'/%3E%3C/svg%3E");
+  --icone-seguir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4' fill='none' stroke='%231d2622' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --icone-seguir-branco: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --icone-abrir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 3v10M3 8h10' fill='none' stroke='%231f2823' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* No computador, os rótulos descem um passo da escala; no celular ficam em 16 px. */
+@media (min-width: 64rem) {
+  :root {
+    --t-r1: 0.875rem;
+  }
 }
 
 * {
@@ -50,114 +96,602 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  background: var(--preto);
+  background: var(--fundo);
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   min-height: 100dvh;
   margin: 0;
-  background: var(--preto);
+  background: var(--fundo);
   color: var(--texto);
-  font: 400 1rem/1.5 var(--sans);
+  font: 400 var(--t-0) / 1.5 var(--sans);
+  font-variant-numeric: tabular-nums;
   overflow-wrap: anywhere;
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 
 main {
-  flex: 1;
-  width: min(100%, 120rem);
-  margin-inline: auto;
-  padding: 0 var(--margem) 3rem;
+  display: block;
+  width: 100%;
+  max-width: 84rem;
+  padding: var(--e-6) var(--margem) var(--e-7);
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-weight: 300;
-  letter-spacing: -0.04em;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.005em;
   text-wrap: balance;
 }
 
 h1 {
-  margin: 0 0 1rem;
-  font-size: clamp(2.75rem, 6vw, 5.5rem);
-  line-height: 1;
+  font: 650 var(--t-titulo) / 1.05 var(--sans);
+  font-stretch: var(--largo);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--t-0);
+  line-height: 1.35;
+}
+
+h3 {
+  font-size: var(--t-1);
+  line-height: 1.3;
+}
+
+h4 {
+  color: var(--apoio);
+  font-size: var(--t-r1);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+p {
+  margin: 0;
 }
 
 strong {
   font-weight: 600;
 }
 
-/* Rótulo técnico: mono, caixa alta, com o ponto da referência antes. */
-.rotulo,
-h2 {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  margin: 0 0 1rem;
-  color: var(--apoio);
-  font: 400 1rem/1.4 var(--mono);
-  letter-spacing: 0;
-  text-transform: uppercase;
+a {
+  color: inherit;
 }
 
-h2::before {
-  flex: none;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: currentColor;
+.so-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.explica {
+  max-width: 44rem;
+  color: var(--apoio);
+}
+
+/* A linha de contexto acima do título: texto normal, sem caixa alta. */
+.sobre {
+  color: var(--apoio);
+  font-size: var(--t-r1);
+  font-weight: 500;
+}
+
+/* --- A casca --- */
+
+.casca {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+}
+
+.lateral {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-5);
+  width: min(19rem, 86vw);
+  padding: var(--e-5) var(--e-4);
+  overflow-y: auto;
+  border-right: 1px solid var(--linha);
+  background: var(--lateral);
+  transform: translateX(-102%);
+  transition: transform 0.3s var(--suave);
+}
+
+[data-menu] .lateral {
+  transform: none;
+}
+
+[data-menu]::after {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgb(22 29 26 / 0.28);
   content: "";
 }
 
-.topo {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  width: min(100%, 120rem);
-  margin-inline: auto;
-  padding: 0.75rem var(--margem);
-  border-bottom: 1px solid transparent;
-  background: rgb(0 0 0 / 0.82);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
-}
-
-.topo a {
+/* A marca: a placa de patrimônio amarela, com os dois rebites, e o nome em Archivo largo. */
+.marca {
   display: inline-flex;
   align-items: center;
-  min-height: 2.75rem;
-  padding: 0 0.875rem;
-  border-radius: 0.375rem;
-  background: var(--sinal);
-  color: var(--sinal-texto);
-  font: 600 1rem/1 var(--mono);
-  letter-spacing: -0.02em;
+  gap: 0.625rem;
+  color: var(--texto);
+  font: 720 1.3125rem / 1 var(--sans);
+  font-stretch: 125%;
+  letter-spacing: -0.015em;
   text-decoration: none;
-  transition: background-color 0.2s, color 0.2s;
 }
 
-.topo a:hover {
-  background: var(--texto);
+.marca::before {
+  width: 1.75rem;
+  height: 1.125rem;
+  border-radius: 0.1875rem;
+  background:
+    radial-gradient(circle at 0.3125rem 50%, var(--marca-borda) 0.0938rem, transparent 0.125rem),
+    radial-gradient(circle at calc(100% - 0.3125rem) 50%, var(--marca-borda) 0.0938rem, transparent 0.125rem),
+    var(--marca);
+  box-shadow: inset 0 0 0 1px var(--marca-borda);
+  content: "";
+}
+
+.usina {
+  display: grid;
+  gap: 0.125rem;
+  padding: 0 var(--e-2) var(--e-4);
+  border-bottom: 1px solid var(--linha);
+  line-height: 1.3;
+}
+
+.usina span {
+  color: var(--apoio);
+  font-size: var(--t-r1);
+}
+
+.lateral nav ul {
+  display: grid;
+  gap: 0.125rem;
+  margin: 0 0 var(--e-5);
+  padding: 0;
+  list-style: none;
+}
+
+.grupo {
+  margin: 0 0 var(--e-2) var(--e-2);
+  color: var(--texto);
+  font-size: var(--t-r1);
+  font-weight: 650;
+}
+
+/* O nome do setor sobre as máquinas dele, na ordem do caminho da cana. */
+.setor-lateral {
+  margin: var(--e-2) 0 0 var(--e-2);
+  color: var(--apoio);
+  font-size: var(--t-r1);
+}
+
+.lateral nav a {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  min-height: 2.5rem;
+  padding: var(--e-2) var(--e-2);
+  border-radius: 0.375rem;
+  color: var(--texto);
+  font-size: var(--t-r1);
+  text-decoration: none;
+}
+
+.lateral nav a:hover {
+  background: var(--poco);
+}
+
+.lateral nav a[aria-current] {
+  background: var(--acao-claro);
+  color: var(--acao-alta);
+  font-weight: 600;
+}
+
+.icone {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nota-lateral {
+  margin-top: auto;
+  padding: var(--e-3) var(--e-2) 0;
+  border-top: 1px solid var(--linha);
+  color: var(--apoio);
+  font-size: var(--t-r1);
+}
+
+.lateral nav .maquinas ul {
+  margin: 0;
+}
+
+.lateral nav li {
+  min-width: 0;
+}
+
+.maquinas .tag-maquina {
+  flex: none;
+  width: 3.75rem;
+  color: var(--apoio);
+  font-family: var(--mono);
+}
+
+.maquinas a[aria-current] .tag-maquina {
+  color: var(--texto);
+}
+
+.maquinas .nome-maquina {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* A barra de cima: o menu (no celular), a trilha, o aviso de demonstração e a visita guiada. */
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  min-height: 3.5rem;
+  padding: 0 var(--margem);
+  border-bottom: 1px solid var(--linha);
+  background: rgb(241 242 239 / 0.97);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.abrir-menu {
+  display: grid;
+  font-size: 1rem;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-left: -0.625rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.375rem;
+  background: none;
+  color: var(--texto);
+  cursor: pointer;
+}
+
+.trilha {
+  flex: 1;
+  min-width: 0;
+}
+
+.trilha ol {
+  display: flex;
+  gap: var(--e-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--t-r1);
+  white-space: nowrap;
+}
+
+.trilha li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trilha li + li::before {
+  margin-right: var(--e-2);
+  color: var(--linha-forte);
+  content: "/";
+}
+
+.trilha li:not(:last-child) {
+  display: none;
+}
+
+.trilha li:last-child::before {
+  display: none;
+}
+
+.demonstracao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--apoio);
+  font-size: var(--t-r1);
+  white-space: nowrap;
+}
+
+.demonstracao::before {
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-radius: 50%;
+  background: var(--acao);
+  content: "";
+}
+
+.acao-visita {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  min-height: 2.75rem;
+  padding: 0 var(--e-2);
+  border: 0;
+  border-radius: 0.375rem;
+  background: none;
+  color: var(--texto);
+  font: 500 var(--t-r1) / 1 var(--sans);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.acao-visita:hover {
+  background: var(--poco);
 }
 
 .rodape {
-  width: min(100%, 120rem);
-  margin-inline: auto;
-  padding: 1.25rem var(--margem) 1.5rem;
-  border-top: 1px solid var(--grade);
+  width: 100%;
+  max-width: 84rem;
+  padding: var(--e-4) var(--margem) calc(var(--e-5) + 4.5rem);
+  border-top: 1px solid var(--linha);
   color: var(--apoio);
-  font: 400 1rem/1.5 var(--mono);
+  font-size: var(--t-r1);
 }
 
-.rodape p {
+/* As abas do celular, presas embaixo, como num aplicativo. */
+.abas {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 0.25rem 0 calc(0.25rem + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--linha);
+  background: rgb(255 255 255 / 0.97);
+}
+
+.abas a {
+  display: grid;
+  justify-items: center;
+  gap: 0.125rem;
+  min-height: 3.5rem;
+  padding: 0.375rem 0 0.25rem;
+  color: var(--apoio);
+  font-size: 1rem;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.abas a[aria-current] {
+  color: var(--acao-alta);
+  font-weight: 600;
+}
+
+.abas a[aria-current] .icone {
+  padding: 0.0625rem 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--acao-claro);
+  box-sizing: content-box;
+}
+
+@media (max-width: 29.99rem) {
+  .demonstracao span,
+  .acao-visita span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .acao-visita .icone {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .casca {
+    grid-template-columns: 16rem minmax(0, 1fr);
+  }
+
+  .casca {
+    background: linear-gradient(to right, var(--lateral) 16rem, var(--fundo) 16rem);
+  }
+
+  .lateral {
+    position: sticky;
+    top: 0;
+    grid-row: 1 / -1;
+    align-self: start;
+    width: auto;
+    height: 100dvh;
+    transform: none;
+    transition: none;
+  }
+
+  [data-menu]::after {
+    display: none;
+  }
+
+  .casca > :not(.lateral) {
+    grid-column: 2;
+  }
+
+  .abrir-menu,
+  .abas {
+    display: none;
+  }
+
+  .trilha li:not(:last-child) {
+    display: list-item;
+    color: var(--apoio);
+  }
+
+  .trilha li:last-child::before {
+    display: inline;
+  }
+
+  .barra {
+    gap: var(--e-5);
+  }
+
+  .rodape {
+    padding-bottom: var(--e-5);
+  }
+}
+
+/* A página de erro, sem a casca: a marca e o título. */
+.pagina-simples {
+  display: grid;
+  gap: var(--e-6);
+  padding: var(--e-6) var(--margem);
+}
+
+/* --- Peças comuns --- */
+
+/*
+ * A faixa de indicadores. No celular, uma linha por número, rótulo à esquerda e valor à direita;
+ * no computador, células lado a lado com fios finos entre elas.
+ */
+.indicadores {
+  display: grid;
+  margin: var(--e-5) 0;
+  border-block: 1px solid var(--linha);
+}
+
+.indicadores > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--e-4);
+  padding: var(--e-2) 0;
+}
+
+.indicadores > div + div {
+  border-top: 1px solid var(--linha);
+}
+
+.indicadores dt {
+  color: var(--apoio);
+  font-size: var(--t-r1);
+  line-height: 1.35;
+}
+
+.indicadores dd {
   margin: 0;
+  color: var(--apoio);
+  font-size: var(--t-r1);
+  white-space: nowrap;
+}
+
+.indicadores dd strong {
+  color: var(--texto);
+  font-size: var(--t-1);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 48rem) {
+  .indicadores {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    margin: var(--e-6) 0;
+  }
+
+  .indicadores > div {
+    display: block;
+    padding: var(--e-4) var(--e-5);
+  }
+
+  .indicadores > div + div {
+    border-top: 0;
+    border-left: 1px solid var(--linha);
+  }
+
+  .indicadores > div:first-child {
+    padding-left: 0;
+  }
+
+  .indicadores dt {
+    min-height: 2.7em;
+  }
+
+  .indicadores dd {
+    margin-top: var(--e-2);
+  }
+
+  .indicadores dd strong {
+    font-size: var(--t-3);
+  }
+}
+
+/* O cabeçalho dos painéis: título pequeno e firme, e um link verde à direita. */
+.cabeca-painel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-4);
+  margin-bottom: var(--e-4);
+}
+
+.cabeca-painel h2 {
+  font-size: var(--t-1);
+  font-weight: 600;
+}
+
+.cabeca-painel a {
+  padding-right: 1.375rem;
+  background: var(--icone-seguir) right center / 1rem no-repeat;
+  color: var(--acao);
+  font-size: var(--t-r1);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contador {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  background: var(--acao-claro);
+  color: var(--acao-alta);
+  font-size: var(--t-r1);
+  font-weight: 600;
+}
+
+.cartao-painel {
+  padding: var(--e-4);
+  border: 1px solid var(--linha);
+  border-radius: 0.75rem;
+  background: var(--superficie);
+}
+
+@media (min-width: 48rem) {
+  .cartao-painel {
+    padding: var(--e-5);
+  }
 }
 
 /* A placa de patrimônio desenhada: a mesma na página inicial e no topo da página da máquina. */
@@ -165,7 +699,7 @@ h2::before {
   display: block;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 1.75rem 2rem rgb(0 0 0 / 0.75));
+  filter: drop-shadow(0 1px 1px rgb(22 29 26 / 0.18)) drop-shadow(0 6px 10px rgb(22 29 26 / 0.08));
 }
 
 .placa text {
@@ -183,41 +717,88 @@ h2::before {
   transform-box: view-box;
 }
 
-/* O campo do número da placa: um controle de equipamento, não um formulário de cadastro. */
+/* Os códigos como pequenas etiquetas: o código em mono e o saldo ao lado. */
+.chip {
+  display: inline-flex;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid var(--linha-forte);
+  border-radius: 0.375rem;
+  background: var(--superficie);
+  font: 400 var(--t-r1) / 1 var(--mono);
+  white-space: nowrap;
+}
+
+.chip > span {
+  padding: 0.375rem 0.5rem;
+}
+
+.chip-saldo {
+  border-left: 1px solid var(--linha);
+  color: var(--apoio);
+}
+
+.chip.sem {
+  border-style: dashed;
+  color: var(--apoio);
+}
+
+.chip.sem .chip-codigo {
+  text-decoration: line-through;
+  text-decoration-color: var(--linha-forte);
+}
+
+.chip.achado {
+  border-color: var(--tem);
+  color: var(--tem);
+  font-weight: 600;
+}
+
+.chip.achado .chip-saldo {
+  border-left-color: var(--tem-borda);
+  background: var(--tem-claro);
+  color: var(--tem);
+}
+
+/* O campo do número da placa, com o botão dentro. */
 form.numero {
-  max-width: 34rem;
+  width: 100%;
+  max-width: 26rem;
 }
 
 .numero label {
   display: block;
-  margin-bottom: 0.625rem;
-  color: var(--apoio);
-  font: 400 1rem/1.4 var(--mono);
-  text-transform: uppercase;
+  margin-bottom: var(--e-2);
+  color: var(--texto);
+  font-size: var(--t-r1);
+  font-weight: 500;
 }
 
 .numero-linha {
   display: flex;
-  border: 1px solid var(--regua);
+  border: 1px solid var(--linha-forte);
   border-radius: 0.5rem;
-  background: var(--painel);
-  transition: border-color 0.2s;
+  background: var(--superficie);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .numero-linha:focus-within {
-  border-color: var(--sinal);
+  border-color: var(--acao);
+  box-shadow: 0 0 0 3px rgb(29 38 34 / 0.14);
 }
 
 .numero input {
   flex: 1;
   min-width: 0;
-  min-height: 3.5rem;
-  padding: 0 1rem;
+  min-height: 3rem;
+  padding: 0 0.875rem;
   border: 0;
   border-radius: 0.5rem 0 0 0.5rem;
   background: transparent;
   color: var(--texto);
-  font: 600 1.5rem/1 var(--mono);
+  font: 400 var(--t-1) / 1 var(--mono);
   letter-spacing: 0.04em;
 }
 
@@ -225,37 +806,157 @@ form.numero {
   outline: none;
 }
 
+/* O botão principal: o verde-escuro do painel e texto branco. */
 .numero button,
-.estado button {
-  min-height: 3.5rem;
-  padding: 0 1.5rem;
+.estado button,
+.botao-principal {
+  min-height: 2.75rem;
+  padding: 0 1.25rem;
   border: 0;
   border-radius: 0.375rem;
-  background: var(--sinal);
-  color: var(--sinal-texto);
-  font: 600 1rem/1 var(--mono);
+  background: var(--acao);
+  color: #ffffff;
+  font: 600 var(--t-r1) / 1 var(--sans);
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition:
+    background-color 0.2s,
+    transform 0.15s;
 }
 
 .numero button {
-  margin: 0.25rem;
-  min-height: 3rem;
+  margin: 0.125rem;
 }
 
 .numero button:hover,
-.estado button:hover {
-  background: var(--texto);
+.estado button:hover,
+.botao-principal:hover {
+  background: var(--acao-alta);
+}
+
+.numero button:active,
+.estado button:active {
+  transform: scale(0.98);
+}
+
+.botao-principal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3.25rem;
+  padding: 0 var(--e-4);
+  background-image: var(--icone-seguir-branco);
+  background-position: right var(--e-4) center;
+  background-repeat: no-repeat;
+  background-size: 1.125rem;
+  text-decoration: none;
 }
 
 :focus-visible {
-  outline: 2px dashed var(--sinal);
+  outline: 2px solid var(--acao);
   outline-offset: 3px;
 }
 
 ::selection {
-  background: var(--sinal);
-  color: var(--sinal-texto);
+  background: var(--realce);
+  color: var(--texto);
+}
+
+/* A visita guiada: o cartão preso embaixo e o alvo com um contorno verde. */
+[data-visita-alvo] {
+  position: relative;
+  z-index: 5;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 0 0.625rem var(--fundo), 0 0 0 calc(0.625rem + 2px) var(--acao), 0 0 0 100vmax rgb(241 242 239 / 0.72);
+  scroll-margin-top: 5.5rem;
+}
+
+.visita {
+  position: fixed;
+  inset: auto var(--e-4) calc(4.75rem + env(safe-area-inset-bottom)) var(--e-4);
+  z-index: 50;
+  display: grid;
+  gap: var(--e-2);
+  max-width: 28rem;
+  margin-inline: auto;
+  padding: var(--e-4) var(--e-5) var(--e-5);
+  border-radius: 0.75rem;
+  background: var(--acao-alta);
+  color: #ffffff;
+  box-shadow: 0 18px 40px -12px rgb(22 29 26 / 0.45);
+  animation: surgir-visita 0.35s var(--suave) both;
+}
+
+.visita h2 {
+  font: 650 var(--t-2) / 1.15 var(--sans);
+  font-stretch: var(--largo);
+}
+
+.visita p {
+  color: #e4ece6;
+}
+
+.visita-cabeca {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contador-visita {
+  color: #c9d8cd;
+  font-size: var(--t-r1);
+}
+
+.visita button {
+  min-height: 2.75rem;
+  padding: 0 var(--e-4);
+  border: 1px solid #ffffff;
+  border-radius: 0.375rem;
+  background: #ffffff;
+  color: var(--acao-alta);
+  font: 600 var(--t-r1) / 1 var(--sans);
+  cursor: pointer;
+}
+
+.visita button.secundario {
+  border-color: rgb(255 255 255 / 0.4);
+  background: transparent;
+  color: #ffffff;
+}
+
+.visita button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.visita .fechar {
+  width: 2.75rem;
+  margin-right: -0.75rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.visita-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--e-2);
+  margin-top: var(--e-2);
+}
+
+@media (min-width: 64rem) {
+  .visita {
+    inset: auto var(--margem) var(--e-6) auto;
+    margin: 0;
+  }
+}
+
+@keyframes surgir-visita {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
 }
 
 @view-transition {
@@ -271,5 +972,18 @@ form.numero {
   *::before,
   *::after {
     transition-duration: 0s !important;
+    animation-duration: 0s !important;
+  }
+}
+
+/* No computador, a lista de máquinas fica mais justa para caber inteira na lateral. */
+@media (min-width: 64rem) {
+  .lateral nav .maquinas a {
+    min-height: 2rem;
+    padding-block: 0.25rem;
+  }
+
+  .lateral nav ul {
+    margin-bottom: var(--e-4);
   }
 }

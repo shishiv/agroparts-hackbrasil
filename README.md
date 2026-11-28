@@ -180,6 +180,10 @@ Fornecedor, órgão comprador e preço das compras públicas não entram. O test
 - `functions/api/`: funções do Cloudflare Pages, só para foto e áudio.
 - `scripts/`: gerador da demo, download do CATMAT, medições e geração das páginas.
 
+## Como contribuir
+
+Antes de criar ou mudar a interface, leia DESIGN.md.
+
 ## Licença
 
 AGPL-3.0 (GNU Affero General Public License, versão 3). O texto está em `LICENSE`.

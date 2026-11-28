@@ -24,7 +24,16 @@ const dataBR = (iso: string): string => `${iso.slice(8, 10)}/${iso.slice(5, 7)}/
 
 const numeroBR = (n: number): string => String(n).replace(".", ",");
 
-const comUnidade = (n: number, unidade: string): string => `${numeroBR(n)} ${unidade}`;
+/** As unidades da exportação que têm nome por extenso; as outras aparecem como vieram. */
+const UNIDADES: Readonly<Record<string, readonly [string, string]>> = { UN: ["unidade", "unidades"], PC: ["peça", "peças"] };
+
+const nomeDaUnidade = (unidade: string, n = 2): string => UNIDADES[unidade]?.[n === 1 ? 0 : 1] ?? unidade;
+
+const comUnidade = (n: number, unidade: string): string => `${numeroBR(n)} ${nomeDaUnidade(unidade, n)}`;
+
+function juntarComE(itens: readonly string[]): string {
+  return itens.length < 2 ? itens.join("") : `${itens.slice(0, -1).join(", ")} e ${itens.at(-1)}`;
+}
 
 const contagem = (n: number, singular: string, plural: string): string => `${n} ${n === 1 ? singular : plural}`;
 
@@ -132,13 +141,15 @@ function usoPorCodigo(trocas: readonly Troca[]): Map<CodigoLegado, Uso> {
 const quantidadesTexto = (quantidades: ReadonlyMap<string, number>): string =>
   [...quantidades].map(([unidade, n]) => comUnidade(n, unidade)).join(" + ");
 
-function linhaDeSaldo(saldo: Saldo, quemTem = ""): HTMLElement {
+const ondeGuardado = (saldo: Saldo): string =>
+  `${comUnidade(saldo.quantidade, saldo.unidade)} ${saldo.endereco === null ? "no almoxarifado" : `no endereço ${saldo.endereco}`}`;
+
+function linhaDeSaldo(saldo: Saldo): HTMLElement {
   return h(
     "li",
     { "data-codigo": saldo.codigo, "data-saldo": String(saldo.quantidade) },
     h("strong", {}, saldo.codigo),
-    ` · ${quemTem}saldo ${comUnidade(saldo.quantidade, saldo.unidade)}`,
-    saldo.endereco === null ? null : ` · endereço ${saldo.endereco}`,
+    `: ${saldo.quantidade === 0 ? "estoque zerado" : ondeGuardado(saldo)}`,
   );
 }
 
@@ -158,10 +169,40 @@ function saldoNosCodigosDaMaquina(item: Peca): HTMLElement {
   const linhas = item.codigosUsadosAqui.flatMap((codigo) => {
     const doCodigo = item.saldoAqui.filter((s) => s.codigo === codigo);
     return doCodigo.length > 0
-      ? doCodigo.map((saldo) => linhaDeSaldo(saldo, "o almoxarifado tem este código, "))
-      : [h("li", { "data-codigo": codigo }, h("strong", {}, codigo), " · o almoxarifado não tem este código")];
+      ? doCodigo.map((saldo) => linhaDeSaldo(saldo))
+      : [h("li", { "data-codigo": codigo }, h("strong", {}, codigo), ": não tem no almoxarifado")];
   });
-  return blocoComLinhas("aqui", "No almoxarifado, códigos desta máquina", linhas);
+  const usados = item.codigosUsadosAqui.length;
+  return blocoComLinhas("aqui", usados === 1 ? "Estoque do código usado nesta máquina" : `Estoque dos ${usados} códigos usados nesta máquina`, linhas);
+}
+
+/**
+ * A resposta curta da ficha: onde a peça está guardada agora, em frase. Junta o saldo dos códigos
+ * desta máquina e o de outros códigos da mesma peça; o detalhe por código fica dentro da ficha.
+ */
+function ondeTem(item: Peca): HTMLElement {
+  const aqui = item.saldoAqui.filter((s) => s.quantidade > 0).map((saldo) => ({ saldo, outro: false }));
+  const outro = item.saldoSobOutroCodigo.filter((s) => s.quantidade > 0).map((saldo) => ({ saldo, outro: true }));
+  const guardados = [...aqui, ...outro];
+  if (guardados.length === 0) return h("p", { class: "onde", "data-onde": "nao-tem" }, "Não tem no almoxarifado.");
+  return h(
+    "div",
+    { class: "onde", "data-onde": outro.length > 0 ? "outro-codigo" : "tem" },
+    outro.length > 0 ? trilha(item, outro.map((o) => o.saldo)) : null,
+    h(
+      "ul",
+      {},
+      ...guardados.map(({ saldo, outro: deOutro }) =>
+        h(
+          "li",
+          { "data-codigo": saldo.codigo, ...(deOutro ? { "data-outro-codigo": "" } : {}) },
+          h("span", { class: "quanto" }, `Tem ${ondeGuardado(saldo)}.`),
+          " ",
+          h("span", { class: "codigo" }, deOutro ? `Procure o código ${saldo.codigo}: é a mesma peça, com outro código.` : `Procure o código ${saldo.codigo}.`),
+        ),
+      ),
+    ),
+  );
 }
 
 function linhaDeTroca(troca: Troca): HTMLElement {
@@ -187,20 +228,37 @@ function codigoDaPeca(codigo: CodigoLegado, uso: ReadonlyMap<CodigoLegado, Uso>,
       {},
       h("strong", {}, codigo),
       usado
-        ? ` · usado aqui ${contagem(usado.vezes, "vez", "vezes")}, ${quantidadesTexto(usado.quantidades)}`
-        : " · nunca usado nesta máquina",
+        ? `: usado ${contagem(usado.vezes, "vez", "vezes")} nesta máquina, ${quantidadesTexto(usado.quantidades)}`
+        : ": nunca usado nesta máquina",
     ),
     texto ? h("p", { class: "original" }, ...textoComTrechos(texto.descricao, texto.atributos)) : null,
     texto ? atributosDoCodigo(texto.atributos) : null,
   );
 }
 
+/**
+ * O desenho da revelação: os códigos que a máquina usa, sem estoque, e a linha que leva ao código
+ * da mesma peça que tem estoque. A frase ao lado já diz o mesmo, então o desenho fica fora da leitura de tela.
+ */
+function trilha(item: Peca, outros: readonly Saldo[]): HTMLElement {
+  const saldoDe = (codigo: CodigoLegado) => item.saldoAqui.filter((s) => s.codigo === codigo).reduce((soma, s) => soma + s.quantidade, 0);
+  const chip = (codigo: CodigoLegado, quantidade: number, classe: string) =>
+    h("span", { class: `chip ${classe}` }, h("span", { class: "chip-codigo" }, codigo), h("span", { class: "chip-saldo" }, String(quantidade)));
+  return h(
+    "div",
+    { class: "trilha", "aria-hidden": "true" },
+    h("span", { class: "trilha-de" }, ...item.codigosUsadosAqui.map((c) => chip(c, saldoDe(c), saldoDe(c) > 0 ? "com" : "sem"))),
+    h("span", { class: "trilha-alvo" }, h("span", { class: "trilha-seta" }), h("span", { class: "trilha-para" }, ...outros.map((o) => chip(o.codigo, o.quantidade, "achado")))),
+  );
+}
+
 function desenharPeca(item: Peca, textos: Textos): HTMLElement {
   const uso = usoPorCodigo(item.trocas);
-  const total =
+  const total: Filho[] =
     item.quantidadeTotal === null
-      ? `unidades diferentes (${[...new Set(item.trocas.map((t) => t.unidade))].join(" e ")}), sem soma`
-      : comUnidade(item.quantidadeTotal, item.trocas[0].unidade);
+      ? ["sem soma", h("span", { class: "nota" }, `contadas em ${juntarComE([...new Set(item.trocas.map((t) => nomeDaUnidade(t.unidade)))])}`)]
+      : [comUnidade(item.quantidadeTotal, item.trocas[0].unidade)];
+  const celula = (rotulo: string, ...valor: Filho[]) => h("div", {}, h("dt", {}, rotulo), h("dd", {}, ...valor));
   return h(
     "li",
     {
@@ -212,27 +270,31 @@ function desenharPeca(item: Peca, textos: Textos): HTMLElement {
       "data-codigos": String(item.codigosUsadosAqui.length),
     },
     h("h3", {}, item.grupo.rotulo),
-    h("p", { class: "resumo" }, contagem(item.trocas.length, "troca", "trocas"), h("span", { class: "ponto" }, " · "), h("span", {}, total)),
     h(
-      "p",
-      {},
-      h("span", {}, `Última troca ${dataBR(item.ultimaTroca)}`),
-      " · ",
-      h("span", {}, contagem(item.codigosUsadosAqui.length, "código usado aqui", "códigos usados aqui")),
+      "dl",
+      { class: "ficha" },
+      celula("Trocada", contagem(item.trocas.length, "vez", "vezes")),
+      celula("No total", ...total),
+      celula("Última troca", dataBR(item.ultimaTroca)),
     ),
-    saldoNosCodigosDaMaquina(item),
-    blocoDeSaldo(
-      "outro",
-      "No almoxarifado sob outro código",
-      item.saldoSobOutroCodigo.filter((s) => s.quantidade > 0),
-    ),
+    ondeTem(item),
     h(
       "details",
       {},
-      h("summary", {}, "Textos originais e trocas"),
-      h("h4", {}, "Códigos"),
+      h("summary", {}, "Ver estoque, textos e trocas"),
+      h(
+        "div",
+        { class: "estoques" },
+        saldoNosCodigosDaMaquina(item),
+        blocoDeSaldo(
+          "outro",
+          "Estoque com outro código da mesma peça",
+          item.saldoSobOutroCodigo.filter((s) => s.quantidade > 0),
+        ),
+      ),
+      h("h4", {}, "Como cada código aparece no cadastro"),
       h("ul", { class: "codigos" }, ...item.grupo.codigos.map((c) => codigoDaPeca(c, uso, textos))),
-      h("h4", {}, "Trocas"),
+      h("h4", {}, "Trocas nesta máquina"),
       listaDeTrocas(item.trocas),
     ),
   );
@@ -252,18 +314,37 @@ function desenharSemChave(item: SemChave, textos: Textos): HTMLElement {
     h("h3", {}, item.codigo),
     h("p", { class: "motivo" }, motivoDaLeitura(item.leitura)),
     h("p", { class: "original" }, ...textoComTrechos(texto?.descricao ?? item.trocas[0].descricaoMaterial, texto?.atributos ?? [])),
-    h("p", {}, `${contagem(item.trocas.length, "troca", "trocas")} · última ${dataBR(item.trocas[0].data)}`),
-    h("details", {}, h("summary", {}, "Trocas"), listaDeTrocas(item.trocas)),
+    h("p", {}, `${contagem(item.trocas.length, "troca", "trocas")}, a última em ${dataBR(item.trocas[0].data)}`),
+    h("details", {}, h("summary", {}, "Ver trocas"), listaDeTrocas(item.trocas)),
   );
 }
 
-function cabecalhoDaMaquina(equipamento: Equipamento): HTMLElement {
+function cabecalhoDaMaquina(equipamento: Equipamento, pecas: readonly Peca[], semChave: readonly SemChave[]): HTMLElement {
   return h(
     "section",
     { class: "maquina" },
     h("h1", {}, equipamento.nome),
-    h("p", {}, `${equipamento.tag} · ${equipamento.area} · patrimônio ${equipamento.patrimonio}`),
+    h("p", {}, `${equipamento.tag} · setor ${equipamento.area} · placa ${equipamento.patrimonio}`),
     desenharPlaca(equipamento.patrimonio, { decorativa: true }),
+    indicadoresDaMaquina(pecas, semChave),
+  );
+}
+
+/** A faixa de indicadores da máquina: peças com conta, trocas, a última troca e o que está guardado com outro código. */
+function indicadoresDaMaquina(pecas: readonly Peca[], semChave: readonly SemChave[]): HTMLElement {
+  const trocas = pecas.reduce((soma, p) => soma + p.trocas.length, 0) + semChave.reduce((soma, c) => soma + c.trocas.length, 0);
+  const ultima = [...pecas.map((p) => p.ultimaTroca), ...semChave.map((c) => c.trocas[0].data)].toSorted().at(-1);
+  const guardadas = pecas.flatMap((p) => p.saldoSobOutroCodigo.filter((s) => s.quantidade > 0));
+  const unidadesGuardadas = guardadas.reduce((soma, s) => soma + s.quantidade, 0);
+  const celula = (rotulo: string, valor: string, unidade = "") =>
+    h("div", {}, h("dt", {}, rotulo), h("dd", {}, h("strong", {}, valor), unidade ? ` ${unidade}` : null));
+  return h(
+    "dl",
+    { class: "indicadores" },
+    celula("Peças com as trocas somadas", String(pecas.length)),
+    celula("Trocas no histórico", String(trocas)),
+    celula("Última troca", ultima ? dataBR(ultima) : "nenhuma"),
+    celula("Guardadas com outro código", String(unidadesGuardadas), unidadesGuardadas === 1 ? "unidade" : "unidades"),
   );
 }
 
@@ -273,17 +354,23 @@ export function desenharHistorico(achado: Achado): Filho[] {
   const pecas = itens.filter((i): i is Peca => i.tipo === "peca");
   const semChave = itens.filter((i): i is SemChave => i.tipo === "codigo-sem-chave");
   return [
-    cabecalhoDaMaquina(equipamento),
+    cabecalhoDaMaquina(equipamento, pecas, semChave),
     h("div", { id: "entradas", class: "entradas" }),
     h("div", { id: "avisos", role: "status" }),
     itens.length === 0 && h("p", { class: "vazio" }, "Nenhuma troca registrada nesta máquina."),
     pecas.length > 0 &&
-      h("section", { class: "pecas" }, h("h2", {}, "Peças"), h("ul", {}, ...pecas.map((p) => desenharPeca(p, textos)))),
+      h(
+        "section",
+        { class: "pecas" },
+        h("h2", {}, "Peças trocadas nesta máquina"),
+        h("ul", {}, ...pecas.map((p) => desenharPeca(p, textos))),
+      ),
     semChave.length > 0 &&
       h(
         "section",
         { class: "sem-chave-lista" },
-        h("h2", {}, "Códigos que não entram nas somas"),
+        h("h2", {}, "Trocas sem peça identificada"),
+        h("p", { class: "explica" }, "O texto destes códigos não diz qual é a peça, então as trocas deles não entram na soma de nenhuma peça."),
         h("ul", {}, ...semChave.map((s) => desenharSemChave(s, textos))),
       ),
   ];

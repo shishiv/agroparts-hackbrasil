@@ -1,108 +1,684 @@
 @import "./base.css";
 
-/* Página inicial: um palco preto onde as placas são o objeto e a marca ocupa a coluna da esquerda. */
-.palco {
-  position: relative;
+/*
+ * Visão geral da usina: o título com o campo do número, o cadastro código por código, o caminho
+ * da cana com o painel "Para revisar" ao lado, e embaixo as trocas por mês e as placas para tocar.
+ */
+
+.cabecalho {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-content: start;
-  gap: 2.5rem;
-  padding-top: 1.25rem;
-  isolation: isolate;
+  gap: var(--e-5);
+  align-items: end;
 }
 
-/* Grade de desenho técnico (quadrado com círculo de 96 px) acesa só em volta das placas. */
-.palco::before {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(60% 38% at 70% 62%, rgb(255 255 255 / 0.09), transparent 70%),
-    var(--grade-tecnica);
-  -webkit-mask-image: radial-gradient(75% 70% at 68% 45%, #000 30%, transparent 85%);
-  mask-image: radial-gradient(75% 70% at 68% 45%, #000 30%, transparent 85%);
-  content: "";
-  pointer-events: none;
+.titulo {
+  display: grid;
+  gap: var(--e-3);
 }
 
-.palco > h1 {
-  position: relative;
-  margin: 0;
-  padding-top: 1.25rem;
-  font-size: clamp(3.25rem, 17.5vw, 22rem);
-  font-stretch: 125%;
-  font-weight: 200;
-  line-height: 0.82;
-  letter-spacing: -0.055em;
-  padding-bottom: 0.1em;
-  white-space: nowrap;
+@media (min-width: 64rem) {
+  .cabecalho {
+    grid-template-columns: minmax(0, 1fr) 24rem;
+  }
 }
 
-/* Régua de desenho técnico, fina, acima da marca. */
-.palco > h1::before {
-  position: absolute;
-  inset: 0 0 auto;
-  border-top: 1px solid var(--regua);
-  content: "";
+.grade-painel > *,
+.coluna > * {
+  min-width: 0;
+}
+
+.grade-painel {
+  display: grid;
+  gap: var(--e-6);
+  align-items: start;
+  margin-top: var(--e-6);
+}
+
+/* No celular as colunas somem e os painéis seguem a ordem de leitura: caminho, revisar, trocas, placas. */
+.coluna {
+  display: contents;
+}
+
+.mapa {
+  order: 1;
+}
+
+.revisar {
+  order: 2;
+}
+
+.grafico {
+  order: 3;
 }
 
 .toque {
+  order: 4;
+}
+
+@media (min-width: 64rem) {
+  .grade-painel {
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+  }
+
+  .coluna {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--e-6);
+    align-content: start;
+  }
+}
+
+/* O cadastro, código por código: os indicadores numa linha e um quadradinho por código, juntos por peça. */
+.cadastro-visao {
+  margin-top: var(--e-6);
+}
+
+.cadastro-visao .indicadores {
+  margin: 0 0 var(--e-4);
+}
+
+.unidades {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--e-3) var(--e-3);
+  padding-block: var(--e-4) var(--e-1);
+}
+
+.junta {
+  display: inline-flex;
+  gap: 2px;
+  padding-bottom: 0.3125rem;
+  border-bottom: 2px solid var(--texto);
+}
+
+.junta i {
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 0.125rem;
+  background: var(--texto);
+}
+
+.junta.escondida {
+  border-bottom-color: var(--ambar);
+}
+
+.junta i.achado {
+  box-shadow: 0 0 0 2px var(--superficie), 0 0 0 3.5px var(--ambar);
+}
+
+.junta.solta {
+  border-bottom-color: transparent;
+}
+
+.junta.a-revisar i {
+  border: 1.5px solid var(--texto);
+  background: none;
+}
+
+.junta.fora i {
+  background: var(--acao-medio);
+}
+
+@media (min-width: 64rem) {
+  .unidades {
+    gap: var(--e-3) var(--e-4);
+  }
+}
+
+/* O caminho da cana: o fluxograma numa moldura branca, com as correntes em tinta e as máquinas em balões de tag. */
+.quadro-fluxo {
+  padding: var(--e-2) 0;
+  border-block: 1px solid var(--linha);
+}
+
+.fluxo {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.fluxo-largo {
+  display: none;
+}
+
+@media (min-width: 48rem) {
+  .fluxo-largo {
+    display: block;
+  }
+
+  .fluxo-alto {
+    display: none;
+  }
+}
+
+.corrente {
+  fill: none;
+  stroke: var(--texto);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.corrente.vapor {
+  stroke: var(--apoio);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+}
+
+.fluxo-alto .corrente {
+  stroke: var(--linha-forte);
+  stroke-width: 2;
+}
+
+.ponta {
+  fill: var(--texto);
+}
+
+.cota {
+  fill: none;
+  stroke: var(--linha-forte);
+  stroke-width: 1;
+}
+
+.nome-setor {
+  fill: var(--texto);
+  font: 600 16px var(--sans);
+}
+
+.nome-corrente,
+.conta-setor {
+  fill: var(--apoio);
+  font: 400 16px var(--sans);
+}
+
+.nome-corrente {
+  font-style: italic;
+}
+
+.balao .corpo {
+  fill: var(--superficie);
+  stroke: var(--texto);
+  stroke-width: 1.5;
+  transition: fill 0.2s;
+}
+
+.balao .divisa {
+  stroke: var(--texto);
+  stroke-width: 1;
+}
+
+.balao text {
+  fill: var(--texto);
+  font: 600 16px var(--mono);
+}
+
+.balao .numero-tag {
+  font-weight: 400;
+}
+
+.balao .anel {
+  fill: none;
+  stroke: var(--ambar);
+  stroke-width: 2;
+  stroke-dasharray: 4 3;
+}
+
+.balao:hover .corpo,
+.balao:focus-visible .corpo {
+  fill: var(--marca);
+}
+
+.balao:focus-visible {
+  outline: none;
+}
+
+.balao:focus-visible .corpo {
+  stroke-width: 2.5;
+}
+
+/* No computador o desenho fica menor que o corpo do texto; as letras descem para caber. */
+@media (min-width: 48rem) {
+  .nome-setor {
+    font-size: 13px;
+  }
+
+  .nome-corrente,
+  .conta-setor {
+    font-size: 12px;
+  }
+
+  .balao text {
+    font-size: 11px;
+  }
+}
+
+
+.legenda-planta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2) var(--e-5);
+  padding-block: var(--e-3);
+  color: var(--apoio);
+  font-size: var(--t-r1);
+}
+
+.chave {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+}
+
+.chave::before {
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 50%;
+  content: "";
+}
+
+.chave-maquina::before {
+  border: 1.5px solid var(--texto);
+  background: linear-gradient(var(--texto), var(--texto)) center / 100% 1px no-repeat, var(--superficie);
+}
+
+.chave-codigo::before,
+.chave-revisar::before,
+.chave-fora::before {
+  border-radius: 0.125rem;
+}
+
+.chave-codigo::before {
+  background: var(--texto);
+}
+
+.chave-revisar::before {
+  border: 1.5px solid var(--texto);
+}
+
+.chave-fora::before {
+  background: var(--acao-medio);
+}
+
+.chave-escondida::before {
+  border: 2px dashed var(--ambar);
+}
+
+.setores {
+  display: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--linha);
+  list-style: none;
+}
+
+.setores li {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 1.5rem;
-  align-items: start;
+  gap: 0.125rem;
+  padding: var(--e-3) var(--e-3) var(--e-3) 0;
+  border-bottom: 1px solid var(--linha);
+  font-size: var(--t-r1);
+}
+
+.setores li:nth-child(even) {
+  padding-left: var(--e-3);
+  border-left: 1px solid var(--linha);
+}
+
+.setores span {
+  color: var(--apoio);
+}
+
+@media (min-width: 48rem) {
+  .setores {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .setores li,
+  .setores li:nth-child(even) {
+    padding: var(--e-3);
+    border-bottom: 0;
+    border-left: 1px solid var(--linha);
+    text-align: center;
+  }
+
+  .setores li:first-child {
+    border-left: 0;
+  }
+}
+
+.fonte-planta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--e-2);
+  margin-top: var(--e-3);
+  color: var(--apoio);
+  font-size: var(--t-r1);
+}
+
+/* "Para revisar": o caso principal e o botão, e os outros casos em linhas. */
+.revisar {
+  display: grid;
+  align-content: start;
+  gap: var(--e-3);
+  padding: var(--e-4);
+  border: 1px solid var(--linha);
+  border-radius: 0.75rem;
+  background: var(--superficie);
+}
+
+@media (min-width: 48rem) {
+  .revisar {
+    padding: var(--e-5);
+  }
+}
+
+
+
+.revisar .cabeca-painel {
+  margin-bottom: var(--e-2);
+}
+
+/* O caso principal: a placa da máquina, a peça e a ligação dos códigos sem saldo à etiqueta da prateleira. */
+.caso {
+  display: grid;
+  gap: var(--e-3);
+}
+
+.caso-maquina {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-2) var(--e-3);
+}
+
+.caso-peca {
+  font-size: var(--t-2);
+  font-weight: 650;
+  font-stretch: var(--largo);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.ligacao {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-2);
+  margin-block: var(--e-1);
+}
+
+.ligacao-de {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+}
+
+.ligacao-seta {
+  width: 1.75rem;
+  height: 1rem;
+  background: var(--icone-seguir) center / 1.25rem no-repeat;
+}
+
+/* A etiqueta da prateleira: o endereço grande em mono, o código e o saldo embaixo, com o verde do que tem. */
+.etiqueta {
+  display: grid;
+  min-width: 9rem;
+  border: 1px solid var(--tem);
+  border-radius: 0.25rem;
+  background: var(--superficie);
+  font-family: var(--mono);
+}
+
+.etiqueta-endereco {
+  padding: 0.375rem 0.625rem 0.25rem;
+  color: var(--texto);
+  font-size: var(--t-2);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+.etiqueta-linha {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--e-3);
+  padding: 0.25rem 0.625rem;
+  border-top: 1px solid var(--tem-borda);
+  background: var(--tem-claro);
+  color: var(--tem);
+  font-size: var(--t-r1);
+  font-weight: 600;
+}
+
+/* A plaqueta: a tag ou o patrimônio da máquina numa placa pequena, a mesma no fluxograma e na lateral. */
+.plaqueta {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  min-width: 3.75rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--linha-forte);
+  border-radius: 0.25rem;
+  background: var(--poco);
+  color: var(--texto);
+  font: 600 var(--t-r1) / 1.2 var(--mono);
+  letter-spacing: 0.02em;
+}
+
+.plaqueta.patrimonio {
+  border-color: var(--marca-borda);
+  background: var(--marca);
+}
+
+.plaqueta.escondida {
+  border-style: dashed;
+  border-color: var(--ambar);
+  background: var(--superficie);
+}
+
+.plaqueta.alerta {
+  border-color: transparent;
+  background: var(--ambar-claro);
+  color: var(--ambar);
+}
+
+.casos {
+  display: grid;
+  margin: var(--e-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.casos a {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  padding: var(--e-3) 1.75rem var(--e-3) 0;
+  border-bottom: 1px solid var(--linha);
+  background: var(--icone-seguir) right center / 1rem no-repeat;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.casos a:hover strong {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.casos strong,
+.casos a > span:last-child > span {
+  display: block;
+}
+
+.casos a > span:last-child > span {
+  color: var(--apoio);
+  font-size: var(--t-r1);
+}
+
+/* O gráfico de trocas por mês: uma barra por mês em tinta clara, o maior mês em tinta cheia, janeiro abrindo o ano. */
+.barras-quadro {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--e-2);
+  padding-top: var(--e-5);
+}
+
+.escala {
+  position: relative;
+  height: 11rem;
+  min-width: 1.5rem;
+  margin: 0;
+  padding: 0;
+  color: var(--apoio);
+  font-size: var(--t-r1);
+  line-height: 1.2;
+  list-style: none;
+  text-align: right;
+}
+
+.escala li {
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.escala li:nth-child(1) {
+  top: 0;
+}
+
+.escala li:nth-child(2) {
+  top: 50%;
+}
+
+.escala li:nth-child(3) {
+  top: 100%;
+}
+
+.barras {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 11rem;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  border-bottom: 1px solid var(--linha-forte);
+  background: linear-gradient(var(--linha), var(--linha)) 0 50% / 100% 1px no-repeat, linear-gradient(var(--linha), var(--linha)) 0 0 / 100% 1px no-repeat;
+  list-style: none;
+}
+
+.barras li {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.barra-mes {
+  width: 100%;
+  height: calc(var(--v) * 100%);
+  border-radius: 1px 1px 0 0;
+  background: var(--acao-medio);
+}
+
+.pico .barra-mes {
+  background: var(--acao);
+}
+
+.barras li.ano {
+  margin-left: 0.375rem;
+}
+
+.rotulo-ano {
+  position: absolute;
+  white-space: nowrap;
+  bottom: -1.75rem;
+  left: 0.25rem;
+  color: var(--apoio);
+  font-size: var(--t-r1);
+  line-height: 1.5;
+}
+
+.valor-pico {
+  position: absolute;
+  white-space: nowrap;
+  bottom: calc(var(--v) * 100% + 0.25rem);
+  left: 50%;
+  color: var(--texto);
+  font-size: var(--t-r1);
+  font-weight: 650;
+  line-height: 1;
+  transform: translateX(-50%);
+}
+
+/* As placas para tocar: linhas de catálogo, a placa de metal à esquerda e a legenda à direita. */
+.toque {
+  display: grid;
+  gap: var(--e-3);
+  align-content: start;
 }
 
 .toque h2 {
-  margin: 0;
-  color: var(--texto);
-}
-
-.toque h2::before {
-  background: var(--sinal);
+  font-size: var(--t-1);
 }
 
 .aviso-demo {
-  justify-self: start;
-  margin: -0.75rem 0 0;
-  padding: 0.375rem 0.75rem;
-  border: 1px dashed var(--sinal);
-  border-radius: 0.375rem;
-  color: var(--sinal);
-  font: 400 1rem/1.4 var(--mono);
+  margin-top: calc(-1 * var(--e-2));
+  color: var(--apoio);
+  font-size: var(--t-r1);
 }
 
 .placa-toque {
   position: relative;
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(0, 9fr) minmax(0, 11fr);
+  align-items: center;
   width: 100%;
   padding: 0;
-  border: 0;
-  background: none;
+  overflow: hidden;
+  border: 1px solid var(--linha);
+  border-radius: 0.5rem;
+  background: var(--superficie);
   color: inherit;
   font: inherit;
   text-align: left;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition:
-    transform 0.5s var(--suave),
+    border-color 0.3s,
+    box-shadow 0.4s var(--suave),
     opacity 0.35s;
-  animation: chegar 0.9s var(--suave) both;
-  animation-delay: calc(var(--ordem, 0) * 110ms + 120ms);
+  animation: chegar 0.6s var(--suave) both;
+  animation-delay: calc(var(--ordem, 0) * 70ms + 60ms);
+}
+
+.placa-toque > svg {
+  box-sizing: content-box;
+  width: calc(100% - 2 * var(--e-3));
+  padding: var(--e-3);
+  border-right: 1px solid var(--linha);
+  background: var(--poco);
+  transition: transform 0.5s var(--suave);
 }
 
 .placa-toque:focus-visible {
-  outline-offset: 8px;
+  outline-offset: 3px;
 }
 
-/* O brilho do metal, que segue o ponteiro. Fica só sobre o desenho, com o mesmo canto da placa. */
 .placa-toque::before {
   position: absolute;
-  inset: 0 0 auto;
+  top: var(--e-3);
+  left: var(--e-3);
   z-index: 1;
+  width: calc(45% - 2 * var(--e-3));
   aspect-ratio: 320 / 132;
   border-radius: 3.125% / 7.58%;
-  background: radial-gradient(circle at var(--luz-x, 30%) var(--luz-y, 20%), rgb(255 255 255 / 0.6), transparent 42%);
+  background: radial-gradient(circle at var(--luz-x, 30%) var(--luz-y, 20%), rgb(255 255 255 / 0.75), transparent 42%);
   mix-blend-mode: overlay;
   opacity: 0;
   transition: opacity 0.3s;
@@ -112,49 +688,66 @@
 
 .legenda {
   display: block;
-  min-height: 1.5rem;
-  margin-top: 0.875rem;
-  padding-top: 0.625rem;
-  border-top: 1px solid var(--grade);
-  color: #c2c2c2;
-  font: 400 1rem/1.4 var(--mono);
-  transition: color 0.2s;
+  padding: var(--e-2) 2.25rem var(--e-2) var(--e-3);
+  background: var(--icone-seguir) right var(--e-3) center / 1rem no-repeat;
+  color: var(--texto);
+  font-size: var(--t-r1);
+  line-height: 1.35;
+}
+
+.legenda .nome {
+  font-weight: 600;
+}
+
+.legenda .tag {
+  margin-left: 0.25rem;
+  color: var(--apoio);
+  white-space: nowrap;
+}
+
+.legenda .setor {
+  color: var(--apoio);
 }
 
 @media (hover: hover) {
   .placa-toque:hover {
-    transform: translateY(-0.375rem);
+    border-color: var(--acao-medio);
+  }
+
+  .placa-toque:hover > svg {
+    transform: translateY(-0.125rem);
   }
 
   .placa-toque:hover::before {
     opacity: 1;
   }
-
-  .placa-toque:hover .legenda {
-    color: var(--texto);
-  }
 }
 
-.placa-toque:active {
-  transform: translateY(-0.125rem) scale(0.99);
+.placa-toque:active > svg {
+  transform: scale(0.985);
 }
 
-/* A leitura: a placa tocada acende, as outras apagam. */
+/* O toque: a placa tocada fica em evidência, as outras recuam, e a linha de leitura corre no metal. */
 .toque:not([data-estado="parado"]) .placa-toque:not([data-lendo]) {
   opacity: 0.35;
 }
 
-.placa-toque[data-lendo] .legenda {
-  border-top-color: var(--sinal);
-  color: var(--sinal);
+.placa-toque[data-lendo] {
+  border-color: var(--acao);
+  box-shadow: 0 0 0 1px var(--acao), 0 14px 30px -16px rgb(22 29 26 / 0.4);
+}
+
+.toque[data-estado="lida"] .placa-toque[data-lendo] .legenda {
+  color: var(--acao);
+  font-weight: 600;
 }
 
 .placa-toque[data-lendo] path.onda-nfc {
-  stroke: var(--sinal);
+  stroke: var(--marca);
 }
 
 .placa-toque[data-lendo] circle.onda-nfc {
-  fill: var(--sinal);
+  fill: var(--marca);
 }
 
 .placa-toque[data-lendo] .onda {
@@ -172,7 +765,7 @@
 @keyframes chegar {
   from {
     opacity: 0;
-    transform: translateY(2.5rem);
+    transform: translateY(0.5rem);
   }
 }
 
@@ -202,107 +795,13 @@
   }
 }
 
-@media (min-width: 40rem) {
-  .toque {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 1.5rem;
-    row-gap: 2rem;
-  }
-
-  .toque h2,
-  .aviso-demo {
-    grid-column: 1 / -1;
-  }
-
-  .toque .placa-toque:first-of-type {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (min-width: 64rem) {
-  .palco {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    grid-template-rows: auto 1fr;
-    column-gap: 1rem;
-    row-gap: clamp(1.5rem, 4vh, 3rem);
-    min-height: calc(100dvh - 4.5rem);
-    padding-top: clamp(1.25rem, 4vh, 3rem);
-    padding-bottom: 1.5rem;
-  }
-
-  .palco > form {
-    grid-column: 1 / 6;
-    grid-row: 2;
-    align-self: end;
-  }
-
-  /* A largura das placas também segue a altura da janela, para tudo caber na primeira tela. */
-  .palco > .toque {
-    grid-column: 6 / -1;
-    grid-row: 1 / 3;
-    align-self: center;
-    justify-self: end;
-    width: min(100%, calc((100dvh - 10rem) * 1.2));
-  }
-
-  .palco > h1 {
-    grid-row: 1;
-    font-size: min(14.4vw, 24dvh);
-  }
-
-  .palco > h1 span {
-    display: block;
-  }
-
-  .palco > h1 {
-    grid-column: 1 / 6;
-  }
-
-  .toque {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .toque {
-    container-type: inline-size;
-  }
-
-  .toque .placa-toque:first-of-type {
-    grid-column: 2 / -1;
-  }
-
-  .toque .placa-toque:nth-of-type(2) {
-    grid-column: 1 / 3;
-  }
-
-  .toque .placa-toque:nth-of-type(3) {
-    grid-column: 3 / -1;
-  }
-}
-
-/* O título e o aviso dividem a linha só quando cabem lado a lado. */
-@container (min-width: 44rem) {
-  .toque h2 {
-    grid-column: 1 / 2;
-    grid-row: 1;
-    white-space: nowrap;
-  }
-
-  .aviso-demo {
-    grid-column: 2 / -1;
-    grid-row: 1;
-    justify-self: end;
-    margin: 0;
-    white-space: nowrap;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .placa-toque {
     animation: none;
   }
 
-  .placa-toque:hover,
-  .placa-toque:active {
+  .placa-toque:hover > svg,
+  .placa-toque:active > svg {
     transform: none;
   }
 

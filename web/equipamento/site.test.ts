@@ -98,7 +98,7 @@ describe("no site construído, num celular de 390 px", () => {
 
     const { pagina, contexto } = await celular();
     await pagina.goto(`${base}/`);
-    expect(await pagina.locator(".aviso-demo").innerText()).toBe("Demonstração: simula o toque na tag NFC");
+    expect(await pagina.locator(".aviso-demo").innerText()).toBe("Demonstração: o toque do celular na placa é simulado");
     const placa = pagina.locator('button[data-patrimonio="004512"]');
     expect(await placa.locator("svg").textContent()).toContain("004512");
 
@@ -110,7 +110,7 @@ describe("no site construído, num celular de 390 px", () => {
 
     await pagina.goBack();
     await pagina.waitForSelector('button[data-patrimonio="004512"]:not([data-lendo])');
-    expect(await pagina.locator('button[data-patrimonio="004512"]').innerText()).toContain("B-104 · Bomba de caldo");
+    expect(await pagina.locator('button[data-patrimonio="004512"]').innerText()).toContain("Bomba de caldo B-104");
     await link.contexto.close();
     await contexto.close();
   }, 60_000);

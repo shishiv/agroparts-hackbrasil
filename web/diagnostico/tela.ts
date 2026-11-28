@@ -104,7 +104,7 @@ function codigosDoSku({ codigos }: SkuDiagnosticado, analise: Analise, destacado
     "div",
     { class: "blocos" },
     ...[...porGrupo].map(([grupo, lista]) => blocoDeCodigos(grupo.rotulo, "peca", { "data-peca": grupo.chave }, linhas(lista))),
-    semGrupo.length === 0 ? null : blocoDeCodigos("Sem grupo", "sem-grupo", { "data-sem-grupo": "" }, linhas(semGrupo)),
+    semGrupo.length === 0 ? null : blocoDeCodigos("Peça não identificada", "sem-grupo", { "data-sem-grupo": "" }, linhas(semGrupo)),
   );
 }
 
@@ -114,7 +114,7 @@ function cartaoDaMistura(sku: SkuDiagnosticado, veredicto: Veredicto<"mistura">,
     "article",
     { class: "cartao mistura", "data-sku": veredicto.sku, "data-veredicto": "mistura" },
     h("h3", {}, veredicto.sku),
-    h("p", { class: "resumo-do-sku" }, `Junta ${veredicto.chaves.length} peças diferentes · difere em ${juntarComE(diferem.map(nomeDoAtributo))}`),
+    h("p", { class: "resumo-do-sku" }, `Junta ${veredicto.chaves.length} peças diferentes: ${diferem.length > 1 ? "mudam" : "muda"} ${juntarComE(diferem.map((a) => `a ${nomeDoAtributo(a)}`))}`),
     codigosDoSku(sku, analise, diferem),
   );
 }
@@ -127,12 +127,12 @@ function cartaoDaFragmentacao({ grupo, skus }: Fragmentacao, analise: Analise): 
     "article",
     { class: "cartao fragmentacao", "data-peca": grupo.chave },
     h("h3", {}, grupo.rotulo),
-    h("p", { class: "resumo-do-sku" }, `${contagem(grupo.codigos.length, "código", "códigos")} da mesma peça em ${contagem(skus.length, "SKU", "SKUs")}`),
+    h("p", { class: "resumo-do-sku" }, `${contagem(grupo.codigos.length, "código", "códigos")} da mesma peça, em ${contagem(skus.length, "item", "itens")}`),
     h(
       "div",
       { class: "blocos" },
       ...skus.map((sku) => blocoDeCodigos(sku, "sku", { "data-sku": sku }, linhas(doSku(sku)))),
-      semSku.length === 0 ? null : blocoDeCodigos("Sem SKU", "sem-sku", { "data-sem-sku": "" }, linhas(semSku)),
+      semSku.length === 0 ? null : blocoDeCodigos("Sem item", "sem-sku", { "data-sem-sku": "" }, linhas(semSku)),
     ),
   );
 }
@@ -151,43 +151,50 @@ function itemCoerente(sku: SkuDiagnosticado, veredicto: Veredicto<"coerente">, a
 }
 
 function itemInconclusivo(sku: SkuDiagnosticado, veredicto: Veredicto<"inconclusivo">, analise: Analise): HTMLElement {
-  return itemRecolhido(sku, "inconclusivo", `${veredicto.semChave.length} de ${contagem(sku.codigos.length, "código", "códigos")} sem grupo`, analise);
+  return itemRecolhido(sku, "inconclusivo", `${veredicto.semChave.length} de ${contagem(sku.codigos.length, "código", "códigos")} sem peça identificada`, analise);
 }
 
-function secao(id: string, titulo: string, vazio: string, itens: readonly HTMLElement[], lista: "ul" | "div"): HTMLElement {
+function secao(id: string, titulo: string, explicacao: string, vazio: string, itens: readonly HTMLElement[], lista: "ul" | "div"): HTMLElement {
   const corpo = itens.length === 0 ? h("p", { class: "vazio" }, vazio) : h(lista, { class: "cartoes" }, ...itens);
-  return h("section", { id, class: "secao" }, h("h2", {}, titulo), corpo);
+  return h("section", { id, class: "secao" }, h("h2", {}, titulo), h("p", { class: "explica" }, explicacao), corpo);
 }
 
 function painelDeResumo(resumo: Resumo): HTMLElement {
   const numero = (id: string, cor: string, n: number, singular: string, plural: string) =>
-    h("li", {}, h("a", { href: `#${id}`, class: `numero ${cor}`, "data-resumo": id }, h("strong", {}, String(n)), n === 1 ? singular : plural));
+    h("li", {}, h("a", { href: `#${id}`, class: `numero ${cor}`, "data-resumo": id }, h("strong", {}, String(n)), h("span", {}, n === 1 ? singular : plural)));
   return h(
     "nav",
     { class: "painel", "aria-label": "Resumo" },
     h(
       "ul",
       {},
-      numero("misturas", "cor-mistura", resumo.misturas, "mistura", "misturas"),
-      numero("fragmentacoes", "cor-fragmentacao", resumo.fragmentacoes, "fragmentação", "fragmentações"),
-      numero("coerentes", "cor-coerente", resumo.coerentes, "coerente", "coerentes"),
-      numero("inconclusivos", "cor-inconclusivo", resumo.inconclusivos, "inconclusivo", "inconclusivos"),
+      numero("misturas", "cor-mistura", resumo.misturas, "item mistura peças diferentes", "itens misturam peças diferentes"),
+      numero("fragmentacoes", "cor-fragmentacao", resumo.fragmentacoes, "peça aparece em mais de um item", "peças aparecem em mais de um item"),
+      numero("coerentes", "cor-coerente", resumo.coerentes, "item está certo", "itens estão certos"),
+      numero("inconclusivos", "cor-inconclusivo", resumo.inconclusivos, "item não pôde ser conferido", "itens não puderam ser conferidos"),
     ),
   );
 }
 
 function desenharResultado(analise: Analise): Node[] {
   const { skus, fragmentacoes } = analise.diagnostico;
-  if (skus.length === 0) return [h("p", { class: "vazio" }, "Nenhum código do cadastro tem SKU, então não há o que comparar.")];
+  if (skus.length === 0) return [h("p", { class: "vazio" }, "Nenhum código do cadastro está num item da usina, então não há o que comparar.")];
   const misturas = skus.flatMap((s) => (s.veredicto.tipo === "mistura" ? [cartaoDaMistura(s, s.veredicto, analise)] : []));
   const coerentes = skus.flatMap((s) => (s.veredicto.tipo === "coerente" ? [itemCoerente(s, s.veredicto, analise)] : []));
   const inconclusivos = skus.flatMap((s) => (s.veredicto.tipo === "inconclusivo" ? [itemInconclusivo(s, s.veredicto, analise)] : []));
   return [
     painelDeResumo(resumir(analise.diagnostico)),
-    secao("misturas", "Misturas", "Nenhuma.", misturas, "div"),
-    secao("fragmentacoes", "Fragmentações", "Nenhuma.", fragmentacoes.map((f) => cartaoDaFragmentacao(f, analise)), "div"),
-    secao("coerentes", "Coerentes", "Nenhum.", coerentes, "ul"),
-    secao("inconclusivos", "Inconclusivos", "Nenhum.", inconclusivos, "ul"),
+    secao("misturas", "Itens que misturam peças diferentes", "O mesmo item junta códigos de peças que não são iguais.", "Nenhum.", misturas, "div"),
+    secao(
+      "fragmentacoes",
+      "Peças que aparecem em mais de um item",
+      "Os códigos da mesma peça foram postos em itens diferentes.",
+      "Nenhuma.",
+      fragmentacoes.map((f) => cartaoDaFragmentacao(f, analise)),
+      "div",
+    ),
+    secao("coerentes", "Itens certos", "Todos os códigos do item são da mesma peça.", "Nenhum.", coerentes, "ul"),
+    secao("inconclusivos", "Itens que não puderam ser conferidos", "Algum código do item não tem texto bastante para dizer qual é a peça.", "Nenhum.", inconclusivos, "ul"),
   ];
 }
 
@@ -197,8 +204,8 @@ function descreverFonte(nome: string | null, analise: Analise): string {
   const partes = [
     nome ?? "Dados de demonstração: Usina Modelo (fictícia)",
     contagem(total, "código", "códigos"),
-    contagem(analise.diagnostico.skus.length, "SKU", "SKUs"),
-    total > comSku ? `${total - comSku} sem SKU` : null,
+    contagem(analise.diagnostico.skus.length, "item da usina", "itens da usina"),
+    total > comSku ? `${contagem(total - comSku, "código sem item", "códigos sem item")}` : null,
   ];
   return partes.filter((p) => p !== null).join(" · ");
 }
@@ -228,7 +235,7 @@ export function montarDiagnostico(raiz: HTMLElement, csvDaDemo: string): void {
   const aviso = h("div", { class: "aviso", role: "alert", hidden: true });
   const resultado = h("div", { id: "resultado" });
   const entrada = h("input", { type: "file", accept: ".csv,text/csv,text/plain" });
-  const voltar = h("button", { type: "button", class: "secundario", hidden: true }, "Usar a demonstração");
+  const voltar = h("button", { type: "button", class: "secundario", hidden: true }, "Voltar à demonstração");
 
   function mostrar(nome: string | null, analise: Analise): void {
     fonte.textContent = descreverFonte(nome, analise);
@@ -256,12 +263,13 @@ export function montarDiagnostico(raiz: HTMLElement, csvDaDemo: string): void {
   voltar.addEventListener("click", () => mostrar(null, analiseDaDemo));
 
   raiz.replaceChildren(
-    h("h1", {}, "Diagnóstico dos SKUs"),
+    h("h1", {}, "Cadastro de peças"),
+    h("p", { class: "explica" }, "A usina agrupa os códigos de material em itens. Aqui conferimos se cada item junta só códigos da mesma peça."),
     fonte,
     h(
       "div",
       { class: "acoes" },
-      h("label", { class: "botao" }, "Carregar outro cadastro de materiais (CSV)", entrada),
+      h("label", { class: "botao" }, "Conferir outro cadastro (CSV)", entrada),
       voltar,
     ),
     aviso,

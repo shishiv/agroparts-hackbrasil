@@ -22,8 +22,8 @@ const carregando = (): HTMLElement => estado("carregando", h("p", { "aria-busy":
 const desconhecido = (digitado: string, ir: Ir): HTMLElement =>
   estado(
     "desconhecido",
-    h("h1", {}, "Patrimônio desconhecido"),
-    h("p", {}, digitado === "" ? "Nenhuma máquina nesta página." : `Não há máquina com o número ${digitado}.`),
+    h("h1", {}, "Máquina não encontrada"),
+    h("p", {}, digitado === "" ? "Nenhuma máquina nesta página." : `Não encontramos a máquina ${digitado}. Confira o número da placa e tente de novo.`),
     campoDeNumero(ir),
   );
 
